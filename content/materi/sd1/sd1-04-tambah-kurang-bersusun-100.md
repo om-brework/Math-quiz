@@ -25,11 +25,27 @@ Dua aturan penting:
 - **Menyimpan.** Kalau stik lepas sudah ada 10 atau lebih, ikat 10 stik menjadi 1 ikat. Pindahkan ikatan itu ke kotak puluhan.
 - **Meminjam.** Kalau stik lepas kurang untuk diambil, buka 1 ikat. Sekarang ada 10 stik lepas tambahan.
 
+Lihat cara **menyimpan**: 10 stik lepas diikat menjadi 1 ikat.
+
+```anim
+{"type": "stik", "op": "+", "a": 47, "b": 38, "title": "Menyimpan: 47 + 38"}
+```
+
+Lihat cara **meminjam**: 1 ikat dibuka menjadi 10 stik lepas.
+
+```anim
+{"type": "stik", "op": "-", "a": 73, "b": 28, "title": "Meminjam: 73 − 28"}
+```
+
 ## Konsep
 
 ### Menyusun menurut nilai tempat
 
 Tulis bilangan **satu di bawah yang lain**. Satuan di bawah satuan. Puluhan di bawah puluhan.
+
+```visual
+{"type": "base10", "tens": 4, "ones": 7, "caption": "47 = 4 puluhan dan 7 satuan"}
+```
 
 ```
   Puluhan  Satuan
@@ -64,11 +80,8 @@ Kalau angka satuan atas **lebih kecil** dari angka satuan bawah, kita **meminjam
 
 **Soal.** 34 + 25 = ...
 
-```
-  3 4
-+ 2 5
------
-  5 9
+```anim
+{"type": "susun", "op": "+", "a": 34, "b": 25}
 ```
 
 1. **Langkah 1: Susun.** Tulis 25 di bawah 34. Satuan 5 di bawah satuan 4. Puluhan 2 di bawah puluhan 3.
@@ -82,12 +95,8 @@ Kalau angka satuan atas **lebih kecil** dari angka satuan bawah, kita **meminjam
 
 **Soal.** 47 + 38 = ...
 
-```
-  1
-  4 7
-+ 3 8
------
-  8 5
+```anim
+{"type": "susun", "op": "+", "a": 47, "b": 38}
 ```
 
 1. **Langkah 1: Susun.** 7 dan 8 di kolom satuan. 4 dan 3 di kolom puluhan.
@@ -102,11 +111,8 @@ Kalau angka satuan atas **lebih kecil** dari angka satuan bawah, kita **meminjam
 
 **Soal.** 68 − 23 = ...
 
-```
-  6 8
-- 2 3
------
-  4 5
+```anim
+{"type": "susun", "op": "-", "a": 68, "b": 23}
 ```
 
 1. **Langkah 1: Susun.** Bilangan yang lebih besar (68) di atas.
@@ -120,12 +126,8 @@ Kalau angka satuan atas **lebih kecil** dari angka satuan bawah, kita **meminjam
 
 **Soal.** 73 − 28 = ...
 
-```
-  6 13
-  7  3
-- 2  8
-------
-  4  5
+```anim
+{"type": "susun", "op": "-", "a": 73, "b": 28}
 ```
 
 1. **Langkah 1: Susun dan lihat satuan.** Satuan atas 3, satuan bawah 8. Tiga stik tidak cukup untuk diambil 8.
@@ -140,12 +142,12 @@ Kalau angka satuan atas **lebih kecil** dari angka satuan bawah, kita **meminjam
 
 **Soal.** Bu Siti punya 52 telur. Sebanyak 37 telur terjual. Berapa telur yang tersisa?
 
+```visual
+{"type": "objects", "item": "kue", "count": 52, "crossed": 37, "caption": "52 telur, 37 terjual (dicoret)"}
 ```
-  4 12
-  5  2
-- 3  7
-------
-  1  5
+
+```anim
+{"type": "susun", "op": "-", "a": 52, "b": 37}
 ```
 
 1. **Langkah 1: Pahami soal.** Telur terjual berarti diambil. Ini pengurangan: 52 − 37.

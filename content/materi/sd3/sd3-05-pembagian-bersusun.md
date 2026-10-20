@@ -19,6 +19,12 @@ Kamu selalu membagi **lembaran besar dulu**. Kalau ada lembaran besar yang tidak
 
 Pembagian bersusun bekerja persis seperti itu: bagi angka paling kiri dulu, tukar yang tersisa ke kolom kanan, lalu lanjutkan.
 
+Lihat bagaimana 12 kue dibagi rata ke 3 piring, satu-satu bergiliran:
+
+```anim
+{"type": "benda", "op": "÷", "a": 12, "b": 3, "item": "kue", "title": "Membagi rata 12 kue ke 3 piring"}
+```
+
 ## Konsep
 
 ### Bagian-bagian pembagian
@@ -33,6 +39,10 @@ Pada 96 ÷ 4 = 24:
 
 Tidak semua pembagian pas. Misalnya 14 kelereng dibagi ke 3 anak.
 
+```anim
+{"type": "benda", "op": "÷", "a": 14, "b": 3, "item": "kelereng", "title": "14 kelereng untuk 3 anak"}
+```
+
 - Tiap anak mendapat 4 kelereng (3 × 4 = 12).
 - Masih ada 2 kelereng yang tidak bisa dibagi rata.
 
@@ -44,16 +54,8 @@ Kita tulis: 14 ÷ 3 = 4 sisa 2.
 
 Di sekolah Indonesia, pembagian bersusun ditulis dengan **porogapit**. Pembagi ditulis di kiri, yang dibagi di dalam "kurung", dan hasil bagi di atas.
 
-```
-    2 4
-   -----
-4 ) 9 6
-    8
-   ---
-    1 6
-    1 6
-   ----
-      0
+```anim
+{"type": "porogapit", "a": 96, "b": 4, "title": "Porogapit 96 ÷ 4"}
 ```
 
 ### Empat gerakan yang selalu diulang
@@ -73,6 +75,10 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 
 **Soal.** 96 ÷ 4 = ...
 
+```visual
+{"type": "money", "items": [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 1000, 1000, 1000, 1000, 1000, 1000], "caption": "Bayangkan Rp96.000: 9 lembar sepuluh ribuan dan 6 ribuan, dibagi ke 4 orang"}
+```
+
 1. **Langkah 1: Bagi angka puluhan.** Lihat angka 9 (artinya 9 puluhan). 4 muat 2 kali di 9, karena 4 × 2 = 8 dan 4 × 3 = 12 sudah kelebihan. Tulis **2** di atas angka 9.
 2. **Langkah 2: Kali.** 2 × 4 = 8. Tulis 8 di bawah 9.
 3. **Langkah 3: Kurang.** 9 − 8 = 1. Ada 1 puluhan yang tersisa. Ini seperti 1 lembar Rp10 yang tidak bisa dibagi ke 4 orang.
@@ -87,16 +93,8 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 
 **Soal.** 75 ÷ 6 = ...
 
-```
-    1 2
-   -----
-6 ) 7 5
-    6
-   ---
-    1 5
-    1 2
-   ----
-      3
+```anim
+{"type": "porogapit", "a": 75, "b": 6}
 ```
 
 1. **Langkah 1: Bagi puluhan.** 6 muat 1 kali di 7. Tulis **1** di atas 7.
@@ -114,6 +112,10 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 
 **Soal.** 252 ÷ 7 = ...
 
+```anim
+{"type": "porogapit", "a": 252, "b": 7}
+```
+
 1. **Langkah 1: Lihat angka ratusan.** Angka 2 lebih kecil dari 7, jadi 7 tidak muat di 2. Kita **tidak menulis apa-apa** di atas 2, lalu gabungkan dengan angka berikutnya: 25.
 2. **Langkah 2: Bagi.** 7 muat 3 kali di 25 (7 × 3 = 21, 7 × 4 = 28 kelebihan). Tulis **3** di atas angka 5.
 3. **Langkah 3: Kali dan kurang.** 3 × 7 = 21, dan 25 − 21 = 4.
@@ -127,6 +129,10 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 ### Contoh 4: Soal cerita, sisa harus dipikirkan
 
 **Soal.** Ada 130 siswa yang akan naik bus mini. Satu bus mini memuat 8 siswa. Berapa bus mini yang dibutuhkan?
+
+```anim
+{"type": "porogapit", "a": 130, "b": 8}
+```
 
 1. **Langkah 1: Pahami soal.** Kita membagi 130 siswa ke kelompok berisi 8. Jadi kita menghitung 130 ÷ 8.
 2. **Langkah 2: Hitung bersusun.** 8 muat 1 kali di 13, sisa 5. Turunkan 0 menjadi 50. 8 muat 6 kali di 50 (8 × 6 = 48), sisa 2. Jadi 130 ÷ 8 = 16 sisa 2.

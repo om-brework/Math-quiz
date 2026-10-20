@@ -38,9 +38,7 @@ export default function MateriPage({ topic, locked, prev, next }: Props) {
             ) : (
                 <>
                     {practice && <div className="mb-2 sm:hidden">{practice}</div>}
-                    <div className="rounded-3xl border-2 border-emerald-100 bg-white p-5 sm:p-8 dark:border-slate-800 dark:bg-slate-900">
-                        <Materi body={topic.body ?? ''} />
-                    </div>
+                    <Materi body={topic.body ?? ''} />
                     <div className="mt-5">{practice || <p className="text-center text-sm text-slate-500">Latihan interaktif untuk topik ini sedang disiapkan. Kerjakan dulu soal "Cek pemahaman" di atas.</p>}</div>
                 </>
             )}
