@@ -1,0 +1,404 @@
+{
+  "salah-membilang-benda": {
+    "nama": "Salah membilang benda",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak keliru menghitung banyak ikatan puluhan atau melompati benda saat membilang.",
+    "saran": "Latih membilang benda nyata (stik, kelereng) dengan mengikat tiap 10, lalu hitung loncat sepuluh: 10, 20, 30, baru lanjut satu-satu."
+  },
+  "lupa-ikat-sepuluh": {
+    "nama": "Belum menukar 10 satuan menjadi 1 puluhan",
+    "kategori": "Bilangan",
+    "penjelasan": "Saat satuan 10 atau lebih (misalnya 3 ikat dan 14 lepas), anak belum mengikat 10 satuan menjadi 1 puluhan baru.",
+    "saran": "Main tukar-tukaran: setiap terkumpul 10 stik lepas, ikat dengan karet dan pindahkan ke tumpukan ikatan."
+  },
+  "tertukar-puluhan-satuan": {
+    "nama": "Puluhan dan satuan tertukar",
+    "kategori": "Nilai tempat",
+    "penjelasan": "Anak menulis angka puluhan di tempat satuan atau sebaliknya, misalnya tiga puluh empat ditulis 43.",
+    "saran": "Pakai tabel dua kolom Puluhan | Satuan. Ucapkan \"puluhan di kiri\" setiap menulis bilangan dua angka."
+  },
+  "salah-baca-bilangan-kata": {
+    "nama": "Salah membaca atau menulis bilangan dengan kata",
+    "kategori": "Nilai tempat",
+    "penjelasan": "Anak keliru mengubah bilangan ke kata atau sebaliknya, misalnya \"satu puluh\", \"satu ratus\", atau \"lima delapan\" untuk 58.",
+    "saran": "Hafalkan kata khusus sepuluh, sebelas, seratus. Latih membaca angka di kalender, nomor rumah, atau halaman buku."
+  },
+  "salah-nilai-angka": {
+    "nama": "Belum paham nilai angka sesuai tempatnya",
+    "kategori": "Nilai tempat",
+    "penjelasan": "Anak menganggap angka 4 pada 47 bernilai 4, padahal bernilai 40.",
+    "saran": "Uraikan bilangan dengan blok atau uang: 47 = 4 lembar sepuluhan + 7 koin satuan = 40 + 7."
+  },
+  "bandingkan-satuan-dulu": {
+    "nama": "Membandingkan dari satuan, bukan puluhan",
+    "kategori": "Membandingkan bilangan",
+    "penjelasan": "Anak melihat angka satuan dulu sehingga mengira 29 lebih besar dari 31.",
+    "saran": "Biasakan urutan: bandingkan puluhan dulu; hanya kalau puluhannya sama, baru lihat satuan."
+  },
+  "salah-urutkan-bilangan": {
+    "nama": "Salah mengurutkan bilangan",
+    "kategori": "Membandingkan bilangan",
+    "penjelasan": "Anak tertukar arah urutan (terkecil/terbesar) atau melewatkan satu bilangan saat menyusun.",
+    "saran": "Tulis bilangan di kartu, lalu susun di meja. Baca lagi petunjuknya: mulai dari terkecil atau terbesar?"
+  },
+  "salah-aturan-pola": {
+    "nama": "Salah menemukan aturan pola",
+    "kategori": "Pola bilangan",
+    "penjelasan": "Anak menebak aturan pola (tambah/kurang berapa) tanpa memeriksa dua bilangan berdekatan, atau salah arah naik/turun.",
+    "saran": "Ajak anak menulis selisih di antara setiap pasangan bilangan sebelum menebak aturannya."
+  },
+  "salah-lanjutkan-pola": {
+    "nama": "Salah melanjutkan pola",
+    "kategori": "Pola bilangan",
+    "penjelasan": "Aturan sudah benar, tetapi bilangan berikutnya dihitung keliru.",
+    "saran": "Pakai garis bilangan atau hitung loncat dengan jari untuk melanjutkan pola langkah demi langkah."
+  },
+  "salah-kata-urutan": {
+    "nama": "Salah kata bilangan urutan",
+    "kategori": "Bilangan urutan",
+    "penjelasan": "Anak menulis \"kesatu\" untuk ke-1 atau salah memasangkan kata urutan dengan bilangannya.",
+    "saran": "Latih dengan antrean mainan: pertama, kedua, ketiga, dan seterusnya. Ingatkan bahwa ke-1 dibaca \"pertama\"."
+  },
+  "lambang-urutan-tanpa-hubung": {
+    "nama": "Lambang urutan tanpa tanda hubung",
+    "kategori": "Bilangan urutan",
+    "penjelasan": "Anak menulis \"ke5\" atau hanya \"5\", padahal lambang bilangan urutan adalah ke-5.",
+    "saran": "Tulis beberapa lambang bilangan urutan bersama anak dan tunjukkan tanda hubungnya."
+  },
+  "tertukar-banyak-urutan": {
+    "nama": "Mencampur banyak dan posisi",
+    "kategori": "Bilangan urutan",
+    "penjelasan": "Anak mengira \"mobil keempat\" berarti empat mobil, atau sebaliknya.",
+    "saran": "Bedakan dengan benda nyata: \"ambil 3 kelereng\" berbeda dengan \"ambil kelereng ketiga\". Bilangan urutan hanya menunjuk satu benda."
+  },
+  "salah-ujung-antrean": {
+    "nama": "Mulai menghitung dari ujung yang salah",
+    "kategori": "Bilangan urutan",
+    "penjelasan": "Soal meminta dari belakang, tetapi anak menghitung dari depan (atau sebaliknya).",
+    "saran": "Sebelum menghitung, minta anak menunjuk dulu ujung yang diminta. Ujung itu selalu \"pertama\"."
+  },
+  "salah-hitung-posisi": {
+    "nama": "Salah menghitung posisi dalam antrean",
+    "kategori": "Bilangan urutan",
+    "penjelasan": "Anak kelebihan atau kekurangan satu saat menghitung posisi, atau lupa menghitung dirinya sendiri.",
+    "saran": "Tunjuk dan hitung satu per satu. Cek: anak di depan + anak itu + anak di belakang = semua anak."
+  },
+  "salah-urutan-dari-belakang": {
+    "nama": "Menganggap urutan dari belakang sama dengan dari depan",
+    "kategori": "Bilangan urutan",
+    "penjelasan": "Anak ke-2 dari depan dijawab ke-2 juga dari belakang.",
+    "saran": "Buat antrean boneka dan hitung dari dua arah. Tunjukkan bahwa urutannya biasanya berbeda."
+  },
+  "salah-pilih-tambah-kurang": {
+    "nama": "Salah memilih tambah atau kurang",
+    "kategori": "Soal cerita",
+    "penjelasan": "Anak belum bisa menentukan apakah cerita meminta penjumlahan (menggabung) atau pengurangan (mengambil, sisa, selisih).",
+    "saran": "Peragakan cerita dengan toples dan benda: benda masuk berarti +, benda keluar berarti −. Tanyakan \"bertambah atau berkurang?\"."
+  },
+  "kurang-urutan-terbalik": {
+    "nama": "Menulis pengurangan terbalik",
+    "kategori": "Penjumlahan dan pengurangan",
+    "penjelasan": "Anak menulis bilangan kecil di depan, misalnya 4 − 9 untuk \"9 permen diambil 4\".",
+    "saran": "Ingatkan: pada pengurangan, bilangan seluruh (yang terbesar) selalu ditulis paling depan."
+  },
+  "salah-keluarga-bilangan": {
+    "nama": "Belum paham keluarga bilangan",
+    "kategori": "Penjumlahan dan pengurangan",
+    "penjelasan": "Anak belum bisa membedakan bilangan seluruh dan bagian, sehingga salah mencari bilangan yang hilang.",
+    "saran": "Pakai model bagian-bagian-seluruh: dua mangkuk kecil (bagian) dan satu mangkuk besar (seluruh). Seluruh − bagian = bagian lain."
+  },
+  "salah-pasangan-sepuluh": {
+    "nama": "Belum hafal pasangan 10",
+    "kategori": "Fakta dasar",
+    "penjelasan": "Anak tidak mengenali dua bilangan yang jumlahnya 10 (1 dan 9, 2 dan 8, 3 dan 7, 4 dan 6, 5 dan 5).",
+    "saran": "Main tebak cepat pasangan 10 dengan jari atau rak telur berisi 10 lubang."
+  },
+  "lupa-bilangan-ketiga": {
+    "nama": "Lupa bilangan ketiga",
+    "kategori": "Penjumlahan dan pengurangan",
+    "penjelasan": "Saat menjumlah tiga bilangan, anak berhenti setelah dua bilangan.",
+    "saran": "Biasakan mencoret setiap bilangan yang sudah dipakai, lalu cek apakah masih ada yang belum dicoret."
+  },
+  "susun-tidak-lurus": {
+    "nama": "Menyusun bilangan tidak lurus",
+    "kategori": "Hitung susun",
+    "penjelasan": "Bilangan satu angka ditulis di bawah puluhan, misalnya 45 + 3 disusun sehingga 3 di bawah 4.",
+    "saran": "Pakai kertas berpetak dan beri label kolom P dan S. Satuan selalu di kolom paling kanan."
+  },
+  "pinjam-tidak-perlu": {
+    "nama": "Meminjam padahal tidak perlu",
+    "kategori": "Hitung susun",
+    "penjelasan": "Anak meminjam 1 puluhan walaupun satuan atas sudah cukup besar.",
+    "saran": "Sebelum menghitung kolom, tanya: \"atas lebih kecil dari bawah?\" Pinjam hanya kalau jawabannya ya."
+  },
+  "salah-pecah-bilangan": {
+    "nama": "Salah memecah bilangan",
+    "kategori": "Hitung cepat",
+    "penjelasan": "Saat membuat 10 atau turun ke 10, anak memecah bilangan dengan ukuran yang salah (misalnya 8 + 5, memecah 5 menjadi 1 dan 4).",
+    "saran": "Pakai rak telur 10 lubang: lihat dulu berapa lubang kosong, baru pecah bilangan kedua sesuai jumlah itu."
+  },
+  "lupa-sisa-ambil": {
+    "nama": "Lupa sisa yang harus diambil",
+    "kategori": "Hitung cepat",
+    "penjelasan": "Pada 15 − 7, anak berhenti setelah 15 − 5 = 10 dan lupa masih harus mengambil 2 lagi.",
+    "saran": "Tulis pecahannya di kertas: 7 = 5 + 2. Coret setiap bagian setelah dipakai."
+  },
+  "salah-sesuaikan-dobel": {
+    "nama": "Salah menyesuaikan dobel",
+    "kategori": "Hitung cepat",
+    "penjelasan": "Anak memakai dobel yang benar tetapi menambah padahal harus mengurangi 1 (atau sebaliknya), misalnya 7 + 8 = 8 + 8 + 1.",
+    "saran": "Bandingkan dua soal: 7 + 8 dengan 8 + 8. Mana yang lebih kecil? Kalau mulai dari dobel yang lebih besar, kurangi 1."
+  },
+  "ubah-tempat-salah": {
+    "nama": "Mengubah tempat yang salah",
+    "kategori": "Hitung cepat",
+    "penjelasan": "Saat menambah puluhan, anak mengubah satuan (52 + 30 dijawab 55), atau sebaliknya.",
+    "saran": "Gunakan blok atau uang: puluhan = lembar sepuluhan, satuan = koin. Menambah 30 berarti menambah 3 lembar, koinnya tetap."
+  },
+  "tambah-bukan-kali": {
+    "nama": "Menjumlahkan, bukan mengalikan",
+    "kategori": "Perkalian",
+    "penjelasan": "Untuk \"4 kantong berisi 5\", anak menjawab 4 + 5 = 9.",
+    "saran": "Gambar kantong-kantongnya dan isi masing-masing. Tunjukkan bahwa 5 dijumlahkan 4 kali."
+  },
+  "tertukar-arti-kali": {
+    "nama": "Tertukar arti perkalian",
+    "kategori": "Perkalian",
+    "penjelasan": "Anak tertukar antara banyak kelompok dan isi setiap kelompok (3 × 4 digambar 4 piring berisi 3).",
+    "saran": "Baca 3 × 4 sebagai \"3 piring, setiap piring 4\". Angka pertama adalah banyak piring."
+  },
+  "salah-hitung-loncat": {
+    "nama": "Salah hitung loncat",
+    "kategori": "Perkalian",
+    "penjelasan": "Anak melompati atau mengulang satu loncatan, atau berhenti terlalu cepat.",
+    "saran": "Latih hitung loncat 2, 5, dan 10 sambil melompat di lantai atau menunjuk garis bilangan, dan hitung banyak loncatan dengan jari."
+  },
+  "tertukar-jenis-bagi": {
+    "nama": "Tertukar dua jenis pembagian",
+    "kategori": "Pembagian",
+    "penjelasan": "Anak tidak membedakan \"membagi sama banyak\" (mencari isi tiap kelompok) dan \"mengelompokkan\" (mencari banyak kelompok).",
+    "saran": "Setelah membaca soal, tanya: \"yang sudah diketahui banyak kelompok atau isi tiap kelompok?\" Peragakan dengan kue dan piring."
+  },
+  "bagi-tidak-rata": {
+    "nama": "Membagi tidak sama banyak",
+    "kategori": "Pembagian",
+    "penjelasan": "Anak membagikan benda tidak berputar sehingga bagiannya tidak sama atau salah menghitung putaran.",
+    "saran": "Bagikan benda satu per satu berputar ke setiap anak sampai habis, lalu periksa semua bagian sama banyak."
+  },
+  "salah-baca-nilai-uang": {
+    "nama": "Salah membaca nilai uang",
+    "kategori": "Uang",
+    "penjelasan": "Anak keliru membaca atau menulis nilai uang, misalnya Rp5.000 dibaca lima ratus atau lima puluh ribu.",
+    "saran": "Mainkan uang mainan atau uang asli: sebut nilainya sambil menunjuk angka dan banyak nolnya."
+  },
+  "campur-ratus-ribu": {
+    "nama": "Mencampur ratus dan ribu",
+    "kategori": "Uang",
+    "penjelasan": "Anak menganggap Rp500 sama dengan lima ribu, atau menjumlahkan ratusan dan ribuan seolah sama.",
+    "saran": "Pisahkan koin (ratus) dan uang kertas (ribu). Hitung masing-masing kelompok dulu."
+  },
+  "lupa-ribu": {
+    "nama": "Lupa menulis ribu",
+    "kategori": "Uang",
+    "penjelasan": "Anak menjawab \"39\" padahal maksudnya Rp39.000.",
+    "saran": "Setelah menghitung dengan \"ribu\", minta anak menulis ulang dalam Rupiah lengkap dengan tiga angka nol."
+  },
+  "hitung-lembar-bukan-nilai": {
+    "nama": "Menghitung banyak lembar, bukan nilainya",
+    "kategori": "Uang",
+    "penjelasan": "Anak mengira 3 lembar uang pasti lebih banyak dari 1 lembar, atau menghitung lembar alih-alih nilainya.",
+    "saran": "Bandingkan 3 lembar Rp2.000 dengan 1 lembar Rp10.000 secara nyata. Ajak anak melompat dengan nilai uang, bukan banyak lembar."
+  },
+  "salah-urut-lompat": {
+    "nama": "Tidak mulai dari uang terbesar",
+    "kategori": "Uang",
+    "penjelasan": "Anak menghitung uang secara acak sehingga sering salah jumlah.",
+    "saran": "Biasakan menyusun uang dari nilai terbesar ke terkecil sebelum menghitung, seperti katak yang lompat besar dulu."
+  },
+  "salah-bandingkan-harga": {
+    "nama": "Salah membandingkan harga",
+    "kategori": "Uang",
+    "penjelasan": "Anak mengira Rp9.000 lebih mahal dari Rp12.000 karena melihat angka depan saja.",
+    "saran": "Ubah harga ke \"ribu\" (9 ribu dan 12 ribu), lalu bandingkan seperti bilangan biasa: puluhan dulu."
+  },
+  "salah-cukup-uang": {
+    "nama": "Salah menentukan uang cukup atau tidak",
+    "kategori": "Uang",
+    "penjelasan": "Anak belum membandingkan jumlah uangnya dengan harga barang.",
+    "saran": "Saat berbelanja, ajak anak menghitung uangnya dulu lalu bertanya: \"uangku sama dengan atau lebih dari harganya?\"."
+  },
+  "ukur-tidak-dari-nol": {
+    "nama": "Tidak mengukur dari angka 0",
+    "kategori": "Panjang",
+    "penjelasan": "Ujung benda diletakkan di angka 1 atau di tepi penggaris, sehingga hasil ukur meleset.",
+    "saran": "Latih mengukur benda di rumah (pensil, sendok). Cek dulu: ujung benda tepat di angka 0?"
+  },
+  "baca-ujung-saja": {
+    "nama": "Membaca angka ujung saja",
+    "kategori": "Panjang",
+    "penjelasan": "Benda tidak mulai dari 0, tetapi anak langsung membaca angka di ujung kanan.",
+    "saran": "Ajak anak menghitung \"langkah semut\" dari ujung kiri ke ujung kanan, atau kurangkan angka ujung kanan dengan ujung kiri."
+  },
+  "salah-baca-penggaris": {
+    "nama": "Salah membaca angka penggaris",
+    "kategori": "Panjang",
+    "penjelasan": "Anak keliru membaca angka yang ditunjuk ujung benda.",
+    "saran": "Minta anak menunjuk garis tanda tepat di ujung benda dengan jari sebelum membaca angkanya."
+  },
+  "hitung-garis-tanda": {
+    "nama": "Menghitung garis tanda, bukan jarak",
+    "kategori": "Panjang",
+    "penjelasan": "Anak menghitung banyak garis tanda (0 sampai 6 ada 7 tanda) sehingga kelebihan 1 cm.",
+    "saran": "Tekankan bahwa yang dihitung adalah langkah di antara tanda. Mulai hitungan \"satu\" setelah melompat dari 0."
+  },
+  "lupa-satuan-cm": {
+    "nama": "Lupa menulis cm",
+    "kategori": "Panjang",
+    "penjelasan": "Anak menulis panjang hanya angka, tanpa satuan cm.",
+    "saran": "Biasakan membaca hasil ukur lengkap: \"enam sentimeter\", lalu tulis 6 cm."
+  },
+  "salah-bandingkan-panjang": {
+    "nama": "Salah membandingkan panjang",
+    "kategori": "Panjang",
+    "penjelasan": "Anak tertukar antara lebih panjang dan lebih pendek, atau salah mengurutkan panjang.",
+    "saran": "Bandingkan benda nyata yang dijajarkan dari titik awal yang sama, lalu cocokkan dengan angka ukurannya."
+  },
+  "salah-baca-jarum-pendek": {
+    "nama": "Salah membaca jarum pendek",
+    "kategori": "Waktu",
+    "penjelasan": "Saat jarum pendek di antara dua angka, anak membaca angka berikutnya (8.45 dibaca 9.45).",
+    "saran": "Pakai jam mainan: jarum pendek (siput) menunjukkan angka yang sudah dilewati. Selama jarum panjang belum kembali ke 12, jamnya belum berganti."
+  },
+  "tertukar-jarum-jam": {
+    "nama": "Jarum jam tertukar",
+    "kategori": "Waktu",
+    "penjelasan": "Anak membaca jarum panjang sebagai jam dan jarum pendek sebagai menit.",
+    "saran": "Ingatkan: siput (pendek) untuk jam, kelinci (panjang) untuk menit. Latih dengan jam dinding di rumah setiap hari."
+  },
+  "menit-tidak-loncat-5": {
+    "nama": "Membaca menit tanpa hitung loncat 5",
+    "kategori": "Waktu",
+    "penjelasan": "Jarum panjang di angka 4 dibaca 4 menit, padahal 20 menit.",
+    "saran": "Tempel kertas kecil berisi 5, 10, 15, ... di sekeliling jam dinding dan latih hitung loncat 5."
+  },
+  "salah-tulis-menit": {
+    "nama": "Salah menulis menit",
+    "kategori": "Waktu",
+    "penjelasan": "Anak menulis menit satu angka (7.5 untuk tujuh lewat lima) atau salah menyusun jam dan menit.",
+    "saran": "Menit selalu ditulis dua angka: 7.05. Latih menulis waktu dari jam dinding."
+  },
+  "salah-pagi-siang-malam": {
+    "nama": "Salah menentukan pagi, siang, sore, atau malam",
+    "kategori": "Waktu",
+    "penjelasan": "Anak belum mengaitkan kegiatan sehari-hari dengan bagian hari.",
+    "saran": "Bicarakan jadwal harian anak: bangun tidur (pagi), pulang sekolah (siang), main (sore), tidur (malam)."
+  },
+  "tertukar-am-pm": {
+    "nama": "Tertukar am dan pm",
+    "kategori": "Waktu",
+    "penjelasan": "Anak belum tahu bahwa am untuk sebelum tengah hari dan pm untuk sesudah tengah hari.",
+    "saran": "Hubungkan dengan kegiatan: sarapan pukul 6.00 am, makan malam pukul 7.00 pm."
+  },
+  "salah-lama-waktu": {
+    "nama": "Salah menghitung lama waktu",
+    "kategori": "Waktu",
+    "penjelasan": "Anak tertukar antara 1 jam (satu putaran jarum panjang) dan setengah jam (setengah putaran).",
+    "saran": "Putar jarum panjang jam mainan satu putaran untuk 1 jam dan setengah putaran untuk setengah jam sambil melihat jarum pendek bergerak."
+  },
+  "salah-singkatan-waktu": {
+    "nama": "Belum paham singkatan j dan mnt",
+    "kategori": "Waktu",
+    "penjelasan": "Anak belum tahu bahwa j berarti jam, mnt berarti menit, dan 1 jam = 60 menit.",
+    "saran": "Tulis kartu kecil: 1 j = 60 mnt, setengah jam = 30 mnt, dan baca bersama."
+  },
+  "salah-hitung-sisi": {
+    "nama": "Salah menghitung sisi",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak keliru menghitung sisi lurus, misalnya ikut menghitung tepi lengkung.",
+    "saran": "Raba tepi bangun dari kertas: tandai sisi lurus dengan spidol, lalu hitung."
+  },
+  "salah-hitung-pojok": {
+    "nama": "Salah menghitung pojok",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak keliru menghitung pojok, misalnya mengira seperempat lingkaran punya 2 pojok.",
+    "saran": "Tandai setiap pojok dengan titik warna saat menghitung supaya tidak terhitung dua kali."
+  },
+  "salah-kenali-bangun": {
+    "nama": "Salah mengenali bangun datar",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak belum bisa menyebut nama bangun dari ciri sisi dan pojoknya.",
+    "saran": "Cari bangun di sekitar rumah (ubin, pintu, koin, potongan kue) dan sebutkan namanya bersama."
+  },
+  "tertukar-persegi-persegi-panjang": {
+    "nama": "Persegi dan persegi panjang tertukar",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak menyebut semua bangun bersisi 4 \"persegi\" tanpa memeriksa apakah sisinya sama panjang.",
+    "saran": "Ukur sisi ubin dan pintu dengan tali. Persegi: keempat sisi sama panjang. Persegi panjang: dua panjang, dua pendek."
+  },
+  "lupa-sisi-lurus-lengkung": {
+    "nama": "Tidak membedakan sisi lurus dan lengkung",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak lupa bahwa setengah atau seperempat lingkaran punya sisi lurus dan sisi lengkung sekaligus.",
+    "saran": "Potong kertas bundar menjadi setengah dan seperempat, lalu raba tepinya: mana yang lurus, mana yang melengkung."
+  },
+  "tertukar-bagian-lingkaran": {
+    "nama": "Setengah dan seperempat lingkaran tertukar",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak tertukar antara setengah lingkaran (1 dari 2 bagian) dan seperempat lingkaran (1 dari 4 bagian).",
+    "saran": "Potong kue atau kertas bundar menjadi 2 lalu 4 bagian sama besar dan bandingkan potongannya."
+  },
+  "salah-golongkan-bangun": {
+    "nama": "Salah menggolongkan bangun",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak melewatkan bangun yang diputar atau berbeda ukuran saat mengelompokkan.",
+    "saran": "Tekankan bahwa ukuran, warna, dan posisi tidak mengubah nama bangun. Coret setiap bangun setelah dihitung."
+  },
+  "salah-susun-potongan": {
+    "nama": "Salah menyusun bangun dari potongan",
+    "kategori": "Bangun datar",
+    "penjelasan": "Anak belum bisa membayangkan bangun hasil gabungan potongan (misalnya 2 segitiga menjadi persegi).",
+    "saran": "Main puzzle dari kertas: potong persegi menjadi 2 segitiga, lingkaran menjadi 2 atau 4 bagian, lalu susun kembali."
+  },
+  "hitung-titik-bukan-jarak": {
+    "nama": "Menghitung titik, bukan lompatan",
+    "kategori": "Bangun datar",
+    "penjelasan": "Saat menyalin di kertas berpetak atau bertitik, anak menghitung titik sehingga sisinya kelebihan satu.",
+    "saran": "Latih menghitung lompatan antar titik dengan jari: titik pertama belum dihitung."
+  },
+  "salah-salin-bangun": {
+    "nama": "Salah menyalin bangun",
+    "kategori": "Bangun datar",
+    "penjelasan": "Sisi yang berhadapan pada salinan tidak sama panjang dengan aslinya.",
+    "saran": "Setelah menyalin, minta anak membandingkan setiap sisi dengan gambar asli: sisi atas = sisi bawah, sisi kiri = sisi kanan."
+  },
+  "salah-hitung-gambar": {
+    "nama": "Salah menghitung gambar di diagram",
+    "kategori": "Diagram gambar",
+    "penjelasan": "Anak melompati atau menghitung dua kali gambar pada satu baris.",
+    "saran": "Tunjuk setiap gambar sambil menghitung, atau coret pelan dengan pensil. Hitung ulang dari arah sebaliknya."
+  },
+  "abaikan-keterangan": {
+    "nama": "Tidak membaca keterangan diagram",
+    "kategori": "Diagram gambar",
+    "penjelasan": "Anak tidak melihat keterangan \"setiap gambar mewakili ...\".",
+    "saran": "Biasakan membaca judul dan keterangan diagram dengan suara keras sebelum menjawab."
+  },
+  "salah-paling-banyak-sedikit": {
+    "nama": "Tertukar paling banyak dan paling sedikit",
+    "kategori": "Diagram gambar",
+    "penjelasan": "Anak memilih baris terpendek untuk \"paling banyak\" atau sebaliknya.",
+    "saran": "Hubungkan dengan panjang baris: paling banyak = baris terpanjang = bilangan terbesar."
+  },
+  "jumlah-bukan-selisih": {
+    "nama": "Menjumlahkan saat ditanya selisih",
+    "kategori": "Diagram gambar",
+    "penjelasan": "Untuk \"berapa lebih banyak\", anak menjumlahkan dua bilangan.",
+    "saran": "Pasangkan gambar dua baris satu-satu; gambar yang tidak punya pasangan adalah selisihnya."
+  },
+  "lupa-satu-baris": {
+    "nama": "Lupa satu baris saat menjumlah",
+    "kategori": "Diagram gambar",
+    "penjelasan": "Saat menjumlahkan semua baris, ada baris yang terlewat.",
+    "saran": "Tulis angka setiap baris di samping diagram, lalu coret setiap angka yang sudah dijumlahkan."
+  }
+}

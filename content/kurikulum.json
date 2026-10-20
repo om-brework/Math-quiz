@@ -1,0 +1,201 @@
+{
+  "sumber": "Silabus Matematika Singapura (MOE): 2021 Primary Mathematics P1–P6, 2020 Secondary Mathematics (Express/G3) dan Additional Mathematics (G3), serta A-Level H2 Mathematics (9758). Konteks soal disesuaikan dengan Indonesia: Rupiah, nama, dan satuan sehari-hari.",
+  "jenjang": [
+    {
+      "id": "sd1", "nama": "SD Kelas 1", "moe": "Primary 1", "tahap": "SD",
+      "topik": [
+        { "id": "sd1-01-bilangan-sampai-100", "judul": "Bilangan sampai 100", "cakupan": "Membilang benda, membaca dan menulis bilangan dengan angka dan kata, nilai tempat puluhan dan satuan, membandingkan dan mengurutkan bilangan, pola barisan bilangan." },
+        { "id": "sd1-02-bilangan-urutan", "judul": "Bilangan Urutan", "cakupan": "Pertama sampai kesepuluh, ditulis dengan kata dan lambang (ke-1 sampai ke-10); posisi dalam antrean dari depan dan dari belakang." },
+        { "id": "sd1-03-konsep-tambah-kurang", "judul": "Konsep Penjumlahan dan Pengurangan", "cakupan": "Arti menggabungkan dan mengambil, lambang +, −, =, hubungan penjumlahan dan pengurangan (keluarga bilangan), menjumlahkan tiga bilangan satu angka." },
+        { "id": "sd1-04-tambah-kurang-bersusun-100", "judul": "Penjumlahan dan Pengurangan Bersusun sampai 100", "cakupan": "Menyusun bilangan menurut nilai tempat, penjumlahan dengan dan tanpa menyimpan, pengurangan dengan dan tanpa meminjam, soal cerita." },
+        { "id": "sd1-05-hitung-cepat", "judul": "Hitung Cepat (Mental)", "cakupan": "Penjumlahan dan pengurangan sampai 20 di kepala (membuat 10, dobel), bilangan 2 angka ditambah/dikurangi satuan tanpa menyimpan, bilangan 2 angka ditambah/dikurangi puluhan." },
+        { "id": "sd1-06-konsep-kali-bagi", "judul": "Konsep Perkalian dan Pembagian", "cakupan": "Perkalian sebagai penjumlahan berulang dan kelompok sama banyak (hasil sampai 40), lambang ×, pembagian sebagai membagi sama banyak dan mengelompokkan (sampai 20)." },
+        { "id": "sd1-07-uang", "judul": "Mengenal Uang", "cakupan": "Mengenal koin dan uang kertas Rupiah, menghitung jumlah uang sampai Rp100.000, membandingkan harga." },
+        { "id": "sd1-08-panjang-cm", "judul": "Panjang dalam Sentimeter", "cakupan": "Mengukur panjang dengan penggaris dalam cm, singkatan cm, membandingkan dan mengurutkan panjang, menggambar garis sepanjang ukuran tertentu." },
+        { "id": "sd1-09-waktu", "judul": "Membaca Jam", "cakupan": "Membaca jam sampai kelipatan 5 menit, pagi/siang/sore/malam (am dan pm), singkatan jam dan menit, lamanya 1 jam dan setengah jam." },
+        { "id": "sd1-10-bangun-datar", "judul": "Bangun Datar", "cakupan": "Persegi panjang, persegi, segitiga, lingkaran, setengah lingkaran, seperempat lingkaran: mengenali, menggolongkan, menyusun bangun dari potongan, menyalin bangun pada kertas berpetak atau bertitik." },
+        { "id": "sd1-11-diagram-gambar", "judul": "Diagram Gambar", "cakupan": "Membaca dan memahami piktogram (diagram gambar) sederhana: paling banyak, paling sedikit, selisih, jumlah." }
+      ]
+    },
+    {
+      "id": "sd2", "nama": "SD Kelas 2", "moe": "Primary 2", "tahap": "SD",
+      "topik": [
+        { "id": "sd2-01-bilangan-sampai-1000", "judul": "Bilangan sampai 1.000", "cakupan": "Membilang loncat 10 dan 100, nilai tempat ratusan-puluhan-satuan, membaca dan menulis, membandingkan dan mengurutkan, pola bilangan, bilangan ganjil dan genap." },
+        { "id": "sd2-02-tambah-kurang-bersusun-1000", "judul": "Penjumlahan dan Pengurangan Bersusun sampai 1.000", "cakupan": "Bersusun sampai 3 angka dengan menyimpan dan meminjam (termasuk meminjam melewati nol), soal cerita dua langkah dengan model batang." },
+        { "id": "sd2-03-hitung-cepat-3-angka", "judul": "Hitung Cepat Bilangan 3 Angka", "cakupan": "Bilangan 3 angka ditambah/dikurangi satuan, puluhan, atau ratusan di kepala." },
+        { "id": "sd2-04-perkalian-2-3-4-5-10", "judul": "Perkalian 2, 3, 4, 5, dan 10", "cakupan": "Tabel perkalian 2, 3, 4, 5, 10, pola dalam tabel, sifat pertukaran, perkalian dalam soal cerita." },
+        { "id": "sd2-05-pembagian", "judul": "Pembagian dan Hubungannya dengan Perkalian", "cakupan": "Lambang ÷, membagi sama banyak dan mengelompokkan, keluarga fakta kali-bagi, pembagian dalam tabel 2, 3, 4, 5, 10." },
+        { "id": "sd2-06-pecahan-bagian-utuh", "judul": "Pecahan sebagai Bagian dari Keseluruhan", "cakupan": "Pembilang dan penyebut, menggambar pecahan, membandingkan dan mengurutkan pecahan satuan dan pecahan senama dengan penyebut sampai 12." },
+        { "id": "sd2-07-tambah-kurang-pecahan-senama", "judul": "Penjumlahan dan Pengurangan Pecahan Senama", "cakupan": "Menjumlahkan dan mengurangkan pecahan berpenyebut sama (sampai 12) dalam satu keseluruhan, menggenapkan menjadi 1 utuh." },
+        { "id": "sd2-08-uang", "judul": "Menghitung Uang", "cakupan": "Menghitung kumpulan uang, membandingkan dua atau tiga jumlah uang, menukar uang (misalnya 1 lembar Rp10.000 = 2 lembar Rp5.000), kembalian sederhana." },
+        { "id": "sd2-09-panjang-massa-volume", "judul": "Panjang, Massa, dan Volume", "cakupan": "Mengukur panjang dalam m, massa dalam kg dan g, volume cairan dalam liter; singkatan m, kg, g, ℓ; membandingkan dan mengurutkan." },
+        { "id": "sd2-10-waktu", "judul": "Waktu dalam Jam dan Menit", "cakupan": "Membaca jam sampai menit, lama waktu dalam jam dan menit, mengubah jam ke menit dan sebaliknya." },
+        { "id": "sd2-11-pola-bangun", "judul": "Pola Bangun Datar", "cakupan": "Membuat dan melengkapi pola berdasarkan satu atau dua sifat: ukuran, bentuk, warna, arah." },
+        { "id": "sd2-12-bangun-ruang", "judul": "Bangun Ruang", "cakupan": "Kubus, balok, kerucut, tabung, bola: mengenali, menyebut, menggambarkan sisi datar/lengkung, menggolongkan, benda sehari-hari." },
+        { "id": "sd2-13-diagram-gambar-skala", "judul": "Diagram Gambar dengan Skala", "cakupan": "Piktogram dengan 1 gambar mewakili 2, 5, atau 10 benda; membaca, menjumlah, dan mencari selisih." }
+      ]
+    },
+    {
+      "id": "sd3", "nama": "SD Kelas 3", "moe": "Primary 3", "tahap": "SD",
+      "topik": [
+        { "id": "sd3-01-bilangan-sampai-10000", "judul": "Bilangan sampai 10.000", "cakupan": "Nilai tempat ribuan sampai satuan, membaca dan menulis, membandingkan dan mengurutkan, pola bilangan, membilang loncat 100 dan 1000." },
+        { "id": "sd3-02-tambah-kurang-bersusun-4-angka", "judul": "Penjumlahan dan Pengurangan Bersusun 4 Angka", "cakupan": "Bersusun sampai 4 angka dengan menyimpan berkali-kali dan meminjam melewati nol, cek jawaban dengan operasi kebalikan, hitung cepat dua bilangan 2 angka." },
+        { "id": "sd3-03-perkalian-6-7-8-9", "judul": "Perkalian 6, 7, 8, dan 9", "cakupan": "Tabel perkalian 6, 7, 8, 9, strategi (dobel, dekat 10, pola jari 9), pembagian dalam tabel." },
+        { "id": "sd3-04-perkalian-bersusun", "judul": "Perkalian Bersusun", "cakupan": "Perkalian bilangan sampai 3 angka dengan 1 angka secara bersusun, dengan menyimpan, soal cerita." },
+        { "id": "sd3-05-pembagian-bersusun", "judul": "Pembagian Bersusun (Porogapit)", "cakupan": "Pembagian dengan sisa, pembagian bilangan sampai 3 angka dengan 1 angka secara bersusun (porogapit), cek dengan perkalian, soal cerita yang menafsirkan sisa." },
+        { "id": "sd3-06-pecahan-senilai", "judul": "Pecahan Senilai dan Membandingkan Pecahan", "cakupan": "Pecahan senilai, bentuk paling sederhana, membandingkan dan mengurutkan pecahan tidak senama (penyebut sampai 12), mencari pecahan senilai jika pembilang atau penyebut diketahui." },
+        { "id": "sd3-07-tambah-kurang-pecahan-berkaitan", "judul": "Penjumlahan dan Pengurangan Pecahan Berkaitan", "cakupan": "Menjumlahkan dan mengurangkan dua pecahan yang penyebutnya berkaitan (misalnya 1/2 dan 1/4) dalam satu keseluruhan, penyebut sampai 12." },
+        { "id": "sd3-08-uang", "judul": "Penjumlahan dan Pengurangan Uang", "cakupan": "Menjumlahkan dan mengurangkan jumlah uang Rupiah, belanja, kembalian, soal cerita dua langkah." },
+        { "id": "sd3-09-satuan-ukur", "judul": "Satuan Panjang, Massa, dan Volume", "cakupan": "km dan mL, satuan gabungan (2 m 35 cm), mengubah satuan gabungan ke satuan kecil (km-m, m-cm, kg-g, ℓ-mL)." },
+        { "id": "sd3-10-waktu", "judul": "Waktu: Detik, Lama Waktu, dan Jam 24", "cakupan": "Detik, mencari waktu mulai, waktu selesai, atau lama waktu jika dua lainnya diketahui, sistem 24 jam." },
+        { "id": "sd3-11-luas-keliling", "judul": "Luas dan Keliling", "cakupan": "Arti luas dan keliling, satuan persegi (cm², m²), keliling bangun bersudut siku, persegi panjang, dan persegi, luas persegi panjang dan persegi." },
+        { "id": "sd3-12-sudut", "judul": "Sudut", "cakupan": "Arti sudut, sudut siku-siku, sudut lebih besar atau lebih kecil dari siku-siku, sudut di benda sekitar." },
+        { "id": "sd3-13-garis-sejajar-tegak-lurus", "judul": "Garis Sejajar dan Tegak Lurus", "cakupan": "Mengenali dan menggambar garis tegak lurus dan garis sejajar pada kertas berpetak." },
+        { "id": "sd3-14-diagram-batang", "judul": "Diagram Batang", "cakupan": "Membaca dan memahami diagram batang dengan berbagai skala, membandingkan, selisih, total." }
+      ]
+    },
+    {
+      "id": "sd4", "nama": "SD Kelas 4", "moe": "Primary 4", "tahap": "SD",
+      "topik": [
+        { "id": "sd4-01-bilangan-sampai-100000", "judul": "Bilangan sampai 100.000 dan Pembulatan", "cakupan": "Nilai tempat puluh ribuan, membaca dan menulis, membandingkan, pola, membulatkan ke puluhan, ratusan, ribuan terdekat, lambang ≈." },
+        { "id": "sd4-02-faktor-kelipatan", "judul": "Faktor dan Kelipatan", "cakupan": "Faktor, kelipatan, hubungan keduanya, menentukan faktor dari bilangan sampai 100, faktor persekutuan, kelipatan persekutuan dua bilangan satu angka." },
+        { "id": "sd4-03-kali-bagi-lanjut", "judul": "Perkalian dan Pembagian Lanjut", "cakupan": "Perkalian bersusun 4 angka × 1 angka dan 3 angka × 2 angka, pembagian bersusun 4 angka ÷ 1 angka, soal cerita empat operasi." },
+        { "id": "sd4-04-pecahan-campuran", "judul": "Pecahan Campuran dan Pecahan Biasa", "cakupan": "Pecahan campuran, pecahan tidak sejati, mengubah satu ke yang lain, garis bilangan." },
+        { "id": "sd4-05-pecahan-dari-kumpulan", "judul": "Pecahan dari Suatu Kumpulan", "cakupan": "Pecahan sebagai bagian dari kumpulan benda, mencari 3/4 dari 20, model batang." },
+        { "id": "sd4-06-tambah-kurang-pecahan", "judul": "Penjumlahan dan Pengurangan Pecahan", "cakupan": "Pecahan dengan paling banyak dua penyebut berbeda (sampai 12), hasil berupa pecahan campuran." },
+        { "id": "sd4-07-desimal", "judul": "Bilangan Desimal", "cakupan": "Persepuluhan, perseratusan, perseribuan, nilai tempat, membandingkan dan mengurutkan, desimal ke pecahan dan sebaliknya (penyebut faktor 10 atau 100), membulatkan ke bilangan bulat, 1 dan 2 tempat desimal." },
+        { "id": "sd4-08-operasi-desimal", "judul": "Operasi Hitung Desimal", "cakupan": "Menjumlah dan mengurangi desimal sampai 2 tempat, mengalikan dan membagi desimal dengan bilangan 1 angka, pembagian dengan hasil desimal, pembulatan hasil." },
+        { "id": "sd4-09-luas-keliling-gabungan", "judul": "Luas dan Keliling Bangun Gabungan", "cakupan": "Mencari sisi persegi panjang jika luas/keliling diketahui, sisi persegi dari luas/keliling, luas dan keliling bangun gabungan persegi dan persegi panjang." },
+        { "id": "sd4-10-sudut-derajat", "judul": "Mengukur dan Menggambar Sudut", "cakupan": "Penamaan ∠ABC dan ∠a, mengukur sudut dengan busur derajat, menggambar sudut, sudut lancip, siku-siku, tumpul, putaran." },
+        { "id": "sd4-11-sifat-persegi-panjang", "judul": "Sifat Persegi dan Persegi Panjang", "cakupan": "Sifat sisi dan sudut persegi dan persegi panjang (tanpa diagonal), menggambar keduanya, mencari sudut yang belum diketahui." },
+        { "id": "sd4-12-simetri-lipat", "judul": "Simetri Lipat", "cakupan": "Bangun simetris, menentukan apakah garis adalah sumbu simetri, melengkapi bangun simetris di kertas berpetak." },
+        { "id": "sd4-13-jaring-jaring", "judul": "Jaring-jaring Bangun Ruang", "cakupan": "Gambar 2D kubus, balok, kerucut, tabung, prisma, limas; jaring-jaring kubus, balok, prisma, limas; bangun ruang dari jaring-jaring." },
+        { "id": "sd4-14-tabel-diagram", "judul": "Tabel, Diagram Garis, dan Diagram Lingkaran", "cakupan": "Melengkapi tabel dari data, membaca tabel, diagram garis, dan diagram lingkaran." }
+      ]
+    },
+    {
+      "id": "sd5", "nama": "SD Kelas 5", "moe": "Primary 5", "tahap": "SD",
+      "topik": [
+        { "id": "sd5-01-bilangan-sampai-10-juta", "judul": "Bilangan sampai 10 Juta", "cakupan": "Membaca dan menulis bilangan sampai 10.000.000 dengan angka dan kata, nilai tempat jutaan." },
+        { "id": "sd5-02-operasi-hitung-campuran", "judul": "Operasi Hitung Campuran", "cakupan": "Mengalikan dan membagi dengan 10, 100, 1000 dan kelipatannya, urutan operasi hitung, tanda kurung, tanpa kalkulator." },
+        { "id": "sd5-03-pecahan-dan-pembagian", "judul": "Pecahan dan Pembagian", "cakupan": "Pembagian bilangan bulat dengan hasil pecahan (3 ÷ 4 = 3/4), mengubah pecahan ke desimal." },
+        { "id": "sd5-04-operasi-pecahan", "judul": "Operasi Hitung Pecahan", "cakupan": "Menjumlah dan mengurangi pecahan campuran, mengalikan pecahan dengan bilangan bulat, pecahan dengan pecahan, pecahan campuran dengan bilangan bulat." },
+        { "id": "sd5-05-desimal-satuan", "judul": "Desimal: Kali-Bagi 10, 100, 1000 dan Konversi Satuan", "cakupan": "Mengalikan dan membagi desimal sampai 3 tempat dengan 10, 100, 1000 dan kelipatannya, mengubah satuan (km-m, m-cm, kg-g, ℓ-mL) dalam bentuk desimal." },
+        { "id": "sd5-06-persen", "judul": "Persen", "cakupan": "Bagian sebagai persen, lambang %, mencari persen dari keseluruhan, diskon, PPN, bunga tabungan per tahun." },
+        { "id": "sd5-07-laju", "judul": "Laju (Rate)", "cakupan": "Laju sebagai banyaknya sesuatu per satuan, mencari laju, jumlah total, atau banyak satuan jika dua lainnya diketahui." },
+        { "id": "sd5-08-luas-segitiga", "judul": "Luas Segitiga", "cakupan": "Alas dan tinggi segitiga (termasuk tinggi di luar segitiga), luas segitiga, luas bangun gabungan persegi panjang, persegi, segitiga." },
+        { "id": "sd5-09-volume-kubus-balok", "judul": "Volume Kubus dan Balok", "cakupan": "Menyusun dari kubus satuan, cm³ dan m³, menggambar di kertas isometrik, volume kubus dan balok, volume air dalam bak, hubungan liter/mL dengan cm³." },
+        { "id": "sd5-10-sudut-garis-titik", "judul": "Sudut pada Garis Lurus dan di Satu Titik", "cakupan": "Sudut pada garis lurus (180°), sudut di sekitar satu titik (360°), sudut bertolak belakang, mencari sudut yang belum diketahui." },
+        { "id": "sd5-11-segitiga", "judul": "Segitiga", "cakupan": "Sifat segitiga sama kaki, sama sisi, siku-siku, jumlah sudut segitiga 180°, mencari sudut yang belum diketahui." },
+        { "id": "sd5-12-jajargenjang-belah-ketupat-trapesium", "judul": "Jajargenjang, Belah Ketupat, dan Trapesium", "cakupan": "Sifat sisi dan sudut ketiga bangun, mencari sudut yang belum diketahui." }
+      ]
+    },
+    {
+      "id": "sd6", "nama": "SD Kelas 6", "moe": "Primary 6", "tahap": "SD",
+      "topik": [
+        { "id": "sd6-01-pembagian-pecahan", "judul": "Pembagian Pecahan", "cakupan": "Pecahan dibagi bilangan bulat, bilangan bulat atau pecahan dibagi pecahan, arti 'berapa kali muat', tanpa kalkulator." },
+        { "id": "sd6-02-persen-lanjut", "judul": "Persen Lanjut", "cakupan": "Mencari keseluruhan jika bagian dan persennya diketahui, persentase kenaikan dan penurunan." },
+        { "id": "sd6-03-perbandingan", "judul": "Perbandingan (Rasio)", "cakupan": "Notasi a : b dan a : b : c, perbandingan senilai, membagi jumlah menurut perbandingan, bentuk paling sederhana, mencari suku yang hilang, hubungan pecahan dan perbandingan, model batang." },
+        { "id": "sd6-04-aljabar-dasar", "judul": "Aljabar Dasar", "cakupan": "Huruf sebagai pengganti bilangan, bentuk a + 3, a − 3, 3a, a/3, menyederhanakan bentuk linear, substitusi, persamaan linear sederhana." },
+        { "id": "sd6-05-lingkaran", "judul": "Lingkaran", "cakupan": "Jari-jari, diameter, keliling dan luas lingkaran (π), setengah dan seperempat lingkaran, bangun gabungan dengan lingkaran." },
+        { "id": "sd6-06-volume-lanjut", "judul": "Volume Lanjut", "cakupan": "Mencari rusuk kubus dari volume, tinggi balok dari volume dan luas alas, satu ukuran balok jika volume dan ukuran lain diketahui, akar pangkat dua dan tiga sederhana." },
+        { "id": "sd6-07-sudut-bangun-gabungan", "judul": "Sudut pada Bangun Gabungan", "cakupan": "Mencari sudut yang belum diketahui pada gabungan persegi, persegi panjang, segitiga, jajargenjang, belah ketupat, trapesium." },
+        { "id": "sd6-08-rata-rata", "judul": "Rata-rata", "cakupan": "Rata-rata = jumlah nilai ÷ banyak data, hubungan rata-rata, jumlah, dan banyak data, soal cerita (nilai yang hilang, data ditambah)." }
+      ]
+    },
+    {
+      "id": "smp1", "nama": "SMP Kelas 7", "moe": "Secondary 1 (Express/G3)", "tahap": "SMP",
+      "topik": [
+        { "id": "smp1-01-prima-fpb-kpk", "judul": "Bilangan Prima, FPB, dan KPK", "cakupan": "Bilangan prima, faktorisasi prima, FPB dan KPK, kuadrat, pangkat tiga, akar kuadrat dan akar pangkat tiga dengan faktorisasi prima." },
+        { "id": "smp1-02-bilangan-bulat-real", "judul": "Bilangan Bulat, Rasional, dan Real", "cakupan": "Bilangan negatif, bulat, rasional, real dan empat operasinya, garis bilangan, lambang <, >, ≤, ≥, penggunaan kalkulator." },
+        { "id": "smp1-03-pembulatan-estimasi", "judul": "Pembulatan dan Estimasi", "cakupan": "Membulatkan ke tempat desimal dan angka penting, estimasi hasil hitung, memeriksa kewajaran jawaban." },
+        { "id": "smp1-04-perbandingan", "judul": "Perbandingan", "cakupan": "Perbandingan dengan bilangan rasional, bentuk paling sederhana, soal perbandingan." },
+        { "id": "smp1-05-persentase", "judul": "Persentase", "cakupan": "Satu besaran sebagai persen besaran lain, persen lebih dari 100%, kenaikan/penurunan persen, poin persen, persen balik (reverse percentage)." },
+        { "id": "smp1-06-laju-kecepatan", "judul": "Laju dan Kecepatan", "cakupan": "Laju rata-rata, kecepatan tetap dan kecepatan rata-rata, konversi km/jam ke m/s, soal jarak-waktu-kecepatan." },
+        { "id": "smp1-07-bentuk-aljabar", "judul": "Bentuk Aljabar dan Rumus", "cakupan": "Notasi aljabar, menghitung nilai bentuk dan rumus, menerjemahkan situasi ke bentuk aljabar, suku ke-n pola, menjumlah dan mengurangi bentuk linear, tanda kurung, memfaktorkan faktor persekutuan." },
+        { "id": "smp1-08-fungsi-linear", "judul": "Koordinat dan Grafik Fungsi Linear", "cakupan": "Koordinat Kartesius, pasangan berurutan, fungsi linear y = ax + b, menggambar grafik, gradien positif dan negatif." },
+        { "id": "smp1-09-persamaan-linear", "judul": "Persamaan Linear Satu Variabel", "cakupan": "Arti persamaan, menyelesaikan persamaan linear, persamaan pecahan sederhana, menyusun persamaan dari soal cerita." },
+        { "id": "smp1-10-sudut-segitiga-poligon", "judul": "Sudut, Segitiga, dan Poligon", "cakupan": "Jenis sudut, sudut sehadap, berseberangan, dalam sepihak pada garis sejajar, sifat segitiga dan segiempat khusus, poligon beraturan, jumlah sudut dalam dan luar poligon, melukis dengan jangka dan busur." },
+        { "id": "smp1-11-pengukuran-bangun", "judul": "Luas dan Volume: Jajargenjang, Trapesium, Prisma, Tabung", "cakupan": "Luas jajargenjang dan trapesium, bangun gabungan, volume dan luas permukaan prisma dan tabung, konversi cm² ke m² dan cm³ ke m³, bangun ruang gabungan." },
+        { "id": "smp1-12-penyajian-data", "judul": "Penyajian Data", "cakupan": "Mengumpulkan, menggolongkan, dan menabelkan data, tabel, diagram batang, piktogram, diagram garis, diagram lingkaran, kelebihan dan kekurangan tiap penyajian, diagram yang menyesatkan." }
+      ]
+    },
+    {
+      "id": "smp2", "nama": "SMP Kelas 8", "moe": "Secondary 2 (Express/G3)", "tahap": "SMP",
+      "topik": [
+        { "id": "smp2-01-skala-proporsi", "judul": "Skala Peta dan Proporsi", "cakupan": "Skala peta untuk jarak dan luas, perbandingan senilai (berbanding lurus) dan berbalik nilai." },
+        { "id": "smp2-02-ekspansi-faktorisasi", "judul": "Ekspansi dan Faktorisasi", "cakupan": "Mengalikan bentuk aljabar, identitas (a ± b)² dan a² − b², faktorisasi dengan pengelompokan, faktorisasi ax² + bx + c." },
+        { "id": "smp2-03-pecahan-aljabar-rumus", "judul": "Pecahan Aljabar dan Mengubah Subjek Rumus", "cakupan": "Mengalikan, membagi, menjumlah, mengurangi pecahan aljabar, mengubah subjek rumus, mencari nilai dalam rumus." },
+        { "id": "smp2-04-fungsi-kuadrat", "judul": "Fungsi Kuadrat dan Grafiknya", "cakupan": "y = ax² + bx + c, bentuk grafik (parabola), arah buka, titik maksimum/minimum, sumbu simetri." },
+        { "id": "smp2-05-pertidaksamaan-linear", "judul": "Pertidaksamaan Linear", "cakupan": "Arti pertidaksamaan, menyelesaikan pertidaksamaan linear, membalik tanda saat dikali bilangan negatif, garis bilangan." },
+        { "id": "smp2-06-sistem-persamaan-linear", "judul": "Sistem Persamaan Linear Dua Variabel", "cakupan": "Grafik ax + by = c, metode substitusi, eliminasi, dan grafik, menyusun sepasang persamaan dari soal cerita." },
+        { "id": "smp2-07-persamaan-kuadrat", "judul": "Persamaan Kuadrat dengan Pemfaktoran", "cakupan": "Menyelesaikan persamaan kuadrat dengan faktorisasi, sifat hasil kali nol, soal cerita." },
+        { "id": "smp2-08-kongruen-sebangun", "judul": "Kekongruenan dan Kesebangunan", "cakupan": "Bangun kongruen dan sebangun, sudut bersesuaian sama dan sisi sebanding, pembesaran dan pengecilan, soal sederhana." },
+        { "id": "smp2-09-pythagoras-trigonometri", "judul": "Teorema Pythagoras dan Trigonometri Dasar", "cakupan": "Teorema Pythagoras, uji segitiga siku-siku, sinus, kosinus, tangen sudut lancip untuk mencari sisi dan sudut segitiga siku-siku." },
+        { "id": "smp2-10-limas-kerucut-bola", "judul": "Volume dan Luas Permukaan Limas, Kerucut, dan Bola", "cakupan": "Volume dan luas permukaan limas, kerucut, bola, bangun gabungan." },
+        { "id": "smp2-11-ukuran-pemusatan", "judul": "Penyajian Data Lanjut dan Ukuran Pemusatan", "cakupan": "Diagram titik, histogram, diagram batang-daun, rata-rata, median, modus, kegunaan masing-masing, rata-rata data berkelompok." },
+        { "id": "smp2-12-peluang-dasar", "judul": "Peluang Dasar", "cakupan": "Peluang sebagai ukuran kemungkinan, ruang sampel, peluang kejadian tunggal, nilai 0 sampai 1." }
+      ]
+    },
+    {
+      "id": "smp3", "nama": "SMP Kelas 9", "moe": "Secondary 3 (Express/G3)", "tahap": "SMP",
+      "topik": [
+        { "id": "smp3-01-bentuk-baku-eksponen", "judul": "Bentuk Baku dan Hukum Eksponen", "cakupan": "Bentuk baku A × 10ⁿ, pangkat positif, negatif, nol, dan pecahan, hukum-hukum eksponen." },
+        { "id": "smp3-02-persamaan-kuadrat-lanjut", "judul": "Persamaan Kuadrat Lanjut", "cakupan": "Rumus kuadrat (rumus abc), melengkapkan kuadrat sempurna, cara grafik, persamaan pecahan yang menjadi kuadrat, menyusun persamaan kuadrat dari soal." },
+        { "id": "smp3-03-pertidaksamaan-simultan", "judul": "Pertidaksamaan Linear Simultan", "cakupan": "Menyelesaikan dua pertidaksamaan sekaligus, irisan penyelesaian pada garis bilangan, bilangan bulat yang memenuhi." },
+        { "id": "smp3-04-grafik-fungsi-lanjut", "judul": "Grafik Fungsi Lanjut", "cakupan": "Sketsa kuadrat bentuk y = (x − p)² + q dan y = (x − a)(x − b), grafik y = axⁿ untuk n = −2, −1, 0, 1, 2, 3, grafik eksponen y = kaˣ, gradien kurva dengan garis singgung." },
+        { "id": "smp3-05-himpunan", "judul": "Himpunan dan Diagram Venn", "cakupan": "Notasi himpunan, anggota, himpunan kosong, semesta, komplemen, gabungan, irisan, himpunan bagian, diagram Venn, n(A)." },
+        { "id": "smp3-06-geometri-koordinat", "judul": "Geometri Koordinat", "cakupan": "Gradien garis melalui dua titik, panjang ruas garis, persamaan garis y = mx + c, soal geometri dengan koordinat." },
+        { "id": "smp3-07-trigonometri-lanjut", "judul": "Trigonometri Lanjut", "cakupan": "Sinus dan kosinus sudut tumpul, luas segitiga ½ab sin C, aturan sinus, aturan kosinus, sudut elevasi dan depresi, arah mata angin (bearing), soal 3D." },
+        { "id": "smp3-08-sifat-lingkaran", "judul": "Sifat-sifat Lingkaran", "cakupan": "Sifat simetri (tali busur, garis singgung dari titik luar), sifat sudut (sudut di setengah lingkaran, garis singgung ⟂ jari-jari, sudut pusat = 2 × sudut keliling, sudut pada tembereng yang sama, segiempat tali busur)." },
+        { "id": "smp3-09-kongruen-sebangun-lanjut", "judul": "Kesebangunan Lanjut", "cakupan": "Gambar berskala, garis sumbu dan garis bagi sudut, uji kongruen dan sebangun segitiga, perbandingan luas bangun sebangun, perbandingan volume bangun ruang sebangun." },
+        { "id": "smp3-10-peluang-majemuk", "judul": "Peluang Kejadian Majemuk", "cakupan": "Diagram kemungkinan, diagram pohon, aturan penjumlahan untuk kejadian saling lepas, aturan perkalian untuk kejadian saling bebas." }
+      ]
+    },
+    {
+      "id": "sma1", "nama": "SMA Kelas 10", "moe": "Secondary 4 (Mathematics + Additional Mathematics)", "tahap": "SMA",
+      "topik": [
+        { "id": "sma1-01-matriks", "judul": "Matriks", "cakupan": "Menyajikan informasi dalam matriks, ordo, perkalian skalar, penjumlahan, pengurangan, dan perkalian matriks dalam soal kontekstual." },
+        { "id": "sma1-02-vektor-2d", "judul": "Vektor di Bidang", "cakupan": "Notasi vektor kolom, vektor sebagai ruas garis berarah, translasi, vektor posisi, besar vektor, penjumlahan, pengurangan, perkalian skalar, soal geometri dengan vektor." },
+        { "id": "sma1-03-busur-juring-radian", "judul": "Panjang Busur, Luas Juring, dan Radian", "cakupan": "Panjang busur, luas juring, luas tembereng, ukuran radian dan konversinya dengan derajat." },
+        { "id": "sma1-04-ukuran-penyebaran", "judul": "Ukuran Penyebaran Data", "cakupan": "Kuartil dan persentil, jangkauan, jangkauan antarkuartil, simpangan baku (data tunggal dan berkelompok), ogive, diagram kotak-garis, membandingkan dua kelompok data." },
+        { "id": "sma1-05-fungsi-kuadrat-lanjut", "judul": "Fungsi Kuadrat Lanjut", "cakupan": "Nilai maksimum/minimum dengan melengkapkan kuadrat, syarat definit positif/negatif, fungsi kuadrat sebagai model." },
+        { "id": "sma1-06-diskriminan-pertidaksamaan-kuadrat", "judul": "Diskriminan dan Pertidaksamaan Kuadrat", "cakupan": "Syarat akar real berbeda, kembar, tidak real, kedudukan garis terhadap kurva, persamaan simultan linear-kuadrat, pertidaksamaan kuadrat." },
+        { "id": "sma1-07-bentuk-akar", "judul": "Bentuk Akar (Surd)", "cakupan": "Operasi bentuk akar, merasionalkan penyebut, persamaan yang memuat bentuk akar." },
+        { "id": "sma1-08-polinomial-pecahan-parsial", "judul": "Polinomial dan Pecahan Parsial", "cakupan": "Perkalian dan pembagian polinomial, teorema sisa dan teorema faktor, persamaan pangkat tiga, jumlah dan selisih pangkat tiga, pecahan parsial." },
+        { "id": "sma1-09-binomial-newton", "judul": "Ekspansi Binomial", "cakupan": "Teorema binomial untuk n bulat positif, notasi n! dan kombinasi, suku umum, mencari suku tertentu." },
+        { "id": "sma1-10-eksponen-logaritma", "judul": "Fungsi Eksponen dan Logaritma", "cakupan": "Fungsi aˣ, eˣ, logₐx, ln x dan grafiknya, sifat logaritma, perubahan basis, persamaan eksponen dan logaritma, model pertumbuhan dan peluruhan." }
+      ]
+    },
+    {
+      "id": "sma2", "nama": "SMA Kelas 11", "moe": "Additional Mathematics (lanjutan) + H2 Mathematics JC1", "tahap": "SMA",
+      "topik": [
+        { "id": "sma2-01-trigonometri-identitas", "judul": "Fungsi, Identitas, dan Persamaan Trigonometri", "cakupan": "Enam fungsi trigonometri untuk sudut sembarang, nilai eksak sudut istimewa, amplitudo dan periode, grafik, identitas dasar, rumus jumlah/selisih dan sudut ganda, bentuk R cos(θ ± α), persamaan trigonometri, pembuktian identitas." },
+        { "id": "sma2-02-koordinat-lingkaran", "judul": "Geometri Koordinat: Garis dan Lingkaran", "cakupan": "Syarat garis sejajar dan tegak lurus, titik tengah, luas bangun dengan koordinat, persamaan lingkaran, hukum linear (mengubah y = axⁿ dan y = kbˣ menjadi garis lurus)." },
+        { "id": "sma2-03-pembuktian-geometri", "judul": "Pembuktian Geometri Bidang", "cakupan": "Membuktikan dengan sifat garis sejajar, segitiga, segiempat, lingkaran, segitiga kongruen dan sebangun, teorema titik tengah, teorema tali busur-garis singgung." },
+        { "id": "sma2-04-turunan", "judul": "Turunan", "cakupan": "Turunan sebagai gradien dan laju perubahan, notasi, turunan xⁿ, sin, cos, tan, eˣ, ln x, aturan perkalian, pembagian, dan rantai, fungsi naik dan turun, titik stasioner, uji turunan kedua." },
+        { "id": "sma2-05-aplikasi-turunan", "judul": "Aplikasi Turunan", "cakupan": "Persamaan garis singgung dan garis normal, laju perubahan yang berkaitan, masalah maksimum dan minimum." },
+        { "id": "sma2-06-integral", "judul": "Integral", "cakupan": "Integral sebagai kebalikan turunan, integral xⁿ, sin, cos, sec², eˣ dan bentuk (ax + b), integral tentu, luas di bawah kurva dan di bawah sumbu x, perpindahan, kecepatan, percepatan." },
+        { "id": "sma2-07-fungsi-transformasi", "judul": "Fungsi dan Transformasi Grafik", "cakupan": "Daerah asal dan daerah hasil, fungsi satu-satu, fungsi invers, fungsi komposisi, transformasi grafik (geser, regang, cermin), grafik y = |f(x)|, y = 1/f(x), asimtot." },
+        { "id": "sma2-08-persamaan-pertidaksamaan-lanjut", "judul": "Persamaan dan Pertidaksamaan Lanjut", "cakupan": "Pertidaksamaan rasional, pertidaksamaan nilai mutlak, sistem persamaan linear tiga variabel, penyelesaian grafik." },
+        { "id": "sma2-09-barisan-deret", "judul": "Barisan dan Deret", "cakupan": "Barisan dan deret aritmetika dan geometri, deret geometri tak hingga, notasi sigma, metode selisih, rumus rekursif." },
+        { "id": "sma2-10-vektor-3d", "judul": "Vektor di Ruang, Garis, dan Bidang", "cakupan": "Vektor di ruang tiga dimensi, perkalian titik dan silang, persamaan garis dan bidang, sudut, jarak, perpotongan." }
+      ]
+    },
+    {
+      "id": "sma3", "nama": "SMA Kelas 12", "moe": "H2 Mathematics JC2", "tahap": "SMA",
+      "topik": [
+        { "id": "sma3-01-bilangan-kompleks", "judul": "Bilangan Kompleks", "cakupan": "Bentuk kartesius a + bi, operasi, sekawan, bidang Argand, bentuk polar dan eksponensial, akar kompleks persamaan polinomial." },
+        { "id": "sma3-02-deret-maclaurin", "judul": "Deret Maclaurin", "cakupan": "Ekspansi Maclaurin, deret standar (eˣ, sin x, cos x, ln(1 + x), (1 + x)ⁿ), hampiran untuk x kecil." },
+        { "id": "sma3-03-teknik-integral", "judul": "Teknik Integral dan Volume Benda Putar", "cakupan": "Integral substitusi, parsial (by parts), pecahan parsial, luas antara dua kurva, volume benda putar terhadap sumbu x dan y." },
+        { "id": "sma3-04-persamaan-diferensial", "judul": "Persamaan Diferensial", "cakupan": "Persamaan diferensial orde satu dengan pemisahan variabel, solusi umum dan khusus, pemodelan." },
+        { "id": "sma3-05-kaidah-pencacahan", "judul": "Permutasi dan Kombinasi", "cakupan": "Aturan perkalian, permutasi, kombinasi, susunan dengan syarat, susunan melingkar." },
+        { "id": "sma3-06-peluang-lanjut", "judul": "Peluang Lanjut", "cakupan": "Peluang bersyarat, kejadian saling bebas dan saling lepas, diagram pohon, aturan penjumlahan dan perkalian." },
+        { "id": "sma3-07-variabel-acak-binomial", "judul": "Variabel Acak Diskrit dan Distribusi Binomial", "cakupan": "Distribusi peluang, nilai harapan dan variansi, distribusi binomial B(n, p), rata-rata dan variansinya." },
+        { "id": "sma3-08-distribusi-normal", "judul": "Distribusi Normal", "cakupan": "Kurva normal, standardisasi Z, mencari peluang dan nilai batas, kombinasi linear variabel normal." },
+        { "id": "sma3-09-sampling-uji-hipotesis", "judul": "Sampling dan Uji Hipotesis", "cakupan": "Sampel acak, distribusi rata-rata sampel, teorema limit pusat, uji hipotesis rata-rata (uji z), tingkat signifikansi, nilai-p." },
+        { "id": "sma3-10-korelasi-regresi", "judul": "Korelasi dan Regresi Linear", "cakupan": "Diagram pencar, koefisien korelasi r, garis regresi y atas x, transformasi ke bentuk linear, menafsirkan dan memperkirakan." }
+      ]
+    }
+  ]
+}

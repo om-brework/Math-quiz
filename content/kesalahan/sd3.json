@@ -1,0 +1,362 @@
+{
+  "salah-pilih-operasi": {
+    "nama": "Salah memilih operasi hitung",
+    "kategori": "Soal cerita",
+    "penjelasan": "Anak belum bisa menentukan apakah soal cerita meminta penjumlahan, pengurangan, perkalian, atau pembagian.",
+    "saran": "Ajak anak menggambar model batang dan mencari kata kunci: digabung, sisa, setiap, dibagi rata."
+  },
+  "salah-tafsir-sisa": {
+    "nama": "Salah memaknai sisa pembagian",
+    "kategori": "Soal cerita",
+    "penjelasan": "Hasil bagi benar, tetapi sisa tidak diperhitungkan sesuai cerita (misalnya kendaraan tambahan untuk sisa penumpang).",
+    "saran": "Setelah membagi, tanya: \"sisa ini diapakan dalam cerita?\" Bayangkan kejadiannya."
+  },
+  "salah-nilai-tempat": {
+    "nama": "Salah menentukan nilai tempat",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak keliru menentukan tempat sebuah angka (ribuan, ratusan, puluhan, satuan) atau menyebut angkanya saja, bukan nilainya (misalnya nilai 5 pada 4.528 dijawab 5, bukan 500).",
+    "saran": "Tulis bilangan di tabel nilai tempat (Ribuan | Ratusan | Puluhan | Satuan). Pakai uang mainan Rp1.000, Rp100, Rp10, Rp1 untuk menunjukkan nilai tiap angka."
+  },
+  "lupa-nol-tempat": {
+    "nama": "Lupa menulis 0 untuk tempat kosong",
+    "kategori": "Bilangan",
+    "penjelasan": "Saat ada tempat yang kosong (misalnya tidak ada ratusan), anak tidak menulis 0 sehingga angka lain bergeser (tujuh ribu enam puluh lima ditulis 765).",
+    "saran": "Diktekan bilangan seperti \"empat ribu delapan\" dan minta anak mengisi tabel nilai tempat dulu. Tempat yang kosong wajib diisi 0. Cek: bilangan ribuan selalu 4 angka."
+  },
+  "salah-baca-bilangan": {
+    "nama": "Salah membaca bilangan",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak keliru membaca bilangan 4 angka dengan kata-kata, misalnya \"satu ribu\" untuk 1.000 atau tertukar ratusan dan puluhan.",
+    "saran": "Latih membaca nomor rumah, harga, dan angka di kalender dari kiri: ribu, ratus, puluh, satuan. Ingatkan: 1.000 dibaca seribu, 100 seratus, 11 sebelas."
+  },
+  "banding-dari-kanan": {
+    "nama": "Membandingkan dari angka kanan",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak membandingkan bilangan dengan melihat angka di kanan yang tampak besar (mengira 2.999 lebih dari 3.001).",
+    "saran": "Biasakan membandingkan mulai dari tempat paling kiri (ribuan). Begitu ada angka yang berbeda, keputusan sudah diambil; angka di kanannya tidak penting lagi."
+  },
+  "salah-banding-bilangan": {
+    "nama": "Salah membandingkan bilangan",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak keliru memilih tanda lebih dari (>) atau kurang dari (<), atau keliru menentukan mana yang lebih besar.",
+    "saran": "Ingatkan bahwa mulut tanda > dan < selalu terbuka ke bilangan yang lebih besar. Latih dengan dua harga barang: mana yang lebih mahal?"
+  },
+  "salah-urutan-bilangan": {
+    "nama": "Salah mengurutkan bilangan",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak mengurutkan terbalik (terbesar dulu padahal diminta terkecil) atau ada bilangan yang tertukar posisi.",
+    "saran": "Minta anak menggarisbawahi kata \"terkecil\" atau \"terbesar\" di soal, lalu mencoret bilangan yang sudah ditulis supaya tidak ada yang terlewat."
+  },
+  "salah-pola-bilangan": {
+    "nama": "Salah melanjutkan pola bilangan",
+    "kategori": "Bilangan",
+    "penjelasan": "Anak keliru menentukan besar loncatan pola (10, 100, atau 1.000) atau arah pola (naik atau turun).",
+    "saran": "Bandingkan dua bilangan pertama: angka di tempat mana yang berubah? Latih membilang loncat 100 dan 1.000 dengan suara keras."
+  },
+  "salah-pola-lewat-ribuan": {
+    "nama": "Salah saat pola melewati ribuan",
+    "kategori": "Bilangan",
+    "penjelasan": "Saat membilang loncat 100 melewati ribuan, anak menulis bentuk seperti 6.1000 atau tidak menaikkan angka ribuan (6.900 lalu 6.000).",
+    "saran": "Pakai analogi kemasan: 10 kotak (ratusan) menjadi 1 kardus (ribuan). Latih bagian peralihan: 3.800, 3.900, 4.000, 4.100."
+  },
+  "salah-operasi-kebalikan": {
+    "nama": "Salah memakai operasi kebalikan",
+    "kategori": "Cek jawaban",
+    "penjelasan": "Anak belum tahu cara mengecek: penjumlahan dicek dengan pengurangan, pengurangan dicek dengan penjumlahan, atau keliru mencari bilangan yang hilang.",
+    "saran": "Tunjukkan keluarga bilangan: 25 + 17 = 42, maka 42 − 17 = 25. Biasakan setiap selesai menghitung, anak mengecek dengan operasi kebalikannya."
+  },
+  "salah-pembulatan": {
+    "nama": "Salah membulatkan ke puluhan terdekat",
+    "kategori": "Hitung cepat",
+    "penjelasan": "Anak keliru memilih puluhan terdekat (misalnya 38 dibulatkan ke 30).",
+    "saran": "Gambar garis bilangan dari 30 ke 40 dan letakkan 38 di atasnya. Puluhan mana yang lebih dekat?"
+  },
+  "salah-arah-pembulatan": {
+    "nama": "Salah arah membetulkan hasil hitung cepat",
+    "kategori": "Hitung cepat",
+    "penjelasan": "Setelah membulatkan, anak membetulkan ke arah yang salah (83 − 29: setelah 83 − 30 = 53, malah dikurangi 1 lagi).",
+    "saran": "Tanyakan: tadi kita menambah/mengurangi terlalu banyak atau terlalu sedikit? Kalau mengurangi terlalu banyak, kembalikan dengan menambah."
+  },
+  "salah-strategi-kali": {
+    "nama": "Belum memakai strategi perkalian dengan tepat",
+    "kategori": "Perkalian",
+    "penjelasan": "Anak keliru menjalankan strategi perkalian: dobel (kali 6 = dobel kali 3), pecah 5 + 2 (kali 7), dekat 10 (kali 9: kurangi satu kelompok, bukan 9), atau pola jari.",
+    "saran": "Latih satu strategi per hari dengan kue atau tutup botol yang disusun berbaris. Untuk kali 9, ingatkan bahwa yang diambil adalah satu baris berisi bilangan pasangannya."
+  },
+  "salah-fakta-bagi": {
+    "nama": "Salah fakta pembagian",
+    "kategori": "Perkalian",
+    "penjelasan": "Anak keliru menjawab pembagian dalam tabel, sering menjawab bilangan pembaginya sendiri (56 ÷ 8 dijawab 8).",
+    "saran": "Ubah pembagian menjadi pertanyaan perkalian: 56 ÷ 8 = ? artinya 8 × ? = 56. Latih keluarga fakta (7 × 8, 8 × 7, 56 ÷ 8, 56 ÷ 7)."
+  },
+  "salah-urutan-langkah": {
+    "nama": "Salah pada langkah kedua soal cerita",
+    "kategori": "Soal cerita",
+    "penjelasan": "Pada soal dua langkah, anak berhenti setelah langkah pertama atau memakai hasil yang salah untuk langkah berikutnya.",
+    "saran": "Minta anak menulis rencana sebelum menghitung: \"Pertama cari ..., lalu cari ...\". Gambar model batang untuk melihat apa yang dicari."
+  },
+  "salah-pengali-senilai": {
+    "nama": "Salah mencari pengali pecahan senilai",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak belum bisa menemukan bilangan pengali atau pembagi yang mengubah penyebut (atau pembilang) menjadi angka yang diminta, misalnya 3 menjadi 12 dikali 4.",
+    "saran": "Latih pertanyaan \"3 kali berapa sama dengan 12?\" dengan tabel perkalian. Pakai kertas yang dilipat untuk menunjukkan setiap potong dipotong lagi."
+  },
+  "senilai-satu-angka": {
+    "nama": "Hanya mengubah satu angka pecahan",
+    "kategori": "Pecahan",
+    "penjelasan": "Saat membuat pecahan senilai atau menyederhanakan, anak hanya mengubah penyebut atau hanya pembilang (2/3 ditulis 2/12).",
+    "saran": "Ingatkan aturan: apa pun yang dilakukan pada penyebut, lakukan juga pada pembilang. Tunjukkan dengan potongan kertas bahwa besarnya harus tetap sama."
+  },
+  "senilai-ditambah": {
+    "nama": "Membuat pecahan senilai dengan menambah",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak mengira pecahan senilai dibuat dengan menambah angka yang sama pada pembilang dan penyebut (2/3 = 3/4).",
+    "saran": "Bandingkan 2/3 dan 3/4 dengan dua kertas sama besar: hasilnya tidak sama. Pecahan senilai selalu dibuat dengan mengali atau membagi."
+  },
+  "salah-pembagi-sama": {
+    "nama": "Salah mencari pembagi yang sama",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak memilih bilangan yang tidak bisa membagi pembilang dan penyebut sekaligus saat menyederhanakan pecahan.",
+    "saran": "Latih memeriksa: apakah kedua bilangan ada di tabel perkalian bilangan itu? Mulai dari 2, 3, 4, dan seterusnya."
+  },
+  "salah-membaca-pecahan": {
+    "nama": "Salah menulis bagian sebagai pecahan",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak keliru menentukan pembilang (bagian yang diambil) dan penyebut (seluruh bagian yang sama besar).",
+    "saran": "Potong roti atau kertas menjadi beberapa bagian sama besar. Tanyakan: ada berapa potong semuanya (penyebut)? Berapa yang dimakan (pembilang)?"
+  },
+  "banding-pecahan": {
+    "nama": "Salah membandingkan pecahan",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak keliru memilih tanda > atau < atau keliru mengurutkan pecahan, walaupun penyebut atau pembilangnya sudah sama.",
+    "saran": "Kalau penyebut sama, bandingkan pembilang. Kalau pembilang sama, ingat bahwa potongan per-8 lebih kecil dari potongan per-4. Gambarkan dengan batang pecahan."
+  },
+  "penyebut-besar-pecahan-besar": {
+    "nama": "Mengira penyebut besar berarti pecahan lebih besar",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak mengira 1/8 lebih besar dari 1/4 (atau 3/8 lebih besar dari 3/4) karena 8 lebih besar dari 4.",
+    "saran": "Bagi dua martabak atau kertas yang sama besar menjadi 4 dan 8 potong. Makin banyak potongan, makin kecil tiap potongnya."
+  },
+  "banding-tanpa-samakan": {
+    "nama": "Membandingkan pecahan tanpa menyamakan penyebut",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak langsung membandingkan pembilang dari pecahan yang penyebutnya berbeda, atau belum bisa mencari penyebut bersama.",
+    "saran": "Biasakan langkah: cari penyebut bersama dulu (lihat tabel perkalian kedua penyebut), ubah pecahannya, baru bandingkan pembilang."
+  },
+  "penyebut-tidak-disamakan": {
+    "nama": "Tidak menyamakan penyebut sebelum menghitung",
+    "kategori": "Pecahan",
+    "penjelasan": "Saat menjumlah atau mengurang pecahan berkaitan, anak langsung menghitung pembilang tanpa menyamakan penyebut (5/6 − 1/3 = 4/6), atau keliru memilih penyebut bersama.",
+    "saran": "Tunjukkan bahwa potongan perenam dan pertiga berbeda ukuran. Ubah dulu pecahan berpenyebut kecil, misalnya 1/3 = 2/6, lalu hitung."
+  },
+  "jumlah-penyebut": {
+    "nama": "Menjumlahkan penyebut",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak menjumlahkan pembilang dan juga penyebut (1/2 + 1/4 = 2/6).",
+    "saran": "Penyebut adalah ukuran potongan, bukan banyaknya. Dua potong per-4 ditambah satu potong per-4 tetap per-4. Latih dengan potongan kertas yang ukurannya sama."
+  },
+  "satu-utuh-pecahan": {
+    "nama": "Belum menulis 1 utuh sebagai pecahan",
+    "kategori": "Pecahan",
+    "penjelasan": "Anak bingung menghitung sisa dari 1 keseluruhan (1 − 3/8), karena belum tahu bahwa 1 = 8/8.",
+    "saran": "Potong sebuah kue menjadi 8 bagian dan tunjukkan bahwa 8 dari 8 potong adalah satu kue utuh. Latih menulis 1 = 2/2 = 4/4 = 8/8."
+  },
+  "salah-nol-rupiah": {
+    "nama": "Salah menulis nol pada jumlah uang",
+    "kategori": "Uang",
+    "penjelasan": "Anak salah menulis banyak angka nol pada jawaban uang (Rp4.300 ditulis Rp430 atau Rp43.000).",
+    "saran": "Bacakan jawaban dengan keras: \"empat ribu tiga ratus\" berarti 4 angka. Latih dengan uang mainan dan label harga di warung."
+  },
+  "kembalian-terbalik": {
+    "nama": "Salah urutan menghitung kembalian atau kekurangan",
+    "kategori": "Uang",
+    "penjelasan": "Anak menghitung kembalian sebagai harga − uang yang dibayar, atau tertukar antara sisa uang dan kekurangan.",
+    "saran": "Main jual-beli di rumah. Ingatkan: kembalian = uang yang dibayar − harga; kekurangan = harga − uang yang dimiliki."
+  },
+  "salah-hitung-naik": {
+    "nama": "Salah menghitung naik (cara kasir)",
+    "kategori": "Uang",
+    "penjelasan": "Saat mencari kembalian dengan menghitung naik dari harga ke uang yang dibayar, anak keliru di salah satu loncatan.",
+    "saran": "Latih loncatan ke ratusan bulat lalu ke ribuan bulat dengan uang mainan, seperti kasir yang menyerahkan kembalian satu per satu."
+  },
+  "salah-uang-cukup": {
+    "nama": "Salah menentukan uang cukup atau tidak",
+    "kategori": "Uang",
+    "penjelasan": "Anak keliru membandingkan uang yang dimiliki dengan harga barang.",
+    "saran": "Bandingkan mulai dari ribuan. Ajak anak memutuskan sendiri di toko: \"uangmu cukup tidak?\""
+  },
+  "lupa-barang-belanja": {
+    "nama": "Ada barang yang terlewat saat belanja",
+    "kategori": "Uang",
+    "penjelasan": "Pada soal belanja beberapa barang, anak lupa menjumlahkan semua barang atau langsung menghitung kembalian sebelum harga semuanya diketahui.",
+    "saran": "Minta anak mencentang setiap barang yang sudah dijumlahkan, lalu menulis rencana: \"jumlahkan harga dulu, baru cari kembalian\"."
+  },
+  "salah-jenis-satuan": {
+    "nama": "Tertukar jenis satuan",
+    "kategori": "Pengukuran",
+    "penjelasan": "Anak memakai satuan dari jenis ukuran lain, misalnya mengukur berat dengan cm atau isi air dengan kg.",
+    "saran": "Kelompokkan satuan: panjang (km, m, cm), massa (kg, g), volume (ℓ, mL). Saat memasak atau berbelanja, tanyakan apa yang sedang diukur."
+  },
+  "satuan-kurang-cocok": {
+    "nama": "Satuan kurang cocok dengan ukuran benda",
+    "kategori": "Pengukuran",
+    "penjelasan": "Jenis satuannya benar, tetapi besarnya tidak cocok (jarak antarkota dalam m, obat satu sendok dalam ℓ).",
+    "saran": "Kenalkan patokan: berjalan 1 km kira-kira 15 menit, 1 sendok obat 5 mL, sebutir telur sekitar 60 g. Tanyakan \"masuk akal tidak?\"."
+  },
+  "salah-angka-tukar": {
+    "nama": "Salah angka tukar satuan",
+    "kategori": "Pengukuran",
+    "penjelasan": "Anak memakai angka tukar yang salah, misalnya 1 kg = 100 g atau 1 m = 1.000 cm.",
+    "saran": "Tempel tabel kecil di dinding: 1 km = 1.000 m, 1 m = 100 cm, 1 kg = 1.000 g, 1 ℓ = 1.000 mL. Hanya m ke cm yang memakai 100."
+  },
+  "lupa-nol-satuan": {
+    "nama": "Lupa nol saat mengubah satuan gabungan",
+    "kategori": "Pengukuran",
+    "penjelasan": "Saat bagian kecilnya hanya 1 atau 2 angka, anak menempelkan angka begitu saja (3 km 50 m ditulis 350 m, 5 m 8 cm ditulis 58 cm).",
+    "saran": "Ubah bagian besar dulu (3 km = 3.000 m), lalu tambahkan bagian kecil dengan bersusun rata kanan: 3.000 + 50 = 3.050."
+  },
+  "banding-tanpa-samakan-satuan": {
+    "nama": "Membandingkan ukuran tanpa menyamakan satuan",
+    "kategori": "Pengukuran",
+    "penjelasan": "Anak membandingkan dua ukuran yang satuannya berbeda tanpa mengubahnya dulu (mengira 1 kg 90 g lebih berat dari 1.200 g).",
+    "saran": "Biasakan mengubah semua ukuran ke satuan kecil yang sama sebelum membandingkan atau menghitung."
+  },
+  "salah-baca-skala-ukur": {
+    "nama": "Salah membaca timbangan atau gelas ukur",
+    "kategori": "Pengukuran",
+    "penjelasan": "Anak keliru membaca angka yang ditunjuk jarum timbangan atau permukaan air pada gelas ukur, terutama bila setiap garis bernilai 100, 200, atau 250.",
+    "saran": "Saat memasak, minta anak membaca timbangan atau gelas takar. Hitung dulu nilai satu garis dari dua angka yang berdekatan."
+  },
+  "salah-jam-24": {
+    "nama": "Salah mengubah sistem 12 jam dan 24 jam",
+    "kategori": "Waktu",
+    "penjelasan": "Anak lupa menambah 12 untuk waktu siang/sore/malam (3.45 sore ditulis 03.45), lupa mengurangi 12, atau menulis tengah malam sebagai 24.00.",
+    "saran": "Pasang jadwal harian anak dengan dua cara penulisan (pukul 7 malam = 19.00). Ingatkan: tengah malam = 00.00."
+  },
+  "salah-hitung-waktu": {
+    "nama": "Salah menghitung pada garis waktu",
+    "kategori": "Waktu",
+    "penjelasan": "Anak keliru menghitung menit ke jam bulat, banyak jam penuh, atau sisa menit saat mencari lama waktu atau waktu selesai.",
+    "saran": "Gambar garis waktu dengan \"halte\" di jam bulat: jalan ke jam bulat, naik jam penuh, lalu jalan sisa menit."
+  },
+  "salah-arah-waktu": {
+    "nama": "Salah arah di garis waktu",
+    "kategori": "Waktu",
+    "penjelasan": "Anak berjalan maju padahal harus mundur (mencari waktu berangkat dengan menambah lama perjalanan), atau sebaliknya.",
+    "saran": "Tanyakan dulu: yang diketahui waktu mulai atau waktu selesai? Kalau waktu selesai diketahui, berjalanlah mundur."
+  },
+  "waktu-seperti-desimal": {
+    "nama": "Menghitung waktu seperti bilangan biasa",
+    "kategori": "Waktu",
+    "penjelasan": "Anak menganggap 1 jam = 100 menit, misalnya 16.10 − 14.35 dijawab 1 jam 75 menit, atau 150 detik dijawab 1 menit 50 detik.",
+    "saran": "Ingatkan: 1 jam = 60 menit dan 1 menit = 60 detik. Pakai jam dinding dan garis waktu, bukan pengurangan biasa."
+  },
+  "salah-tukar-detik": {
+    "nama": "Salah mengubah menit dan detik",
+    "kategori": "Waktu",
+    "penjelasan": "Anak keliru mengubah menit ke detik atau detik ke menit dan detik.",
+    "saran": "Latih dengan stopwatch: 1 menit = 60 detik. Hitung loncat 60: 60, 120, 180, 240."
+  },
+  "salah-banding-waktu": {
+    "nama": "Salah membandingkan waktu lomba",
+    "kategori": "Waktu",
+    "penjelasan": "Anak mengira waktu yang lebih lama berarti lebih cepat, atau membandingkan tanpa menyamakan satuan (menit dan detik).",
+    "saran": "Ubah semua waktu ke detik dulu. Ingatkan: yang lebih cepat sampai adalah yang waktunya lebih sedikit."
+  },
+  "salah-baca-jam": {
+    "nama": "Salah membaca jarum jam",
+    "kategori": "Waktu",
+    "penjelasan": "Anak keliru membaca angka yang ditunjuk jarum pendek atau tertukar jarum pendek dan jarum panjang.",
+    "saran": "Latih membaca jam dinding setiap hari pada jam tepat: jarum pendek menunjukkan jam, jarum panjang di angka 12."
+  },
+  "keliling-luas-tertukar": {
+    "nama": "Tertukar luas dan keliling",
+    "kategori": "Luas dan keliling",
+    "penjelasan": "Anak menghitung luas padahal yang ditanya keliling, atau sebaliknya (menjawab panjang pagar dengan luas kebun), atau menjumlah sisi untuk mencari luas.",
+    "saran": "Pakai benda nyata: lis atau pita di tepi = keliling; ubin atau karpet yang menutup permukaan = luas. Hitung ubin di lantai rumah."
+  },
+  "keliling-dua-sisi": {
+    "nama": "Hanya menjumlahkan dua sisi",
+    "kategori": "Luas dan keliling",
+    "penjelasan": "Saat mencari keliling persegi panjang atau persegi, anak hanya menjumlahkan panjang dan lebar (8 + 5 = 13) tanpa sisi yang lain.",
+    "saran": "Ajak anak menelusuri tepi meja dengan jari sambil menyebut setiap sisi. Persegi panjang punya 4 sisi."
+  },
+  "salah-satuan-luas": {
+    "nama": "Salah satuan luas atau keliling",
+    "kategori": "Luas dan keliling",
+    "penjelasan": "Anak menulis luas dengan cm atau m, atau keliling dengan cm² atau m².",
+    "saran": "Ingatkan: keliling adalah panjang (cm, m); luas adalah banyak persegi satuan (cm², m²). Tunjukkan satu persegi 1 cm × 1 cm."
+  },
+  "lupa-sisi-bangun": {
+    "nama": "Lupa sisi yang tidak tertulis",
+    "kategori": "Luas dan keliling",
+    "penjelasan": "Pada bangun bersudut siku (bentuk L), anak hanya menjumlahkan sisi yang ada angkanya, atau keliru mencari panjang sisi yang belum diketahui.",
+    "saran": "Hitung dulu banyak sisinya (bentuk L punya 6 sisi). Cari sisi yang belum diketahui dari sisi di hadapannya: sisi kiri = gabungan sisi kanan."
+  },
+  "salah-banding-siku": {
+    "nama": "Salah membandingkan sudut dengan siku-siku",
+    "kategori": "Sudut",
+    "penjelasan": "Anak keliru menentukan apakah sudut lebih kecil, sama dengan, atau lebih besar dari sudut siku-siku.",
+    "saran": "Buat alat siku dari kertas yang dilipat dua kali. Ajak anak memeriksa pojok buku, pintu, dan jarum jam di rumah."
+  },
+  "sudut-kaki-panjang": {
+    "nama": "Mengira kaki panjang berarti sudut besar",
+    "kategori": "Sudut",
+    "penjelasan": "Anak mengira sudut dengan kaki lebih panjang pasti lebih besar. Padahal besar sudut ditentukan oleh lebar bukaan.",
+    "saran": "Bandingkan gunting kecil yang terbuka lebar dengan gunting besar yang hampir tertutup. Perpanjang kaki sudut dengan penggaris: bukaannya tetap sama."
+  },
+  "salah-hitung-sudut": {
+    "nama": "Salah menghitung banyak sudut",
+    "kategori": "Sudut",
+    "penjelasan": "Anak keliru menghitung banyak sudut pada bangun, atau menganggap semua pojok adalah siku-siku.",
+    "saran": "Tandai setiap pojok dengan titik sebelum menghitung, lalu periksa satu per satu dengan alat siku kertas."
+  },
+  "salah-titik-sudut": {
+    "nama": "Salah menunjuk titik sudut",
+    "kategori": "Sudut",
+    "penjelasan": "Anak belum tahu bahwa titik sudut adalah tempat dua kaki sudut bertemu (misalnya engsel pintu, paku gunting).",
+    "saran": "Buka-tutup pintu atau gunting bersama anak dan tunjukkan bagian yang diam saat berputar: itulah titik sudutnya."
+  },
+  "sejajar-tegak-lurus-tertukar": {
+    "nama": "Tertukar garis sejajar dan tegak lurus",
+    "kategori": "Garis",
+    "penjelasan": "Anak tertukar antara garis sejajar (tidak pernah bertemu) dan garis tegak lurus (bertemu membentuk siku-siku), atau menganggap garis yang jaraknya berubah tetap sejajar.",
+    "saran": "Cari contoh di rumah: rel kereta atau garis buku tulis (sejajar), pojok pintu dan lantai (tegak lurus). Periksa sejajar dengan mengukur jarak di dua tempat."
+  },
+  "berpotongan-dianggap-tegak-lurus": {
+    "nama": "Mengira semua garis berpotongan tegak lurus",
+    "kategori": "Garis",
+    "penjelasan": "Anak menganggap dua garis yang bertemu pasti tegak lurus, padahal sudutnya belum tentu siku-siku.",
+    "saran": "Selalu periksa titik pertemuan dengan alat siku kertas. Bandingkan huruf X yang miring dengan tanda tambah (+)."
+  },
+  "tegak-lurus-harus-berdiri": {
+    "nama": "Mengira garis tegak lurus harus berdiri tegak",
+    "kategori": "Garis",
+    "penjelasan": "Anak tidak mengenali garis tegak lurus yang posisinya miring, karena mengira \"tegak lurus\" berarti berdiri.",
+    "saran": "Putar buku di meja: pojoknya tetap siku-siku walaupun miring. Tegak lurus berarti membentuk siku-siku dengan garis lain."
+  },
+  "salah-langkah-petak": {
+    "nama": "Salah menghitung langkah petak",
+    "kategori": "Garis",
+    "penjelasan": "Saat menggambar garis sejajar atau tegak lurus di kertas berpetak, anak keliru menghitung berapa petak ke kanan/kiri dan ke atas/bawah.",
+    "saran": "Latih di buku berpetak: tulis langkah petak garis pertama (misalnya kanan 1, naik 1), lalu ulangi langkah yang sama dari titik lain."
+  },
+  "salah-baca-skala": {
+    "nama": "Salah membaca skala diagram batang",
+    "kategori": "Data",
+    "penjelasan": "Anak mengira skala selalu 1, membaca banyaknya garis sebagai nilai, atau keliru membaca puncak batang yang berada di tengah dua garis.",
+    "saran": "Sebelum menjawab, minta anak menyebut skalanya dulu (loncatan angka di sumbu tegak). Tarik garis dari puncak batang ke kiri dengan penggaris."
+  },
+  "selisih-dijumlah": {
+    "nama": "Selisih dihitung dengan menjumlah",
+    "kategori": "Data",
+    "penjelasan": "Ditanya \"berapa lebih banyak\" atau \"selisih\", anak justru menjumlahkan kedua nilai (atau sebaliknya).",
+    "saran": "Garis bawahi kata kunci: \"lebih banyak\", \"lebih sedikit\", \"selisih\" berarti mengurangkan; \"semuanya\", \"total\" berarti menjumlahkan."
+  },
+  "lupa-batang": {
+    "nama": "Ada batang yang terlewat saat menjumlah",
+    "kategori": "Data",
+    "penjelasan": "Saat mencari total, anak lupa menjumlahkan satu batang atau menjumlahkan satu batang dua kali.",
+    "saran": "Coret setiap batang yang sudah dijumlahkan, lalu cocokkan banyak coretan dengan banyak batang."
+  }
+}

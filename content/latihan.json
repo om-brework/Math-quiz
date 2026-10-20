@@ -1,0 +1,570 @@
+{
+  "sd1-01-bilangan-sampai-100": [
+    {
+      "code": "membilang-puluhan",
+      "name": "Membilang dengan puluhan dan satuan"
+    },
+    {
+      "code": "baca-tulis-nilai-tempat",
+      "name": "Membaca, menulis, dan nilai tempat"
+    },
+    {
+      "code": "bandingkan-urutkan",
+      "name": "Membandingkan dan mengurutkan bilangan"
+    },
+    {
+      "code": "pola-bilangan",
+      "name": "Pola barisan bilangan"
+    }
+  ],
+  "sd1-02-bilangan-urutan": [
+    {
+      "code": "kata-lambang-urutan",
+      "name": "Kata dan lambang bilangan urutan"
+    },
+    {
+      "code": "posisi-antrean",
+      "name": "Mencari posisi dalam antrean"
+    },
+    {
+      "code": "depan-belakang",
+      "name": "Urutan dari depan dan dari belakang"
+    }
+  ],
+  "sd1-03-konsep-tambah-kurang": [
+    {
+      "code": "gabung-ambil",
+      "name": "Menggabungkan dan mengambil"
+    },
+    {
+      "code": "keluarga-bilangan",
+      "name": "Keluarga bilangan"
+    },
+    {
+      "code": "tiga-bilangan",
+      "name": "Menjumlahkan tiga bilangan"
+    }
+  ],
+  "sd1-04-tambah-kurang-bersusun-100": [
+    {
+      "code": "tambah-bersusun",
+      "name": "Penjumlahan bersusun"
+    },
+    {
+      "code": "kurang-bersusun",
+      "name": "Pengurangan bersusun"
+    },
+    {
+      "code": "cerita-bersusun",
+      "name": "Soal cerita bersusun"
+    }
+  ],
+  "sd1-05-hitung-cepat": [
+    {
+      "code": "membuat-10",
+      "name": "Membuat 10"
+    },
+    {
+      "code": "dobel",
+      "name": "Dobel dan hampir dobel"
+    },
+    {
+      "code": "kurang-lewat-10",
+      "name": "Mengurangi lewat 10"
+    },
+    {
+      "code": "satuan-puluhan",
+      "name": "Menambah dan mengurangi satuan atau puluhan"
+    }
+  ],
+  "sd1-06-konsep-kali-bagi": [
+    {
+      "code": "kelompok-sama-banyak",
+      "name": "Perkalian: kelompok sama banyak"
+    },
+    {
+      "code": "hitung-loncat",
+      "name": "Perkalian dengan hitung loncat"
+    },
+    {
+      "code": "bagi-sama-banyak",
+      "name": "Pembagian: membagi sama banyak"
+    },
+    {
+      "code": "mengelompokkan",
+      "name": "Pembagian: mengelompokkan"
+    }
+  ],
+  "sd1-07-uang": [
+    {
+      "code": "kenal-uang",
+      "name": "Mengenal dan membaca uang"
+    },
+    {
+      "code": "hitung-uang",
+      "name": "Menghitung jumlah uang"
+    },
+    {
+      "code": "bandingkan-harga",
+      "name": "Membandingkan harga"
+    }
+  ],
+  "sd1-08-panjang-cm": [
+    {
+      "code": "ukur-penggaris",
+      "name": "Mengukur dengan penggaris"
+    },
+    {
+      "code": "bandingkan-panjang",
+      "name": "Membandingkan dan mengurutkan panjang"
+    },
+    {
+      "code": "gambar-garis",
+      "name": "Menggambar garis"
+    }
+  ],
+  "sd1-09-waktu": [
+    {
+      "code": "baca-jam",
+      "name": "Membaca jam sampai 5 menit"
+    },
+    {
+      "code": "pagi-siang-malam",
+      "name": "Pagi, siang, sore, malam (am dan pm)"
+    },
+    {
+      "code": "lama-waktu",
+      "name": "Lamanya 1 jam dan setengah jam"
+    }
+  ],
+  "sd1-10-bangun-datar": [
+    {
+      "code": "kenali-bangun",
+      "name": "Mengenali bangun datar"
+    },
+    {
+      "code": "golongkan-bangun",
+      "name": "Menggolongkan bangun datar"
+    },
+    {
+      "code": "susun-potongan",
+      "name": "Menyusun bangun dari potongan"
+    },
+    {
+      "code": "salin-berpetak",
+      "name": "Menyalin bangun di kertas berpetak"
+    }
+  ],
+  "sd1-11-diagram-gambar": [
+    {
+      "code": "baca-piktogram",
+      "name": "Membaca diagram gambar"
+    },
+    {
+      "code": "paling-banyak-sedikit",
+      "name": "Paling banyak dan paling sedikit"
+    },
+    {
+      "code": "selisih-jumlah",
+      "name": "Selisih dan jumlah"
+    }
+  ],
+  "sd2-01-bilangan-sampai-1000": [
+    {
+      "code": "tulis-baca",
+      "name": "Nilai tempat, menulis dan membaca bilangan"
+    },
+    {
+      "code": "bandingkan-urutkan",
+      "name": "Membandingkan dan mengurutkan bilangan"
+    },
+    {
+      "code": "pola-loncat",
+      "name": "Membilang loncat dan pola bilangan"
+    },
+    {
+      "code": "ganjil-genap",
+      "name": "Bilangan ganjil dan genap"
+    }
+  ],
+  "sd2-02-tambah-kurang-bersusun-1000": [
+    {
+      "code": "tambah-susun",
+      "name": "Penjumlahan bersusun dengan menyimpan"
+    },
+    {
+      "code": "kurang-susun",
+      "name": "Pengurangan bersusun dengan meminjam (termasuk melewati nol)"
+    },
+    {
+      "code": "cerita-model-batang",
+      "name": "Soal cerita dua langkah dengan model batang"
+    }
+  ],
+  "sd2-03-hitung-cepat-3-angka": [
+    {
+      "code": "buka-laci",
+      "name": "Menambah dan mengurang satuan, puluhan, ratusan di kepala"
+    },
+    {
+      "code": "lewat-bulat",
+      "name": "Hitung cepat melewati puluhan atau ratusan"
+    }
+  ],
+  "sd2-04-perkalian-2-3-4-5-10": [
+    {
+      "code": "tabel-kali",
+      "name": "Tabel perkalian 2, 3, 4, 5, 10"
+    },
+    {
+      "code": "pertukaran-pola",
+      "name": "Sifat pertukaran dan pola dalam tabel"
+    },
+    {
+      "code": "cerita-kali",
+      "name": "Soal cerita perkalian"
+    }
+  ],
+  "sd2-05-pembagian": [
+    {
+      "code": "bagi-sama-banyak",
+      "name": "Membagi sama banyak"
+    },
+    {
+      "code": "mengelompokkan",
+      "name": "Pembagian sebagai mengelompokkan"
+    },
+    {
+      "code": "keluarga-fakta",
+      "name": "Keluarga fakta perkalian dan pembagian"
+    }
+  ],
+  "sd2-06-pecahan-bagian-utuh": [
+    {
+      "code": "pecahan-dari-gambar",
+      "name": "Pembilang, penyebut, dan pecahan dari gambar"
+    },
+    {
+      "code": "arsir-pecahan",
+      "name": "Menggambar (mengarsir) pecahan"
+    },
+    {
+      "code": "bandingkan-urutkan-pecahan",
+      "name": "Membandingkan dan mengurutkan pecahan"
+    }
+  ],
+  "sd2-07-tambah-kurang-pecahan-senama": [
+    {
+      "code": "tambah-senama",
+      "name": "Menjumlahkan pecahan senama"
+    },
+    {
+      "code": "kurang-senama",
+      "name": "Mengurangkan pecahan senama (termasuk dari 1 utuh)"
+    },
+    {
+      "code": "genapkan-satu",
+      "name": "Menggenapkan menjadi 1 utuh"
+    }
+  ],
+  "sd2-08-uang": [
+    {
+      "code": "hitung-uang",
+      "name": "Menghitung kumpulan uang"
+    },
+    {
+      "code": "bandingkan-uang",
+      "name": "Membandingkan jumlah uang"
+    },
+    {
+      "code": "tukar-uang",
+      "name": "Menukar uang"
+    },
+    {
+      "code": "kembalian",
+      "name": "Menghitung kembalian"
+    }
+  ],
+  "sd2-09-panjang-massa-volume": [
+    {
+      "code": "pilih-satuan",
+      "name": "Memilih satuan m, kg, g, ℓ"
+    },
+    {
+      "code": "baca-alat-ukur",
+      "name": "Membaca timbangan dan gelas ukur"
+    },
+    {
+      "code": "bandingkan-ukuran",
+      "name": "Membandingkan dan mengurutkan ukuran"
+    }
+  ],
+  "sd2-10-waktu": [
+    {
+      "code": "baca-jam",
+      "name": "Membaca jam sampai menit"
+    },
+    {
+      "code": "jam-menit",
+      "name": "Mengubah jam ke menit dan sebaliknya"
+    },
+    {
+      "code": "lama-waktu",
+      "name": "Menghitung lama waktu"
+    }
+  ],
+  "sd2-11-pola-bangun": [
+    {
+      "code": "pola-satu-sifat",
+      "name": "Pola satu sifat: bentuk, ukuran, warna"
+    },
+    {
+      "code": "pola-arah",
+      "name": "Pola arah (putaran)"
+    },
+    {
+      "code": "pola-dua-sifat",
+      "name": "Pola dua sifat"
+    }
+  ],
+  "sd2-12-bangun-ruang": [
+    {
+      "code": "kenali-bangun-ruang",
+      "name": "Mengenali bangun ruang dan benda sehari-hari"
+    },
+    {
+      "code": "sisi-datar-lengkung",
+      "name": "Sisi datar dan sisi lengkung"
+    },
+    {
+      "code": "golongkan-bangun-ruang",
+      "name": "Menggolongkan bangun ruang dan menyusun menara"
+    }
+  ],
+  "sd2-13-diagram-gambar-skala": [
+    {
+      "code": "baca-piktogram",
+      "name": "Membaca piktogram berskala"
+    },
+    {
+      "code": "jumlah-selisih-piktogram",
+      "name": "Menjumlah dan mencari selisih pada piktogram"
+    }
+  ],
+  "sd3-01-bilangan-sampai-10000": [
+    {
+      "code": "nilai-tempat",
+      "name": "Nilai tempat dan bentuk panjang"
+    },
+    {
+      "code": "baca-tulis",
+      "name": "Membaca dan menulis bilangan"
+    },
+    {
+      "code": "bandingkan-urutkan",
+      "name": "Membandingkan dan mengurutkan bilangan"
+    },
+    {
+      "code": "pola-loncat",
+      "name": "Pola bilangan: loncat 100 dan 1.000"
+    }
+  ],
+  "sd3-02-tambah-kurang-bersusun-4-angka": [
+    {
+      "code": "tambah-susun",
+      "name": "Penjumlahan bersusun sampai 4 angka"
+    },
+    {
+      "code": "kurang-susun",
+      "name": "Pengurangan bersusun dan meminjam melewati nol"
+    },
+    {
+      "code": "cek-kebalikan",
+      "name": "Cek jawaban dengan operasi kebalikan"
+    },
+    {
+      "code": "hitung-cepat",
+      "name": "Hitung cepat dua bilangan 2 angka"
+    }
+  ],
+  "sd3-03-perkalian-6-7-8-9": [
+    {
+      "code": "kali-dobel",
+      "name": "Kali 6 dan 8 dengan strategi dobel"
+    },
+    {
+      "code": "kali-7-9",
+      "name": "Kali 7 (5 + 2) dan kali 9 (dekat 10, pola jari)"
+    },
+    {
+      "code": "bagi-tabel",
+      "name": "Pembagian dalam tabel 6, 7, 8, 9"
+    }
+  ],
+  "sd3-04-perkalian-bersusun": [
+    {
+      "code": "kali-2-angka",
+      "name": "Perkalian bersusun 2 angka × 1 angka"
+    },
+    {
+      "code": "kali-3-angka",
+      "name": "Perkalian bersusun 3 angka × 1 angka"
+    },
+    {
+      "code": "cerita-kali",
+      "name": "Soal cerita perkalian"
+    }
+  ],
+  "sd3-05-pembagian-bersusun": [
+    {
+      "code": "bagi-sisa-tabel",
+      "name": "Pembagian dengan sisa"
+    },
+    {
+      "code": "porogapit",
+      "name": "Pembagian bersusun (porogapit)"
+    },
+    {
+      "code": "cerita-sisa",
+      "name": "Soal cerita: memaknai sisa"
+    }
+  ],
+  "sd3-06-pecahan-senilai": [
+    {
+      "code": "lengkapi-senilai",
+      "name": "Melengkapi pecahan senilai"
+    },
+    {
+      "code": "paling-sederhana",
+      "name": "Bentuk paling sederhana"
+    },
+    {
+      "code": "bandingkan-pecahan",
+      "name": "Membandingkan dan mengurutkan pecahan"
+    }
+  ],
+  "sd3-07-tambah-kurang-pecahan-berkaitan": [
+    {
+      "code": "tambah-berkaitan",
+      "name": "Menjumlahkan pecahan berkaitan"
+    },
+    {
+      "code": "kurang-berkaitan",
+      "name": "Mengurangkan pecahan berkaitan dan dari 1 utuh"
+    },
+    {
+      "code": "cerita-pecahan",
+      "name": "Soal cerita: bagian yang dimakan dan sisa"
+    }
+  ],
+  "sd3-08-uang": [
+    {
+      "code": "jumlah-harga",
+      "name": "Menjumlahkan harga"
+    },
+    {
+      "code": "kembalian",
+      "name": "Menghitung kembalian dan kekurangan uang"
+    },
+    {
+      "code": "belanja-dua-langkah",
+      "name": "Soal cerita belanja dua langkah"
+    }
+  ],
+  "sd3-09-satuan-ukur": [
+    {
+      "code": "pilih-satuan",
+      "name": "Memilih satuan dan membaca alat ukur"
+    },
+    {
+      "code": "ubah-satuan-kecil",
+      "name": "Mengubah satuan gabungan ke satuan kecil"
+    },
+    {
+      "code": "cerita-satuan",
+      "name": "Soal cerita satuan gabungan"
+    }
+  ],
+  "sd3-10-waktu": [
+    {
+      "code": "jam-24",
+      "name": "Sistem 24 jam"
+    },
+    {
+      "code": "lama-waktu",
+      "name": "Mencari lama waktu"
+    },
+    {
+      "code": "mulai-selesai",
+      "name": "Mencari waktu selesai atau waktu mulai"
+    },
+    {
+      "code": "detik-menit",
+      "name": "Detik dan menit"
+    }
+  ],
+  "sd3-11-luas-keliling": [
+    {
+      "code": "keliling",
+      "name": "Keliling persegi panjang dan persegi"
+    },
+    {
+      "code": "luas",
+      "name": "Luas persegi panjang dan persegi"
+    },
+    {
+      "code": "keliling-bangun-siku",
+      "name": "Keliling bangun bersudut siku"
+    },
+    {
+      "code": "luas-atau-keliling",
+      "name": "Soal cerita: luas atau keliling?"
+    }
+  ],
+  "sd3-12-sudut": [
+    {
+      "code": "banding-siku",
+      "name": "Membandingkan sudut dengan siku-siku"
+    },
+    {
+      "code": "sudut-jam",
+      "name": "Sudut pada jarum jam"
+    },
+    {
+      "code": "sudut-bangun",
+      "name": "Sudut pada bangun datar"
+    },
+    {
+      "code": "sudut-sekitar",
+      "name": "Sudut di benda sekitar"
+    }
+  ],
+  "sd3-13-garis-sejajar-tegak-lurus": [
+    {
+      "code": "kenali-garis",
+      "name": "Mengenali garis sejajar, tegak lurus, dan berpotongan"
+    },
+    {
+      "code": "sisi-bangun",
+      "name": "Sisi sejajar dan tegak lurus pada bangun"
+    },
+    {
+      "code": "langkah-petak",
+      "name": "Menggambar garis dengan langkah petak"
+    }
+  ],
+  "sd3-14-diagram-batang": [
+    {
+      "code": "baca-skala",
+      "name": "Membaca skala dan nilai batang"
+    },
+    {
+      "code": "banding-selisih",
+      "name": "Paling banyak, paling sedikit, dan selisih"
+    },
+    {
+      "code": "total-diagram",
+      "name": "Total dan soal cerita diagram batang"
+    }
+  ]
+}
