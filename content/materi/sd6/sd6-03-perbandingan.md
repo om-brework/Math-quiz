@@ -22,6 +22,10 @@ Resepnya: **2 gelas sirup dan 5 gelas air**. Satu gelas takar kita sebut **1 uni
 
 Setiap unit nanti kita gambar sebagai **satu kotak** di model batang.
 
+```anim
+{"type": "batang", "title": "Resep es sirup 2 : 5", "bars": [{"label": "Sirup", "units": 2, "unitValue": "1 gelas"}, {"label": "Air", "units": 5, "unitValue": "1 gelas"}], "total": "7 gelas", "langkah": [{"say": "Sirup: 2 gelas takar, jadi 2 unit.", "bars": 1}, {"say": "Air: 5 gelas takar, jadi 5 unit.", "bars": 2}, {"say": "Satu paket resep berisi 2 + 5 = 7 gelas.", "bars": 2, "total": true}]}
+```
+
 ## Konsep
 
 ### Notasi perbandingan
@@ -42,6 +46,10 @@ $$2 : 5 = 4 : 10 = 6 : 15$$
 
 Ini seperti resep es sirup yang dilipatgandakan. Rasanya tidak berubah.
 
+```visual
+{"type": "table", "head": ["Paket resep", "Sirup", "Air", "Perbandingan"], "rows": [["1", "2", "5", "2 : 5"], ["2", "4", "10", "4 : 10"], ["3", "6", "15", "6 : 15"]], "caption": "Semua suku dikali bilangan yang sama: perbandingannya senilai."}
+```
+
 **Bentuk paling sederhana**: semua suku dibagi dengan **FPB**-nya (faktor persekutuan terbesar) sampai tidak bisa dibagi lagi.
 
 - $18 : 24$. FPB dari 18 dan 24 adalah 6. Jadi $18 : 24 = 3 : 4$.
@@ -57,9 +65,8 @@ Dari 3 menjadi 12, dikali 4. Maka 5 juga dikali 4: $5 \times 4 = 20$. Jadi $3 : 
 
 Jika sirup : air = 2 : 5, gambarnya:
 
-```
-Sirup : [ ][ ]
-Air   : [ ][ ][ ][ ][ ]
+```visual
+{"type": "barModel", "bars": [{"label": "Sirup", "units": 2}, {"label": "Air", "units": 5}], "total": "7 unit", "caption": "Sirup 2 unit, air 5 unit, seluruh campuran 7 unit."}
 ```
 
 - Sirup adalah $\frac{2}{5}$ dari air.
@@ -76,62 +83,273 @@ Langkah tetapnya:
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Bentuk paling sederhana
 
-**Soal.** Di kebun Pak Wayan ada 45 pohon pisang dan 60 pohon pepaya. Tulis perbandingan pohon pisang dan pepaya dalam bentuk paling sederhana.
-
-1. **Langkah 1: Tulis sesuai urutan.** Pisang : pepaya = 45 : 60.
-2. **Langkah 2: Cari FPB.** Faktor 45: 1, 3, 5, 9, 15, 45. Faktor 60: 1, 2, 3, 4, 5, 6, 10, 12, 15, 20, 30, 60. FPB = 15.
-3. **Langkah 3: Bagi semua suku dengan FPB.** $45 \div 15 = 3$ dan $60 \div 15 = 4$.
-4. **Cek jawaban.** 3 dan 4 tidak punya faktor persekutuan selain 1, jadi sudah paling sederhana. Kalikan balik: $3 \times 15 = 45$ dan $4 \times 15 = 60$. Benar.
-
-**Jawaban:** 3 : 4.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Di kebun Pak Wayan ada 45 pohon pisang dan 60 pohon pepaya. Tulis perbandingan pohon pisang dan pepaya dalam bentuk paling sederhana.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Tulis sesuai urutan. Pisang : pepaya = ...",
+   "options": [
+    "45 : 60",
+    "60 : 45",
+    "45 : 105"
+   ],
+   "answer": "45 : 60",
+   "hint": "Pisang disebut lebih dulu.",
+   "explain": "Pisang : pepaya = 45 : 60.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Cari FPB dari 45 dan 60.",
+   "answer": "15",
+   "hint": "Daftar faktor 45: 1, 3, 5, 9, 15, 45. Mana yang terbesar yang juga membagi 60?",
+   "explain": "FPB dari 45 dan 60 adalah 15.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Bagi suku pertama dengan FPB. 45 ÷ 15 = ?",
+   "answer": "3",
+   "hint": "Hitung 15, 30, 45.",
+   "explain": "45 ÷ 15 = 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Bagi suku kedua dengan FPB. 60 ÷ 15 = ?",
+   "answer": "4",
+   "hint": "Hitung 15, 30, 45, 60.",
+   "explain": "60 ÷ 15 = 4. Hasilnya 3 : 4.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: apakah 3 : 4 sudah paling sederhana?",
+   "options": [
+    "Ya, 3 dan 4 hanya punya faktor sekutu 1",
+    "Belum, masih bisa dibagi 2"
+   ],
+   "answer": "Ya, 3 dan 4 hanya punya faktor sekutu 1",
+   "hint": "Adakah bilangan selain 1 yang membagi 3 dan 4?",
+   "explain": "3 dan 4 hanya habis dibagi 1 bersama-sama, jadi sudah paling sederhana.",
+   "error": "pecahan-belum-sederhana"
+  }
+ ],
+ "conclusion": "Jadi pisang : pepaya = 3 : 4."
+}
+```
 
 ### Contoh 2: Mencari suku yang hilang
 
-**Soal.** Resep es sirup memakai sirup dan air dengan perbandingan 2 : 5. Siti memakai 8 gelas sirup. Berapa gelas air yang ia perlukan?
-
-1. **Langkah 1: Tulis perbandingan senilai.** $2 : 5 = 8 : \ldots$
-2. **Langkah 2: Cari pengalinya.** Dari 2 gelas menjadi 8 gelas, resep dikali $8 \div 2 = 4$.
-3. **Langkah 3: Kalikan suku lainnya.** Air $= 5 \times 4 = 20$ gelas.
-4. **Cek jawaban.** $8 : 20$, dibagi FPB 4, menjadi $2 : 5$. Sama dengan resep. Benar.
-
-**Jawaban:** 20 gelas air.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Resep es sirup memakai sirup dan air dengan perbandingan 2 : 5. Siti memakai 8 gelas sirup. Berapa gelas air yang ia perlukan?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Tulis perbandingan senilai.",
+   "options": [
+    "2 : 5 = 8 : ...",
+    "2 : 5 = ... : 8",
+    "5 : 2 = 8 : ..."
+   ],
+   "answer": "2 : 5 = 8 : ...",
+   "hint": "8 gelas itu sirup. Sirup ada di suku pertama.",
+   "explain": "Sirup di depan: 2 : 5 = 8 : ...",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Dari 2 gelas menjadi 8 gelas, resep dikali berapa?",
+   "answer": "4",
+   "hint": "8 ÷ 2.",
+   "explain": "Resep dikali 4.",
+   "error": "salah-pengali-senilai"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Kalikan suku air dengan pengali yang sama.",
+   "answer": "20",
+   "hint": "5 × 4.",
+   "explain": "Air = 5 × 4 = 20 gelas.",
+   "error": "senilai-ditambah",
+   "suffix": "gelas"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: 8 : 20 disederhanakan menjadi ...",
+   "options": [
+    "2 : 5",
+    "4 : 10",
+    "8 : 20"
+   ],
+   "answer": "2 : 5",
+   "hint": "Bagi keduanya dengan FPB 4.",
+   "explain": "8 : 20 = 2 : 5, sama dengan resep. Benar.",
+   "error": "pecahan-belum-sederhana"
+  }
+ ],
+ "conclusion": "Jadi Siti memerlukan 20 gelas air."
+}
+```
 
 ### Contoh 3: Membagi uang menurut perbandingan
 
-**Soal.** Nenek memberi uang Rp72.000 kepada Budi dan Siti dengan perbandingan 4 : 5. Berapa uang masing-masing?
-
-1. **Langkah 1: Gambar model batang.**
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Nenek memberi uang Rp72.000 kepada Budi dan Siti dengan perbandingan 4 : 5. Berapa uang masing-masing?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Jumlahkan unit Budi dan Siti.",
+   "answer": "9",
+   "hint": "Budi 4 unit, Siti 5 unit.",
+   "explain": "4 + 5 = 9 unit = Rp72.000.",
+   "error": "salah-langkah-materi",
+   "suffix": "unit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Cari nilai 1 unit.",
+   "answer": "8.000",
+   "hint": "Bagi total uang dengan jumlah unit.",
+   "explain": "72.000 ÷ 9 = 8.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Uang Budi (4 unit) = ?",
+   "answer": "32.000",
+   "hint": "4 × nilai 1 unit.",
+   "explain": "4 × 8.000 = Rp32.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Uang Siti (5 unit) = ?",
+   "answer": "40.000",
+   "hint": "5 × nilai 1 unit.",
+   "explain": "5 × 8.000 = Rp40.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: uang Budi + uang Siti = ?",
+   "answer": "72.000",
+   "hint": "32.000 + 40.000.",
+   "explain": "72.000, sama dengan uang dari Nenek. Benar.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "Jadi Budi mendapat Rp32.000 dan Siti Rp40.000.",
+ "visual": {
+  "type": "barModel",
+  "bars": [
+   {
+    "label": "Budi",
+    "units": 4,
+    "unitValue": "u"
+   },
+   {
+    "label": "Siti",
+    "units": 5,
+    "unitValue": "u"
+   }
+  ],
+  "total": "Rp72.000"
+ }
+}
 ```
-Budi : [ u ][ u ][ u ][ u ]
-Siti : [ u ][ u ][ u ][ u ][ u ]
-Total: 4 + 5 = 9 unit = Rp72.000
-```
-2. **Langkah 2: Jumlahkan unit.** $4 + 5 = 9$ unit.
-3. **Langkah 3: Cari nilai 1 unit.** $72.000 \div 9 = 8.000$.
-4. **Langkah 4: Hitung bagian tiap anak.** Budi $= 4 \times 8.000 = 32.000$. Siti $= 5 \times 8.000 = 40.000$.
-5. **Cek jawaban.** $32.000 + 40.000 = 72.000$. Lalu $32.000 : 40.000$ dibagi 8.000 menjadi $4 : 5$. Benar.
-
-**Jawaban:** Budi Rp32.000, Siti Rp40.000.
 
 ### Contoh 4: Soal cerita tiga besaran dengan selisih
 
-**Soal.** Perbandingan kelereng Made, Putu, dan Ketut adalah 2 : 3 : 5. Kelereng Ketut 36 butir lebih banyak daripada kelereng Made. Berapa jumlah kelereng mereka bertiga?
-
-1. **Langkah 1: Gambar model batang.**
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Perbandingan kelereng Made, Putu, dan Ketut adalah 2 : 3 : 5. Kelereng Ketut 36 butir lebih banyak daripada kelereng Made. Berapa jumlah kelereng mereka bertiga?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Ketut 5 unit, Made 2 unit. Selisihnya berapa unit?",
+   "answer": "3",
+   "hint": "5 − 2.",
+   "explain": "Selisihnya 3 unit, dan 3 unit = 36 butir.",
+   "error": "selisih-dijumlah",
+   "suffix": "unit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Cari nilai 1 unit.",
+   "answer": "12",
+   "hint": "36 dibagi selisih unit.",
+   "explain": "36 ÷ 3 = 12 butir.",
+   "error": "salah-langkah-materi",
+   "suffix": "butir"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Berapa total unit ketiganya?",
+   "answer": "10",
+   "hint": "2 + 3 + 5.",
+   "explain": "Total 10 unit.",
+   "error": "salah-langkah-materi",
+   "suffix": "unit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Jumlah kelereng mereka bertiga = ?",
+   "answer": "120",
+   "hint": "Total unit × nilai 1 unit.",
+   "explain": "10 × 12 = 120 butir.",
+   "error": "salah-langkah-materi",
+   "suffix": "butir"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: Ketut (5 unit) dikurangi Made (2 unit) = ? butir",
+   "answer": "36",
+   "hint": "Ketut 60, Made 24.",
+   "explain": "60 − 24 = 36. Sesuai soal. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "butir"
+  }
+ ],
+ "conclusion": "Jadi jumlah kelereng mereka 120 butir.",
+ "visual": {
+  "type": "barModel",
+  "bars": [
+   {
+    "label": "Made",
+    "units": 2,
+    "unitValue": "u"
+   },
+   {
+    "label": "Putu",
+    "units": 3,
+    "unitValue": "u"
+   },
+   {
+    "label": "Ketut",
+    "units": 5,
+    "unitValue": "u"
+   }
+  ]
+ }
+}
 ```
-Made  : [ u ][ u ]
-Putu  : [ u ][ u ][ u ]
-Ketut : [ u ][ u ][ u ][ u ][ u ]
-                  |<---- 36 --->|
-```
-2. **Langkah 2: Cari selisih unit.** Ketut 5 unit, Made 2 unit. Selisihnya $5 - 2 = 3$ unit.
-3. **Langkah 3: Cari nilai 1 unit.** 3 unit = 36 butir, jadi 1 unit $= 36 \div 3 = 12$ butir.
-4. **Langkah 4: Hitung jumlah semua.** Total unit $= 2 + 3 + 5 = 10$. Jumlah kelereng $= 10 \times 12 = 120$ butir.
-5. **Cek jawaban.** Made $= 24$, Putu $= 36$, Ketut $= 60$. Selisih Ketut dan Made $= 60 - 24 = 36$. Jumlah $= 24 + 36 + 60 = 120$. Benar.
-
-**Jawaban:** 120 butir kelereng.
 
 ## Kesalahan yang sering terjadi
 
@@ -151,16 +369,201 @@ Ketut : [ u ][ u ][ u ][ u ][ u ]
 
 ## Cek pemahaman
 
-1. Sederhanakan 45 : 60 : 75.
-2. $2 : 7 = \ldots : 35$
-3. Uang Rp150.000 dibagi kepada Andi dan Rina dengan perbandingan 2 : 3. Berapa uang Rina?
-4. Perbandingan tepung dan gula adalah 3 : 5. Tepung adalah pecahan berapa dari gula? Tepung adalah pecahan berapa dari seluruh campuran?
-5. Perbandingan uang Dewi dan Fajar adalah 5 : 2. Uang Dewi Rp24.000 lebih banyak daripada uang Fajar. Berapa jumlah uang mereka berdua?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. 3 : 4 : 5. FPB dari 45, 60, dan 75 adalah 15.
-2. 10. Dari 7 ke 35 dikali 5, jadi $2 \times 5 = 10$.
-3. Rp90.000. 5 unit = Rp150.000, 1 unit = Rp30.000, Rina = 3 unit.
-4. $\frac{3}{5}$ dari gula, dan $\frac{3}{8}$ dari seluruh campuran (total $3 + 5 = 8$ unit).
-5. Rp56.000. Selisih 3 unit = Rp24.000, jadi 1 unit = Rp8.000, dan total 7 unit = Rp56.000.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Sederhanakan 45 : 60 : 75.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Cari FPB dari 45, 60, dan 75.",
+   "answer": "15",
+   "hint": "Bilangan terbesar yang membagi ketiganya. Coba 15.",
+   "explain": "FPB-nya 15.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Bagi semua suku dengan FPB. Hasilnya ...",
+   "options": [
+    "3 : 4 : 5",
+    "9 : 12 : 15",
+    "15 : 20 : 25"
+   ],
+   "answer": "3 : 4 : 5",
+   "hint": "45 ÷ 15, 60 ÷ 15, 75 ÷ 15.",
+   "explain": "45 : 60 : 75 = 3 : 4 : 5.",
+   "error": "pecahan-belum-sederhana"
+  }
+ ],
+ "conclusion": "Jadi 45 : 60 : 75 = 3 : 4 : 5."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Lengkapi: $2 : 7 = \\ldots : 35$",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Dari 7 menjadi 35, dikali berapa?",
+   "answer": "5",
+   "hint": "35 ÷ 7.",
+   "explain": "Dikali 5.",
+   "error": "salah-pengali-senilai"
+  },
+  {
+   "kind": "number",
+   "prompt": "Suku yang hilang = ?",
+   "answer": "10",
+   "hint": "Kalikan 2 dengan pengali yang sama.",
+   "explain": "2 × 5 = 10.",
+   "error": "senilai-ditambah"
+  }
+ ],
+ "conclusion": "Jadi 2 : 7 = 10 : 35."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Uang Rp150.000 dibagi kepada Andi dan Rina dengan perbandingan 2 : 3. Berapa uang Rina?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Berapa jumlah unitnya?",
+   "answer": "5",
+   "hint": "2 + 3.",
+   "explain": "5 unit = Rp150.000.",
+   "error": "salah-langkah-materi",
+   "suffix": "unit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa nilai 1 unit?",
+   "answer": "30.000",
+   "hint": "150.000 ÷ 5.",
+   "explain": "1 unit = Rp30.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa uang Rina?",
+   "answer": "90.000",
+   "hint": "Rina 3 unit.",
+   "explain": "3 × 30.000 = Rp90.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "Jadi uang Rina Rp90.000."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Perbandingan tepung dan gula adalah 3 : 5.",
+ "steps": [
+  {
+   "kind": "fraction",
+   "prompt": "Tepung adalah pecahan berapa dari gula?",
+   "answer": {
+    "num": 3,
+    "den": 5
+   },
+   "hint": "Tepung dibandingkan dengan gula saja.",
+   "explain": "Tepung $= \\frac{3}{5}$ dari gula.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Seluruh campuran ada berapa unit?",
+   "answer": "8",
+   "hint": "3 + 5.",
+   "explain": "Total 8 unit.",
+   "error": "salah-langkah-materi",
+   "suffix": "unit"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Tepung adalah pecahan berapa dari seluruh campuran?",
+   "answer": {
+    "num": 3,
+    "den": 8
+   },
+   "hint": "Tepung 3 unit dari total unit.",
+   "explain": "Tepung $= \\frac{3}{8}$ dari seluruh campuran.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  }
+ ],
+ "conclusion": "Jadi tepung $\\frac{3}{5}$ dari gula dan $\\frac{3}{8}$ dari seluruh campuran.",
+ "visual": {
+  "type": "barModel",
+  "bars": [
+   {
+    "label": "Tepung",
+    "units": 3
+   },
+   {
+    "label": "Gula",
+    "units": 5
+   }
+  ]
+ }
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Perbandingan uang Dewi dan Fajar adalah 5 : 2. Uang Dewi Rp24.000 lebih banyak daripada uang Fajar. Berapa jumlah uang mereka berdua?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Selisih uang mereka berapa unit?",
+   "answer": "3",
+   "hint": "5 − 2.",
+   "explain": "3 unit = Rp24.000.",
+   "error": "selisih-dijumlah",
+   "suffix": "unit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa nilai 1 unit?",
+   "answer": "8.000",
+   "hint": "24.000 ÷ 3.",
+   "explain": "1 unit = Rp8.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa jumlah uang mereka berdua?",
+   "answer": "56.000",
+   "hint": "Total 5 + 2 = 7 unit.",
+   "explain": "7 × 8.000 = Rp56.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "Jadi jumlah uang mereka Rp56.000."
+}
+```

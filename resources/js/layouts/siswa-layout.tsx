@@ -11,9 +11,9 @@ export default function SiswaLayout({ title, children, wide = false }: { title: 
     const { auth } = usePage<SharedData>().props;
     const s = auth.student;
     return (
-        <div className="min-h-screen bg-[#f6fbf8] text-slate-800 dark:bg-slate-950 dark:text-slate-100">
+        <div className="min-h-screen text-slate-800 dark:bg-slate-950 dark:text-slate-100">
             <Head title={title} />
-            <header className="sticky top-0 z-20 border-b border-emerald-100 bg-white/90 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90">
+            <header className="sticky top-0 z-20 border-b border-slate-200/80 bg-white/85 backdrop-blur dark:border-slate-800 dark:bg-slate-900/90">
                 <div className="mx-auto flex h-14 max-w-5xl items-center gap-3 px-4">
                     <Link href={route('siswa.home')} className="flex items-center" aria-label="Beranda belajar"><AppLogo /></Link>
                     <div className="flex-1" />

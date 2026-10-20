@@ -32,9 +32,9 @@ export default function Welcome({ plans, topicCount }: Props) {
                     content="Langkah: latihan matematika kurikulum Singapura (MOE) untuk SD–SMA. Tiap soal dipecah jadi langkah kecil, dengan laporan kesalahan untuk orang tua. Coba gratis 7 hari."
                 />
             </Head>
-            <div className="min-h-screen bg-[#fffaf2] text-zinc-900 dark:bg-zinc-950 dark:text-zinc-100">
+            <div className="min-h-screen text-[#1A1F36] dark:bg-zinc-950 dark:text-zinc-100">
                 {/* Header */}
-                <header className="sticky top-0 z-30 border-b border-amber-900/10 bg-[#fffaf2]/90 backdrop-blur dark:border-white/10 dark:bg-zinc-950/85">
+                <header className="sticky top-0 z-30 border-b border-slate-200 bg-white/85 backdrop-blur dark:border-white/10 dark:bg-zinc-950/85">
                     <div className="mx-auto flex h-16 max-w-6xl items-center gap-3 px-4 sm:px-6">
                         <Link href="/" className="flex items-center" aria-label="Langkah, ke beranda">
                             <AppLogo />
@@ -48,11 +48,11 @@ export default function Welcome({ plans, topicCount }: Props) {
                                 <>
                                     <Link
                                         href={route('login')}
-                                        className="hidden rounded-full px-3 py-2 hover:bg-amber-900/5 sm:inline-block dark:hover:bg-white/5"
+                                        className="hidden rounded-full px-3 py-2 hover:bg-slate-900/5 sm:inline-block dark:hover:bg-white/5"
                                     >
                                         Masuk orang tua
                                     </Link>
-                                    <Link href="/masuk-siswa" className="rounded-full px-3 py-2 hover:bg-amber-900/5 dark:hover:bg-white/5">
+                                    <Link href="/masuk-siswa" className="rounded-full px-3 py-2 hover:bg-slate-900/5 dark:hover:bg-white/5">
                                         Masuk siswa
                                     </Link>
                                     <Link
@@ -73,11 +73,11 @@ export default function Welcome({ plans, topicCount }: Props) {
                         <Stairs className="text-brand-100 dark:text-brand-700/20 pointer-events-none absolute -right-24 -bottom-10 hidden h-[420px] w-auto lg:block" />
                         <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 pt-12 pb-16 sm:px-6 lg:grid-cols-[1.1fr_1fr] lg:pt-20 lg:pb-24">
                             <div>
-                                <p className="text-brand-700 dark:text-brand-100 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-bold ring-1 ring-amber-900/10 dark:bg-white/5 dark:ring-white/10">
+                                <p className="text-brand-700 dark:text-brand-100 inline-flex items-center gap-2 rounded-full bg-white px-3 py-1 text-xs font-bold ring-1 ring-slate-200 dark:bg-white/5 dark:ring-white/10">
                                     <span className="bg-sun-400 size-2 rounded-full" /> Kurikulum Singapura (MOE) · SD sampai SMA
                                 </p>
                                 <h1 className="font-display mt-5 text-4xl leading-[1.05] font-extrabold tracking-tight text-balance sm:text-5xl lg:text-6xl">
-                                    Belajar matematika <span className="text-brand-600 dark:text-brand-500">selangkah</span> demi selangkah
+                                    Belajar matematika selangkah demi selangkah
                                 </h1>
                                 <p className="mt-5 max-w-xl text-lg text-zinc-700 dark:text-zinc-300">
                                     Anak memahami konsep lewat analogi sehari-hari, lalu berlatih soal yang dipecah menjadi langkah-langkah kecil.
@@ -88,7 +88,7 @@ export default function Welcome({ plans, topicCount }: Props) {
                                         href={route('register')}
                                         className="bg-brand-600 hover:bg-brand-700 inline-flex items-center justify-center gap-2 rounded-full px-6 py-3 text-base font-bold text-white shadow-md transition"
                                     >
-                                        Coba gratis 7 hari <ArrowRight className="size-4" />
+                                        Coba gratis 7 hari
                                     </Link>
                                     <span className="text-sm text-zinc-600 dark:text-zinc-400">Tanpa kartu kredit · tidak diperpanjang otomatis</span>
                                 </div>
@@ -98,7 +98,7 @@ export default function Welcome({ plans, topicCount }: Props) {
                     </section>
 
                     {/* Cara kerja */}
-                    <section className="border-y border-amber-900/10 bg-white dark:border-white/10 dark:bg-zinc-900/40" aria-labelledby="cara-kerja">
+                    <section className="border-y border-slate-200 bg-white dark:border-white/10 dark:bg-zinc-900/40" aria-labelledby="cara-kerja">
                         <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
                             <h2 id="cara-kerja" className="font-display max-w-2xl text-3xl font-bold sm:text-4xl">
                                 Tiga langkah yang saling menyambung
@@ -110,7 +110,7 @@ export default function Welcome({ plans, topicCount }: Props) {
                                 {STEPS.map((s, i) => (
                                     <li
                                         key={s.title}
-                                        className="relative rounded-3xl bg-[#fffaf2] p-6 ring-1 ring-amber-900/10 dark:bg-zinc-900 dark:ring-white/10"
+                                        className="relative rounded-3xl bg-white p-6 ring-1 ring-slate-200 dark:bg-zinc-900 dark:ring-white/10"
                                     >
                                         <div className="flex items-center gap-3">
                                             <span className="font-display bg-brand-600 flex size-10 items-center justify-center rounded-2xl text-lg font-bold text-white">
@@ -120,7 +120,7 @@ export default function Welcome({ plans, topicCount }: Props) {
                                         </div>
                                         <h3 className="font-display mt-4 text-xl font-bold">{s.title}</h3>
                                         <p className="mt-2 text-zinc-700 dark:text-zinc-300">{s.body}</p>
-                                        <p className="mt-4 rounded-xl bg-white p-3 text-sm text-zinc-600 ring-1 ring-amber-900/10 dark:bg-zinc-950 dark:text-zinc-400 dark:ring-white/10">
+                                        <p className="mt-4 rounded-xl bg-white p-3 text-sm text-zinc-600 ring-1 ring-slate-200 dark:bg-zinc-950 dark:text-zinc-400 dark:ring-white/10">
                                             {s.example}
                                         </p>
                                     </li>
@@ -164,7 +164,7 @@ export default function Welcome({ plans, topicCount }: Props) {
 
                     {/* Harga */}
                     {plans.length > 0 && (
-                        <section className="bg-brand-700 text-white dark:bg-[#073d31]" aria-labelledby="harga">
+                        <section className="bg-brand-700 text-white dark:bg-brand-950" aria-labelledby="harga">
                             <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 lg:py-20">
                                 <h2 id="harga" className="font-display text-3xl font-bold sm:text-4xl">
                                     Satu langganan untuk seluruh keluarga
@@ -241,7 +241,7 @@ export default function Welcome({ plans, topicCount }: Props) {
                         <h2 id="faq" className="font-display text-3xl font-bold sm:text-4xl">
                             Pertanyaan orang tua
                         </h2>
-                        <div className="mt-8 divide-y divide-amber-900/10 rounded-3xl bg-white ring-1 ring-amber-900/10 dark:divide-white/10 dark:bg-zinc-900 dark:ring-white/10">
+                        <div className="mt-8 divide-y divide-amber-900/10 rounded-3xl bg-white ring-1 ring-slate-200 dark:divide-white/10 dark:bg-zinc-900 dark:ring-white/10">
                             {FAQ.map((f) => (
                                 <details key={f.q} className="group p-5">
                                     <summary className="flex cursor-pointer list-none items-center justify-between gap-4 font-bold">
@@ -266,7 +266,7 @@ export default function Welcome({ plans, topicCount }: Props) {
                     </section>
                 </main>
 
-                <footer className="border-t border-amber-900/10 dark:border-white/10">
+                <footer className="border-t border-slate-200 dark:border-white/10">
                     <div className="mx-auto flex max-w-6xl flex-col gap-4 px-4 py-8 text-sm text-zinc-600 sm:flex-row sm:items-center sm:px-6 dark:text-zinc-400">
                         <div className="flex items-center">
                             <AppLogo />
@@ -370,7 +370,7 @@ function ColumnAddition() {
             role="img"
         >
             <div className="bg-sun-300/50 dark:bg-sun-400/10 absolute -inset-3 -rotate-2 rounded-[2rem]" aria-hidden />
-            <div className="relative rounded-[1.75rem] bg-white p-5 shadow-xl ring-1 ring-amber-900/10 sm:p-7 dark:bg-zinc-900 dark:ring-white/10">
+            <div className="relative rounded-[1.75rem] bg-white p-5 shadow-xl ring-1 ring-slate-200 sm:p-7 dark:bg-zinc-900 dark:ring-white/10">
                 <div className="flex items-center justify-between text-xs font-bold">
                     <span className="text-brand-700 dark:text-brand-100 bg-brand-50 dark:bg-brand-700/30 rounded-full px-2.5 py-1">
                         Langkah 2 dari 3
@@ -424,7 +424,7 @@ function ColumnAddition() {
                     </div>
                 </div>
 
-                <div className="mt-6 rounded-2xl bg-[#fffaf2] p-4 text-sm ring-1 ring-amber-900/10 dark:bg-zinc-950 dark:ring-white/10">
+                <div className="mt-6 rounded-2xl bg-white p-4 text-sm ring-1 ring-slate-200 dark:bg-zinc-950 dark:ring-white/10">
                     <p className="font-bold">Satuan: 7 + 8 = 15</p>
                     <p className="mt-1 text-zinc-600 dark:text-zinc-400">
                         Tulis <b className="text-brand-700 dark:text-brand-100">5</b> di kolom satuan, lalu simpan{' '}

@@ -32,7 +32,7 @@ function Glyph({ name }: { name: AvatarName }) {
             return (
                 <path
                     d="M20 7.5l3.6 7.4 8.1 1.1-5.9 5.7 1.4 8.1L20 26l-7.2 3.8 1.4-8.1-5.9-5.7 8.1-1.1z"
-                    fill="#f59e0b"
+                    fill="#E2901F"
                     stroke="#b45309"
                     strokeWidth="1.2"
                     strokeLinejoin="round"
@@ -41,9 +41,9 @@ function Glyph({ name }: { name: AvatarName }) {
         case 'roket':
             return (
                 <g strokeLinejoin="round">
-                    <path d="M20 6c5 3.5 6.5 9 6 16h-12c-.5-7 1-12.5 6-16z" fill="#f8fafc" stroke="#0369a1" strokeWidth="1.4" />
-                    <circle cx="20" cy="15" r="2.6" fill="#38bdf8" stroke="#0369a1" strokeWidth="1.2" />
-                    <path d="M14 18l-4 6h4.5zM26 18l4 6h-4.5z" fill="#ef4444" stroke="#b91c1c" strokeWidth="1" />
+                    <path d="M20 6c5 3.5 6.5 9 6 16h-12c-.5-7 1-12.5 6-16z" fill="#f8fafc" stroke="#2440B4" strokeWidth="1.4" />
+                    <circle cx="20" cy="15" r="2.6" fill="#6F8BEA" stroke="#2440B4" strokeWidth="1.2" />
+                    <path d="M14 18l-4 6h4.5zM26 18l4 6h-4.5z" fill="#D9503D" stroke="#b91c1c" strokeWidth="1" />
                     <path d="M17 23h6l-1.2 5h-3.6z" fill="#fb923c" />
                     <path d="M18.6 28h2.8L20 33z" fill="#facc15" />
                 </g>
@@ -80,9 +80,9 @@ function Glyph({ name }: { name: AvatarName }) {
         case 'pelangi':
             return (
                 <g fill="none" strokeLinecap="round" strokeWidth="2.6">
-                    <path d="M7 27a13 13 0 0126 0" stroke="#ef4444" />
-                    <path d="M10 27a10 10 0 0120 0" stroke="#f59e0b" />
-                    <path d="M13 27a7 7 0 0114 0" stroke="#22c55e" />
+                    <path d="M7 27a13 13 0 0126 0" stroke="#D9503D" />
+                    <path d="M10 27a10 10 0 0120 0" stroke="#E2901F" />
+                    <path d="M13 27a7 7 0 0114 0" stroke="#279469" />
                     <path d="M16 27a4 4 0 018 0" stroke="#3b82f6" />
                 </g>
             );
@@ -98,7 +98,7 @@ function Glyph({ name }: { name: AvatarName }) {
             return (
                 <g strokeLinejoin="round" strokeLinecap="round">
                     <path d="M20 8v3.5" stroke="#475569" strokeWidth="1.4" />
-                    <circle cx="20" cy="7.5" r="1.6" fill="#ef4444" />
+                    <circle cx="20" cy="7.5" r="1.6" fill="#D9503D" />
                     <rect x="10" y="11.5" width="20" height="16" rx="4" fill="#94a3b8" stroke="#334155" strokeWidth="1.3" />
                     <circle cx="15.5" cy="18.5" r="2.4" fill="#fef08a" stroke="#334155" strokeWidth="1" />
                     <circle cx="24.5" cy="18.5" r="2.4" fill="#fef08a" stroke="#334155" strokeWidth="1" />
@@ -109,8 +109,8 @@ function Glyph({ name }: { name: AvatarName }) {
         case 'bunga':
             return (
                 <g strokeLinejoin="round">
-                    <path d="M20 23v9" stroke="#16a34a" strokeWidth="1.6" strokeLinecap="round" />
-                    <path d="M20 29c-3.5 0-5-2-5.5-3.5 2.5-.5 4.5.5 5.5 3.5z" fill="#22c55e" />
+                    <path d="M20 23v9" stroke="#1A7A56" strokeWidth="1.6" strokeLinecap="round" />
+                    <path d="M20 29c-3.5 0-5-2-5.5-3.5 2.5-.5 4.5.5 5.5 3.5z" fill="#279469" />
                     {[0, 72, 144, 216, 288].map((r) => (
                         <ellipse
                             key={r}

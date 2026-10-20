@@ -19,6 +19,10 @@ Bayangkan setiap data adalah **paku** yang ditancapkan di papan. Kita ingin mema
 - Jika paku-paku berbaris rapat di sekitar penggaris, pegas hampir tidak teregang: **korelasi kuat**.
 - Jika paku-paku tersebar seperti awan bulat, penggaris tidak banyak membantu: **korelasi lemah**.
 
+```anim
+{"type": "grafik", "title": "Paku dan penggaris", "xmin": 0, "xmax": 6, "ymin": 0, "ymax": 7, "kurva": [{"f": "1.3+0.9x", "label": "y = 1{,}3 + 0{,}9x"}], "titik": [{"x": 1, "y": 2, "label": ""}, {"x": 2, "y": 3, "label": ""}, {"x": 3, "y": 5, "label": ""}, {"x": 4, "y": 4, "label": ""}, {"x": 5, "y": 6, "label": ""}], "langkah": [{"say": "Lima paku ditancapkan di papan: data $(x, y)$.", "kurva": 0, "titik": 5}, {"say": "Penggaris berhenti di posisi dengan total energi pegas (kuadrat jarak tegak) paling kecil.", "kurva": 1, "titik": 5}, {"say": "Paku-paku cukup dekat dengan penggaris: korelasi positif yang kuat ($r \\approx 0{,}9$).", "kurva": 1, "titik": 5}]}
+```
+
 ## Konsep
 
 ### Diagram pencar
@@ -39,6 +43,10 @@ $$S_{xx} = \sum (x - \bar{x})^2 = \sum x^2 - \frac{(\sum x)^2}{n}, \qquad S_{yy}
 $$S_{xy} = \sum (x - \bar{x})(y - \bar{y}) = \sum xy - \frac{(\sum x)(\sum y)}{n}.$$
 
 **Kenapa $S_{xy}$?** Tarik garis bantu $x = \bar{x}$ dan $y = \bar{y}$. Titik di kanan-atas dan kiri-bawah membuat $(x - \bar{x})(y - \bar{y})$ positif. Titik di kiri-atas dan kanan-bawah membuatnya negatif. Jadi tanda $S_{xy}$ menunjukkan arah hubungan.
+
+```anim
+{"type": "grafik", "title": "Empat kuadran di sekitar titik rata-rata", "xmin": 0, "xmax": 6, "ymin": 0, "ymax": 7, "kurva": [], "titik": [{"x": 3, "y": 4, "label": "(x̄, ȳ)"}, {"x": 1, "y": 2, "label": ""}, {"x": 2, "y": 3, "label": ""}, {"x": 3, "y": 5, "label": ""}, {"x": 4, "y": 4, "label": ""}, {"x": 5, "y": 6, "label": ""}], "garis": [{"x": 3}, {"y": 4}], "langkah": [{"say": "Data yang sama: (1, 2), (2, 3), (3, 5), (4, 4), (5, 6). Rata-ratanya $\\bar{x} = 3$, $\\bar{y} = 4$.", "kurva": 0, "titik": 6}, {"say": "Tarik garis bantu $x = \\bar{x}$ dan $y = \\bar{y}$.", "kurva": 0, "titik": 6, "garis": 2}, {"say": "Titik kiri-bawah dan kanan-atas menyumbang hasil kali positif: $(-2)(-2) + (-1)(-1) + (2)(2) = 9$. Jadi $S_{xy} = 9 > 0$, hubungan positif.", "kurva": 0, "titik": 6, "garis": 2}]}
+```
 
 Supaya tidak bergantung pada satuan, $S_{xy}$ dibagi dengan ukuran penyebaran masing-masing:
 
@@ -78,70 +86,286 @@ Garis ini disebut **garis regresi kuadrat terkecil $y$ atas $x$**. Garis ini dip
 
 Jika diagram pencar melengkung, ubah variabel supaya titik-titik berbaris lurus.
 
-```
-Model           Bentuk linear                Variabel yang diregresikan
-y = a + b x^2   y = a + b (x^2)              y atas x^2
-y = a + b ln x  y = a + b (ln x)             y atas ln x
-y = a e^(bx)    ln y = ln a + b x            ln y atas x
-y = a x^b       ln y = ln a + b (ln x)       ln y atas ln x
+```visual
+{"type": "table", "head": ["Model", "Bentuk linear", "Variabel yang diregresikan"], "rows": [["y = a + b x²", "y = a + b (x²)", "y atas x²"], ["y = a + b ln x", "y = a + b (ln x)", "y atas ln x"], ["y = a eᵇˣ", "ln y = ln a + b x", "ln y atas x"], ["y = a xᵇ", "ln y = ln a + b (ln x)", "ln y atas ln x"]], "caption": "Meluruskan pola melengkung"}
 ```
 
 Pilih model yang $|r|$-nya paling dekat dengan 1, dan yang diagram pencarnya paling lurus. Setelah mendapat garis, kembalikan ke model asal.
 
+```anim
+{"type": "grafik", "title": "Pola melengkung diluruskan", "xmin": 0, "xmax": 5, "ymin": 0, "ymax": 12, "kurva": [{"f": "exp(0.5x)", "label": "y = e^{0{,}5x}"}, {"f": "0.5x", "label": "\\ln y = 0{,}5x"}], "langkah": [{"say": "Data mengikuti $y = e^{0{,}5x}$: melengkung, garis lurus kurang cocok.", "kurva": 1}, {"say": "Ambil ln: $\\ln y = 0{,}5x$. Sekarang polanya lurus, jadi regresikan $\\ln y$ atas $x$.", "kurva": 2}]}
+```
+
 ## Contoh langkah demi langkah
+
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
 
 ### Contoh 1: Menghitung $r$ dari ringkasan data
 
-**Soal.** Untuk 8 siswa, $x$ adalah jam bermain gim per minggu dan $y$ adalah skor kuis (skala 20). Diketahui $\sum x = 40$, $\sum y = 96$, $\sum x^2 = 240$, $\sum y^2 = 1240$, $\sum xy = 440$. Hitung $r$ dan tafsirkan.
-
-1. **Langkah 1: Hitung $S_{xx}$ dan $S_{yy}$.** $S_{xx} = 240 - \frac{40^2}{8} = 240 - 200 = 40$. $S_{yy} = 1240 - \frac{96^2}{8} = 1240 - 1152 = 88$.
-2. **Langkah 2: Hitung $S_{xy}$.** $S_{xy} = 440 - \frac{40 \times 96}{8} = 440 - 480 = -40$.
-3. **Langkah 3: Hitung $r$.** $r = \frac{-40}{\sqrt{40 \times 88}} = \frac{-40}{59{,}33} \approx -0{,}674$.
-4. **Langkah 4: Tafsirkan.** Ada korelasi linear negatif sedang: siswa yang lebih lama bermain gim cenderung mendapat skor lebih rendah. Ini tidak membuktikan bahwa gim **menyebabkan** skor turun.
-5. **Cek jawaban.** $S_{xx}$ dan $S_{yy}$ positif (wajib), dan $|S_{xy}| = 40 \le \sqrt{3520} \approx 59{,}3$, sehingga $|r| \le 1$. Konsisten.
-
-**Jawaban:** $r \approx -0{,}674$, korelasi linear negatif sedang.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Untuk 8 siswa, $x$ adalah jam bermain gim per minggu dan $y$ adalah skor kuis (skala 20). Diketahui $\\sum x = 40$, $\\sum y = 96$, $\\sum x^2 = 240$, $\\sum y^2 = 1240$, $\\sum xy = 440$. Hitung $r$ dan tafsirkan.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: $S_{xx} = 240 - \\frac{40^2}{8}$ = ?",
+   "answer": "40",
+   "hint": "$\\frac{1600}{8} = 200$.",
+   "explain": "$S_{xx} = 40$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$S_{yy} = 1240 - \\frac{96^2}{8}$ = ?",
+   "answer": "88",
+   "hint": "$\\frac{9216}{8} = 1152$.",
+   "explain": "$S_{yy} = 88$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $S_{xy} = 440 - \\frac{40 \\times 96}{8}$ = ?",
+   "answer": "-40",
+   "hint": "Jangan lupa membagi dengan $n = 8$.",
+   "explain": "$440 - 480 = -40$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $r = \\frac{-40}{\\sqrt{40 \\times 88}}$, bulatkan ke 3 desimal.",
+   "answer": "-0,674",
+   "hint": "$\\sqrt{3520} \\approx 59{,}33$.",
+   "explain": "$r \\approx -0{,}674$.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Tafsiran yang tepat?",
+   "options": [
+    "Korelasi linear negatif sedang; bukan bukti sebab-akibat",
+    "Bermain gim menyebabkan skor turun",
+    "Tidak ada hubungan sama sekali"
+   ],
+   "answer": "Korelasi linear negatif sedang; bukan bukti sebab-akibat",
+   "hint": "Lihat tanda dan besar $r$; ingat korelasi bukan sebab-akibat.",
+   "explain": "Siswa yang lebih lama bermain gim cenderung mendapat skor lebih rendah, tetapi ini tidak membuktikan gim penyebabnya.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $r \\approx -0{,}674$: korelasi linear negatif sedang."
+}
+```
 
 ### Contoh 2: Garis regresi dan perkiraan
 
-**Soal.** Data jam belajar tambahan per minggu ($x$) dan nilai ujian ($y$) enam siswa:
-
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Data jam belajar tambahan per minggu ($x$) dan nilai ujian ($y$) enam siswa ada di tabel. Tentukan $r$, garis regresi $y$ atas $x$, lalu perkirakan nilai untuk $x = 4{,}5$ dan komentari perkiraan untuk $x = 12$. Diketahui $\\sum x = 21$, $\\sum y = 394$, $\\sum x^2 = 91$, $\\sum y^2 = 26.434$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: $\\sum xy$ = ?",
+   "answer": "1477",
+   "hint": "52 + 116 + 183 + 280 + 360 + 486.",
+   "explain": "$\\sum xy = 1.477$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $S_{xx} = 91 - \\frac{21^2}{6}$ = ?",
+   "answer": "17,5",
+   "hint": "$\\frac{441}{6} = 73{,}5$.",
+   "explain": "$S_{xx} = 17{,}5$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$S_{xy} = 1477 - \\frac{21 \\times 394}{6}$ = ?",
+   "answer": "98",
+   "hint": "$\\frac{8274}{6} = 1379$.",
+   "explain": "$S_{xy} = 98$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Dengan $S_{yy} \\approx 561{,}33$, $r = \\frac{98}{\\sqrt{17{,}5 \\times 561{,}33}}$, bulatkan ke 3 desimal.",
+   "answer": "0,989",
+   "hint": "$\\sqrt{9823{,}3} \\approx 99{,}11$.",
+   "explain": "$r \\approx 0{,}989$: positif sangat kuat.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: $b = \\frac{S_{xy}}{S_{xx}}$ = ?",
+   "answer": "5,6",
+   "hint": "$\\frac{98}{17{,}5}$.",
+   "explain": "$b = 5{,}6$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$a = \\bar{y} - b\\bar{x}$ dengan $\\bar{y} = \\frac{394}{6}$, $\\bar{x} = 3{,}5$. Bulatkan ke 2 desimal.",
+   "answer": "46,07",
+   "hint": "$65{,}667 - 19{,}6$.",
+   "explain": "$a \\approx 46{,}07$, garisnya $y = 46{,}07 + 5{,}6x$.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: Perkiraan untuk $x = 4{,}5$, bulatkan ke 2 desimal.",
+   "answer": "71,27",
+   "hint": "$46{,}07 + 5{,}6 \\times 4{,}5$.",
+   "explain": "$46{,}07 + 25{,}2 = 71{,}27$. Interpolasi dengan $r$ dekat 1: dapat dipercaya.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Perkiraan untuk $x = 12$ sekitar 113. Komentarnya?",
+   "options": [
+    "Tidak dapat dipercaya: ekstrapolasi dan melebihi nilai maksimum 100",
+    "Dapat dipercaya karena r dekat 1",
+    "Dapat dipercaya karena garisnya lurus"
+   ],
+   "answer": "Tidak dapat dipercaya: ekstrapolasi dan melebihi nilai maksimum 100",
+   "hint": "Apakah $x = 12$ di dalam rentang data 1 sampai 6?",
+   "explain": "Di luar rentang data, pola belum tentu berlanjut; nilai 113 bahkan mustahil.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $r \\approx 0{,}989$, garisnya $y = 46{,}07 + 5{,}6x$, perkiraan untuk $x = 4{,}5$ sekitar 71,3, dan perkiraan untuk $x = 12$ tidak dapat dipercaya.",
+ "visual": {
+  "type": "table",
+  "head": [
+   "x",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "rows": [
+   [
+    "y",
+    "52",
+    "58",
+    "61",
+    "70",
+    "72",
+    "81"
+   ]
+  ]
+ }
+}
 ```
-x   1    2    3    4    5    6
-y   52   58   61   70   72   81
-```
-
-Tentukan $r$, garis regresi $y$ atas $x$, lalu perkirakan nilai untuk $x = 4{,}5$ dan komentari perkiraan untuk $x = 12$.
-
-1. **Langkah 1: Hitung jumlah-jumlah.** $\sum x = 21$, $\sum y = 394$, $\sum x^2 = 91$, $\sum y^2 = 26\,434$, $\sum xy = 1477$.
-2. **Langkah 2: Hitung $S$.** $S_{xx} = 91 - \frac{21^2}{6} = 17{,}5$. $S_{yy} = 26\,434 - \frac{394^2}{6} \approx 561{,}33$. $S_{xy} = 1477 - \frac{21 \times 394}{6} = 1477 - 1379 = 98$.
-3. **Langkah 3: Hitung $r$.** $r = \frac{98}{\sqrt{17{,}5 \times 561{,}33}} = \frac{98}{99{,}11} \approx 0{,}989$. Korelasi linear positif sangat kuat.
-4. **Langkah 4: Hitung $b$ dan $a$.** $b = \frac{98}{17{,}5} = 5{,}6$. $\bar{x} = 3{,}5$ dan $\bar{y} = \frac{394}{6} \approx 65{,}67$, jadi $a = 65{,}67 - 5{,}6 \times 3{,}5 \approx 46{,}07$. Garisnya $y = 46{,}07 + 5{,}6x$.
-5. **Langkah 5: Perkirakan.** Untuk $x = 4{,}5$: $y \approx 46{,}07 + 25{,}2 = 71{,}27$. Ini interpolasi dan $r$ dekat 1, jadi dapat dipercaya. Untuk $x = 12$: $y \approx 113{,}3$, melebihi nilai maksimum 100. Ini ekstrapolasi dan tidak dapat dipercaya.
-6. **Cek jawaban.** Garis harus melalui $(\bar{x}, \bar{y})$: $46{,}07 + 5{,}6 \times 3{,}5 = 65{,}67 = \bar{y}$. Benar.
-
-**Jawaban:** $r \approx 0{,}989$; $y = 46{,}07 + 5{,}6x$; perkiraan untuk $x = 4{,}5$ sekitar 71,3; perkiraan untuk $x = 12$ tidak dapat dipercaya.
 
 ### Contoh 3: Harga motor bekas, model eksponensial
 
-**Soal.** Harga pasaran ($y$, juta rupiah) sebuah model motor menurut umurnya ($x$, tahun):
-
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Harga pasaran ($y$, juta rupiah) sebuah model motor menurut umurnya ($x$, tahun) ada di tabel. Bandingkan model $y = a + bx$ dan $y = ae^{bx}$, pilih yang lebih cocok, lalu perkirakan harga motor berumur 3,5 tahun.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Model $y = ae^{bx}$ diluruskan menjadi?",
+   "options": [
+    "$\\ln y = \\ln a + bx$",
+    "$y = \\ln a + b\\ln x$",
+    "$\\ln y = a + b\\ln x$"
+   ],
+   "answer": "$\\ln y = \\ln a + bx$",
+   "hint": "Ambil ln kedua ruas.",
+   "explain": "$\\ln y = \\ln a + bx$, jadi regresikan $\\ln y$ atas $x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Hitung $\\ln y$ untuk $x = 1$ ($y = 16$), bulatkan ke 4 desimal.",
+   "answer": "2,7726",
+   "hint": "$\\ln 16$.",
+   "explain": "$\\ln 16 \\approx 2{,}7726$.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Kalkulator memberi $r = -0{,}9900$ (linear) dan $r = -0{,}9996$ ($\\ln y$ atas $x$). Model mana yang lebih cocok?",
+   "options": [
+    "Eksponensial",
+    "Linear"
+   ],
+   "answer": "Eksponensial",
+   "hint": "Pilih $|r|$ yang paling dekat 1.",
+   "explain": "$0{,}9996 > 0{,}9900$. Masuk akal: harga turun dengan persentase yang kira-kira sama tiap tahun.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Garisnya $\\ln y = 2{,}9369 - 0{,}1694x$. Nilai $a = e^{2{,}9369}$, bulatkan ke 2 desimal.",
+   "answer": "18,86",
+   "hint": "Titik potong garis adalah $\\ln a$.",
+   "explain": "$a \\approx 18{,}86$, jadi $y = 18{,}86\\,e^{-0{,}1694x}$.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Untuk $x = 3{,}5$, $\\ln y$ = ? (4 desimal)",
+   "answer": "2,344",
+   "hint": "$2{,}9369 - 0{,}1694 \\times 3{,}5$.",
+   "explain": "$2{,}9369 - 0{,}5929 = 2{,}3440$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Harga $y$ (juta rupiah), bulatkan ke 2 desimal.",
+   "answer": "10,42",
+   "hint": "Kembalikan transformasi: $y = e^{2{,}3440}$.",
+   "explain": "$y \\approx 10{,}42$ juta. Jangan berhenti di 2,344, itu nilai $\\ln y$.",
+   "error": "salah-pembulatan",
+   "suffix": "juta"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: apakah 10,42 masuk akal?",
+   "options": [
+    "Ya, di antara harga umur 3 tahun (11,2) dan 4 tahun (9,6)",
+    "Tidak, harus lebih dari 11,2",
+    "Tidak, harus kurang dari 9,6"
+   ],
+   "answer": "Ya, di antara harga umur 3 tahun (11,2) dan 4 tahun (9,6)",
+   "hint": "Bandingkan dengan data di tabel.",
+   "explain": "Umur 3,5 di antara 3 dan 4, harganya juga di antara. Interpolasi.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi model $y = 18{,}86\\,e^{-0{,}1694x}$ lebih cocok, dan harga motor umur 3,5 tahun sekitar Rp10,4 juta.",
+ "visual": {
+  "type": "table",
+  "head": [
+   "x",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5",
+   "6"
+  ],
+  "rows": [
+   [
+    "y",
+    "16,0",
+    "13,5",
+    "11,2",
+    "9,6",
+    "8,0",
+    "6,9"
+   ]
+  ]
+ }
+}
 ```
-x   1      2      3      4      5      6
-y   16,0   13,5   11,2   9,6    8,0    6,9
-```
-
-Bandingkan model $y = a + bx$ dan $y = ae^{bx}$, pilih yang lebih cocok, lalu perkirakan harga motor berumur 3,5 tahun.
-
-1. **Langkah 1: Hitung $r$ untuk model linear.** Dengan kalkulator, $r$ untuk $y$ atas $x$ adalah $-0{,}9900$.
-2. **Langkah 2: Transformasi.** $y = ae^{bx}$ menjadi $\ln y = \ln a + bx$. Hitung $\ln y$: 2,7726; 2,6027; 2,4159; 2,2618; 2,0794; 1,9315.
-3. **Langkah 3: Hitung $r$ untuk $\ln y$ atas $x$.** Dengan kalkulator, $r = -0{,}9996$.
-4. **Langkah 4: Pilih model.** $|-0{,}9996| > |-0{,}9900|$, jadi model eksponensial lebih cocok. Ini juga masuk akal: motor kehilangan **persentase** harga yang kira-kira sama setiap tahun.
-5. **Langkah 5: Cari garis regresi $\ln y$ atas $x$.** Dari kalkulator: $\ln y = 2{,}9369 - 0{,}1694x$. Jadi $b = -0{,}1694$ dan $a = e^{2{,}9369} \approx 18{,}86$. Modelnya $y = 18{,}86\,e^{-0{,}1694x}$.
-6. **Langkah 6: Perkirakan.** Untuk $x = 3{,}5$: $\ln y = 2{,}9369 - 0{,}5929 = 2{,}3440$, jadi $y = e^{2{,}3440} \approx 10{,}42$. Ini interpolasi.
-7. **Cek jawaban.** Nilai 10,42 berada di antara harga umur 3 tahun (11,2) dan 4 tahun (9,6), sesuai harapan. Faktor tahunan $e^{-0{,}1694} \approx 0{,}844$ berarti harga turun sekitar 15,6% per tahun; misalnya $16{,}0 \times 0{,}844 \approx 13{,}5$, cocok dengan data umur 2 tahun.
-
-**Jawaban:** Model $y = 18{,}86\,e^{-0{,}1694x}$ lebih cocok; harga motor umur 3,5 tahun sekitar Rp10,4 juta.
 
 ## Kesalahan yang sering terjadi
 
@@ -161,16 +385,206 @@ Bandingkan model $y = a + bx$ dan $y = ae^{bx}$, pilih yang lebih cocok, lalu pe
 
 ## Cek pemahaman
 
-1. Diketahui $S_{xx} = 40$, $S_{yy} = 90$, $S_{xy} = 54$. Hitung $r$.
-2. Dengan data nomor 1, $\bar{x} = 5$ dan $\bar{y} = 20$. Tentukan garis regresi $y$ atas $x$.
-3. Dengan garis dari nomor 2, perkirakan $y$ untuk $x = 7$ (nilai $x$ data berkisar 1 sampai 10).
-4. Model $y = ax^b$ ingin diuji. Variabel apa yang harus dihitung koefisien korelasinya, dan apa arti gradien serta titik potong garisnya?
-5. Hitung $r$ untuk data $(-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4)$, lalu jelaskan artinya.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $r = \frac{54}{\sqrt{40 \times 90}} = \frac{54}{60} = 0{,}9$.
-2. $b = \frac{54}{40} = 1{,}35$ dan $a = 20 - 1{,}35 \times 5 = 13{,}25$, jadi $y = 13{,}25 + 1{,}35x$.
-3. $y = 13{,}25 + 1{,}35 \times 7 = 22{,}7$; ini interpolasi dan $r = 0{,}9$, jadi cukup dapat dipercaya.
-4. Hitung $r$ antara $\ln y$ dan $\ln x$, karena $\ln y = \ln a + b\ln x$; gradiennya $b$ dan titik potongnya $\ln a$.
-5. $\sum x = 0$ dan $\sum xy = -8 - 1 + 0 + 1 + 8 = 0$, jadi $S_{xy} = 0$ dan $r = 0$; tidak ada hubungan linear, tetapi ada hubungan kuadrat sempurna $y = x^2$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Diketahui $S_{xx} = 40$, $S_{yy} = 90$, $S_{xy} = 54$. Hitung $r$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\sqrt{40 \\times 90}$ = ?",
+   "answer": "60",
+   "hint": "$\\sqrt{3600}$.",
+   "explain": "60.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$r$ = ?",
+   "answer": "0,9",
+   "hint": "$\\frac{54}{60}$.",
+   "explain": "$r = 0{,}9$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $r = 0{,}9$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Dengan data nomor 1, $\\bar{x} = 5$ dan $\\bar{y} = 20$. Tentukan garis regresi $y$ atas $x$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$b = \\frac{S_{xy}}{S_{xx}}$ = ?",
+   "answer": "1,35",
+   "hint": "$\\frac{54}{40}$.",
+   "explain": "$b = 1{,}35$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$a = \\bar{y} - b\\bar{x}$ = ?",
+   "answer": "13,25",
+   "hint": "$20 - 1{,}35 \\times 5$.",
+   "explain": "$a = 13{,}25$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Garis regresinya?",
+   "options": [
+    "$y = 13{,}25 + 1{,}35x$",
+    "$y = 1{,}35 + 13{,}25x$",
+    "$x = 13{,}25 + 1{,}35y$"
+   ],
+   "answer": "$y = 13{,}25 + 1{,}35x$",
+   "hint": "Bentuknya $y = a + bx$.",
+   "explain": "$y = 13{,}25 + 1{,}35x$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $y = 13{,}25 + 1{,}35x$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Dengan garis dari nomor 2, perkirakan $y$ untuk $x = 7$ (nilai $x$ data berkisar 1 sampai 10).",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$y$ = ?",
+   "answer": "22,7",
+   "hint": "$13{,}25 + 1{,}35 \\times 7$.",
+   "explain": "$13{,}25 + 9{,}45 = 22{,}7$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Seberapa dapat dipercaya?",
+   "options": [
+    "Cukup dapat dipercaya: interpolasi dan r = 0,9",
+    "Tidak dapat dipercaya: ekstrapolasi",
+    "Pasti tepat"
+   ],
+   "answer": "Cukup dapat dipercaya: interpolasi dan r = 0,9",
+   "hint": "Apakah 7 di dalam rentang 1 sampai 10?",
+   "explain": "7 di dalam rentang data dan korelasinya kuat.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $y \\approx 22{,}7$, cukup dapat dipercaya."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Model $y = ax^b$ ingin diuji. Variabel apa yang harus dihitung koefisien korelasinya, dan apa arti gradien serta titik potong garisnya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Bentuk linearnya?",
+   "options": [
+    "$\\ln y = \\ln a + b\\ln x$",
+    "$\\ln y = \\ln a + bx$",
+    "$y = a + b\\ln x$"
+   ],
+   "answer": "$\\ln y = \\ln a + b\\ln x$",
+   "hint": "Ambil ln kedua ruas; $\\ln x^b = b\\ln x$.",
+   "explain": "$\\ln y = \\ln a + b\\ln x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Korelasi dihitung antara...",
+   "options": [
+    "$\\ln y$ dan $\\ln x$",
+    "$\\ln y$ dan $x$",
+    "$y$ dan $\\ln x$"
+   ],
+   "answer": "$\\ln y$ dan $\\ln x$",
+   "hint": "Lihat variabel di bentuk linear.",
+   "explain": "Regresikan $\\ln y$ atas $\\ln x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Gradien dan titik potongnya?",
+   "options": [
+    "gradien $b$, titik potong $\\ln a$",
+    "gradien $\\ln b$, titik potong $a$",
+    "gradien $a$, titik potong $b$"
+   ],
+   "answer": "gradien $b$, titik potong $\\ln a$",
+   "hint": "Cocokkan dengan $Y = c + mX$.",
+   "explain": "Gradien $b$, titik potong $\\ln a$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi hitung $r$ antara $\\ln y$ dan $\\ln x$; gradiennya $b$ dan titik potongnya $\\ln a$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Hitung $r$ untuk data $(-2, 4), (-1, 1), (0, 0), (1, 1), (2, 4)$, lalu jelaskan artinya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\sum x$ = ?",
+   "answer": "0",
+   "hint": "−2 − 1 + 0 + 1 + 2.",
+   "explain": "$\\sum x = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\sum xy$ = ?",
+   "answer": "0",
+   "hint": "−8 − 1 + 0 + 1 + 8.",
+   "explain": "$\\sum xy = 0$, jadi $S_{xy} = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$r$ = ?",
+   "answer": "0",
+   "hint": "$S_{xy} = 0$.",
+   "explain": "$r = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Artinya?",
+   "options": [
+    "Tidak ada hubungan linear, tetapi ada hubungan kuadrat sempurna",
+    "Tidak ada hubungan sama sekali",
+    "Hubungan linear sempurna"
+   ],
+   "answer": "Tidak ada hubungan linear, tetapi ada hubungan kuadrat sempurna",
+   "hint": "Lihat polanya: $y = x^2$.",
+   "explain": "$r$ hanya mengukur hubungan linear; datanya tepat di $y = x^2$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $r = 0$: tidak ada hubungan linear, tetapi ada hubungan kuadrat sempurna $y = x^2$."
+}
+```

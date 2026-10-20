@@ -75,7 +75,7 @@ export default function Dashboard({ students, subscription, maxStudents, grades 
                     )}
 
                     {students.length === 0 ? (
-                        <div className="rounded-2xl border-2 border-dashed p-8 text-center">
+                        <div className="rounded-2xl border border-dashed p-8 text-center">
                             <div className="mx-auto mb-3 flex w-fit gap-1">
                                 <AvatarAnak name="roket" className="size-10" />
                                 <AvatarAnak name="bunga" className="size-10" />

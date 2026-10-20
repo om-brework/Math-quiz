@@ -18,6 +18,10 @@ Bayangkan kamu **melipat selembar kertas** bergambar tepat di tengah.
 - Kalau kedua bagian gambar **saling menutupi dengan tepat**, tanpa ada yang menonjol, gambar itu **simetris**.
 - Garis lipatannya disebut **sumbu simetri** atau **garis simetri**.
 
+```anim
+{"type": "bangun", "title": "Rumah simetris dan garis lipatnya", "titik": {"A": [0, 0], "B": [4, 0], "C": [4, 3], "D": [2, 5], "E": [0, 3], "M": [2, -0.6], "N": [2, 5.6]}, "sisi": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "E"], ["E", "A"], ["M", "N"]], "langkah": [{"say": "Sebuah gambar rumah.", "sisi": 5}, {"say": "Garis MN di tengah adalah garis lipat (sumbu simetri).", "sisi": 6, "sorot": ["MN"]}, {"say": "A berkembar dengan B: jaraknya ke garis sama.", "sisi": 6, "sorot": ["A", "B"]}, {"say": "E berkembar dengan C. D tepat di garis, kembarannya dirinya sendiri.", "sisi": 6, "sorot": ["E", "C", "D"]}, {"say": "Dilipat pada MN, kiri dan kanan saling menutupi tepat.", "sisi": 6, "sorot": ["MN", "DE", "CD"]}]}
+```
+
 Sumbu simetri juga seperti **cermin**. Setiap titik di satu sisi punya **kembaran** di sisi lain. Kembarannya berada pada **jarak yang sama** dari cermin, dan berhadapan lurus.
 
 ## Konsep
@@ -27,6 +31,10 @@ Sumbu simetri juga seperti **cermin**. Setiap titik di satu sisi punya **kembara
 Sebuah bangun **simetris** kalau ada garis yang membaginya menjadi dua bagian yang sama persis, dan bagian satu adalah **bayangan cermin** bagian lainnya.
 
 Contoh bangun simetris: persegi panjang, persegi, segitiga sama kaki, lingkaran, huruf A, huruf H.
+
+```visual
+{"type": "shapes", "items": [{"shape": "persegi-panjang", "color": "biru"}, {"shape": "persegi", "color": "hijau"}, {"shape": "segitiga", "color": "kuning"}, {"shape": "lingkaran", "color": "ungu"}], "caption": "Semua bangun ini simetris"}
+```
 
 Contoh bangun yang tidak simetris: huruf F, huruf J.
 
@@ -41,12 +49,11 @@ Kalau ada satu saja bagian yang tidak punya kembaran, garis itu **bukan** sumbu 
 
 ### Kertas berpetak
 
-Di kertas berpetak, kita menghitung **kotak**. Pada gambar di materi ini:
+Di kertas berpetak, kita menghitung **kotak**. Pada soal di materi ini, ■ adalah kotak yang diarsir dan □ kotak kosong. Letak sumbu simetri selalu disebutkan di soal.
 
-- `#` adalah kotak yang diarsir.
-- `.` adalah kotak kosong.
-- `|` adalah sumbu simetri tegak.
-- `---` adalah sumbu simetri mendatar.
+```visual
+{"type": "grid", "width": 6, "height": 4, "shade": [{"x": 2, "y": 0, "w": 1, "h": 1}, {"x": 3, "y": 0, "w": 1, "h": 1}, {"x": 1, "y": 1, "w": 1, "h": 1}, {"x": 2, "y": 1, "w": 1, "h": 1}, {"x": 3, "y": 1, "w": 1, "h": 1}, {"x": 4, "y": 1, "w": 1, "h": 1}, {"x": 0, "y": 2, "w": 1, "h": 1}, {"x": 1, "y": 2, "w": 1, "h": 1}, {"x": 4, "y": 2, "w": 1, "h": 1}, {"x": 5, "y": 2, "w": 1, "h": 1}, {"x": 0, "y": 3, "w": 1, "h": 1}, {"x": 5, "y": 3, "w": 1, "h": 1}], "caption": "Simetris terhadap garis tegak di tengah, antara kolom ke-3 dan ke-4"}
+```
 
 Untuk sumbu **tegak**, kotak yang menempel di kiri garis berkembar dengan kotak yang menempel di kanan garis. Kotak kedua dari garis berkembar dengan kotak kedua di seberang, dan seterusnya. Barisnya tetap sama.
 
@@ -54,99 +61,434 @@ Untuk sumbu **mendatar**, idenya sama, tetapi kita menghitung ke atas dan ke baw
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Apakah garis ini sumbu simetri?
 
-**Soal.** Tentukan apakah garis berikut adalah sumbu simetri.
-(a) Garis tegak tepat di tengah persegi panjang.
-(b) Garis yang menghubungkan dua pojok yang berhadapan pada persegi panjang (bukan persegi).
-(c) Garis dari puncak segitiga sama kaki ke tengah alasnya.
-
-1. **Langkah 1: Bayangkan melipat (a).** Lipat persegi panjang di tengah, kiri ke kanan. Kedua bagian sama lebar dan sama tinggi, jadi saling menutupi tepat. Ya, sumbu simetri.
-2. **Langkah 2: Bayangkan melipat (b).** Lipat persegi panjang dari pojok ke pojok. Hasilnya dua segitiga, tetapi pojok-pojoknya tidak bertemu. Ada bagian yang menonjol. Bukan sumbu simetri.
-3. **Langkah 3: Bayangkan melipat (c).** Segitiga sama kaki punya dua sisi miring yang sama panjang. Kalau dilipat dari puncak ke tengah alas, kedua sisi miring bertemu tepat. Ya, sumbu simetri.
-4. **Cek jawaban.** Coba dengan kertas sungguhan. Gunting persegi panjang, lalu lipat dari pojok ke pojok. Kamu akan melihat ujungnya tidak bertemu.
-
-**Jawaban:** (a) ya, (b) bukan, (c) ya.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Tentukan apakah garis berikut sumbu simetri: (a) garis tegak tepat di tengah persegi panjang, (b) garis dari pojok ke pojok seberang pada persegi panjang (bukan persegi), (c) garis dari puncak segitiga sama kaki ke tengah alasnya.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Bayangkan melipat (a), garis tegak di tengah persegi panjang.",
+   "options": [
+    "Ya, sumbu simetri",
+    "Bukan sumbu simetri"
+   ],
+   "answer": "Ya, sumbu simetri",
+   "hint": "Kedua bagian sama lebar dan sama tinggi?",
+   "explain": "Kedua bagian saling menutupi tepat. Ya, sumbu simetri.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Bayangkan melipat (b), garis pojok ke pojok.",
+   "options": [
+    "Ya, sumbu simetri",
+    "Bukan sumbu simetri"
+   ],
+   "answer": "Bukan sumbu simetri",
+   "hint": "Setelah dilipat, apakah pojok-pojoknya bertemu?",
+   "explain": "Pojok-pojoknya tidak bertemu, ada yang menonjol. Bukan sumbu simetri.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Bayangkan melipat (c), puncak ke tengah alas segitiga sama kaki.",
+   "options": [
+    "Ya, sumbu simetri",
+    "Bukan sumbu simetri"
+   ],
+   "answer": "Ya, sumbu simetri",
+   "hint": "Kedua sisi miring segitiga sama kaki sama panjang.",
+   "explain": "Kedua sisi miring bertemu tepat. Ya, sumbu simetri.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: kenapa (b) bukan sumbu simetri, padahal membagi dua sama luas?",
+   "options": [
+    "Sama luas belum tentu saling menutupi saat dilipat",
+    "Karena garisnya miring",
+    "Karena persegi panjang tidak simetris"
+   ],
+   "answer": "Sama luas belum tentu saling menutupi saat dilipat",
+   "hint": "Ingat syarat lipatan.",
+   "explain": "Simetris berarti saling menutupi tepat, bukan hanya sama luas.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "(a) ya, (b) bukan, (c) ya.",
+ "visual": {
+  "type": "shape",
+  "shape": "persegi-panjang"
+ }
+}
+```
 
 ### Contoh 2: Memeriksa di kertas berpetak
 
-**Soal.** Apakah garis tegak pada gambar ini sumbu simetri?
-
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Apakah garis tegak di tengah gambar (antara kolom ke-2 dan ke-3) sumbu simetri?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Baris 1, kiri □ ■ dan kanan ■ □. Apakah setiap kotak punya kembaran?",
+   "options": [
+    "Cocok",
+    "Tidak cocok"
+   ],
+   "answer": "Cocok",
+   "hint": "Bandingkan kotak yang menempel garis, lalu kotak kedua.",
+   "explain": "■ dengan ■, □ dengan □. Cocok.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Baris 2, semua kotak diarsir. Cocok?",
+   "options": [
+    "Cocok",
+    "Tidak cocok"
+   ],
+   "answer": "Cocok",
+   "hint": "Bandingkan dari garis ke luar.",
+   "explain": "■ ■ dengan ■ ■. Cocok.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Baris 3, kiri □ ■ dan kanan □ □. Cocok?",
+   "options": [
+    "Cocok",
+    "Tidak cocok"
+   ],
+   "answer": "Tidak cocok",
+   "hint": "Kotak yang menempel di kiri garis diarsir. Bagaimana kembarannya?",
+   "explain": "Kiri ■ menempel garis, kanan □. Tidak cocok.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Kesimpulan: apakah garis itu sumbu simetri?",
+   "options": [
+    "Ya, sumbu simetri",
+    "Bukan sumbu simetri"
+   ],
+   "answer": "Bukan sumbu simetri",
+   "hint": "Satu pasang yang tidak cocok sudah cukup.",
+   "explain": "Bukan sumbu simetri. Kalau dilipat, kotak di baris 3 tidak tertutupi.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Garis itu bukan sumbu simetri.",
+ "visual": {
+  "type": "grid",
+  "width": 4,
+  "height": 3,
+  "shade": [
+   {
+    "x": 1,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 0,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   }
+  ]
+ }
+}
 ```
-. # | # .
-# # | # #
-. # | . .
-```
-
-1. **Langkah 1: Periksa baris 1.** Kotak menempel di kiri garis: `#`. Kembarannya, menempel di kanan: `#`. Cocok. Kotak kedua: `.` dan `.`. Cocok.
-2. **Langkah 2: Periksa baris 2.** `#` dan `#`, lalu `#` dan `#`. Cocok.
-3. **Langkah 3: Periksa baris 3.** Kotak menempel di kiri garis: `#`. Kembarannya di kanan: `.`. **Tidak cocok.**
-4. **Cek jawaban.** Satu pasang yang tidak cocok sudah cukup. Kalau dilipat, kotak arsiran di baris 3 tidak tertutupi.
-
-**Jawaban:** Bukan sumbu simetri.
 
 ### Contoh 3: Melengkapi bangun dengan sumbu tegak
 
-**Soal.** Lengkapi gambar ini agar simetris terhadap garis tegak.
-
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Lengkapi gambar ini agar simetris terhadap garis tegak di tengah (antara kolom ke-4 dan ke-5).",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Baris 1. Isi 4 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "■ ■ □ □",
+    "□ □ ■ ■",
+    "■ ■ ■ ■"
+   ],
+   "answer": "■ ■ □ □",
+   "hint": "Baca kotak di kiri dari garis ke kiri, lalu salin dengan urutan yang sama dari garis ke kanan.",
+   "explain": "Dari garis ke kiri: ■ ■ □ □. Jadi dari garis ke kanan juga ■ ■ □ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Baris 2. Isi 4 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "■ ■ ■ □",
+    "□ ■ ■ ■",
+    "■ □ □ □",
+    "■ ■ ■ ■"
+   ],
+   "answer": "■ ■ ■ □",
+   "hint": "Baca kotak di kiri dari garis ke kiri, lalu salin dengan urutan yang sama dari garis ke kanan.",
+   "explain": "Dari garis ke kiri: ■ ■ ■ □. Jadi dari garis ke kanan juga ■ ■ ■ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Baris 3. Isi 4 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "■ □ ■ ■",
+    "■ ■ □ ■",
+    "□ □ ■ □",
+    "■ ■ ■ ■"
+   ],
+   "answer": "■ □ ■ ■",
+   "hint": "Baca kotak di kiri dari garis ke kiri, lalu salin dengan urutan yang sama dari garis ke kanan.",
+   "explain": "Dari garis ke kiri: ■ □ ■ ■. Jadi dari garis ke kanan juga ■ □ ■ ■.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Baris 4. Isi 4 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "■ □ □ □",
+    "□ □ □ ■",
+    "■ ■ ■ □",
+    "■ ■ ■ ■"
+   ],
+   "answer": "■ □ □ □",
+   "hint": "Baca kotak di kiri dari garis ke kiri, lalu salin dengan urutan yang sama dari garis ke kanan.",
+   "explain": "Dari garis ke kiri: ■ □ □ □. Jadi dari garis ke kanan juga ■ □ □ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: berapa kotak arsiran seluruhnya setelah lengkap?",
+   "answer": "18",
+   "hint": "Kiri ada 2 + 3 + 3 + 1 kotak. Kanan harus sama banyak.",
+   "explain": "9 + 9 = 18 kotak.",
+   "error": "salah-membilang-benda"
+  }
+ ],
+ "conclusion": "Gambar lengkap punya 18 kotak arsiran, 9 di setiap sisi garis.",
+ "visual": {
+  "type": "grid",
+  "width": 8,
+  "height": 4,
+  "shade": [
+   {
+    "x": 2,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 0,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 3,
+    "w": 1,
+    "h": 1
+   }
+  ]
+ }
+}
 ```
-. . # # | . . . .
-. # # # | . . . .
-# # . # | . . . .
-. . . # | . . . .
-```
-
-1. **Langkah 1: Kerjakan baris demi baris.** Setiap kotak di kiri punya kembaran di kanan dengan jarak sama dari garis. Bayangkan cermin di garis.
-2. **Langkah 2: Baris 1.** Dari garis ke kiri: `#`, `#`, `.`, `.`. Salin dari garis ke kanan dengan urutan yang sama: `#`, `#`, `.`, `.`.
-3. **Langkah 3: Baris 2.** Dari garis ke kiri: `#`, `#`, `#`, `.`. Ke kanan: `#`, `#`, `#`, `.`.
-4. **Langkah 4: Baris 3.** Dari garis ke kiri: `#`, `.`, `#`, `#`. Ke kanan: `#`, `.`, `#`, `#`.
-5. **Langkah 5: Baris 4.** Dari garis ke kiri: `#`, `.`, `.`, `.`. Ke kanan: `#`, `.`, `.`, `.`.
-6. **Cek jawaban.** Hitung kotak arsiran. Kiri: $2 + 3 + 3 + 1 = 9$. Kanan juga harus 9. Bayangkan melipat: setiap `#` tertutup `#`.
-
-```
-. . # # | # # . .
-. # # # | # # # .
-# # . # | # . # #
-. . . # | # . . .
-```
-
-**Jawaban:** Seperti gambar di atas. Ada 18 kotak arsiran.
 
 ### Contoh 4: Soal cerita dengan sumbu mendatar
 
-**Soal.** Komang mendesain motif kain endek di kertas berpetak. Ia sudah menggambar bagian atas. Motifnya harus simetris terhadap garis mendatar. Lengkapi bagian bawahnya.
-
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Komang mendesain motif kain endek. Ia sudah menggambar 3 baris bagian atas. Motifnya harus simetris terhadap garis mendatar di bawah baris ke-3. Lengkapi 3 baris bagian bawah.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Sumbunya mendatar. Baris tepat di bawah garis berkembar dengan baris mana?",
+   "options": [
+    "Baris tepat di atas garis",
+    "Baris paling atas",
+    "Baris tengah"
+   ],
+   "answer": "Baris tepat di atas garis",
+   "hint": "Baris yang paling dekat garis berkembar dengan baris yang paling dekat garis.",
+   "explain": "Baris yang menempel garis berkembar dengan baris yang menempel garis.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Baris ke-1 di bawah garis.",
+   "options": [
+    "□ ■ ■ ■ □",
+    "□ ■ □ □ □",
+    "■ ■ ■ □ □"
+   ],
+   "answer": "□ ■ ■ ■ □",
+   "hint": "Salin baris ke-1 di atas garis (dihitung dari garis).",
+   "explain": "Baris ke-1 di bawah garis = □ ■ ■ ■ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Baris ke-2 di bawah garis.",
+   "options": [
+    "■ ■ ■ □ □",
+    "□ ■ □ □ □",
+    "□ ■ ■ ■ □"
+   ],
+   "answer": "■ ■ ■ □ □",
+   "hint": "Salin baris ke-2 di atas garis (dihitung dari garis).",
+   "explain": "Baris ke-2 di bawah garis = ■ ■ ■ □ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Baris ke-3 di bawah garis.",
+   "options": [
+    "□ ■ □ □ □",
+    "■ ■ ■ □ □",
+    "□ ■ ■ ■ □"
+   ],
+   "answer": "□ ■ □ □ □",
+   "hint": "Salin baris ke-3 di atas garis (dihitung dari garis).",
+   "explain": "Baris ke-3 di bawah garis = □ ■ □ □ □.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Bagian bawah: □ ■ ■ ■ □, ■ ■ ■ □ □, □ ■ □ □ □. Urutan barisnya terbalik, seperti bayangan di air danau.",
+ "visual": {
+  "type": "grid",
+  "width": 5,
+  "height": 6,
+  "shade": [
+   {
+    "x": 1,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 0,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   }
+  ]
+ }
+}
 ```
-. # . . .
-# # # . .
-. # # # .
----------
-. . . . .
-. . . . .
-. . . . .
-```
-
-1. **Langkah 1: Pahami soal.** Cerminnya mendatar. Baris yang menempel di atas garis berkembar dengan baris yang menempel di bawah garis. Kolomnya tetap.
-2. **Langkah 2: Baris pertama di bawah garis.** Salin baris tepat di atas garis: `. # # # .`
-3. **Langkah 3: Baris kedua di bawah garis.** Salin baris kedua di atas garis: `# # # . .`
-4. **Langkah 4: Baris ketiga di bawah garis.** Salin baris paling atas: `. # . . .`
-5. **Cek jawaban.** Bagian atas punya $1 + 3 + 3 = 7$ kotak arsiran. Bagian bawah juga 7. Urutan barisnya **terbalik**, seperti bayangan di air danau.
-
-```
-. # . . .
-# # # . .
-. # # # .
----------
-. # # # .
-# # # . .
-. # . . .
-```
-
-**Jawaban:** Seperti gambar di atas.
 
 ## Kesalahan yang sering terjadi
 
-- **Menggeser, bukan mencerminkan.** Pada Contoh 3, menyalin baris 1 apa adanya ke kanan (`. . # #`). Yang benar dicerminkan dari garis: kotak yang menempel garis berkembar dengan kotak yang menempel garis, jadi `# # . .`.
+- **Menggeser, bukan mencerminkan.** Pada Contoh 3, menyalin baris 1 apa adanya ke kanan (□ □ ■ ■). Yang benar dicerminkan dari garis: kotak yang menempel garis berkembar dengan kotak yang menempel garis, jadi ■ ■ □ □.
 - **Tidak membalik urutan baris pada sumbu mendatar.** Menyalin baris paling atas ke baris tepat di bawah garis. Baris yang paling dekat garis harus berkembar dengan baris yang paling dekat garis.
 - **Mengira garis pojok ke pojok persegi panjang adalah sumbu simetri.** Garis itu membagi dua sama luas, tetapi lipatannya tidak saling menutupi. Sama luas belum tentu simetris.
 - **Salah menghitung jarak.** Ingat, jarak dihitung dalam kotak dari garis, bukan dari tepi kertas.
@@ -162,37 +504,349 @@ Untuk sumbu **mendatar**, idenya sama, tetapi kita menghitung ke atas dan ke baw
 
 ## Cek pemahaman
 
-1. Dari huruf A, F, H, dan J, mana yang punya sumbu simetri tegak?
-2. Sebuah persegi panjang (bukan persegi) dilipat dari satu pojok ke pojok seberangnya. Apakah garis lipatan itu sumbu simetri?
-3. Lengkapi gambar ini agar simetris terhadap garis tegak.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-   ```
-   # . . | . . .
-   # # . | . . .
-   . # # | . . .
-   ```
+### Soal 1
 
-4. Apakah garis tegak pada gambar ini sumbu simetri?
+```soal
+{
+ "title": "Soal 1",
+ "text": "Dari huruf A, F, H, dan J, mana yang punya sumbu simetri tegak?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Bayangkan setiap huruf dilipat tegak di tengah. Huruf F, apakah kedua bagiannya saling menutupi?",
+   "options": [
+    "Tidak",
+    "Ya"
+   ],
+   "answer": "Tidak",
+   "hint": "Garis mendatar F hanya ada di kanan.",
+   "explain": "F tidak simetris tegak.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Jadi, huruf mana saja yang punya sumbu simetri tegak?",
+   "options": [
+    "A dan H",
+    "A, F, dan H",
+    "H saja",
+    "F dan J"
+   ],
+   "answer": "A dan H",
+   "hint": "Periksa A, H, dan J juga.",
+   "explain": "A dan H saling menutupi saat dilipat tegak. F dan J tidak.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "A dan H."
+}
+```
 
-   ```
-   . # # | # # .
-   # . # | # . #
-   ```
+### Soal 2
 
-5. Lengkapi gambar ini agar simetris terhadap garis mendatar.
+```soal
+{
+ "title": "Soal 2",
+ "text": "Sebuah persegi panjang (bukan persegi) dilipat dari satu pojok ke pojok seberangnya. Apakah garis lipatan itu sumbu simetri?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Setelah dilipat, apakah pojok-pojoknya bertemu?",
+   "options": [
+    "Tidak bertemu",
+    "Bertemu tepat"
+   ],
+   "answer": "Tidak bertemu",
+   "hint": "Coba bayangkan atau lipat kertas sungguhan.",
+   "explain": "Pojok-pojoknya tidak bertemu, ada yang menonjol.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Jadi, apakah garis itu sumbu simetri?",
+   "options": [
+    "Ya, sumbu simetri",
+    "Bukan sumbu simetri"
+   ],
+   "answer": "Bukan sumbu simetri",
+   "hint": "Sumbu simetri harus membuat kedua bagian saling menutupi.",
+   "explain": "Bukan sumbu simetri.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Bukan sumbu simetri."
+}
+```
 
-   ```
-   # # # .
-   . # . .
-   -------
-   . . . .
-   . . . .
-   ```
+### Soal 3
 
-### Kunci jawaban
+```soal
+{
+ "title": "Soal 3",
+ "text": "Lengkapi gambar ini agar simetris terhadap garis tegak di tengah (antara kolom ke-3 dan ke-4).",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Baris 1. Isi 3 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "□ □ ■",
+    "■ □ □",
+    "■ ■ ■",
+    "□ □ □"
+   ],
+   "answer": "□ □ ■",
+   "hint": "Baca kotak kiri dari garis ke kiri, lalu salin dari garis ke kanan.",
+   "explain": "Dari garis ke kanan: □ □ ■.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Baris 2. Isi 3 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "□ ■ ■",
+    "■ ■ □",
+    "■ ■ ■",
+    "□ □ □"
+   ],
+   "answer": "□ ■ ■",
+   "hint": "Baca kotak kiri dari garis ke kiri, lalu salin dari garis ke kanan.",
+   "explain": "Dari garis ke kanan: □ ■ ■.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Baris 3. Isi 3 kotak di kanan garis, dari garis ke kanan.",
+   "options": [
+    "■ ■ □",
+    "□ ■ ■",
+    "■ ■ ■",
+    "□ □ □"
+   ],
+   "answer": "■ ■ □",
+   "hint": "Baca kotak kiri dari garis ke kiri, lalu salin dari garis ke kanan.",
+   "explain": "Dari garis ke kanan: ■ ■ □.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Gambar lengkap: ■ □ □ □ □ ■; ■ ■ □ □ ■ ■; □ ■ ■ ■ ■ □.",
+ "visual": {
+  "type": "grid",
+  "width": 6,
+  "height": 3,
+  "shade": [
+   {
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 0,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 2,
+    "w": 1,
+    "h": 1
+   }
+  ]
+ }
+}
+```
 
-1. A dan H. Kalau dilipat tegak di tengah, kedua bagiannya saling menutupi. F dan J tidak.
-2. Bukan. Pojok-pojoknya tidak bertemu saat dilipat.
-3. Baris 1: `# . . | . . #`. Baris 2: `# # . | . # #`. Baris 3: `. # # | # # .`. Setiap baris dicerminkan dari garis.
-4. Ya. Setiap kotak di kiri punya kembaran yang sama di kanan dengan jarak sama dari garis.
-5. Baris pertama di bawah garis `. # . .`, baris kedua `# # # .`. Urutan baris dibalik.
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Apakah garis tegak di tengah gambar (antara kolom ke-3 dan ke-4) sumbu simetri?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Baris 1. Cocok?",
+   "options": [
+    "Cocok",
+    "Tidak cocok"
+   ],
+   "answer": "Cocok",
+   "hint": "Bandingkan dari garis ke luar.",
+   "explain": "Kiri dari garis ■ ■ □, kanan dari garis ■ ■ □. Cocok.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Baris 2. Cocok?",
+   "options": [
+    "Cocok",
+    "Tidak cocok"
+   ],
+   "answer": "Cocok",
+   "hint": "Bandingkan dari garis ke luar.",
+   "explain": "Kiri dari garis ■ □ ■, kanan dari garis ■ □ ■. Cocok.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Jadi, apakah garis itu sumbu simetri?",
+   "options": [
+    "Ya, sumbu simetri",
+    "Bukan sumbu simetri"
+   ],
+   "answer": "Ya, sumbu simetri",
+   "hint": "Semua baris sudah diperiksa.",
+   "explain": "Ya. Setiap kotak punya kembaran dengan jarak sama dari garis.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Ya, garis itu sumbu simetri.",
+ "visual": {
+  "type": "grid",
+  "width": 6,
+  "height": 2,
+  "shade": [
+   {
+    "x": 1,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 4,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 0,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 3,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 5,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   }
+  ]
+ }
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Lengkapi gambar ini agar simetris terhadap garis mendatar di bawah baris ke-2.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Baris ke-1 di bawah garis.",
+   "options": [
+    "□ ■ □ □",
+    "■ ■ ■ □",
+    "□ □ □ □"
+   ],
+   "answer": "□ ■ □ □",
+   "hint": "Baris yang paling dekat garis berkembar dengan baris yang paling dekat garis.",
+   "explain": "Baris ke-1 di bawah garis = □ ■ □ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Baris ke-2 di bawah garis.",
+   "options": [
+    "■ ■ ■ □",
+    "□ ■ □ □",
+    "□ □ □ □"
+   ],
+   "answer": "■ ■ ■ □",
+   "hint": "Baris yang paling dekat garis berkembar dengan baris yang paling dekat garis.",
+   "explain": "Baris ke-2 di bawah garis = ■ ■ ■ □.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: berapa kotak arsiran di bagian bawah?",
+   "answer": "4",
+   "hint": "Harus sama dengan bagian atas.",
+   "explain": "3 + 1 = 4, sama dengan bagian atas.",
+   "error": "salah-membilang-benda"
+  }
+ ],
+ "conclusion": "Bagian bawah: □ ■ □ □, ■ ■ ■ □. Urutan baris dibalik.",
+ "visual": {
+  "type": "grid",
+  "width": 4,
+  "height": 4,
+  "shade": [
+   {
+    "x": 0,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 2,
+    "y": 0,
+    "w": 1,
+    "h": 1
+   },
+   {
+    "x": 1,
+    "y": 1,
+    "w": 1,
+    "h": 1
+   }
+  ]
+ }
+}
+```

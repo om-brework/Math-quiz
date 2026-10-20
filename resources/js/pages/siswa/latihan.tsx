@@ -75,16 +75,16 @@ export default function Latihan({ session, topic, size, masteries }: Props) {
                 <span className="font-display text-lg font-bold tabular-nums">{Math.min(index + 1, size)}/{size}</span>
             </div>
             <p className="mb-3 text-sm font-semibold text-slate-500">
-                {topic.title} · {skillName} · <span className="text-emerald-700 dark:text-emerald-400">Tingkat {question.level} ({LEVEL_NAME[question.level]})</span>
+                {topic.title} · {skillName} · <span className="text-brand-700 dark:text-brand-400">Tingkat {question.level} ({LEVEL_NAME[question.level]})</span>
             </p>
-            <div className="rounded-3xl border-2 border-emerald-100 bg-white p-4 sm:p-6 dark:border-slate-800 dark:bg-slate-900">
+            <div className="rounded-2xl border border-brand-100 bg-white p-4 sm:p-6 dark:border-slate-800 dark:bg-slate-900">
                 <QuestionPlayer key={`${index}-${question.seed}`} question={question} onFinish={finished} />
             </div>
             </div>
             {done && (
                 <div className="fixed inset-x-0 bottom-0 z-10 mx-auto max-w-3xl px-4 pb-4">
                     {saveError && <p className="mb-2 rounded-lg bg-rose-50 p-2 text-center text-sm font-semibold text-rose-700">Hasil soal ini gagal tersimpan. Periksa koneksi internet.</p>}
-                    <button type="button" onClick={next} autoFocus className="flex w-full items-center justify-center gap-2 rounded-2xl bg-emerald-600 py-4 text-lg font-bold text-white shadow-[0_4px_0_#065f46] active:translate-y-0.5">
+                    <button type="button" onClick={next} autoFocus className="flex w-full items-center justify-center gap-2 rounded-2xl bg-brand-600 py-4 text-lg font-bold text-white shadow-sm active:translate-y-0.5">
                         {index + 1 >= size ? 'Lihat hasil' : 'Soal berikutnya'} <ArrowRight className="size-5" />
                     </button>
                 </div>

@@ -40,7 +40,7 @@ export function QuestionPlayer({ question, onFinish }: { question: Question; onF
                     if (i > current) return null;
                     const r = results[i];
                     return (
-                        <li key={step.id} className={cn('rounded-2xl border-2 p-4', !r ? 'border-sky-300 bg-white dark:bg-slate-900' : r.ok ? 'border-emerald-200 bg-emerald-50/60 dark:bg-emerald-950/40' : 'border-amber-200 bg-amber-50/60 dark:bg-amber-950/40')}>
+                        <li key={step.id} className={cn('rounded-2xl border p-4', !r ? 'border-sky-300 bg-white dark:bg-slate-900' : r.ok ? 'border-emerald-200 bg-emerald-50/60 dark:bg-emerald-950/40' : 'border-amber-200 bg-amber-50/60 dark:bg-amber-950/40')}>
                             <div className="mb-2 flex items-start gap-2">
                                 <span className={cn('flex size-7 flex-none items-center justify-center rounded-full text-sm font-bold text-white', !r ? 'bg-sky-500' : r.ok ? 'bg-emerald-500' : 'bg-amber-500')}>
                                     {r ? (r.revealed ? <Eye className="size-4" /> : <CheckCircle2 className="size-4" />) : i + 1}
@@ -170,7 +170,7 @@ function SimpleStep({ step, onDone }: { step: NumberStep | ChoiceStep | Fraction
                         </div>
                     </div>
                 )}
-                <button type="submit" disabled={step.kind === 'number' ? !value.trim() : !frac.num || !frac.den} className="h-12 rounded-xl bg-emerald-600 px-5 font-bold text-white disabled:opacity-40">Periksa</button>
+                <button type="submit" disabled={step.kind === 'number' ? !value.trim() : !frac.num || !frac.den} className="h-12 rounded-xl bg-brand-600 px-5 font-bold text-white disabled:opacity-40">Periksa</button>
             </div>
             {feedback}
         </form>

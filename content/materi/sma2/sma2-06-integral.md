@@ -22,6 +22,10 @@ Caranya, bagi perjalanan menjadi potongan waktu yang sangat pendek. Di tiap poto
 
 Kalau motor **mundur**, kecepatannya negatif dan pitanya berada di bawah sumbu. Pita itu mengurangi posisi akhir, tetapi tetap menambah jarak yang ditempuh. Gagasan ini dipakai lagi saat menghitung luas dan gerak lurus.
 
+```anim
+{"type": "grafik", "title": "Grafik kecepatan motor ojek", "xmin": 0, "xmax": 6.5, "ymin": -5, "ymax": 9, "kurva": [{"f": "8-2x", "label": "v = 8 - 2t", "dari": 0, "sampai": 6}], "garis": [{"x": 2}, {"x": 2.25}], "titik": [{"x": 4, "y": 0, "label": "v = 0: berbalik arah"}, {"x": 2, "y": 4, "label": "pita: tinggi v, lebar kecil"}], "langkah": [{"say": "Spidometer merekam kecepatan $v$ setiap saat (sumbu mendatar: waktu $t$).", "kurva": 1}, {"say": "Satu pita tipis: jarak $\\approx v \\times$ lebar waktu, yaitu luas pita.", "kurva": 1, "garis": 2, "titik": 2}, {"say": "Setelah $t = 4$, $v$ negatif: motor mundur, pitanya di bawah sumbu.", "kurva": 1, "garis": 2, "titik": 1}, {"say": "Jumlah semua pita = luas di bawah grafik kecepatan = jarak.", "kurva": 1, "titik": 1}]}
+```
+
 ## Konsep
 
 ### Integral sebagai kebalikan turunan
@@ -33,13 +37,8 @@ $$ \int f(x)\,dx = F(x) + C $$
 
 Setiap rumus didapat dengan membalik rumus turunan:
 
-```
-Turunan                  Integral
-d/dx [x^(n+1)] = (n+1)x^n   ->  ∫ x^n dx   = x^(n+1)/(n+1) + C,  n ≠ -1
-d/dx [-cos x]  = sin x      ->  ∫ sin x dx = -cos x + C
-d/dx [sin x]   = cos x      ->  ∫ cos x dx = sin x + C
-d/dx [tan x]   = sec² x     ->  ∫ sec² x dx = tan x + C
-d/dx [e^x]     = e^x        ->  ∫ e^x dx   = e^x + C
+```visual
+{"type": "table", "caption": "Setiap rumus integral adalah rumus turunan yang dibalik", "head": ["Turunan", "Integral"], "rows": [["d/dx [xⁿ⁺¹] = (n+1)xⁿ", "∫ xⁿ dx = xⁿ⁺¹/(n+1) + C, n ≠ −1"], ["d/dx [−cos x] = sin x", "∫ sin x dx = −cos x + C"], ["d/dx [sin x] = cos x", "∫ cos x dx = sin x + C"], ["d/dx [tan x] = sec² x", "∫ sec² x dx = tan x + C"], ["d/dx [eˣ] = eˣ", "∫ eˣ dx = eˣ + C"]]}
 ```
 
 Kasus $n = -1$ dikecualikan karena penyebutnya nol. Integral $\int \frac{1}{x}\,dx$ bernilai $\ln|x| + C$, kebalikan dari turunan $\ln x$.
@@ -47,6 +46,10 @@ Kasus $n = -1$ dikecualikan karena penyebutnya nol. Integral $\int \frac{1}{x}\,
 ### Bentuk $(ax + b)$
 
 Dengan aturan rantai, $\dfrac{d}{dx}(ax + b)^{n+1} = a(n+1)(ax + b)^n$. Ada faktor $a$ tambahan, jadi saat membalik kita **membagi dengan $a$**:
+
+```anim
+{"type": "persamaan", "title": "Mengapa dibagi a? Contoh (4x + 1)³", "baris": [{"tex": "\\int (4x+1)^3\\,dx = \\ ?", "say": "Pangkat naik satu menjadi 4."}, {"tex": "\\frac{d}{dx}(4x+1)^4 = 4(4x+1)^3 \\cdot 4 = 16(4x+1)^3", "say": "Cek dengan menurunkan: aturan rantai memunculkan faktor $a = 4$."}, {"tex": "\\int (4x+1)^3\\,dx = \\frac{(4x+1)^4}{4 \\times 4} + C", "say": "Jadi bagi dengan pangkat baru dan dengan $a$.", "op": "$\\div a(n+1)$"}, {"tex": "= \\frac{(4x+1)^4}{16} + C", "say": "Turunkan balik: hasilnya tepat $(4x+1)^3$."}]}
+```
 $$ \int (ax+b)^n\,dx = \frac{(ax+b)^{n+1}}{a(n+1)} + C, \quad n \neq -1 $$
 $$ \int \sin(ax+b)\,dx = -\frac{1}{a}\cos(ax+b) + C, \qquad \int \cos(ax+b)\,dx = \frac{1}{a}\sin(ax+b) + C $$
 $$ \int \sec^2(ax+b)\,dx = \frac{1}{a}\tan(ax+b) + C, \qquad \int e^{ax+b}\,dx = \frac{1}{a}e^{ax+b} + C $$
@@ -65,6 +68,10 @@ Jika kurva berada **di bawah** sumbu $x$, integral tentunya **negatif** (seperti
 2. Integralkan tiap bagian terpisah.
 3. Ambil nilai mutlak setiap bagian, lalu jumlahkan.
 
+```anim
+{"type": "grafik", "title": "Bagian di atas dan di bawah sumbu x", "xmin": 0, "xmax": 6.6, "ymin": -1.5, "ymax": 1.5, "kurva": [{"f": "sin(x)", "label": "y = \\sin x"}], "titik": [{"x": 1.5708, "y": 1, "label": "luas 2 (integral +2)"}, {"x": 4.7124, "y": -1, "label": "luas 2 (integral −2)"}, {"x": 3.1416, "y": 0, "label": "x = π"}], "langkah": [{"say": "Kurva $y = \\sin x$ dari $0$ sampai $2\\pi$.", "kurva": 1}, {"say": "Titik potong dengan sumbu $x$ di $x = \\pi$.", "kurva": 1, "titik": 3}, {"say": "$\\int_0^{\\pi} \\sin x\\,dx = 2$, tetapi $\\int_{\\pi}^{2\\pi} \\sin x\\,dx = -2$.", "kurva": 1, "titik": 3}, {"say": "Langsung $\\int_0^{2\\pi}$ memberi 0. Luas sebenarnya $|2| + |-2| = 4$.", "kurva": 1, "titik": 3}]}
+```
+
 ### Perpindahan, kecepatan, percepatan
 
 Untuk benda yang bergerak lurus dengan posisi $s$, kecepatan $v$, dan percepatan $a$:
@@ -75,54 +82,294 @@ $$ v = \frac{ds}{dt}, \quad a = \frac{dv}{dt} \qquad\Longleftrightarrow\qquad v 
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Integral pangkat
 
-**Soal.** Tentukan $\displaystyle\int \left(6x^2 + \frac{4}{x^3} + 3\sqrt{x}\right) dx$.
-
-1. **Langkah 1: Tulis sebagai pangkat.** $6x^2 + 4x^{-3} + 3x^{1/2}$.
-2. **Langkah 2: Integralkan suku per suku.** Naikkan pangkat satu, lalu bagi dengan pangkat baru:
-$$ \frac{6x^3}{3} + \frac{4x^{-2}}{-2} + \frac{3x^{3/2}}{3/2} = 2x^3 - 2x^{-2} + 2x^{3/2} $$
-3. **Langkah 3: Tambahkan $C$.** Hasil: $2x^3 - \dfrac{2}{x^2} + 2x^{3/2} + C$.
-4. **Cek jawaban.** Turunkan hasilnya: $6x^2 + 4x^{-3} + 3x^{1/2}$. Sama dengan soal.
-
-**Jawaban:** $2x^3 - \dfrac{2}{x^2} + 2x\sqrt{x} + C$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Tentukan $\\displaystyle\\int \\left(6x^2 + \\frac{4}{x^3} + 3\\sqrt{x}\\right) dx$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Tulis sebagai pangkat.",
+   "options": [
+    "$6x^2 + 4x^{-3} + 3x^{1/2}$",
+    "$6x^2 + 4x^{3} + 3x^{1/2}$",
+    "$6x^2 + 4x^{-3} + 3x^{2}$"
+   ],
+   "answer": "$6x^2 + 4x^{-3} + 3x^{1/2}$",
+   "hint": "$\\frac{1}{x^3} = x^{-3}$ dan $\\sqrt{x} = x^{1/2}$.",
+   "explain": "Sekarang setiap suku berbentuk $ax^n$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Integralkan suku per suku (naikkan pangkat, bagi dengan pangkat baru).",
+   "options": [
+    "$2x^3 - 2x^{-2} + 2x^{3/2}$",
+    "$2x^3 + 2x^{-2} + 2x^{3/2}$",
+    "$2x^3 - 2x^{-4} + 2x^{3/2}$",
+    "$12x - 12x^{-4} + \\frac{3}{2}x^{-1/2}$"
+   ],
+   "answer": "$2x^3 - 2x^{-2} + 2x^{3/2}$",
+   "hint": "$4x^{-3} \\to \\frac{4x^{-2}}{-2}$ dan $3x^{1/2} \\to \\frac{3x^{3/2}}{3/2}$.",
+   "explain": "Pangkat $-3$ naik menjadi $-2$, dan pembaginya negatif.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Tulis hasil akhirnya.",
+   "options": [
+    "$2x^3 - \\frac{2}{x^2} + 2x^{3/2} + C$",
+    "$2x^3 - \\frac{2}{x^2} + 2x^{3/2}$",
+    "$2x^3 - 2x^2 + 2x^{3/2} + C$"
+   ],
+   "answer": "$2x^3 - \\frac{2}{x^2} + 2x^{3/2} + C$",
+   "hint": "Integral tak tentu selalu punya konstanta.",
+   "explain": "Jangan lupa $+C$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: turunkan $2x^{3/2}$. Berapa koefisien $x^{1/2}$?",
+   "answer": "3",
+   "hint": "$2 \\cdot \\frac{3}{2}$.",
+   "explain": "Turunannya $3x^{1/2} = 3\\sqrt{x}$, sama dengan suku di soal. Suku lain juga cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Hasilnya $2x^3 - \\frac{2}{x^2} + 2x\\sqrt{x} + C$."
+}
+```
 
 ### Contoh 2: Integral tentu bentuk $(ax + b)$
 
-**Soal.** Hitung $\displaystyle\int_0^1 (2x+1)^3\,dx$.
-
-1. **Langkah 1: Kenali bentuknya.** $a = 2$, $b = 1$, $n = 3$.
-2. **Langkah 2: Antiturunan.** $\dfrac{(2x+1)^4}{2 \times 4} = \dfrac{(2x+1)^4}{8}$.
-3. **Langkah 3: Masukkan batas.** $\dfrac{3^4}{8} - \dfrac{1^4}{8} = \dfrac{81 - 1}{8} = 10$.
-4. **Cek jawaban.** Jabarkan: $(2x+1)^3 = 8x^3 + 12x^2 + 6x + 1$. Integralnya dari 0 sampai 1: $2 + 4 + 3 + 1 = 10$. Sama.
-
-**Jawaban:** $10$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Hitung $\\displaystyle\\int_0^1 (2x+1)^3\\,dx$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Bentuk $(ax + b)^n$. Berapa $a$?",
+   "answer": "2",
+   "hint": "Koefisien $x$ di dalam kurung.",
+   "explain": "$a = 2$, $b = 1$, $n = 3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Antiturunannya?",
+   "options": [
+    "$\\frac{(2x+1)^4}{8}$",
+    "$\\frac{(2x+1)^4}{4}$",
+    "$\\frac{(2x+1)^4}{2}$"
+   ],
+   "answer": "$\\frac{(2x+1)^4}{8}$",
+   "hint": "Bagi dengan pangkat baru dan dengan $a$.",
+   "explain": "$\\frac{(2x+1)^4}{2 \\times 4}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 3: Nilai antiturunan di $x = 1$?",
+   "answer": {
+    "num": 81,
+    "den": 8
+   },
+   "hint": "$(2 + 1)^4 = 81$.",
+   "explain": "$\\frac{81}{8}$. Di $x = 0$: $\\frac{1}{8}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Hasil $\\frac{81}{8} - \\frac{1}{8}$?",
+   "answer": "10",
+   "hint": "$\\frac{80}{8}$.",
+   "explain": "Hasilnya 10.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $(2x+1)^3 = 8x^3 + 12x^2 + 6x + 1$. Integralnya dari 0 sampai 1 adalah $2 + 4 + 3 + 1 = ?$",
+   "answer": "10",
+   "hint": "Jumlahkan.",
+   "explain": "Sama-sama 10. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\int_0^1 (2x+1)^3\\,dx = 10$."
+}
+```
 
 ### Contoh 3: Luas yang sebagian di bawah sumbu $x$
 
-**Soal.** Hitung luas daerah antara kurva $y = x^2 - 2x$ dan sumbu $x$, dari $x = 0$ sampai $x = 3$.
-
-1. **Langkah 1: Cari titik potong.** $x^2 - 2x = x(x - 2) = 0$, jadi $x = 0$ atau $x = 2$. Di antara 0 dan 2 kurva di bawah sumbu (cek $x = 1$: $y = -1$). Di antara 2 dan 3 kurva di atas sumbu.
-2. **Langkah 2: Antiturunan.** $F(x) = \dfrac{x^3}{3} - x^2$.
-3. **Langkah 3: Bagian bawah.** $F(2) - F(0) = \dfrac{8}{3} - 4 = -\dfrac{4}{3}$. Luasnya $\dfrac{4}{3}$.
-4. **Langkah 4: Bagian atas.** $F(3) - F(2) = (9 - 9) - \left(-\dfrac{4}{3}\right) = \dfrac{4}{3}$.
-5. **Langkah 5: Jumlahkan luas.** $\dfrac{4}{3} + \dfrac{4}{3} = \dfrac{8}{3}$.
-6. **Cek jawaban.** Kalau langsung $\int_0^3$, hasilnya $F(3) - F(0) = 0$. Nol jelas bukan luas, karena daerahnya terlihat ada. Ini bukti bagian bawah dan atas saling menghapus, sehingga perlu dipisah.
-
-**Jawaban:** Luas $= \dfrac{8}{3}$ satuan luas.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Hitung luas daerah antara kurva $y = x^2 - 2x$ dan sumbu $x$, dari $x = 0$ sampai $x = 3$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Di mana kurva memotong sumbu $x$?",
+   "options": [
+    "$x = 0$ dan $x = 2$",
+    "$x = 0$ dan $x = -2$",
+    "$x = 2$ saja"
+   ],
+   "answer": "$x = 0$ dan $x = 2$",
+   "hint": "Faktorkan $x(x - 2) = 0$.",
+   "explain": "Di antara 0 dan 2 kurva di bawah sumbu (cek $x = 1$: $y = -1$).",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Antiturunannya?",
+   "options": [
+    "$\\frac{x^3}{3} - x^2$",
+    "$x^3 - x^2$",
+    "$2x - 2$"
+   ],
+   "answer": "$\\frac{x^3}{3} - x^2$",
+   "hint": "Naikkan pangkat dan bagi.",
+   "explain": "$F(x) = \\frac{x^3}{3} - x^2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: $F(2) - F(0) = ?$",
+   "options": [
+    "$-\\frac{4}{3}$",
+    "$\\frac{4}{3}$",
+    "$\\frac{8}{3}$"
+   ],
+   "answer": "$-\\frac{4}{3}$",
+   "hint": "$\\frac{8}{3} - 4$.",
+   "explain": "Negatif karena di bawah sumbu. Luas bagian ini $\\frac{4}{3}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 4: Luas bagian atas, $F(3) - F(2)$?",
+   "answer": {
+    "num": 4,
+    "den": 3
+   },
+   "hint": "$F(3) = 9 - 9 = 0$.",
+   "explain": "$0 - \\left(-\\frac{4}{3}\\right) = \\frac{4}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 5: Luas total?",
+   "answer": {
+    "num": 8,
+    "den": 3
+   },
+   "hint": "Jumlahkan nilai mutlak kedua bagian.",
+   "explain": "$\\frac{4}{3} + \\frac{4}{3} = \\frac{8}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: kalau langsung $\\int_0^3$, berapa hasilnya?",
+   "answer": "0",
+   "hint": "$F(3) - F(0)$.",
+   "explain": "Hasilnya 0, padahal daerahnya ada. Jadi memang harus dipisah.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Luas $= \\frac{8}{3}$ satuan luas."
+}
+```
 
 ### Contoh 4: Gerak motor yang berbalik arah
 
-**Soal.** Putu mengendarai motor di jalan lurus. Percepatannya $a = 2t - 6$ m/s², dan kecepatan awalnya $8$ m/s. Tentukan (a) kecepatan $v$ sebagai fungsi $t$, (b) perpindahan, dan (c) jarak tempuh selama 5 detik pertama.
-
-1. **Langkah 1: Integralkan percepatan.** $v = \int (2t - 6)\,dt = t^2 - 6t + C$. Saat $t = 0$, $v = 8$, jadi $C = 8$. Maka $v = t^2 - 6t + 8$.
-2. **Langkah 2: Cari saat berbalik arah.** $v = (t - 2)(t - 4) = 0$, jadi $t = 2$ dan $t = 4$. Antara keduanya $v < 0$ (motor mundur).
-3. **Langkah 3: Antiturunan kecepatan.** $S(t) = \dfrac{t^3}{3} - 3t^2 + 8t$. Hitung $S(0) = 0$, $S(2) = \dfrac{20}{3}$, $S(4) = \dfrac{16}{3}$, $S(5) = \dfrac{20}{3}$.
-4. **Langkah 4: Perpindahan.** $S(5) - S(0) = \dfrac{20}{3} \approx 6{,}67$ m.
-5. **Langkah 5: Jarak per bagian.** $0 \to 2$: $\dfrac{20}{3}$. $2 \to 4$: $\left|\dfrac{16}{3} - \dfrac{20}{3}\right| = \dfrac{4}{3}$. $4 \to 5$: $\dfrac{20}{3} - \dfrac{16}{3} = \dfrac{4}{3}$. Total $\dfrac{28}{3} \approx 9{,}33$ m.
-6. **Cek jawaban.** Perpindahan = maju − mundur = $\left(\dfrac{20}{3} + \dfrac{4}{3}\right) - \dfrac{4}{3} = \dfrac{20}{3}$. Cocok dengan Langkah 4. Turunkan $v$: $2t - 6$, sama dengan $a$.
-
-**Jawaban:** (a) $v = t^2 - 6t + 8$; (b) perpindahan $\dfrac{20}{3}$ m; (c) jarak $\dfrac{28}{3}$ m.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Putu mengendarai motor di jalan lurus dengan percepatan $a = 2t - 6$ m/s² dan kecepatan awal $8$ m/s. Tentukan (a) $v$ sebagai fungsi $t$, (b) perpindahan, dan (c) jarak tempuh selama 5 detik pertama.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Integralkan $a$ dan pakai $v(0) = 8$.",
+   "options": [
+    "$v = t^2 - 6t + 8$",
+    "$v = t^2 - 6t$",
+    "$v = 2t^2 - 6t + 8$"
+   ],
+   "answer": "$v = t^2 - 6t + 8$",
+   "hint": "$\\int (2t - 6)\\,dt = t^2 - 6t + C$, lalu cari $C$.",
+   "explain": "Saat $t = 0$, $v = C = 8$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Kapan motor berbalik arah ($v = 0$)?",
+   "options": [
+    "$t = 2$ dan $t = 4$",
+    "$t = 3$",
+    "$t = -2$ dan $t = -4$"
+   ],
+   "answer": "$t = 2$ dan $t = 4$",
+   "hint": "Faktorkan $t^2 - 6t + 8$.",
+   "explain": "$(t - 2)(t - 4) = 0$. Di antaranya $v < 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 3: Dengan $S(t) = \\frac{t^3}{3} - 3t^2 + 8t$, berapa $S(2)$?",
+   "answer": {
+    "num": 20,
+    "den": 3
+   },
+   "hint": "$\\frac{8}{3} - 12 + 16$.",
+   "explain": "$S(2) = \\frac{20}{3}$. Juga $S(4) = \\frac{16}{3}$ dan $S(5) = \\frac{20}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 4: Perpindahan $S(5) - S(0)$?",
+   "answer": {
+    "num": 20,
+    "den": 3
+   },
+   "hint": "$S(0) = 0$.",
+   "explain": "Perpindahan $\\frac{20}{3} \\approx 6{,}67$ m.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 5: Jarak tempuh (jumlah nilai mutlak tiap bagian)?",
+   "answer": {
+    "num": 28,
+    "den": 3
+   },
+   "hint": "$\\frac{20}{3} + \\left|\\frac{16}{3} - \\frac{20}{3}\\right| + \\left(\\frac{20}{3} - \\frac{16}{3}\\right)$.",
+   "explain": "$\\frac{20}{3} + \\frac{4}{3} + \\frac{4}{3} = \\frac{28}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: tulis jarak tempuh dalam desimal, bulatkan ke 2 desimal.",
+   "answer": "9,33",
+   "hint": "$28 \\div 3$.",
+   "explain": "$\\approx 9{,}33$ m, lebih besar dari perpindahan karena motor sempat mundur.",
+   "error": "salah-pembulatan",
+   "suffix": "m"
+  }
+ ],
+ "conclusion": "(a) $v = t^2 - 6t + 8$; (b) perpindahan $\\frac{20}{3}$ m; (c) jarak $\\frac{28}{3}$ m."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -142,16 +389,213 @@ $$ \frac{6x^3}{3} + \frac{4x^{-2}}{-2} + \frac{3x^{3/2}}{3/2} = 2x^3 - 2x^{-2} +
 
 ## Cek pemahaman
 
-1. Tentukan $\displaystyle\int (4x^3 - 6x + 5)\,dx$.
-2. Tentukan $\displaystyle\int (3x - 2)^5\,dx$.
-3. Hitung $\displaystyle\int_0^{\pi/4} (\sec^2 x + 2\cos 2x)\,dx$.
-4. Hitung luas daerah antara $y = x^2 - 4$ dan sumbu $x$ dari $x = 0$ sampai $x = 3$.
-5. Sebuah bola menggelinding di lantai lurus dengan kecepatan $v = 6 - 2t$ m/s. Tentukan perpindahan dan jarak tempuhnya selama 5 detik pertama.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $x^4 - 3x^2 + 5x + C$. Integralkan suku per suku.
-2. $\dfrac{(3x-2)^6}{18} + C$. Pangkat naik jadi 6, lalu bagi dengan $3 \times 6 = 18$.
-3. $2$. Antiturunan $\tan x + \sin 2x$; di $\frac{\pi}{4}$ bernilai $1 + 1 = 2$, di 0 bernilai 0.
-4. $\dfrac{23}{3}$. Kurva memotong sumbu di $x = 2$; $\int_0^2 = -\dfrac{16}{3}$ (luas $\dfrac{16}{3}$) dan $\int_2^3 = \dfrac{7}{3}$, jumlah $\dfrac{23}{3}$.
-5. Perpindahan 5 m, jarak 13 m. $s = 6t - t^2$; berbalik di $t = 3$ dengan $s(3) = 9$, lalu $s(5) = 5$, jadi jarak $9 + 4 = 13$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Tentukan $\\displaystyle\\int (4x^3 - 6x + 5)\\,dx$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Integral $4x^3$?",
+   "options": [
+    "$x^4$",
+    "$12x^2$",
+    "$4x^4$"
+   ],
+   "answer": "$x^4$",
+   "hint": "$\\frac{4x^4}{4}$.",
+   "explain": "$x^4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Hasil lengkapnya?",
+   "options": [
+    "$x^4 - 3x^2 + 5x + C$",
+    "$x^4 - 6x^2 + 5x + C$",
+    "$x^4 - 3x^2 + 5 + C$",
+    "$x^4 - 3x^2 + 5x$"
+   ],
+   "answer": "$x^4 - 3x^2 + 5x + C$",
+   "hint": "Integralkan suku per suku; konstanta 5 menjadi $5x$.",
+   "explain": "$-6x \\to -3x^2$, $5 \\to 5x$, dan $+C$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$x^4 - 3x^2 + 5x + C$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Tentukan $\\displaystyle\\int (3x - 2)^5\\,dx$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Pangkat baru setelah diintegralkan?",
+   "answer": "6",
+   "hint": "Naikkan satu.",
+   "explain": "Pangkat menjadi 6.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Hasilnya?",
+   "options": [
+    "$\\frac{(3x-2)^6}{18} + C$",
+    "$\\frac{(3x-2)^6}{6} + C$",
+    "$\\frac{(3x-2)^6}{3} + C$"
+   ],
+   "answer": "$\\frac{(3x-2)^6}{18} + C$",
+   "hint": "Bagi dengan pangkat baru dan dengan $a = 3$.",
+   "explain": "$3 \\times 6 = 18$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$\\frac{(3x-2)^6}{18} + C$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung $\\displaystyle\\int_0^{\\pi/4} (\\sec^2 x + 2\\cos 2x)\\,dx$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Antiturunannya?",
+   "options": [
+    "$\\tan x + \\sin 2x$",
+    "$\\tan x + 4\\sin 2x$",
+    "$\\tan x - \\sin 2x$"
+   ],
+   "answer": "$\\tan x + \\sin 2x$",
+   "hint": "$\\int 2\\cos 2x\\,dx = 2 \\cdot \\frac{1}{2}\\sin 2x$.",
+   "explain": "Bagi dengan $a = 2$, sehingga koefisiennya 1.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Nilai integralnya?",
+   "answer": "2",
+   "hint": "Di $\\frac{\\pi}{4}$: $\\tan\\frac{\\pi}{4} + \\sin\\frac{\\pi}{2}$. Di 0: 0.",
+   "explain": "$1 + 1 - 0 = 2$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Hasilnya 2."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Hitung luas daerah antara $y = x^2 - 4$ dan sumbu $x$ dari $x = 0$ sampai $x = 3$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Di $x$ positif berapa kurva memotong sumbu $x$?",
+   "answer": "2",
+   "hint": "$x^2 - 4 = 0$.",
+   "explain": "$x = 2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Luas bagian dari 0 sampai 2 (nilai mutlak integralnya)?",
+   "answer": {
+    "num": 16,
+    "den": 3
+   },
+   "hint": "$\\left[\\frac{x^3}{3} - 4x\\right]_0^2 = \\frac{8}{3} - 8$.",
+   "explain": "Integralnya $-\\frac{16}{3}$, luasnya $\\frac{16}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Luas bagian dari 2 sampai 3?",
+   "answer": {
+    "num": 7,
+    "den": 3
+   },
+   "hint": "$(9 - 12) - \\left(\\frac{8}{3} - 8\\right)$.",
+   "explain": "$-3 + \\frac{16}{3} = \\frac{7}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Luas total?",
+   "answer": {
+    "num": 23,
+    "den": 3
+   },
+   "hint": "Jumlahkan kedua luas.",
+   "explain": "$\\frac{16}{3} + \\frac{7}{3} = \\frac{23}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  }
+ ],
+ "conclusion": "Luas $= \\frac{23}{3}$ satuan luas."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Sebuah bola menggelinding di lantai lurus dengan kecepatan $v = 6 - 2t$ m/s. Tentukan perpindahan dan jarak tempuhnya selama 5 detik pertama.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Kapan bola berbalik arah?",
+   "answer": "3",
+   "hint": "$v = 0$.",
+   "explain": "$6 - 2t = 0$, jadi $t = 3$.",
+   "error": "salah-langkah-materi",
+   "suffix": "s"
+  },
+  {
+   "kind": "number",
+   "prompt": "Dengan $s = 6t - t^2$, berapa $s(3)$?",
+   "answer": "9",
+   "hint": "$18 - 9$.",
+   "explain": "$s(3) = 9$ m.",
+   "error": "salah-langkah-materi",
+   "suffix": "m"
+  },
+  {
+   "kind": "number",
+   "prompt": "Perpindahan selama 5 detik, $s(5) - s(0)$?",
+   "answer": "5",
+   "hint": "$30 - 25$.",
+   "explain": "Perpindahan 5 m.",
+   "error": "salah-langkah-materi",
+   "suffix": "m"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jarak tempuh?",
+   "answer": "13",
+   "hint": "Maju 9 m, lalu mundur dari 9 ke 5.",
+   "explain": "$9 + 4 = 13$ m.",
+   "error": "salah-langkah-materi",
+   "suffix": "m"
+  }
+ ],
+ "conclusion": "Perpindahan 5 m, jarak tempuh 13 m."
+}
+```

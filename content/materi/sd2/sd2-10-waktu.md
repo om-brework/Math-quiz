@@ -19,6 +19,14 @@ Bayangkan **jarum panjang** sebagai pelari yang berlari **keliling lapangan**.
 - Di pinggir lapangan ada 12 bendera besar (angka 1 sampai 12). Dari satu bendera ke bendera berikutnya ada 5 langkah kecil. Satu langkah kecil = **1 menit**.
 - Setiap kali pelari menyelesaikan satu putaran, **jarum pendek** maju satu angka. Jarum pendek menunjukkan **jam**.
 
+```visual
+{"type": "clock", "hour": 3, "minute": 0, "caption": "Pukul 03.00: pelari (jarum panjang) di garis start, angka 12"}
+```
+
+```visual
+{"type": "clock", "hour": 4, "minute": 0, "caption": "Satu putaran kemudian: pukul 04.00. Jarum pendek maju dari 3 ke 4"}
+```
+
 ## Konsep
 
 ### Membaca jam sampai menit
@@ -28,6 +36,14 @@ Bayangkan **jarum panjang** sebagai pelari yang berlari **keliling lapangan**.
 3. **Tambahkan garis kecil.** Setiap garis kecil setelah angka itu bernilai 1 menit.
 
 Contoh: jarum panjang 3 garis kecil setelah angka 4. Angka 4 berarti 5, 10, 15, 20 menit. Ditambah 3, jadi 23 menit.
+
+```visual
+{"type": "clock", "hour": 7, "minute": 23, "caption": "Pukul 07.23"}
+```
+
+```anim
+{"type": "garis", "from": 0, "to": 60, "start": 0, "jumps": [5, 5, 5, 5, 1, 1, 1], "step": 1, "title": "Pelari menghitung menit: loncat 5 empat kali, lalu 1 tiga kali"}
+```
 
 Waktu ditulis dengan titik: **pukul 07.23**. Dibaca "pukul tujuh lewat dua puluh tiga menit".
 
@@ -54,74 +70,318 @@ Ambil 60 menit sebanyak mungkin. Setiap 60 menit menjadi 1 jam. Sisanya tetap me
 
 Loncat di **garis waktu**. Loncat per jam dulu, lalu per menit. Kalau melewati jam bulat, loncat dulu sampai jam bulat.
 
-```
-08.10 ------------> 10.10 ------> 10.35
-       + 2 jam            + 25 menit
+```visual
+{"type": "numberLine", "from": 0, "to": 150, "step": 10, "marks": [0, 120, 145], "jumps": [{"from": 0, "to": 120, "label": "+2 jam"}, {"from": 120, "to": 145, "label": "+25 menit"}], "caption": "Garis waktu dari 08.10 (angka = menit sejak 08.10): 08.10 → 10.10 → 10.35"}
 ```
 
 Lama waktu: 2 jam 25 menit.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Membaca jam
 
-**Soal.** Jarum pendek berada di antara angka 4 dan 5. Jarum panjang berada 3 garis kecil setelah angka 7. Pukul berapa?
-
-1. **Langkah 1: Baca jarum pendek.** Sudah lewat 4, belum sampai 5. Jamnya 4.
-2. **Langkah 2: Baca angka jarum panjang.** Pelari sudah melewati bendera 7. Hitung loncat 5 tujuh kali: 5, 10, 15, 20, 25, 30, 35. Jadi 35 menit.
-3. **Langkah 3: Tambah garis kecil.** 35 + 3 = 38 menit.
-4. **Langkah 4: Tulis waktunya.** Pukul 04.38.
-5. **Cek jawaban.** Jarum panjang belum sampai angka 8. Angka 8 berarti 40 menit. Jadi menitnya harus kurang dari 40. 38 kurang dari 40. Benar.
-
-**Jawaban:** Pukul 04.38, dibaca empat lewat tiga puluh delapan menit.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Jarum pendek berada di antara angka 4 dan 5. Jarum panjang berada 3 garis kecil setelah angka 7. Pukul berapa?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Baca jarum pendek. Jamnya berapa?",
+   "answer": "4",
+   "hint": "Angka yang sudah dilewati jarum pendek.",
+   "explain": "Sudah lewat 4, belum sampai 5. Jamnya 4.",
+   "error": "salah-baca-jarum-pendek"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Jarum panjang sudah melewati angka 7. Itu berapa menit?",
+   "answer": "35",
+   "hint": "Hitung loncat 5 tujuh kali.",
+   "explain": "5, 10, 15, 20, 25, 30, 35. Jadi 35 menit.",
+   "error": "menit-tidak-loncat-5",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Tambah 3 garis kecil. 35 + 3 = ?",
+   "answer": "38",
+   "hint": "Setiap garis kecil 1 menit.",
+   "explain": "35 + 3 = 38 menit.",
+   "error": "salah-tulis-menit",
+   "suffix": "menit"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Tulis waktunya.",
+   "options": [
+    "04.38",
+    "07.20",
+    "05.38",
+    "04.07"
+   ],
+   "answer": "04.38",
+   "hint": "Jam dulu, lalu menit, dipisah titik.",
+   "explain": "Pukul 04.38, dibaca empat lewat tiga puluh delapan menit.",
+   "error": "tertukar-jarum-jam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: angka 8 berarti berapa menit?",
+   "answer": "40",
+   "hint": "Hitung loncat 5 delapan kali.",
+   "explain": "40 menit. Jarum belum sampai 8, jadi menitnya kurang dari 40. 38 cocok.",
+   "error": "menit-tidak-loncat-5",
+   "suffix": "menit"
+  }
+ ],
+ "conclusion": "Pukul 04.38.",
+ "visual": {
+  "type": "clock",
+  "hour": 4,
+  "minute": 38
+ }
+}
+```
 
 ### Contoh 2: Mengubah satuan waktu
 
-**Soal.** (a) 2 jam 25 menit = ... menit. (b) 95 menit = ... jam ... menit.
-
-1. **Langkah 1: Ubah jam ke menit (a).** 2 jam = 60 + 60 = 120 menit.
-2. **Langkah 2: Tambahkan menitnya (a).** 120 + 25 = 145 menit.
-3. **Langkah 3: Ambil 60 menit (b).** 95 menit lebih dari 60. Ambil 60 menit menjadi 1 jam.
-4. **Langkah 4: Hitung sisa (b).** 95 − 60 = 35 menit. Sisa 35 kurang dari 60, jadi berhenti.
-5. **Cek jawaban.** (a) 145 − 120 = 25, cocok. (b) 1 jam 35 menit = 60 + 35 = 95 menit, cocok.
-
-**Jawaban:** (a) 145 menit. (b) 1 jam 35 menit.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "(a) 2 jam 25 menit = ... menit. (b) 95 menit = ... jam ... menit.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1 (a): Ubah 2 jam ke menit.",
+   "answer": "120",
+   "hint": "1 jam = 60 menit. Ada dua jam.",
+   "explain": "60 + 60 = 120 menit.",
+   "error": "satu-jam-100-menit",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2 (a): Tambahkan menitnya. 120 + 25 = ?",
+   "answer": "145",
+   "hint": "Tambahkan 25 menit.",
+   "explain": "2 jam 25 menit = 145 menit.",
+   "error": "salah-ubah-menit-ke-jam",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3 (b): 95 menit lebih dari 60. Ambil 60 menit menjadi berapa jam?",
+   "answer": "1",
+   "hint": "60 menit = 1 jam.",
+   "explain": "Satu kali 60 menit = 1 jam.",
+   "error": "satu-jam-100-menit",
+   "suffix": "jam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4 (b): Hitung sisa menitnya. 95 − 60 = ?",
+   "answer": "35",
+   "hint": "Kurangi 95 dengan 60.",
+   "explain": "Sisa 35 menit, kurang dari 60, jadi berhenti.",
+   "error": "salah-ubah-menit-ke-jam",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban (b): 1 jam 35 menit = 60 + 35 = ... menit?",
+   "answer": "95",
+   "hint": "Ubah lagi ke menit.",
+   "explain": "95 menit. Cocok.",
+   "error": "salah-ubah-menit-ke-jam",
+   "suffix": "menit"
+  }
+ ],
+ "conclusion": "(a) 145 menit. (b) 1 jam 35 menit."
+}
+```
 
 ### Contoh 3: Lama waktu tanpa melewati jam bulat
 
-**Soal.** Siti les menari mulai pukul 14.15 dan selesai pukul 15.50. Berapa lama Siti les?
-
-1. **Langkah 1: Loncat per jam.** Dari 14.15, maju 1 jam menjadi 15.15. Maju 1 jam lagi menjadi 16.15, itu sudah lewat 15.50. Jadi hanya 1 jam.
-2. **Langkah 2: Loncat per menit.** Dari 15.15 ke 15.50. 50 − 15 = 35 menit.
-
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Siti les menari mulai pukul 14.15 dan selesai pukul 15.50. Berapa lama Siti les?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Loncat per jam dari 14.15. Berapa jam penuh sebelum melewati 15.50?",
+   "answer": "1",
+   "hint": "14.15 + 1 jam = 15.15. Tambah 1 jam lagi menjadi 16.15, sudah lewat.",
+   "explain": "Hanya 1 jam, sampai 15.15.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "jam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Loncat per menit dari 15.15 ke 15.50. Berapa menit?",
+   "answer": "35",
+   "hint": "50 − 15.",
+   "explain": "50 − 15 = 35 menit.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "menit"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Gabungkan. Lama les adalah ...",
+   "options": [
+    "1 jam 35 menit",
+    "1 jam 65 menit",
+    "2 jam 35 menit"
+   ],
+   "answer": "1 jam 35 menit",
+   "hint": "Jam dari langkah 1, menit dari langkah 2.",
+   "explain": "1 jam + 35 menit = 1 jam 35 menit.",
+   "error": "salah-loncat-garis-waktu"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: 14.15 ditambah 1 jam 35 menit menjadi pukul ...",
+   "options": [
+    "15.50",
+    "16.50",
+    "15.35"
+   ],
+   "answer": "15.50",
+   "hint": "Tambah 1 jam dulu, lalu 35 menit.",
+   "explain": "14.15 → 15.15 → 15.50. Sama dengan waktu selesai.",
+   "error": "salah-loncat-garis-waktu"
+  }
+ ],
+ "conclusion": "Siti les selama 1 jam 35 menit.",
+ "visual": {
+  "type": "numberLine",
+  "from": 0,
+  "to": 100,
+  "step": 10,
+  "marks": [
+   0,
+   60,
+   95
+  ],
+  "jumps": [
+   {
+    "from": 0,
+    "to": 60,
+    "label": "+1 jam"
+   },
+   {
+    "from": 60,
+    "to": 95,
+    "label": "+35 menit"
+   }
+  ],
+  "caption": "Angka = menit sejak 14.15: 14.15 → 15.15 → 15.50"
+ }
+}
 ```
-14.15 ---------> 15.15 ---------> 15.50
-       + 1 jam          + 35 menit
-```
-
-3. **Langkah 3: Gabungkan.** 1 jam 35 menit.
-4. **Cek jawaban.** Mulai 14.15, tambah 1 jam menjadi 15.15, tambah 35 menit menjadi 15.50. Sama dengan waktu selesai. Benar.
-
-**Jawaban:** Siti les selama 1 jam 35 menit.
 
 ### Contoh 4: Soal cerita melewati jam bulat
 
-**Soal.** Budi naik bus ke rumah Nenek. Bus berangkat pukul 08.40 dan tiba pukul 10.05. Berapa lama perjalanannya? Tulis juga dalam menit.
-
-1. **Langkah 1: Loncat sampai jam bulat.** Dari 08.40 ke 09.00. Pelari perlu 20 menit lagi untuk menyelesaikan putaran. Jadi 20 menit.
-2. **Langkah 2: Loncat per jam.** Dari 09.00 ke 10.00. Itu 1 jam.
-3. **Langkah 3: Loncat sisa menit.** Dari 10.00 ke 10.05. Itu 5 menit.
-
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Budi naik bus ke rumah Nenek. Bus berangkat pukul 08.40 dan tiba pukul 10.05. Berapa lama perjalanannya? Tulis juga dalam menit.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Loncat sampai jam bulat. Dari 08.40 ke 09.00 berapa menit?",
+   "answer": "20",
+   "hint": "Satu putaran 60 menit. Pelari sudah di menit 40.",
+   "explain": "60 − 40 = 20 menit.",
+   "error": "salah-lewat-jam-bulat",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Loncat per jam. Dari 09.00 ke 10.00 berapa jam?",
+   "answer": "1",
+   "hint": "Jarum pendek maju satu angka.",
+   "explain": "1 jam.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "jam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Loncat sisa menit. Dari 10.00 ke 10.05 berapa menit?",
+   "answer": "5",
+   "hint": "Lihat menitnya saja.",
+   "explain": "5 menit.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Gabungkan menitnya. 20 + 5 = ? (jadi 1 jam ... menit)",
+   "answer": "25",
+   "hint": "Jumlahkan menit dari langkah 1 dan 3.",
+   "explain": "1 jam 25 menit.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: Ubah ke menit. 60 + 25 = ?",
+   "answer": "85",
+   "hint": "1 jam = 60 menit.",
+   "explain": "85 menit.",
+   "error": "satu-jam-100-menit",
+   "suffix": "menit"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: 08.40 + 1 jam = 09.40. Lalu 09.40 + 25 menit = ?",
+   "options": [
+    "10.05",
+    "09.65",
+    "10.25"
+   ],
+   "answer": "10.05",
+   "hint": "Dari 09.40, 20 menit sampai 10.00, lalu 5 menit lagi.",
+   "explain": "10.05, sama dengan waktu tiba. Benar.",
+   "error": "salah-lewat-jam-bulat"
+  }
+ ],
+ "conclusion": "Perjalanan 1 jam 25 menit, atau 85 menit.",
+ "visual": {
+  "type": "numberLine",
+  "from": 0,
+  "to": 90,
+  "step": 5,
+  "marks": [
+   0,
+   20,
+   80,
+   85
+  ],
+  "jumps": [
+   {
+    "from": 0,
+    "to": 20,
+    "label": "+20 menit"
+   },
+   {
+    "from": 20,
+    "to": 80,
+    "label": "+1 jam"
+   },
+   {
+    "from": 80,
+    "to": 85,
+    "label": "+5 menit"
+   }
+  ],
+  "caption": "Angka = menit sejak 08.40: 08.40 → 09.00 → 10.00 → 10.05"
+ }
+}
 ```
-08.40 -------> 09.00 -------> 10.00 -------> 10.05
-      + 20 menit      + 1 jam       + 5 menit
-```
-
-4. **Langkah 4: Gabungkan.** 1 jam + 20 menit + 5 menit = 1 jam 25 menit.
-5. **Langkah 5: Ubah ke menit.** 60 + 25 = 85 menit.
-6. **Cek jawaban.** 08.40 + 1 jam = 09.40. Lalu 09.40 + 25 menit = 10.05. Benar.
-
-**Jawaban:** Perjalanan 1 jam 25 menit, atau 85 menit.
 
 ## Kesalahan yang sering terjadi
 
@@ -142,16 +402,189 @@ Lama waktu: 2 jam 25 menit.
 
 ## Cek pemahaman
 
-1. Jarum pendek di antara 9 dan 10. Jarum panjang 2 garis kecil setelah angka 4. Pukul berapa?
-2. 3 jam = ... menit.
-3. 1 jam 50 menit = ... menit.
-4. 130 menit = ... jam ... menit.
-5. Film di TV mulai pukul 19.35 dan selesai pukul 21.15. Berapa lama film itu?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. Pukul 09.22. Angka 4 berarti 20 menit, ditambah 2 garis menjadi 22 menit.
-2. 180 menit. 60 + 60 + 60 = 180.
-3. 110 menit. 60 + 50 = 110.
-4. 2 jam 10 menit. 130 − 60 − 60 = 10, jadi ada 2 kali 60 menit dan sisa 10 menit.
-5. 1 jam 40 menit. 19.35 ke 20.00 = 25 menit, 20.00 ke 21.00 = 1 jam, 21.00 ke 21.15 = 15 menit, dan 25 + 15 = 40 menit.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Jarum pendek di antara 9 dan 10. Jarum panjang 2 garis kecil setelah angka 4. Pukul berapa?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Jamnya berapa?",
+   "answer": "9",
+   "hint": "Angka yang sudah dilewati jarum pendek.",
+   "explain": "Jamnya 9.",
+   "error": "salah-baca-jarum-pendek"
+  },
+  {
+   "kind": "number",
+   "prompt": "Angka 4 pada jarum panjang berarti berapa menit?",
+   "answer": "20",
+   "hint": "Hitung loncat 5 empat kali.",
+   "explain": "5, 10, 15, 20.",
+   "error": "menit-tidak-loncat-5",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Tambah 2 garis kecil. Menitnya berapa?",
+   "answer": "22",
+   "hint": "Setiap garis kecil 1 menit.",
+   "explain": "20 + 2 = 22. Jadi pukul 09.22.",
+   "error": "salah-tulis-menit",
+   "suffix": "menit"
+  }
+ ],
+ "conclusion": "Pukul 09.22.",
+ "visual": {
+  "type": "clock",
+  "hour": 9,
+  "minute": 22
+ }
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "3 jam = ... menit.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "2 jam = ... menit?",
+   "answer": "120",
+   "hint": "60 + 60.",
+   "explain": "120 menit.",
+   "error": "satu-jam-100-menit",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "3 jam = ... menit?",
+   "answer": "180",
+   "hint": "Tambah 60 lagi.",
+   "explain": "120 + 60 = 180 menit.",
+   "error": "satu-jam-100-menit",
+   "suffix": "menit"
+  }
+ ],
+ "conclusion": "3 jam = 180 menit."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "1 jam 50 menit = ... menit.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "1 jam = ... menit?",
+   "answer": "60",
+   "hint": "Satu putaran jarum panjang.",
+   "explain": "60 menit.",
+   "error": "satu-jam-100-menit",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Tambahkan 50 menit. Hasilnya?",
+   "answer": "110",
+   "hint": "60 + 50.",
+   "explain": "110 menit.",
+   "error": "salah-ubah-menit-ke-jam",
+   "suffix": "menit"
+  }
+ ],
+ "conclusion": "1 jam 50 menit = 110 menit."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "130 menit = ... jam ... menit.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Berapa kali 60 menit bisa diambil dari 130 menit?",
+   "answer": "2",
+   "hint": "60, 120, lalu 180 sudah kelebihan.",
+   "explain": "Dua kali, jadi 2 jam.",
+   "error": "salah-ubah-menit-ke-jam",
+   "suffix": "jam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa menit sisanya?",
+   "answer": "10",
+   "hint": "130 − 120.",
+   "explain": "Sisa 10 menit.",
+   "error": "salah-ubah-menit-ke-jam",
+   "suffix": "menit"
+  }
+ ],
+ "conclusion": "130 menit = 2 jam 10 menit."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Film di TV mulai pukul 19.35 dan selesai pukul 21.15. Berapa lama film itu?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Dari 19.35 ke 20.00 berapa menit?",
+   "answer": "25",
+   "hint": "60 − 35.",
+   "explain": "25 menit.",
+   "error": "salah-lewat-jam-bulat",
+   "suffix": "menit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Dari 20.00 ke 21.00 berapa jam?",
+   "answer": "1",
+   "hint": "Jarum pendek maju satu angka.",
+   "explain": "1 jam.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "jam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Dari 21.00 ke 21.15 berapa menit?",
+   "answer": "15",
+   "hint": "Lihat menitnya saja.",
+   "explain": "15 menit.",
+   "error": "salah-loncat-garis-waktu",
+   "suffix": "menit"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Gabungkan. Lama film adalah ...",
+   "options": [
+    "1 jam 40 menit",
+    "1 jam 80 menit",
+    "2 jam 20 menit"
+   ],
+   "answer": "1 jam 40 menit",
+   "hint": "25 + 15 menit, ditambah 1 jam.",
+   "explain": "1 jam + 40 menit = 1 jam 40 menit.",
+   "error": "satu-jam-100-menit"
+  }
+ ],
+ "conclusion": "Film itu 1 jam 40 menit."
+}
+```

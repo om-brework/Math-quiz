@@ -10,7 +10,7 @@ interface AuthLayoutProps {
 
 export default function AuthSimpleLayout({ children, title, description }: AuthLayoutProps) {
     return (
-        <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden bg-[#fffaf2] p-4 sm:p-10 dark:bg-zinc-950">
+        <div className="relative flex min-h-svh flex-col items-center justify-center overflow-hidden p-4 sm:p-10 dark:bg-zinc-950">
             {/* anak tangga dekoratif */}
             <svg
                 viewBox="0 0 400 400"
@@ -27,7 +27,7 @@ export default function AuthSimpleLayout({ children, title, description }: AuthL
                     <Link href={route('home')} className="flex w-fit items-center self-center" aria-label="Langkah, ke beranda">
                         <AppLogo />
                     </Link>
-                    <div className="flex flex-col gap-6 rounded-3xl bg-white p-6 shadow-xl ring-1 ring-amber-900/10 sm:p-8 dark:bg-zinc-900 dark:ring-white/10">
+                    <div className="flex flex-col gap-6 rounded-2xl bg-white p-6 shadow-sm ring-1 ring-slate-200 sm:p-8 dark:bg-zinc-900 dark:ring-white/10">
                         <div className="space-y-1 text-center">
                             <h1 className="font-display text-2xl font-bold">{title}</h1>
                             <p className="text-muted-foreground text-sm">{description}</p>

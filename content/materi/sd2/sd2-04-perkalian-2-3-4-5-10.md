@@ -17,10 +17,8 @@ Bayangkan **keranjang jeruk**. Setiap keranjang berisi jeruk yang **sama banyak*
 
 3 × 4 artinya **3 keranjang, tiap keranjang berisi 4 jeruk**.
 
-```
-Keranjang 1:  o o o o
-Keranjang 2:  o o o o
-Keranjang 3:  o o o o
+```anim
+{"type": "benda", "op": "×", "a": 3, "b": 4, "item": "jeruk", "title": "3 keranjang, tiap keranjang 4 jeruk"}
 ```
 
 Jumlahnya 4 + 4 + 4 = 12. Jadi 3 × 4 = 12.
@@ -31,21 +29,15 @@ Bilangan pertama adalah **banyak keranjang**. Bilangan kedua adalah **isi tiap k
 
 ### Tabel perkalian 2, 3, 4, 5, dan 10
 
-```
- × 2      × 3      × 4      × 5      × 10
-1×2= 2   1×3= 3   1×4= 4   1×5= 5   1×10=  10
-2×2= 4   2×3= 6   2×4= 8   2×5=10   2×10=  20
-3×2= 6   3×3= 9   3×4=12   3×5=15   3×10=  30
-4×2= 8   4×3=12   4×4=16   4×5=20   4×10=  40
-5×2=10   5×3=15   5×4=20   5×5=25   5×10=  50
-6×2=12   6×3=18   6×4=24   6×5=30   6×10=  60
-7×2=14   7×3=21   7×4=28   7×5=35   7×10=  70
-8×2=16   8×3=24   8×4=32   8×5=40   8×10=  80
-9×2=18   9×3=27   9×4=36   9×5=45   9×10=  90
-10×2=20  10×3=30  10×4=40  10×5=50  10×10= 100
+```visual
+{"type": "table", "head": ["× 2", "× 3", "× 4", "× 5", "× 10"], "rows": [["1 × 2 = 2", "1 × 3 = 3", "1 × 4 = 4", "1 × 5 = 5", "1 × 10 = 10"], ["2 × 2 = 4", "2 × 3 = 6", "2 × 4 = 8", "2 × 5 = 10", "2 × 10 = 20"], ["3 × 2 = 6", "3 × 3 = 9", "3 × 4 = 12", "3 × 5 = 15", "3 × 10 = 30"], ["4 × 2 = 8", "4 × 3 = 12", "4 × 4 = 16", "4 × 5 = 20", "4 × 10 = 40"], ["5 × 2 = 10", "5 × 3 = 15", "5 × 4 = 20", "5 × 5 = 25", "5 × 10 = 50"], ["6 × 2 = 12", "6 × 3 = 18", "6 × 4 = 24", "6 × 5 = 30", "6 × 10 = 60"], ["7 × 2 = 14", "7 × 3 = 21", "7 × 4 = 28", "7 × 5 = 35", "7 × 10 = 70"], ["8 × 2 = 16", "8 × 3 = 24", "8 × 4 = 32", "8 × 5 = 40", "8 × 10 = 80"], ["9 × 2 = 18", "9 × 3 = 27", "9 × 4 = 36", "9 × 5 = 45", "9 × 10 = 90"], ["10 × 2 = 20", "10 × 3 = 30", "10 × 4 = 40", "10 × 5 = 50", "10 × 10 = 100"]]}
 ```
 
 Cara mengingat: **hitung loncat**. Untuk tabel 3, loncat 3: 3, 6, 9, 12, 15, 18, 21, 24, 27, 30.
+
+```anim
+{"type": "garis", "from": 0, "to": 30, "start": 0, "jumps": [3, 3, 3, 3, 3, 3, 3, 3, 3, 3], "title": "Hitung loncat 3 sampai 30"}
+```
 
 ### Pola dalam tabel
 
@@ -59,68 +51,226 @@ Cara mengingat: **hitung loncat**. Untuk tabel 3, loncat 3: 3, 6, 9, 12, 15, 18,
 
 Tukar urutan bilangan, hasilnya tetap sama.
 
+```visual
+{"type": "objects", "item": "jeruk", "count": 12, "group": 4, "caption": "3 × 4: 3 kelompok, isi 4"}
 ```
-3 × 4 (3 baris, isi 4)     4 × 3 (4 baris, isi 3)
-o o o o                    o o o
-o o o o                    o o o
-o o o o                    o o o
-                           o o o
+
+```visual
+{"type": "objects", "item": "jeruk", "count": 12, "group": 3, "caption": "4 × 3: 4 kelompok, isi 3"}
 ```
 
 Keduanya 12 jeruk. Jadi 3 × 4 = 4 × 3. Kalau kamu lupa 4 × 3, pakai 3 × 4 yang kamu ingat.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Hitung loncat
 
-**Soal.** 5 × 3 = ...
-
-1. **Langkah 1: Baca soal dengan analogi.** 5 keranjang, tiap keranjang berisi 3 jeruk.
-2. **Langkah 2: Hitung loncat 3 sebanyak 5 kali.** 3, 6, 9, 12, 15. Pakai jari untuk menghitung loncatan.
-3. **Cek jawaban.** Pakai sifat pertukaran: 3 × 5 artinya loncat 5 tiga kali: 5, 10, 15. Hasilnya sama.
-
-**Jawaban:** 5 × 3 = 15.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Hitung $5 \\times 3$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Baca soal dengan analogi. 5 × 3 artinya?",
+   "options": [
+    "5 keranjang, tiap keranjang 3 jeruk",
+    "3 keranjang, tiap keranjang 5 jeruk",
+    "5 jeruk ditambah 3 jeruk"
+   ],
+   "answer": "5 keranjang, tiap keranjang 3 jeruk",
+   "hint": "Bilangan pertama banyak keranjang, kedua isinya.",
+   "explain": "5 keranjang, isi 3.",
+   "error": "tertukar-arti-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Hitung loncat 3 sebanyak 5 kali: 3, 6, 9, 12, ...",
+   "answer": "15",
+   "hint": "Tambah 3 lagi dari 12.",
+   "explain": "3, 6, 9, 12, 15. Jadi 5 × 3 = 15.",
+   "error": "salah-hitung-loncat"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 3 × 5, loncat 5 tiga kali: 5, 10, ...",
+   "answer": "15",
+   "hint": "Tambah 5 dari 10.",
+   "explain": "5, 10, 15. Hasilnya sama.",
+   "error": "salah-sifat-pertukaran"
+  }
+ ],
+ "conclusion": "Jadi 5 × 3 = 15.",
+ "visual": {
+  "type": "objects",
+  "item": "jeruk",
+  "count": 15,
+  "group": 3
+ }
+}
+```
 
 ### Contoh 2: Memakai pola dobel
 
-**Soal.** 4 × 7 = ...
-
-1. **Langkah 1: Baca soal.** 4 keranjang, tiap keranjang berisi 7 jeruk.
-2. **Langkah 2: Hitung 2 keranjang dulu.** 2 × 7 = 14. Ini dari tabel 2.
-3. **Langkah 3: Gandakan.** 4 keranjang adalah 2 keranjang ditambah 2 keranjang lagi. 14 + 14 = 28.
-4. **Cek jawaban.** Pakai sifat pertukaran: 7 × 4, loncat 4 tujuh kali: 4, 8, 12, 16, 20, 24, 28. Sama.
-
-**Jawaban:** 4 × 7 = 28.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Hitung $4 \\times 7$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Berapa banyak keranjang?",
+   "answer": "4",
+   "hint": "Bilangan pertama.",
+   "explain": "4 keranjang, tiap keranjang 7 jeruk.",
+   "error": "tertukar-arti-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Hitung 2 keranjang dulu. 2 × 7 = ?",
+   "answer": "14",
+   "hint": "Dari tabel 2: 7 + 7.",
+   "explain": "2 × 7 = 14.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Gandakan. 14 + 14 = ?",
+   "answer": "28",
+   "hint": "4 keranjang = 2 keranjang + 2 keranjang.",
+   "explain": "14 + 14 = 28.",
+   "error": "salah-sesuaikan-dobel"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: loncat 4 tujuh kali: 4, 8, 12, 16, 20, 24, ...",
+   "answer": "28",
+   "hint": "Tambah 4 dari 24.",
+   "explain": "Loncatan ketujuh adalah 28. Sama.",
+   "error": "salah-hitung-loncat"
+  }
+ ],
+ "conclusion": "Jadi 4 × 7 = 28."
+}
+```
 
 ### Contoh 3: Sifat pertukaran
 
-**Soal.** Apakah 3 × 8 sama dengan 8 × 3? Berapa hasilnya?
-
-1. **Langkah 1: Gambar 3 × 8.** 3 baris, tiap baris 8 bulatan.
-
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Apakah $3 \\times 8$ sama dengan $8 \\times 3$? Berapa hasilnya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Gambar 3 × 8. Seperti apa gambarnya?",
+   "options": [
+    "3 kelompok, tiap kelompok 8",
+    "8 kelompok, tiap kelompok 3"
+   ],
+   "answer": "3 kelompok, tiap kelompok 8",
+   "hint": "Bilangan pertama banyak kelompok.",
+   "explain": "3 kelompok berisi 8, seperti pada gambar.",
+   "error": "tertukar-arti-kali"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Kalau gambarnya diputar menjadi 8 kelompok isi 3, apakah banyak benda berubah?",
+   "options": [
+    "Tidak berubah",
+    "Berubah"
+   ],
+   "answer": "Tidak berubah",
+   "hint": "Tidak ada benda yang ditambah atau diambil.",
+   "explain": "Banyak benda tetap. Jadi 3 × 8 = 8 × 3.",
+   "error": "salah-sifat-pertukaran"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Hitung 8 × 3 dengan tabel 3.",
+   "answer": "24",
+   "hint": "Loncat 3 delapan kali.",
+   "explain": "8 × 3 = 24.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: loncat 8 tiga kali: 8, 16, ...",
+   "answer": "24",
+   "hint": "Tambah 8 dari 16.",
+   "explain": "8, 16, 24. Sama.",
+   "error": "salah-hitung-loncat"
+  }
+ ],
+ "conclusion": "Ya, 3 × 8 = 8 × 3 = 24.",
+ "visual": {
+  "type": "objects",
+  "item": "bintang",
+  "count": 24,
+  "group": 8
+ }
+}
 ```
-o o o o o o o o
-o o o o o o o o
-o o o o o o o o
-```
-
-2. **Langkah 2: Putar gambarnya.** Kalau dilihat dari samping, gambar yang sama menjadi 8 baris, tiap baris 3 bulatan. Itu 8 × 3. Banyak bulatan tidak berubah.
-3. **Langkah 3: Hitung dengan tabel yang kamu ingat.** 8 × 3 ada di tabel 3: 24.
-4. **Cek jawaban.** Hitung loncat 8 tiga kali: 8, 16, 24. Sama.
-
-**Jawaban:** Ya, 3 × 8 = 8 × 3 = 24.
 
 ### Contoh 4: Soal cerita dua bagian
 
-**Soal.** Di depan sekolah ada 4 sepeda dan 7 becak. Satu sepeda punya 2 roda. Satu becak punya 3 roda. Berapa roda semuanya?
-
-1. **Langkah 1: Pahami soal.** Ada dua kelompok: roda sepeda dan roda becak. Hitung masing-masing, lalu jumlahkan.
-2. **Langkah 2: Roda sepeda.** 4 sepeda, tiap sepeda 2 roda. 4 × 2 = 8.
-3. **Langkah 3: Roda becak.** 7 becak, tiap becak 3 roda. 7 × 3 = 21.
-4. **Langkah 4: Jumlahkan.** 8 + 21 = 29.
-5. **Cek jawaban.** Hitung loncat roda becak: 3, 6, 9, 12, 15, 18, 21. Benar 21. Lalu 21 + 8 = 29.
-
-**Jawaban:** Ada 29 roda.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Di depan sekolah ada 4 sepeda dan 7 becak. Satu sepeda punya 2 roda. Satu becak punya 3 roda. Berapa roda semuanya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pahami soal. Apa yang dikerjakan?",
+   "options": [
+    "Hitung roda sepeda dan roda becak, lalu jumlahkan",
+    "Kalikan 4 × 7",
+    "Jumlahkan 4 + 7 + 2 + 3"
+   ],
+   "answer": "Hitung roda sepeda dan roda becak, lalu jumlahkan",
+   "hint": "Ada dua kelompok kendaraan.",
+   "explain": "Hitung masing-masing, lalu jumlahkan.",
+   "error": "tambah-bukan-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Roda sepeda. 4 × 2 = ?",
+   "answer": "8",
+   "hint": "4 sepeda, tiap sepeda 2 roda.",
+   "explain": "4 × 2 = 8.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Roda becak. 7 × 3 = ?",
+   "answer": "21",
+   "hint": "Loncat 3 tujuh kali.",
+   "explain": "7 × 3 = 21.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Jumlahkan. 8 + 21 = ?",
+   "answer": "29",
+   "hint": "Roda sepeda ditambah roda becak.",
+   "explain": "8 + 21 = 29.",
+   "error": "salah-fakta-tambah",
+   "suffix": "roda"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: loncat 3: 3, 6, 9, 12, 15, 18, ... Loncatan ketujuh?",
+   "answer": "21",
+   "hint": "Tambah 3 dari 18.",
+   "explain": "21 benar, dan 21 + 8 = 29.",
+   "error": "salah-hitung-loncat"
+  }
+ ],
+ "conclusion": "Ada 29 roda."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -139,16 +289,159 @@ o o o o o o o o
 
 ## Cek pemahaman
 
-1. 3 × 6 = ...
-2. 4 × 9 = ...
-3. 10 × 8 = ...
-4. Isi titik-titik: 5 × 7 = 7 × .... Berapa hasilnya?
-5. Di kelas ada 6 meja. Tiap meja punya 4 kaki. Berapa kaki meja semuanya?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. 18. Loncat 3 enam kali: 3, 6, 9, 12, 15, 18.
-2. 36. 2 × 9 = 18, lalu didobel 18 + 18 = 36.
-3. 80. 8 puluhan adalah 80.
-4. 5. Sifat pertukaran: 5 × 7 = 7 × 5, hasilnya 35.
-5. 24 kaki. 6 meja isi 4 kaki: 6 × 4 = 24.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Hitung $3 \\times 6$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "3 × 6 artinya?",
+   "options": [
+    "3 kelompok, tiap kelompok 6",
+    "3 + 6"
+   ],
+   "answer": "3 kelompok, tiap kelompok 6",
+   "hint": "Ingat keranjang.",
+   "explain": "3 kelompok berisi 6.",
+   "error": "tambah-bukan-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Loncat 6 tiga kali, atau loncat 3 enam kali. Hasilnya?",
+   "answer": "18",
+   "hint": "3, 6, 9, 12, 15, ...",
+   "explain": "3 × 6 = 18.",
+   "error": "salah-hitung-loncat"
+  }
+ ],
+ "conclusion": "Jadi 3 × 6 = 18."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Hitung $4 \\times 9$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Hitung 2 × 9 dulu.",
+   "answer": "18",
+   "hint": "9 + 9.",
+   "explain": "2 × 9 = 18.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Gandakan: 18 + 18 = ?",
+   "answer": "36",
+   "hint": "4 kelompok = 2 kelompok + 2 kelompok.",
+   "explain": "18 + 18 = 36.",
+   "error": "salah-sesuaikan-dobel"
+  }
+ ],
+ "conclusion": "Jadi 4 × 9 = 36."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung $10 \\times 8$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "10 × 8 sama dengan 8 × 10. Itu berapa puluhan?",
+   "options": [
+    "8 puluhan",
+    "18 satuan",
+    "1 puluhan"
+   ],
+   "answer": "8 puluhan",
+   "hint": "Tabel 10: setiap kelompok berisi 10.",
+   "explain": "8 × 10 = 8 puluhan.",
+   "error": "salah-sifat-pertukaran"
+  },
+  {
+   "kind": "number",
+   "prompt": "10 × 8 = ?",
+   "answer": "80",
+   "hint": "8 puluhan ditulis dengan 0 di belakang.",
+   "explain": "8 puluhan = 80.",
+   "error": "salah-fakta-kali"
+  }
+ ],
+ "conclusion": "Jadi 10 × 8 = 80."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Isi titik-titik: 5 × 7 = 7 × .... Berapa hasilnya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Isi titik-titiknya.",
+   "answer": "5",
+   "hint": "Sifat pertukaran: urutan ditukar.",
+   "explain": "5 × 7 = 7 × 5.",
+   "error": "salah-sifat-pertukaran"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa hasilnya?",
+   "answer": "35",
+   "hint": "Tabel 5: 5, 10, 15, 20, 25, 30, ...",
+   "explain": "7 × 5 = 35.",
+   "error": "salah-fakta-kali"
+  }
+ ],
+ "conclusion": "Jadi 5 × 7 = 7 × 5 = 35."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Di kelas ada 6 meja. Tiap meja punya 4 kaki. Berapa kaki meja semuanya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Kalimat matematikanya?",
+   "options": [
+    "6 × 4",
+    "6 + 4",
+    "4 − 6"
+   ],
+   "answer": "6 × 4",
+   "hint": "6 kelompok, tiap kelompok 4.",
+   "explain": "6 meja isi 4 kaki: 6 × 4.",
+   "error": "tambah-bukan-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "6 × 4 = ?",
+   "answer": "24",
+   "hint": "6 × 2 = 12, lalu gandakan.",
+   "explain": "12 + 12 = 24.",
+   "error": "salah-fakta-kali",
+   "suffix": "kaki"
+  }
+ ],
+ "conclusion": "Ada 24 kaki meja."
+}
+```

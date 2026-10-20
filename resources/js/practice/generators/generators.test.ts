@@ -71,3 +71,55 @@ describe.each(TOPICS.map((t) => [t.topic, t] as const))('%s', (topic, def) => {
         }
     }
 });
+
+/* Blok ```soal di materi: harus bisa diparse dan setiap langkahnya sah */
+import { toQuestion, type SoalSpec } from '../anim/soal';
+const materiDir = resolve(root, 'content/materi');
+const soalBlocks = readdirSync(materiDir).flatMap((g) => readdirSync(resolve(materiDir, g)).map((f) => [g, f] as const))
+    .flatMap(([g, f]) => [...readFileSync(resolve(materiDir, g, f), 'utf8').matchAll(/```soal\n([\s\S]*?)\n```/g)].map((m, i) => [`${f} #${i + 1}`, m[1]] as const));
+describe('soal di materi', () => {
+    it.each(soalBlocks)('%s', (_where, src) => {
+        const q = toQuestion(JSON.parse(src) as SoalSpec);
+        expect(q.text.length).toBeGreaterThan(3);
+        expect(q.conclusion.length).toBeGreaterThan(3);
+        for (const s of q.steps) {
+            expect(s.prompt.length).toBeGreaterThan(2);
+            expect(s.hint.length).toBeGreaterThan(2);
+            expect(s.explain.length).toBeGreaterThan(2);
+            if (s.kind === 'number') expect(normalizeNumber(s.answer)).toMatch(/^-?\d+(\.\d+)?$/);
+            if (s.kind === 'choice') { expect(s.options).toContain(s.answer); expect(new Set(s.options).size).toBe(s.options.length); }
+            if (s.kind === 'number' || s.kind === 'choice') expect(errorCodes.has(s.error), `kode "${s.error}"`).toBe(true);
+            if (s.kind === 'column') expect(() => columnPlan(s.op, s.a, s.b)).not.toThrow();
+            if (s.kind === 'longdiv') expect(divisionPlan(s.dividend, s.divisor).quotient).toBeGreaterThan(0);
+        }
+    });
+});
+
+/* Blok ```anim dan ```visual di materi: JSON sah, jenis dikenal, isi masuk akal */
+import { compile } from '../anim/expr';
+const ANIM_TYPES = new Set(['susun', 'porogapit', 'stik', 'benda', 'garis', 'pecahan', 'grafik', 'persamaan', 'batang', 'bangun']);
+const animBlocks = readdirSync(materiDir).flatMap((g) => readdirSync(resolve(materiDir, g)).map((f) => [g, f] as const))
+    .flatMap(([g, f]) => [...readFileSync(resolve(materiDir, g, f), 'utf8').matchAll(/```(anim|visual)\n([\s\S]*?)\n```/g)].map((m, i) => [`${f} ${m[1]} #${i + 1}`, m[1], m[2]] as const));
+describe('anim & visual di materi', () => {
+    it.each(animBlocks)('%s', (_where, lang, src) => {
+        const spec = JSON.parse(src);
+        expect(typeof spec.type).toBe('string');
+        if (lang === 'visual') return;
+        expect(ANIM_TYPES.has(spec.type), `jenis "${spec.type}"`).toBe(true);
+        if (spec.type === 'stik') expect(Math.max(spec.a, spec.b)).toBeLessThanOrEqual(99);
+        if (spec.type === 'susun' && spec.op === '-') expect(spec.a).toBeGreaterThanOrEqual(spec.b);
+        if (spec.type === 'porogapit') expect(spec.b).toBeGreaterThan(0);
+        if (spec.type === 'grafik') {
+            expect(spec.xmax).toBeGreaterThan(spec.xmin); expect(spec.ymax).toBeGreaterThan(spec.ymin);
+            for (const k of spec.kurva) { const f = compile(k.f); const ys = [0.1, 0.5, 1.3, 2.7].map((x) => spec.xmin + x * (spec.xmax - spec.xmin) / 3); expect(ys.some((x) => Number.isFinite(f(x))), k.f).toBe(true); }
+            for (const t of spec.titik ?? []) expect(Number.isFinite(t.x) && Number.isFinite(t.y)).toBe(true);
+        }
+        if (spec.type === 'persamaan') { expect(spec.baris.length).toBeGreaterThan(1); for (const b of spec.baris) expect(b.tex.length && b.say.length).toBeTruthy(); }
+        if (spec.type === 'batang') { expect(spec.bars.length).toBeGreaterThan(0); for (const l of spec.langkah) expect(l.bars).toBeLessThanOrEqual(spec.bars.length); }
+        if (spec.type === 'bangun') {
+            for (const [a, b] of spec.sisi) { expect(spec.titik[a], a).toBeDefined(); expect(spec.titik[b], b).toBeDefined(); }
+            for (const s of spec.sudut ?? []) for (const n of [s.di, s.dari, s.ke]) expect(spec.titik[n], n).toBeDefined();
+            expect(spec.langkah.length).toBeGreaterThan(0);
+        }
+    });
+});

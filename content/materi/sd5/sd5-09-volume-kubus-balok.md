@@ -19,6 +19,14 @@ Bayangkan kamu menata **kotak-kotak kecil berbentuk dadu** ke dalam sebuah **kar
 - Lalu kamu menumpuk **lapisan demi lapisan** sampai kardus penuh. Banyak lapisan = tinggi kardus.
 - Jumlah seluruh dadu adalah **volume** kardus.
 
+```visual
+{"type": "grid", "width": 5, "height": 3, "shade": [{"x": 0, "y": 0, "w": 5, "h": 3}], "caption": "Satu lapisan di dasar kardus: 5 × 3 = 15 dadu"}
+```
+
+```anim
+{"type": "batang", "title": "Menumpuk lapisan dadu", "bars": [{"label": "Lapis 1", "units": 1, "unitValue": "15"}, {"label": "Lapis 2", "units": 1, "unitValue": "15"}, {"label": "Lapis 3", "units": 1, "unitValue": "15"}], "langkah": [{"say": "Lapis pertama berisi 15 dadu.", "bars": 1}, {"say": "Tumpuk lapis kedua: 15 + 15 = 30 dadu.", "bars": 2}, {"say": "Tiga lapis: 3 × 15 = 45 dadu. Volume = isi satu lapisan × banyak lapisan.", "bars": 3}]}
+```
+
 Ingat kalimat ini: **volume = isi satu lapisan × banyak lapisan.**
 
 ## Konsep
@@ -47,9 +55,21 @@ Isi satu lapisan = panjang × lebar. Banyak lapisan = tinggi. Jadi:
 
 $$\text{Volume balok} = \text{panjang} \times \text{lebar} \times \text{tinggi}$$
 
+```visual
+{"type": "solid", "solid": "balok", "caption": "Balok: panjang, lebar, tinggi"}
+```
+
+```anim
+{"type": "persamaan", "title": "Volume balok 6 cm × 2 cm × 4 cm", "baris": [{"tex": "V = 6 \\times 2 \\times 4", "say": "Panjang 6, lebar 2, tinggi 4."}, {"tex": "V = 12 \\times 4", "say": "Isi satu lapisan: 6 × 2 = 12 kubus.", "op": "satu lapisan"}, {"tex": "V = 48 \\text{ cm}^3", "say": "Ada 4 lapisan: 12 × 4 = 48 kubus satuan."}]}
+```
+
 Kubus punya rusuk sama panjang (s):
 
 $$\text{Volume kubus} = s \times s \times s$$
+
+```visual
+{"type": "solid", "solid": "kubus", "caption": "Kubus: semua rusuk sama panjang"}
+```
 
 ### Volume air dan liter
 
@@ -59,73 +79,239 @@ Volume air dalam bak dihitung seperti balok, tetapi **tingginya memakai tinggi a
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Menghitung kubus satuan
 
-**Soal.** Sebuah balok disusun dari kubus satuan 1 cm. Panjangnya 4 kubus, lebarnya 3 kubus, dan tingginya 2 lapis. Berapa volumenya?
-
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Sebuah balok disusun dari kubus satuan 1 cm. Panjangnya 4 kubus, lebarnya 3 kubus, dan tingginya 2 lapis. Berapa volumenya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Isi satu lapisan = 4 × 3 = ?",
+   "answer": "12",
+   "hint": "Hitung petak pada gambar tampak atas.",
+   "explain": "Satu lapisan berisi 12 kubus.",
+   "error": "salah-fakta-kali",
+   "suffix": "kubus"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Ada 2 lapis. Banyak kubus = 12 × 2 = ?",
+   "answer": "24",
+   "hint": "Isi satu lapisan × banyak lapisan.",
+   "explain": "24 kubus satuan = 24 cm³.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 12 + 12 = ?",
+   "answer": "24",
+   "hint": "Jumlahkan per lapis.",
+   "explain": "12 + 12 = 24. Sama.",
+   "error": "salah-fakta-tambah",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Volume balok 24 cm³.",
+ "visual": {
+  "type": "grid",
+  "width": 4,
+  "height": 3,
+  "shade": [
+   {
+    "x": 0,
+    "y": 0,
+    "w": 4,
+    "h": 3
+   }
+  ],
+  "showDims": true
+ }
+}
 ```
-Satu lapisan (tampak atas):
-+--+--+--+--+
-|  |  |  |  |
-+--+--+--+--+
-|  |  |  |  |
-+--+--+--+--+
-|  |  |  |  |
-+--+--+--+--+
-```
-
-1. **Langkah 1: Hitung isi satu lapisan.** $4 \times 3 = 12$ kubus.
-2. **Langkah 2: Hitung banyak lapisan.** 2 lapis.
-3. **Langkah 3: Kalikan.** $12 \times 2 = 24$ kubus. Setiap kubus $1\ \text{cm}^3$, jadi $24\ \text{cm}^3$.
-4. **Cek jawaban.** Hitung per lapis dengan menjumlah: $12 + 12 = 24$. Sama.
-
-**Jawaban:** $24\ \text{cm}^3$.
 
 ### Contoh 2: Volume kubus
 
-**Soal.** Sebuah kotak kado berbentuk kubus dengan rusuk 5 cm. Berapa volumenya?
-
-1. **Langkah 1: Tentukan rusuk.** $s = 5$ cm.
-2. **Langkah 2: Hitung isi satu lapisan.** $5 \times 5 = 25$ kubus satuan.
-3. **Langkah 3: Kalikan dengan banyak lapisan.** Ada 5 lapis: $25 \times 5 = 125$.
-4. **Cek jawaban.** $5 \times 5 \times 5$: $5 \times 5 = 25$, $25 \times 5 = 125$. Sama.
-
-**Jawaban:** $125\ \text{cm}^3$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Sebuah kotak kado berbentuk kubus dengan rusuk 5 cm. Berapa volumenya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Hitungan yang tepat?",
+   "options": [
+    "5 × 5 × 5",
+    "5 × 3",
+    "5 + 5 + 5"
+   ],
+   "answer": "5 × 5 × 5",
+   "hint": "Kubus: rusuk × rusuk × rusuk.",
+   "explain": "Volume kubus = s × s × s.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Isi satu lapisan = 5 × 5 = ?",
+   "answer": "25",
+   "hint": "Lima kali lima.",
+   "explain": "25 kubus satuan per lapis.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Ada 5 lapis. 25 × 5 = ?",
+   "answer": "125",
+   "hint": "Isi satu lapisan × banyak lapisan.",
+   "explain": "25 × 5 = 125 cm³.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Volume kotak kado 125 cm³.",
+ "visual": {
+  "type": "solid",
+  "solid": "kubus"
+ }
+}
+```
 
 ### Contoh 3: Volume balok dan liter
 
-**Soal.** Sebuah kotak penyimpanan berbentuk balok berukuran 25 cm × 20 cm × 12 cm. Berapa volumenya dalam $\text{cm}^3$ dan dalam liter?
-
-1. **Langkah 1: Hitung isi satu lapisan.** $25 \times 20 = 500\ \text{cm}^2$, artinya 500 kubus satuan per lapis.
-2. **Langkah 2: Kalikan dengan tinggi.** $500 \times 12 = 6.000\ \text{cm}^3$.
-3. **Langkah 3: Ubah ke liter.** $1\ \ell = 1.000\ \text{cm}^3$, jadi $6.000 \div 1.000 = 6\ \ell$.
-4. **Cek jawaban.** Urutan lain: $20 \times 12 = 240$, lalu $240 \times 25 = 6.000$. Sama.
-
-**Jawaban:** $6.000\ \text{cm}^3 = 6\ \ell$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Sebuah kotak penyimpanan berbentuk balok berukuran 25 cm × 20 cm × 12 cm. Berapa volumenya dalam cm³ dan dalam liter?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Isi satu lapisan = 25 × 20 = ?",
+   "answer": "500",
+   "hint": "25 × 2 = 50, lalu × 10.",
+   "explain": "500 kubus satuan per lapis.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Volume = 500 × 12 = ?",
+   "answer": "6.000",
+   "hint": "5 × 12 = 60, lalu tambah dua nol.",
+   "explain": "500 × 12 = 6.000 cm³.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Ubah ke liter.",
+   "answer": "6",
+   "hint": "1 ℓ = 1.000 cm³, jadi bagi 1.000.",
+   "explain": "6.000 ÷ 1.000 = 6 ℓ.",
+   "error": "salah-pilih-satuan",
+   "suffix": "ℓ"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: urutan lain. 20 × 12 = 240, lalu 240 × 25 = ?",
+   "answer": "6.000",
+   "hint": "240 × 100 ÷ 4.",
+   "explain": "240 × 25 = 6.000. Sama.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Volume kotak 6.000 cm³ = 6 ℓ.",
+ "visual": {
+  "type": "solid",
+  "solid": "balok"
+ }
+}
+```
 
 ### Contoh 4: Soal cerita air dalam bak
 
-**Soal.** Bak mandi di rumah Putu berbentuk balok dengan panjang 80 cm, lebar 50 cm, dan tinggi 60 cm. Bak itu berisi air setinggi 45 cm. (a) Berapa liter air di dalam bak? (b) Berapa liter air lagi agar bak penuh?
-
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Bak mandi di rumah Putu berukuran panjang 80 cm, lebar 50 cm, dan tinggi 60 cm. Bak berisi air setinggi 45 cm. (a) Berapa liter air di dalam bak? (b) Berapa liter air lagi agar bak penuh?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Isi satu lapisan (1 cm tinggi air) = 80 × 50 = ?",
+   "answer": "4.000",
+   "hint": "8 × 5 = 40, lalu tambah dua nol.",
+   "explain": "4.000 cm³ untuk setiap 1 cm tinggi air.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Volume air = 4.000 × 45 = ?",
+   "answer": "180.000",
+   "hint": "Pakai tinggi air 45 cm, bukan tinggi bak.",
+   "explain": "4.000 × 45 = 180.000 cm³.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: (a) Ubah ke liter.",
+   "answer": "180",
+   "hint": "Bagi 1.000.",
+   "explain": "180.000 ÷ 1.000 = 180 ℓ.",
+   "error": "salah-pilih-satuan",
+   "suffix": "ℓ"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Tinggi bagian kosong = 60 − 45 = ?",
+   "answer": "15",
+   "hint": "Tinggi bak dikurangi tinggi air.",
+   "explain": "Bagian kosong setinggi 15 cm.",
+   "error": "salah-fakta-kurang",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: (b) Air yang perlu ditambah = 4.000 × 15 cm³ = ? ℓ",
+   "answer": "60",
+   "hint": "4.000 × 15 = 60.000 cm³, lalu bagi 1.000.",
+   "explain": "60.000 cm³ = 60 ℓ.",
+   "error": "salah-pilih-satuan",
+   "suffix": "ℓ"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: bak penuh = 4.000 × 60 cm³ = ? ℓ",
+   "answer": "240",
+   "hint": "Lalu cek 180 + 60.",
+   "explain": "240 ℓ = 180 + 60. Cocok.",
+   "error": "salah-fakta-kali",
+   "suffix": "ℓ"
+  }
+ ],
+ "conclusion": "(a) Ada 180 ℓ air; (b) perlu 60 ℓ lagi.",
+ "visual": {
+  "type": "barModel",
+  "bars": [
+   {
+    "label": "Air",
+    "units": 3,
+    "unitValue": "15 cm"
+   },
+   {
+    "label": "Kosong",
+    "units": 1,
+    "unitValue": "15 cm"
+   }
+  ],
+  "total": "tinggi bak 60 cm"
+ }
+}
 ```
-     +-----------------+
-     |                 |  15 cm kosong
-     |~~~~~~~~~~~~~~~~~|
-     |                 |
-     |       air       |  45 cm
-     |                 |
-     +-----------------+
-           80 cm  (lebar 50 cm ke belakang)
-```
-
-1. **Langkah 1: Pahami soal.** Air membentuk balok dengan panjang 80 cm, lebar 50 cm, dan tinggi 45 cm (tinggi air, bukan tinggi bak).
-2. **Langkah 2: Hitung isi satu lapisan.** $80 \times 50 = 4.000\ \text{cm}^3$ untuk setiap 1 cm tinggi air.
-3. **Langkah 3: Hitung volume air.** $4.000 \times 45 = 180.000\ \text{cm}^3$.
-4. **Langkah 4: Ubah ke liter.** $180.000 \div 1.000 = 180\ \ell$.
-5. **Langkah 5: Hitung bagian kosong.** Tinggi kosong $60 - 45 = 15$ cm. Volume $4.000 \times 15 = 60.000\ \text{cm}^3 = 60\ \ell$.
-6. **Cek jawaban.** Volume bak penuh $4.000 \times 60 = 240.000\ \text{cm}^3 = 240\ \ell$. Air + bagian kosong $= 180 + 60 = 240$. Cocok.
-
-**Jawaban:** (a) 180 ℓ, (b) 60 ℓ lagi.
 
 ## Kesalahan yang sering terjadi
 
@@ -145,16 +331,160 @@ Satu lapisan (tampak atas):
 
 ## Cek pemahaman
 
-1. Sebuah balok disusun dari kubus satuan 1 cm: panjang 5 kubus, lebar 2 kubus, tinggi 3 lapis. Berapa volumenya?
-2. Hitung volume kubus dengan rusuk 7 cm.
-3. Sebuah kolam ikan berbentuk balok berukuran 4 m × 3 m × 2 m. Berapa volumenya?
-4. Ubah $2.500\ \text{cm}^3$ ke liter dan ke mL.
-5. Akuarium Budi berukuran 40 cm × 25 cm × 30 cm. Akuarium itu berisi air setinggi 20 cm. Berapa liter air di dalamnya? Berapa liter lagi agar penuh?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $30\ \text{cm}^3$. Satu lapis $5 \times 2 = 10$, tiga lapis $10 \times 3 = 30$.
-2. $343\ \text{cm}^3$. $7 \times 7 = 49$, lalu $49 \times 7 = 343$.
-3. $24\ \text{m}^3$. $4 \times 3 = 12$, lalu $12 \times 2 = 24$.
-4. $2{,}5\ \ell$ dan 2.500 mL. $2.500 \div 1.000 = 2{,}5$; $1\ \text{cm}^3 = 1$ mL.
-5. 20 ℓ dan 10 ℓ lagi. Satu lapis $40 \times 25 = 1.000\ \text{cm}^3$; air $1.000 \times 20 = 20.000\ \text{cm}^3 = 20\ \ell$; kosong $1.000 \times 10 = 10.000\ \text{cm}^3 = 10\ \ell$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Sebuah balok disusun dari kubus satuan 1 cm: panjang 5 kubus, lebar 2 kubus, tinggi 3 lapis. Berapa volumenya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Isi satu lapisan?",
+   "answer": "10",
+   "hint": "5 × 2.",
+   "explain": "Satu lapis 10 kubus.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Volume?",
+   "answer": "30",
+   "hint": "Isi satu lapisan × banyak lapisan.",
+   "explain": "10 × 3 = 30 cm³.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Volume balok 30 cm³."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Hitung volume kubus dengan rusuk 7 cm.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "7 × 7 = ?",
+   "answer": "49",
+   "hint": "Isi satu lapisan.",
+   "explain": "49.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "column",
+   "op": "×",
+   "a": 49,
+   "b": 7,
+   "prompt": "49 × 7 = ? (ada 7 lapis)",
+   "hint": "9 × 7 = 63, simpan 6.",
+   "explain": "49 × 7 = 343 cm³."
+  }
+ ],
+ "conclusion": "Volume kubus 343 cm³."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Sebuah kolam ikan berbentuk balok berukuran 4 m × 3 m × 2 m. Berapa volumenya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "4 × 3 = ?",
+   "answer": "12",
+   "hint": "Isi satu lapisan.",
+   "explain": "12 m³ per lapis 1 m.",
+   "error": "salah-fakta-kali"
+  },
+  {
+   "kind": "number",
+   "prompt": "Volume kolam?",
+   "answer": "24",
+   "hint": "Kali tinggi 2 m.",
+   "explain": "12 × 2 = 24 m³.",
+   "error": "salah-fakta-kali",
+   "suffix": "m³"
+  }
+ ],
+ "conclusion": "Volume kolam 24 m³."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Ubah 2.500 cm³ ke liter dan ke mL.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "2.500 cm³ = ? ℓ",
+   "answer": "2,5",
+   "hint": "1 ℓ = 1.000 cm³, jadi bagi 1.000.",
+   "explain": "2.500 ÷ 1.000 = 2,5 ℓ.",
+   "error": "salah-pilih-satuan",
+   "suffix": "ℓ"
+  },
+  {
+   "kind": "number",
+   "prompt": "2.500 cm³ = ? mL",
+   "answer": "2.500",
+   "hint": "1 cm³ = 1 mL.",
+   "explain": "2.500 cm³ = 2.500 mL.",
+   "error": "salah-pilih-satuan",
+   "suffix": "mL"
+  }
+ ],
+ "conclusion": "2.500 cm³ = 2,5 ℓ = 2.500 mL."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Akuarium Budi berukuran 40 cm × 25 cm × 30 cm. Akuarium berisi air setinggi 20 cm. Berapa liter air di dalamnya? Berapa liter lagi agar penuh?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Isi satu lapisan = 40 × 25 = ?",
+   "answer": "1.000",
+   "hint": "4 × 25 = 100.",
+   "explain": "1.000 cm³ per 1 cm tinggi.",
+   "error": "salah-fakta-kali",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Air di dalam akuarium = ? ℓ",
+   "answer": "20",
+   "hint": "1.000 × 20 cm³, lalu bagi 1.000.",
+   "explain": "20.000 cm³ = 20 ℓ.",
+   "error": "salah-pilih-satuan",
+   "suffix": "ℓ"
+  },
+  {
+   "kind": "number",
+   "prompt": "Air yang perlu ditambah = ? ℓ",
+   "answer": "10",
+   "hint": "Bagian kosong setinggi 30 − 20 = 10 cm.",
+   "explain": "1.000 × 10 = 10.000 cm³ = 10 ℓ.",
+   "error": "salah-langkah-materi",
+   "suffix": "ℓ"
+  }
+ ],
+ "conclusion": "Ada 20 ℓ air, perlu 10 ℓ lagi agar penuh."
+}
+```

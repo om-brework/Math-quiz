@@ -20,6 +20,10 @@ Bayangkan **mesin fotokopi** dengan tombol pengatur ukuran (zoom).
 
 Angka pengatur ukuran itu disebut **faktor skala**. Ingat mesin fotokopi ini setiap kali kita mencari sisi yang hilang.
 
+```anim
+{"type": "bangun", "title": "Fotokopi 100% dan 150%", "titik": {"A": [0, 0], "B": [4, 0], "C": [0, 3], "D": [5, 0], "E": [9, 0], "F": [5, 3], "P": [10, 0], "Q": [16, 0], "R": [10, 4.5]}, "sisi": [["A", "B", "4"], ["B", "C", "5"], ["C", "A", "3"], ["D", "E", "4"], ["E", "F", "5"], ["F", "D", "3"], ["P", "Q", "6"], ["Q", "R", "7{,}5"], ["R", "P", "4{,}5"]], "sudut": [{"di": "B", "dari": "C", "ke": "A", "label": "\\alpha"}, {"di": "E", "dari": "F", "ke": "D", "label": "\\alpha"}, {"di": "Q", "dari": "R", "ke": "P", "label": "\\alpha"}], "langkah": [{"say": "Gambar asli: segitiga $ABC$ dengan sisi 3, 4, 5.", "sisi": 3, "sudut": 1}, {"say": "Fotokopi 100%: segitiga $DEF$ sama persis. Ini kongruen.", "sisi": 6, "sudut": 2, "sorot": ["DE", "EF", "FD"]}, {"say": "Fotokopi 150%: segitiga $PQR$. Semua sisi dikali 1,5: 4 menjadi 6, 3 menjadi 4,5, 5 menjadi 7,5.", "sisi": 9, "sudut": 2, "sorot": ["PQ", "QR", "RP"]}, {"say": "Sudutnya tidak berubah, tetap $\\alpha$. Ini sebangun.", "sisi": 9, "sudut": 3, "sorot": ["B", "E", "Q"]}]}
+```
+
 ## Konsep
 
 ### Bangun kongruen
@@ -32,6 +36,10 @@ Pada dua bangun kongruen:
 - **sisi-sisi yang bersesuaian sama panjang**.
 
 Lambangnya $\cong$. Penulisan $\triangle ABC \cong \triangle PQR$ berarti titik-titiknya berpasangan **sesuai urutan**: $A$ dengan $P$, $B$ dengan $Q$, $C$ dengan $R$. Jadi $AB = PQ$, $BC = QR$, $AC = PR$, dan $\angle A = \angle P$, $\angle B = \angle Q$, $\angle C = \angle R$.
+
+```anim
+{"type": "bangun", "title": "Pasangan titik sesuai urutan", "titik": {"A": [0, 0], "B": [5, 0], "C": [1.5, 3], "P": [7, 0], "Q": [12, 0], "R": [8.5, 3]}, "sisi": [["A", "B"], ["B", "C"], ["C", "A"], ["P", "Q"], ["Q", "R"], ["R", "P"]], "langkah": [{"say": "$\\triangle ABC \\cong \\triangle PQR$.", "sisi": 6}, {"say": "Huruf pertama berpasangan: $A \\leftrightarrow P$. Jadi $\\angle A = \\angle P$.", "sisi": 6, "sorot": ["A", "P"]}, {"say": "Dua huruf pertama: $AB = PQ$.", "sisi": 6, "sorot": ["AB", "PQ"]}, {"say": "Dua huruf terakhir: $BC = QR$.", "sisi": 6, "sorot": ["BC", "QR"]}]}
+```
 
 ### Bangun sebangun
 
@@ -53,6 +61,10 @@ dengan $k$ adalah faktor skala dari $ABCD$ ke $PQRS$.
 
 Mesin fotokopi tidak pernah meregangkan gambar ke satu arah saja, dan tidak pernah membengkokkan sudut. Karena itu kedua syarat harus dipenuhi.
 
+```anim
+{"type": "bangun", "title": "Sudut sama, tetapi tidak sebangun", "titik": {"A": [0, 0], "B": [4, 0], "C": [4, 4], "D": [0, 4], "P": [6, 0], "Q": [14, 0], "R": [14, 4], "S": [6, 4]}, "sisi": [["A", "B", "4"], ["B", "C", "4"], ["C", "D"], ["D", "A"], ["P", "Q", "8"], ["Q", "R", "4"], ["R", "S"], ["S", "P"]], "sudut": [{"di": "A", "dari": "B", "ke": "D", "siku": true}, {"di": "P", "dari": "Q", "ke": "S", "siku": true}], "langkah": [{"say": "Persegi 4 cm dan persegi panjang 4 cm × 8 cm.", "sisi": 8}, {"say": "Semua sudutnya $90^\\circ$. Syarat sudut terpenuhi.", "sisi": 8, "sudut": 2}, {"say": "Sisi panjang: $\\frac{8}{4} = 2$. Sisi pendek: $\\frac{4}{4} = 1$. Tidak sama!", "sisi": 8, "sudut": 2, "sorot": ["AB", "PQ", "BC", "QR"]}, {"say": "Gambarnya diregangkan ke satu arah saja, jadi tidak sebangun.", "sisi": 8, "sudut": 2}]}
+```
+
 ### Pembesaran dan pengecilan
 
 Faktor skala $k$ dihitung dari:
@@ -65,57 +77,289 @@ $$k = \frac{\text{panjang pada bangun baru}}{\text{panjang yang bersesuaian pada
 
 Sudut **tidak pernah** dikali $k$. Sudut $60^\circ$ tetap $60^\circ$ setelah difotokopi 200%.
 
+```visual
+{"type": "table", "head": ["Zoom", "Faktor skala k", "Sisi 4 cm menjadi", "Sudut 60° menjadi"], "rows": [["50%", "0,5", "2 cm", "60°"], ["100%", "1", "4 cm", "60°"], ["150%", "1,5", "6 cm", "60°"], ["200%", "2", "8 cm", "60°"]], "caption": "Sisi dikali k, sudut tetap."}
+```
+
 ## Contoh langkah demi langkah
 
 Urutan berpikir: **pasangkan titik yang bersesuaian → cari faktor skala (jika sebangun) → hitung → cek**.
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Memakai kekongruenan
 
-**Soal.** Diketahui $\triangle ABC \cong \triangle PQR$, dengan $AB = 5$ cm, $BC = 7$ cm, $\angle A = 60^\circ$, dan $\angle B = 75^\circ$. Tentukan $PQ$, $QR$, $\angle P$, dan $\angle R$.
-
-1. **Langkah 1: Pasangkan titik sesuai urutan.** $A \leftrightarrow P$, $B \leftrightarrow Q$, $C \leftrightarrow R$.
-2. **Langkah 2: Salin ukuran yang bersesuaian.** Kongruen berarti fotokopi 100%. $PQ = AB = 5$ cm, $QR = BC = 7$ cm, $\angle P = \angle A = 60^\circ$.
-3. **Langkah 3: Hitung sudut yang tersisa.** $\angle C = 180^\circ - 60^\circ - 75^\circ = 45^\circ$, jadi $\angle R = 45^\circ$.
-4. **Cek jawaban.** Sudut $\triangle PQR$: $60^\circ + 75^\circ + 45^\circ = 180^\circ$, benar.
-
-**Jawaban:** $PQ = 5$ cm, $QR = 7$ cm, $\angle P = 60^\circ$, $\angle R = 45^\circ$.
+```soal
+{
+ "title": "Memakai kekongruenan",
+ "text": "Diketahui $\\triangle ABC \\cong \\triangle PQR$, dengan $AB = 5$ cm, $BC = 7$ cm, $\\angle A = 60^\\circ$, dan $\\angle B = 75^\\circ$. Tentukan $PQ$, $QR$, $\\angle P$, dan $\\angle R$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pasangan titik yang benar?",
+   "options": [
+    "$A \\leftrightarrow P$, $B \\leftrightarrow Q$, $C \\leftrightarrow R$",
+    "$A \\leftrightarrow R$, $B \\leftrightarrow Q$, $C \\leftrightarrow P$",
+    "$A \\leftrightarrow Q$, $B \\leftrightarrow P$, $C \\leftrightarrow R$"
+   ],
+   "answer": "$A \\leftrightarrow P$, $B \\leftrightarrow Q$, $C \\leftrightarrow R$",
+   "hint": "Ikuti urutan huruf.",
+   "explain": "Huruf ke-1 dengan ke-1, dan seterusnya.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $PQ = ?$",
+   "answer": "5",
+   "hint": "PQ berpasangan dengan AB.",
+   "explain": "PQ = AB = 5 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2 (lanjutan): $QR = ?$",
+   "answer": "7",
+   "hint": "QR berpasangan dengan BC.",
+   "explain": "QR = 7 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2 (lanjutan): $\\angle P = ?$",
+   "answer": "60",
+   "hint": "∠P berpasangan dengan ∠A.",
+   "explain": "∠P = 60°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $\\angle R = \\angle C = 180^\\circ - 60^\\circ - 75^\\circ$.",
+   "answer": "45",
+   "hint": "Jumlah sudut segitiga 180°.",
+   "explain": "∠R = 45°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $60^\\circ + 75^\\circ + 45^\\circ = ?$",
+   "answer": "180",
+   "hint": "Jumlahkan.",
+   "explain": "180°. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$PQ = 5$ cm, $QR = 7$ cm, $\\angle P = 60^\\circ$, $\\angle R = 45^\\circ$."
+}
+```
 
 ### Contoh 2: Apakah dua persegi panjang sebangun?
 
-**Soal.** Persegi panjang I berukuran 4 cm × 6 cm. Persegi panjang II berukuran 6 cm × 9 cm. Persegi panjang III berukuran 6 cm × 8 cm. Mana yang sebangun dengan persegi panjang I?
-
-1. **Langkah 1: Periksa sudut.** Semua persegi panjang punya empat sudut $90^\circ$. Syarat sudut terpenuhi.
-2. **Langkah 2: Pasangkan sisi.** Sisi pendek dengan sisi pendek, sisi panjang dengan sisi panjang.
-3. **Langkah 3: Bandingkan perbandingan sisi.**
-   - I ke II: $\frac{6}{4} = 1{,}5$ dan $\frac{9}{6} = 1{,}5$. Sama.
-   - I ke III: $\frac{6}{4} = 1{,}5$ dan $\frac{8}{6} \approx 1{,}33$. Tidak sama.
-4. **Cek jawaban.** Fotokopi I dengan zoom 150%: $4 \times 1{,}5 = 6$ dan $6 \times 1{,}5 = 9$. Hasilnya tepat persegi panjang II. Tidak ada satu zoom yang mengubah I menjadi III.
-
-**Jawaban:** hanya persegi panjang II yang sebangun dengan I.
+```soal
+{
+ "title": "Apakah dua persegi panjang sebangun?",
+ "text": "Persegi panjang I berukuran 4 cm × 6 cm, II berukuran 6 cm × 9 cm, III berukuran 6 cm × 8 cm. Mana yang sebangun dengan I?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Apakah syarat sudut terpenuhi untuk ketiganya?",
+   "options": [
+    "Ya, semua sudut 90°",
+    "Tidak"
+   ],
+   "answer": "Ya, semua sudut 90°",
+   "hint": "Sudut persegi panjang selalu siku-siku.",
+   "explain": "Semua sudut 90°.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: I ke II, sisi pendek $\\frac{6}{4} = ?$",
+   "answer": "1,5",
+   "hint": "Bagi.",
+   "explain": "1,5.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "I ke II, sisi panjang $\\frac{9}{6} = ?$",
+   "answer": "1,5",
+   "hint": "Bagi.",
+   "explain": "1,5. Sama dengan sisi pendek, jadi I dan II sebangun.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "I ke III, sisi panjang $\\frac{8}{6}$, bulatkan ke 2 desimal.",
+   "answer": "1,33",
+   "hint": "8 ÷ 6.",
+   "explain": "1,33, tidak sama dengan 1,5. I dan III tidak sebangun.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Kesimpulan?",
+   "options": [
+    "Hanya II",
+    "Hanya III",
+    "II dan III"
+   ],
+   "answer": "Hanya II",
+   "hint": "Bandingkan perbandingan sisinya.",
+   "explain": "Hanya II. Cek: zoom 150% mengubah 4 × 6 menjadi 6 × 9.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Hanya persegi panjang II yang sebangun dengan I.",
+ "visual": {
+  "type": "table",
+  "head": [
+   "Persegi panjang",
+   "Sisi pendek",
+   "Sisi panjang"
+  ],
+  "rows": [
+   [
+    "I",
+    "4 cm",
+    "6 cm"
+   ],
+   [
+    "II",
+    "6 cm",
+    "9 cm"
+   ],
+   [
+    "III",
+    "6 cm",
+    "8 cm"
+   ]
+  ]
+ }
+}
+```
 
 ### Contoh 3: Mencari sisi yang hilang
 
-**Soal.** Segiempat $ABCD \sim PQRS$. Diketahui $AB = 6$ cm, $BC = 4$ cm, $PQ = 9$ cm, dan $RS = 12$ cm. Tentukan $QR$ dan $CD$.
-
-1. **Langkah 1: Pasangkan sisi.** $AB \leftrightarrow PQ$, $BC \leftrightarrow QR$, $CD \leftrightarrow RS$.
-2. **Langkah 2: Cari faktor skala.** Pakai pasangan yang keduanya diketahui: $k = \frac{PQ}{AB} = \frac{9}{6} = 1{,}5$. Jadi $PQRS$ adalah fotokopi $ABCD$ dengan zoom 150%.
-3. **Langkah 3: Hitung $QR$ (dari kecil ke besar, kali $k$).** $QR = 1{,}5 \times 4 = 6$ cm.
-4. **Langkah 4: Hitung $CD$ (dari besar ke kecil, bagi $k$).** $CD = \frac{12}{1{,}5} = 8$ cm.
-5. **Cek jawaban.** Semua perbandingan sama: $\frac{9}{6} = \frac{6}{4} = \frac{12}{8} = 1{,}5$.
-
-**Jawaban:** $QR = 6$ cm dan $CD = 8$ cm.
+```soal
+{
+ "title": "Mencari sisi yang hilang",
+ "text": "Segiempat $ABCD \\sim PQRS$. Diketahui $AB = 6$ cm, $BC = 4$ cm, $PQ = 9$ cm, dan $RS = 12$ cm. Tentukan $QR$ dan $CD$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: $CD$ berpasangan dengan sisi apa?",
+   "options": [
+    "$RS$",
+    "$QR$",
+    "$SP$"
+   ],
+   "answer": "$RS$",
+   "hint": "Huruf ke-3 dan ke-4.",
+   "explain": "$CD \\leftrightarrow RS$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Faktor skala $k = \\frac{PQ}{AB}$.",
+   "answer": "1,5",
+   "hint": "9 ÷ 6.",
+   "explain": "k = 1,5. PQRS adalah ABCD dengan zoom 150%.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $QR = k \\times BC$.",
+   "answer": "6",
+   "hint": "Dari kecil ke besar: kali k.",
+   "explain": "1,5 × 4 = 6 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: $CD = \\frac{RS}{k}$.",
+   "answer": "8",
+   "hint": "Dari besar ke kecil: bagi k.",
+   "explain": "12 ÷ 1,5 = 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $\\frac{12}{8} = ?$",
+   "answer": "1,5",
+   "hint": "Perbandingannya harus sama dengan k.",
+   "explain": "1,5. Semua perbandingan sama.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$QR = 6$ cm dan $CD = 8$ cm."
+}
+```
 
 ### Contoh 4: Soal cerita pembesaran foto
 
-**Soal.** Made punya foto berukuran 4 cm × 6 cm. Ia mencetak ulang foto itu di studio di Denpasar sehingga sisi 4 cm menjadi 10 cm, tanpa mengubah bentuk. Berapa panjang sisi lainnya? Berapa besar sudut di pojok foto baru?
-
-1. **Langkah 1: Pahami soal.** "Tanpa mengubah bentuk" berarti foto baru sebangun dengan foto lama.
-2. **Langkah 2: Cari faktor skala.** $k = \frac{10}{4} = 2{,}5$. Ini pembesaran, karena $k > 1$.
-3. **Langkah 3: Hitung sisi baru.** $6 \times 2{,}5 = 15$ cm.
-4. **Langkah 4: Tentukan sudut.** Pada pembesaran, sudut tidak berubah. Sudut pojok tetap $90^\circ$.
-5. **Cek jawaban.** $\frac{10}{4} = 2{,}5$ dan $\frac{15}{6} = 2{,}5$. Perbandingan sama, jadi sebangun.
-
-**Jawaban:** sisi lainnya 15 cm, sudut pojok tetap $90^\circ$.
+```soal
+{
+ "title": "Soal cerita pembesaran foto",
+ "text": "Foto Made berukuran 4 cm × 6 cm dicetak ulang sehingga sisi 4 cm menjadi 10 cm, tanpa mengubah bentuk. Berapa panjang sisi lainnya? Berapa besar sudut di pojok foto baru?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: \"Tanpa mengubah bentuk\" artinya?",
+   "options": [
+    "Foto baru sebangun dengan foto lama",
+    "Foto baru kongruen dengan foto lama",
+    "Setiap sisi ditambah 6 cm"
+   ],
+   "answer": "Foto baru sebangun dengan foto lama",
+   "hint": "Ukurannya berubah, bentuknya tidak.",
+   "explain": "Sebangun.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Faktor skala $k = \\frac{10}{4}$.",
+   "answer": "2,5",
+   "hint": "Panjang baru dibagi panjang asli.",
+   "explain": "k = 2,5, pembesaran.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Sisi lainnya?",
+   "answer": "15",
+   "hint": "6 × 2,5.",
+   "explain": "15 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Sudut pojok foto baru?",
+   "answer": "90",
+   "hint": "Pembesaran tidak mengubah sudut.",
+   "explain": "Tetap 90°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $\\frac{15}{6} = ?$",
+   "answer": "2,5",
+   "hint": "Bandingkan dengan k.",
+   "explain": "2,5. Sama, jadi sebangun.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Sisi lainnya 15 cm dan sudut pojok tetap 90°."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -135,16 +379,176 @@ Urutan berpikir: **pasangkan titik yang bersesuaian → cari faktor skala (jika 
 
 ## Cek pemahaman
 
-1. $\triangle KLM \cong \triangle XYZ$. Diketahui $KL = 8$ cm dan $\angle M = 40^\circ$. Tentukan $XY$ dan $\angle Z$.
-2. Apakah persegi panjang 3 cm × 5 cm sebangun dengan persegi panjang 6 cm × 10 cm? Jelaskan.
-3. Apakah persegi panjang 5 cm × 8 cm sebangun dengan persegi panjang 10 cm × 14 cm? Jelaskan.
-4. $ABCD \sim EFGH$. Diketahui $AB = 12$ cm, $EF = 8$ cm, dan $FG = 6$ cm. Tentukan $BC$.
-5. Sebuah poster berukuran 60 cm × 90 cm diperkecil untuk brosur tanpa mengubah bentuk, sehingga sisi 60 cm menjadi 20 cm. Berapa panjang sisi lainnya, dan berapa faktor skalanya?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $XY = 8$ cm dan $\angle Z = 40^\circ$. $K \leftrightarrow X$, $L \leftrightarrow Y$, $M \leftrightarrow Z$.
-2. Ya. Sudut semua $90^\circ$, dan $\frac{6}{3} = \frac{10}{5} = 2$.
-3. Tidak. $\frac{10}{5} = 2$ tetapi $\frac{14}{8} = 1{,}75$, perbandingannya berbeda.
-4. $BC = 9$ cm. Faktor skala dari $EFGH$ ke $ABCD$ adalah $\frac{12}{8} = 1{,}5$, jadi $BC = 1{,}5 \times 6 = 9$.
-5. 30 cm, faktor skala $\frac{1}{3}$. $k = \frac{20}{60} = \frac{1}{3}$, jadi $90 \times \frac{1}{3} = 30$ cm.
+```soal
+{
+ "title": "Soal 1",
+ "text": "$\\triangle KLM \\cong \\triangle XYZ$. Diketahui $KL = 8$ cm dan $\\angle M = 40^\\circ$. Tentukan $XY$ dan $\\angle Z$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$XY = ?$",
+   "answer": "8",
+   "hint": "XY berpasangan dengan KL.",
+   "explain": "XY = 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle Z = ?$",
+   "answer": "40",
+   "hint": "Z berpasangan dengan M.",
+   "explain": "∠Z = 40°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$XY = 8$ cm, $\\angle Z = 40^\\circ$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Apakah persegi panjang 3 cm × 5 cm sebangun dengan persegi panjang 6 cm × 10 cm?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\frac{6}{3} = ?$",
+   "answer": "2",
+   "hint": "Sisi pendek.",
+   "explain": "6 ÷ 3 = 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\frac{10}{5} = ?$",
+   "answer": "2",
+   "hint": "Sisi panjang.",
+   "explain": "10 ÷ 5 = 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Kesimpulan?",
+   "options": [
+    "Sebangun",
+    "Tidak sebangun"
+   ],
+   "answer": "Sebangun",
+   "hint": "Sudut sama; bandingkan kedua perbandingan.",
+   "explain": "Sudut semua 90° dan perbandingannya sama, 2.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Ya, sebangun dengan faktor skala 2."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Apakah persegi panjang 5 cm × 8 cm sebangun dengan persegi panjang 10 cm × 14 cm?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\frac{10}{5} = ?$",
+   "answer": "2",
+   "hint": "Sisi pendek.",
+   "explain": "10 ÷ 5 = 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\frac{14}{8} = ?$",
+   "answer": "1,75",
+   "hint": "Sisi panjang.",
+   "explain": "1,75.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Kesimpulan?",
+   "options": [
+    "Tidak sebangun",
+    "Sebangun"
+   ],
+   "answer": "Tidak sebangun",
+   "hint": "Perbandingannya harus sama.",
+   "explain": "2 ≠ 1,75, jadi tidak sebangun.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Tidak sebangun."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "$ABCD \\sim EFGH$. Diketahui $AB = 12$ cm, $EF = 8$ cm, dan $FG = 6$ cm. Tentukan $BC$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Faktor skala dari $EFGH$ ke $ABCD$: $\\frac{12}{8}$.",
+   "answer": "1,5",
+   "hint": "AB dibagi EF.",
+   "explain": "1,5.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$BC = ?$",
+   "answer": "9",
+   "hint": "BC berpasangan dengan FG; kalikan dengan 1,5.",
+   "explain": "1,5 × 6 = 9 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "$BC = 9$ cm."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Poster 60 cm × 90 cm diperkecil untuk brosur tanpa mengubah bentuk, sehingga sisi 60 cm menjadi 20 cm. Berapa panjang sisi lainnya, dan berapa faktor skalanya?",
+ "steps": [
+  {
+   "kind": "fraction",
+   "prompt": "Faktor skala $k = \\frac{20}{60}$ (paling sederhana).",
+   "answer": {
+    "num": 1,
+    "den": 3
+   },
+   "hint": "Sederhanakan dengan membagi 20.",
+   "explain": "$k = \\frac{1}{3}$, pengecilan.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Sisi lainnya?",
+   "answer": "30",
+   "hint": "90 × 1/3.",
+   "explain": "30 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Sisi lainnya 30 cm, faktor skala $\\frac{1}{3}$."
+}
+```

@@ -20,6 +20,10 @@ Bayangkan kamu mengisi kotak dengan **dadu kecil** berukuran 1 cm × 1 cm × 1 c
 
 Kalau kamu tahu jumlah semua dadu dan banyak dadu di satu lapisan, kamu bisa mencari ada berapa lapisan. Dadu ini kita pakai di setiap contoh.
 
+```visual
+{"type": "grid", "width": 5, "height": 4, "shade": [{"x": 0, "y": 0, "w": 5, "h": 4}], "showDims": true, "unit": "cm", "caption": "Satu lapisan dadu di dasar kotak 5 cm × 4 cm: 20 dadu. Luas alas = 20 cm². Kalau ditumpuk 3 lapisan, ada 60 dadu."}
+```
+
 ## Konsep
 
 ### Mengingat kembali rumus volume
@@ -38,6 +42,10 @@ Jika volume dan ukuran lain diketahui, **bagi** volume dengan yang diketahui.
 
 $$t = \frac{V}{\text{luas alas}} \qquad t = \frac{V}{p \times l} \qquad l = \frac{V}{p \times t} \qquad p = \frac{V}{l \times t}$$
 
+```anim
+{"type": "persamaan", "title": "Kotak 5 cm × 4 cm berisi 120 dadu. Berapa tingginya?", "baris": [{"tex": "5 \\times 4 \\times t = 120", "say": "Volume = panjang × lebar × tinggi."}, {"tex": "20 \\times t = 120", "say": "Satu lapisan berisi 5 × 4 = 20 dadu.", "op": "$5 \\times 4 = 20$"}, {"tex": "t = 120 \\div 20", "say": "Banyak lapisan = semua dadu ÷ dadu per lapisan.", "op": "kedua sisi $\\div\\,20$"}, {"tex": "t = 6 \\text{ cm}", "say": "Ada 6 lapisan, jadi tingginya 6 cm."}]}
+```
+
 ### Kuadrat dan akar kuadrat
 
 $7 \times 7 = 49$. Kita tulis $7^2 = 49$, dibaca "7 kuadrat".
@@ -54,12 +62,14 @@ Kebalikannya: $\sqrt[3]{125} = 5$, dibaca "akar pangkat tiga 125".
 
 Gunanya: kubus bervolume 125 cm³ punya rusuk $\sqrt[3]{125} = 5$ cm. Bayangkan kubus besar dari 125 dadu: di tiap rusuk ada 5 dadu.
 
+```visual
+{"type": "solid", "solid": "kubus", "caption": "Kubus dari 125 dadu kecil: 5 dadu di setiap rusuk, karena 5 × 5 × 5 = 125."}
+```
+
 Hafalkan tabel ini:
 
-```
- s  :  1   2   3   4    5    6    7    8    9    10
- s² :  1   4   9   16   25   36   49   64   81   100
- s³ :  1   8   27  64   125  216  343  512  729  1000
+```visual
+{"type": "table", "head": ["s", "s²", "s³"], "rows": [["1", "1", "1"], ["2", "4", "8"], ["3", "9", "27"], ["4", "16", "64"], ["5", "25", "125"], ["6", "36", "216"], ["7", "49", "343"], ["8", "64", "512"], ["9", "81", "729"], ["10", "100", "1.000"]], "caption": "Kuadrat dan pangkat tiga bilangan 1 sampai 10."}
 ```
 
 ### Satuan volume
@@ -68,51 +78,224 @@ $1 \text{ liter} = 1.000 \text{ cm}^3$ dan $1 \text{ ml} = 1 \text{ cm}^3$. Ubah
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Rusuk kubus dari volume
 
-**Soal.** Sebuah kotak kado berbentuk kubus bervolume 343 cm³. Berapa panjang rusuknya?
-
-1. **Langkah 1: Tulis hubungannya.** $s \times s \times s = 343$, jadi $s = \sqrt[3]{343}$.
-2. **Langkah 2: Cari di tabel pangkat tiga.** $7 \times 7 = 49$, dan $49 \times 7 = 343$.
-3. **Langkah 3: Bayangkan dadu.** Kubus dari 343 dadu punya 7 dadu di setiap rusuk.
-4. **Cek jawaban.** $7 \times 7 \times 7 = 343$. Benar.
-
-**Jawaban:** Rusuk 7 cm.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Sebuah kotak kado berbentuk kubus bervolume 343 cm³. Berapa panjang rusuknya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Tulis hubungannya.",
+   "options": [
+    "$s \\times s \\times s = 343$",
+    "$s \\times 3 = 343$",
+    "$s \\times s = 343$"
+   ],
+   "answer": "$s \\times s \\times s = 343$",
+   "hint": "Volume kubus = rusuk × rusuk × rusuk.",
+   "explain": "Jadi $s = \\sqrt[3]{343}$, bukan 343 ÷ 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Hitung 7 × 7.",
+   "answer": "49",
+   "hint": "Fakta perkalian.",
+   "explain": "7 × 7 = 49.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Hitung 49 × 7.",
+   "answer": "343",
+   "hint": "49 × 7 = 280 + 63.",
+   "explain": "49 × 7 = 343. Jadi 7 × 7 × 7 = 343.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Berapa panjang rusuknya?",
+   "answer": "7",
+   "hint": "Bilangan yang dikali dirinya sendiri tiga kali menjadi 343.",
+   "explain": "Ada 7 dadu di setiap rusuk, jadi rusuk 7 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Jadi panjang rusuknya 7 cm.",
+ "visual": {
+  "type": "solid",
+  "solid": "kubus"
+ }
+}
+```
 
 ### Contoh 2: Tinggi balok dari volume dan luas alas
 
-**Soal.** Volume sebuah balok 360 cm³. Luas alasnya 45 cm². Berapa tingginya?
-
-1. **Langkah 1: Bayangkan lapisan.** Ada 360 dadu seluruhnya. Setiap lapisan berisi 45 dadu.
-2. **Langkah 2: Bagi.** Banyak lapisan $= 360 \div 45 = 8$.
-3. **Langkah 3: Tulis tinggi.** 8 lapisan dadu 1 cm berarti tinggi 8 cm.
-4. **Cek jawaban.** $45 \times 8 = 360$. Benar.
-
-**Jawaban:** Tinggi 8 cm.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Volume sebuah balok 360 cm³. Luas alasnya 45 cm². Berapa tingginya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Hitungan apa yang dipakai untuk mencari banyak lapisan?",
+   "options": [
+    "360 ÷ 45",
+    "360 × 45",
+    "360 − 45"
+   ],
+   "answer": "360 ÷ 45",
+   "hint": "Semua dadu dibagi dadu per lapisan.",
+   "explain": "Banyak lapisan = 360 ÷ 45.",
+   "error": "salah-pilih-operasi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Hitung 360 ÷ 45.",
+   "answer": "8",
+   "hint": "45 × 2 = 90, 45 × 4 = 180, 45 × 8 = ...",
+   "explain": "360 ÷ 45 = 8 lapisan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Berapa tinggi balok?",
+   "answer": "8",
+   "hint": "Setiap lapisan setinggi 1 cm.",
+   "explain": "8 lapisan = 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 45 × 8 = ?",
+   "answer": "360",
+   "hint": "40 × 8 + 5 × 8.",
+   "explain": "360 cm³. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Jadi tinggi balok 8 cm.",
+ "visual": {
+  "type": "solid",
+  "solid": "balok"
+ }
+}
+```
 
 ### Contoh 3: Lebar balok, lalu sisi alas persegi
 
-**Soal.** (a) Volume balok 840 cm³, panjang 12 cm, tinggi 7 cm. Berapa lebarnya? (b) Balok lain beralas persegi, tingginya 10 cm, volumenya 640 cm³. Berapa panjang sisi alasnya?
-
-1. **Langkah 1: (a) Kalikan ukuran yang diketahui.** $p \times t = 12 \times 7 = 84$.
-2. **Langkah 2: (a) Bagi volume.** $l = 840 \div 84 = 10$ cm.
-3. **Langkah 3: (b) Cari luas alas.** Luas alas $= V \div t = 640 \div 10 = 64$ cm². Artinya satu lapisan berisi 64 dadu.
-4. **Langkah 4: (b) Cari sisi alas.** Alas persegi, jadi sisi $\times$ sisi $= 64$. Sisi $= \sqrt{64} = 8$ cm.
-5. **Cek jawaban.** (a) $12 \times 10 \times 7 = 840$. (b) $8 \times 8 \times 10 = 640$. Benar.
-
-**Jawaban:** (a) 10 cm; (b) 8 cm.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "(a) Volume balok 840 cm³, panjang 12 cm, tinggi 7 cm. Berapa lebarnya? (b) Balok lain beralas persegi, tingginya 10 cm, volumenya 640 cm³. Berapa panjang sisi alasnya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: (a) Kalikan ukuran yang diketahui: 12 × 7 = ?",
+   "answer": "84",
+   "hint": "Panjang × tinggi.",
+   "explain": "12 × 7 = 84.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: (a) Lebar = 840 ÷ 84 = ?",
+   "answer": "10",
+   "hint": "84 × 10 = ...",
+   "explain": "Lebar = 10 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: (b) Luas alas = 640 ÷ 10 = ?",
+   "answer": "64",
+   "hint": "Volume ÷ tinggi.",
+   "explain": "Luas alas 64 cm², satu lapisan berisi 64 dadu.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: (b) Sisi alas = $\\sqrt{64}$ = ?",
+   "answer": "8",
+   "hint": "Bilangan berapa dikali dirinya sendiri hasilnya 64?",
+   "explain": "8 × 8 = 64, jadi sisi 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: (b) 8 × 8 × 10 = ?",
+   "answer": "640",
+   "hint": "64 × 10.",
+   "explain": "640 cm³. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Jadi (a) lebarnya 10 cm, (b) sisi alasnya 8 cm."
+}
+```
 
 ### Contoh 4: Soal cerita akuarium
 
-**Soal.** Akuarium Putu berbentuk balok dengan alas 60 cm × 40 cm. Putu menuang 36 liter air ke dalamnya. Berapa tinggi air di akuarium?
-
-1. **Langkah 1: Samakan satuan.** $36 \text{ liter} = 36 \times 1.000 = 36.000 \text{ cm}^3$.
-2. **Langkah 2: Hitung luas alas.** $60 \times 40 = 2.400$ cm². Satu lapisan air setinggi 1 cm berisi 2.400 cm³.
-3. **Langkah 3: Bagi volume dengan luas alas.** $36.000 \div 2.400 = 15$.
-4. **Langkah 4: Tulis tinggi air.** Ada 15 lapisan setinggi 1 cm, jadi tinggi air 15 cm.
-5. **Cek jawaban.** $60 \times 40 \times 15 = 2.400 \times 15 = 36.000$ cm³ $= 36$ liter. Benar.
-
-**Jawaban:** Tinggi air 15 cm.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Akuarium Putu berbentuk balok dengan alas 60 cm × 40 cm. Putu menuang 36 liter air ke dalamnya. Berapa tinggi air di akuarium?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Samakan satuan. 36 liter = ? cm³",
+   "answer": "36.000",
+   "hint": "1 liter = 1.000 cm³.",
+   "explain": "36 × 1.000 = 36.000 cm³.",
+   "error": "salah-angka-tukar",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Luas alas = 60 × 40 = ?",
+   "answer": "2.400",
+   "hint": "6 × 4 = 24, lalu tambah dua nol.",
+   "explain": "2.400 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Tinggi air = 36.000 ÷ 2.400 = ?",
+   "answer": "15",
+   "hint": "Coret dua nol: 360 ÷ 24.",
+   "explain": "15 lapisan setinggi 1 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 2.400 × 15 = ? cm³",
+   "answer": "36.000",
+   "hint": "2.400 × 10 + 2.400 × 5.",
+   "explain": "36.000 cm³ = 36 liter. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Jadi tinggi air 15 cm.",
+ "visual": {
+  "type": "solid",
+  "solid": "balok"
+ }
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -132,16 +315,174 @@ $1 \text{ liter} = 1.000 \text{ cm}^3$ dan $1 \text{ ml} = 1 \text{ cm}^3$. Ubah
 
 ## Cek pemahaman
 
-1. Sebuah kubus bervolume 512 cm³. Berapa panjang rusuknya?
-2. Luas sebuah persegi 81 cm². Berapa panjang sisinya?
-3. Volume balok 600 cm³ dan luas alasnya 75 cm². Berapa tingginya?
-4. Volume balok 1.008 cm³, panjang 14 cm, lebar 9 cm. Berapa tingginya?
-5. Bak mandi berbentuk kubus berisi penuh 216 liter air. Berapa panjang rusuk bagian dalamnya dalam cm?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. 8 cm. $8 \times 8 \times 8 = 512$.
-2. 9 cm. $9 \times 9 = 81$.
-3. 8 cm. $600 \div 75 = 8$.
-4. 8 cm. $14 \times 9 = 126$, dan $1.008 \div 126 = 8$.
-5. 60 cm. $216$ liter $= 216.000$ cm³, dan $60 \times 60 \times 60 = 216.000$ (karena $6 \times 6 \times 6 = 216$ dan $10 \times 10 \times 10 = 1.000$).
+```soal
+{
+ "title": "Soal 1",
+ "text": "Sebuah kubus bervolume 512 cm³. Berapa panjang rusuknya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Rusuknya adalah ...",
+   "options": [
+    "$\\sqrt[3]{512}$",
+    "$512 \\div 3$",
+    "$\\sqrt{512}$"
+   ],
+   "answer": "$\\sqrt[3]{512}$",
+   "hint": "Rusuk × rusuk × rusuk = volume.",
+   "explain": "Cari bilangan yang dipangkatkan tiga menjadi 512.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Panjang rusuknya = ?",
+   "answer": "8",
+   "hint": "Lihat tabel pangkat tiga.",
+   "explain": "8 × 8 × 8 = 512, jadi rusuk 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Jadi rusuknya 8 cm."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Luas sebuah persegi 81 cm². Berapa panjang sisinya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Sisinya adalah ...",
+   "options": [
+    "$\\sqrt{81}$",
+    "$81 \\div 4$",
+    "$81 \\div 2$"
+   ],
+   "answer": "$\\sqrt{81}$",
+   "hint": "Sisi × sisi = luas.",
+   "explain": "Cari bilangan yang dikuadratkan menjadi 81.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Panjang sisinya = ?",
+   "answer": "9",
+   "hint": "Bilangan berapa dikali dirinya sendiri = 81?",
+   "explain": "9 × 9 = 81, jadi sisi 9 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Jadi sisinya 9 cm."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Volume balok 600 cm³ dan luas alasnya 75 cm². Berapa tingginya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Rumus tinggi adalah ...",
+   "options": [
+    "V ÷ luas alas",
+    "V × luas alas",
+    "V − luas alas"
+   ],
+   "answer": "V ÷ luas alas",
+   "hint": "Semua dadu ÷ dadu per lapisan.",
+   "explain": "t = V ÷ luas alas.",
+   "error": "salah-pilih-operasi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Hitung 600 ÷ 75.",
+   "answer": "8",
+   "hint": "75 × 4 = 300.",
+   "explain": "75 × 8 = 600, jadi tinggi 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Jadi tingginya 8 cm."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Volume balok 1.008 cm³, panjang 14 cm, lebar 9 cm. Berapa tingginya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Luas alas = 14 × 9 = ?",
+   "answer": "126",
+   "hint": "10 × 9 + 4 × 9.",
+   "explain": "Luas alas 126 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Tinggi = 1.008 ÷ 126 = ?",
+   "answer": "8",
+   "hint": "126 × 8 = ...",
+   "explain": "126 × 8 = 1.008, jadi tinggi 8 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Jadi tingginya 8 cm."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Bak mandi berbentuk kubus berisi penuh 216 liter air. Berapa panjang rusuk bagian dalamnya dalam cm?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Ubah ke cm³: 216 liter = ?",
+   "answer": "216.000",
+   "hint": "1 liter = 1.000 cm³.",
+   "explain": "216.000 cm³.",
+   "error": "salah-angka-tukar",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "6 × 6 × 6 = ?",
+   "answer": "216",
+   "hint": "6 × 6 = 36.",
+   "explain": "36 × 6 = 216.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Panjang rusuk = ?",
+   "answer": "60",
+   "hint": "216.000 = 216 × 1.000, dan 1.000 = 10 × 10 × 10.",
+   "explain": "60 × 60 × 60 = 216.000, jadi rusuk 60 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Jadi rusuk bagian dalamnya 60 cm."
+}
+```

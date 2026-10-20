@@ -19,6 +19,10 @@ Bayangkan sebuah **pintu kamar** yang dibuka.
 - **Kusen** (yang diam) dan **daun pintu** (yang bergerak) adalah dua **kaki sudut**.
 - **Seberapa lebar pintu terbuka** adalah **besar sudut**.
 
+```anim
+{"type": "bangun", "title": "Pintu dilihat dari atas", "titik": {"E": [0, 0], "K": [5, 0], "D": [2.5, 4.33]}, "sisi": [["E", "K"], ["E", "D"]], "sudut": [{"di": "E", "dari": "K", "ke": "D", "label": "60^\\circ"}], "langkah": [{"say": "E adalah engsel pintu: titik sudut.", "sorot": ["E"]}, {"say": "EK adalah kusen yang diam, ED adalah daun pintu. Keduanya kaki sudut.", "sorot": ["EK", "ED"]}, {"say": "Seberapa lebar pintu terbuka itulah besar sudutnya.", "sudut": 1}]}
+```
+
 Panjang daun pintu tidak mengubah besar sudut. Pintu kecil atau pintu besar, kalau dibuka sama lebar, sudutnya sama. Yang penting hanya **seberapa jauh pintu berputar**.
 
 ## Konsep
@@ -27,12 +31,8 @@ Panjang daun pintu tidak mengubah besar sudut. Pintu kecil atau pintu besar, kal
 
 Sudut punya satu **titik sudut** dan dua **kaki sudut**.
 
-```
-        A
-       /
-      /
-     /
-    B----------C
+```anim
+{"type": "bangun", "title": "Sudut ABC", "titik": {"A": [1.6, 2.8], "B": [0, 0], "C": [4.5, 0]}, "sisi": [["B", "A"], ["B", "C"]], "sudut": [{"di": "B", "dari": "C", "ke": "A"}], "langkah": [{"say": "B adalah titik sudut, tempat kedua kaki bertemu.", "sorot": ["B"], "sudut": 1}, {"say": "Kaki sudutnya BA dan BC.", "sorot": ["BA", "BC"], "sudut": 1}, {"say": "Namanya ∠ABC atau ∠CBA: huruf B selalu di tengah.", "sorot": ["B"], "sudut": 1}]}
 ```
 
 Ada dua cara menamai sudut ini:
@@ -48,11 +48,16 @@ Besar sudut diukur dalam **derajat**, ditulis dengan lambang $^\circ$. Satu puta
 
 Bayangkan pintu, atau jarum menit jam, berputar dari posisi awal.
 
+```visual
+{"type": "table", "head": ["Putaran", "Derajat", "Keterangan"], "rows": [["1/4 putaran", "90°", "sudut siku-siku"], ["1/2 putaran", "180°", "garis lurus"], ["3/4 putaran", "270°", ""], ["1 putaran", "360°", "kembali ke posisi awal"]]}
 ```
-1/4 putaran  =  90°   (sudut siku-siku)
-1/2 putaran  = 180°   (garis lurus)
-3/4 putaran  = 270°
-1   putaran  = 360°   (kembali ke posisi awal)
+
+```visual
+{"type": "angle", "degrees": 90, "showRightMark": true, "caption": "1/4 putaran = 90°"}
+```
+
+```visual
+{"type": "angle", "degrees": 180, "caption": "1/2 putaran = 180°, kedua kaki membentuk garis lurus"}
 ```
 
 ### Jenis sudut
@@ -60,6 +65,14 @@ Bayangkan pintu, atau jarum menit jam, berputar dari posisi awal.
 - **Sudut lancip**: lebih dari $0^\circ$ dan kurang dari $90^\circ$. Pintu terbuka sedikit.
 - **Sudut siku-siku**: tepat $90^\circ$. Ditandai dengan kotak kecil di titik sudutnya.
 - **Sudut tumpul**: lebih dari $90^\circ$ dan kurang dari $180^\circ$. Pintu terbuka lebar.
+
+```visual
+{"type": "angle", "degrees": 40, "caption": "Sudut lancip: 40°"}
+```
+
+```visual
+{"type": "angle", "degrees": 130, "caption": "Sudut tumpul: 130°"}
+```
 
 ### Busur derajat
 
@@ -70,63 +83,282 @@ Bayangkan pintu, atau jarum menit jam, berputar dari posisi awal.
 
 Di tengah sisi lurusnya ada **titik pusat**. Garis dari pusat ke angka 0 disebut **garis dasar**.
 
-Aturan emas: **pakai skala yang dimulai dari 0 pada kaki pertama.**
+Aturan emas: **pakai skala yang dimulai dari 0 pada kaki pertama.** Dua angka yang dilewati satu kaki selalu berjumlah $180^\circ$, misalnya 55 dan 125.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Menamai sudut
 
-**Soal.** Pada gambar di bawah, tulis nama sudut yang ditandai dengan tiga huruf. Sebutkan titik sudut dan kakinya.
-
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Garis QP dan garis QR bertemu di titik Q dan membentuk sebuah sudut. Tulis nama sudut itu dengan tiga huruf, lalu sebutkan titik sudut dan kakinya.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Cari engselnya. Titik mana yang menjadi titik sudut?",
+   "options": [
+    "Q",
+    "P",
+    "R"
+   ],
+   "answer": "Q",
+   "hint": "Titik sudut adalah tempat kedua garis bertemu.",
+   "explain": "Kedua garis bertemu di Q, jadi Q titik sudut.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Apa kaki sudutnya?",
+   "options": [
+    "QP dan QR",
+    "PR dan QR",
+    "PQ dan PR"
+   ],
+   "answer": "QP dan QR",
+   "hint": "Kaki sudut berawal dari titik sudut.",
+   "explain": "Kedua kaki berawal dari Q: QP dan QR.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Tulis nama sudutnya.",
+   "options": [
+    "$\\angle PQR$",
+    "$\\angle QPR$",
+    "$\\angle PRQ$"
+   ],
+   "answer": "$\\angle PQR$",
+   "hint": "Huruf titik sudut harus di tengah.",
+   "explain": "Q di tengah: $\\angle PQR$.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: nama lain yang juga benar?",
+   "options": [
+    "$\\angle RQP$",
+    "$\\angle QRP$",
+    "$\\angle RPQ$"
+   ],
+   "answer": "$\\angle RQP$",
+   "hint": "Urutan kaki boleh dibalik, tetapi Q tetap di tengah.",
+   "explain": "$\\angle RQP$ juga benar karena Q tetap di tengah.",
+   "error": "salah-titik-sudut"
+  }
+ ],
+ "conclusion": "Sudutnya $\\angle PQR$ (atau $\\angle RQP$), titik sudut Q, kaki QP dan QR.",
+ "visual": {
+  "type": "angle",
+  "degrees": 35
+ }
+}
 ```
-     P
-      \
-       \
-        Q----------R
-```
-
-1. **Langkah 1: Cari engselnya.** Kedua garis bertemu di Q. Jadi Q adalah titik sudut.
-2. **Langkah 2: Cari kaki sudut.** Kaki pertama QP, kaki kedua QR.
-3. **Langkah 3: Tulis nama.** Titik sudut di tengah: $\angle PQR$ atau $\angle RQP$.
-4. **Cek jawaban.** Huruf tengah harus titik sudut. Pada $\angle PQR$, huruf tengahnya Q. Benar.
-
-**Jawaban:** $\angle PQR$ (atau $\angle RQP$). Titik sudut Q, kaki QP dan QR.
 
 ### Contoh 2: Mengukur sudut dengan busur derajat
 
-**Soal.** Kamu meletakkan busur derajat pada $\angle XYZ$. Kaki YZ tepat di angka 0 skala dalam. Kaki YX melewati angka 55 di skala luar dan 125 di skala dalam. Sudut itu terlihat terbuka lebih lebar dari sudut siku-siku. Berapa besar $\angle XYZ$?
-
-1. **Langkah 1: Perkirakan dulu.** Sudutnya terbuka lebih lebar dari siku-siku. Jadi sudut tumpul, lebih dari $90^\circ$.
-2. **Langkah 2: Pastikan posisi busur.** Titik pusat busur tepat di Y (engsel). Garis dasar tepat di kaki YZ.
-3. **Langkah 3: Pilih skala.** Kaki YZ ada di angka 0 skala **dalam**. Jadi kita baca skala dalam.
-4. **Langkah 4: Baca angka.** Kaki YX melewati 125 di skala dalam. Jadi $\angle XYZ = 125^\circ$.
-5. **Cek jawaban.** Perkiraan kita sudut tumpul. $125^\circ$ memang di antara $90^\circ$ dan $180^\circ$. Angka 55 pasti salah, karena 55° adalah sudut lancip.
-
-**Jawaban:** $\angle XYZ = 125^\circ$.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Busur derajat diletakkan pada $\\angle XYZ$. Kaki YZ tepat di angka 0 skala dalam. Kaki YX melewati angka 55 di skala luar dan 125 di skala dalam. Berapa besar $\\angle XYZ$?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Perkirakan dulu. Sudut pada gambar termasuk jenis apa?",
+   "options": [
+    "Tumpul",
+    "Lancip",
+    "Siku-siku"
+   ],
+   "answer": "Tumpul",
+   "hint": "Bandingkan dengan pojok buku (90°).",
+   "explain": "Terbuka lebih lebar dari siku-siku, jadi tumpul: lebih dari 90°.",
+   "error": "salah-banding-siku"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Titik pusat busur harus diletakkan di mana?",
+   "options": [
+    "Tepat di Y",
+    "Di X",
+    "Di Z"
+   ],
+   "answer": "Tepat di Y",
+   "hint": "Pusat busur di engsel sudut.",
+   "explain": "Y adalah titik sudut, jadi pusat busur di Y.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Skala mana yang dibaca?",
+   "options": [
+    "Skala dalam",
+    "Skala luar"
+   ],
+   "answer": "Skala dalam",
+   "hint": "Lihat skala mana yang angka 0-nya ada di kaki YZ.",
+   "explain": "Kaki YZ di 0 skala dalam, jadi baca skala dalam.",
+   "error": "salah-baca-alat-ukur"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Baca angkanya. $\\angle XYZ$ = ?",
+   "answer": "125",
+   "hint": "Angka di skala dalam yang dilewati kaki YX.",
+   "explain": "∠XYZ = 125°.",
+   "error": "salah-baca-alat-ukur",
+   "suffix": "°"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: apakah 125° cocok dengan perkiraan?",
+   "options": [
+    "Ya, 125° di antara 90° dan 180°",
+    "Tidak, seharusnya 55°"
+   ],
+   "answer": "Ya, 125° di antara 90° dan 180°",
+   "hint": "Sudut tumpul lebih dari 90°.",
+   "explain": "125° tumpul, cocok. 55° lancip, jadi pasti salah.",
+   "error": "salah-banding-siku"
+  }
+ ],
+ "conclusion": "Jadi $\\angle XYZ = 125^\\circ$.",
+ "visual": {
+  "type": "angle",
+  "degrees": 125
+ }
+}
+```
 
 ### Contoh 3: Menggambar sudut
 
-**Soal.** Gambar $\angle ABC = 70^\circ$.
-
-1. **Langkah 1: Gambar kaki pertama.** Dengan penggaris, gambar garis lurus BC. Beri titik B di ujung kiri. B adalah engselnya.
-2. **Langkah 2: Letakkan busur.** Titik pusat busur tepat di B. Garis dasar busur tepat di atas garis BC.
-3. **Langkah 3: Pilih skala.** Cari angka 0 yang ada di atas garis BC. Karena C di kanan, pakai skala yang 0-nya di kanan (skala dalam).
-4. **Langkah 4: Beri tanda.** Ikuti skala itu sampai angka 70. Beri titik kecil dan namai A.
-5. **Langkah 5: Gambar kaki kedua.** Angkat busur. Hubungkan B ke A dengan penggaris. Tulis $70^\circ$ di dalam sudut.
-6. **Cek jawaban.** $70^\circ$ adalah sudut lancip, jadi pintunya terbuka kurang dari siku-siku. Kalau gambarmu terlihat tumpul, kamu memakai skala yang salah ($110^\circ$).
-
-**Jawaban:** Sudut lancip $\angle ABC$ dengan kaki BC dan BA, besarnya $70^\circ$.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Gambar $\\angle ABC = 70^\\circ$. Kaki BC digambar mendatar, dengan B di kiri dan C di kanan.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Setelah menggambar garis BC, titik mana yang menjadi engsel?",
+   "options": [
+    "B",
+    "C",
+    "A"
+   ],
+   "answer": "B",
+   "hint": "Huruf tengah nama sudut adalah titik sudut.",
+   "explain": "Pada ∠ABC, B di tengah, jadi B engselnya.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Di mana pusat busur diletakkan?",
+   "options": [
+    "Tepat di B, garis dasar di atas BC",
+    "Tepat di C",
+    "Di tengah garis BC"
+   ],
+   "answer": "Tepat di B, garis dasar di atas BC",
+   "hint": "Pusat busur selalu di titik sudut.",
+   "explain": "Pusat di B, garis dasar menempel pada BC.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: C ada di kanan. Skala mana yang dipakai?",
+   "options": [
+    "Skala yang 0-nya di kanan (skala dalam)",
+    "Skala yang 0-nya di kiri (skala luar)"
+   ],
+   "answer": "Skala yang 0-nya di kanan (skala dalam)",
+   "hint": "Cari angka 0 yang berada di atas kaki BC.",
+   "explain": "Kaki BC mengarah ke kanan, jadi pakai skala dalam.",
+   "error": "salah-baca-alat-ukur"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Ikuti skala itu sampai angka berapa untuk memberi titik A?",
+   "answer": "70",
+   "hint": "Besar sudut yang diminta.",
+   "explain": "Beri titik A di angka 70, lalu hubungkan B ke A.",
+   "error": "salah-baca-alat-ukur",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: kalau memakai skala yang salah, sudut yang tergambar berapa derajat?",
+   "answer": "110",
+   "hint": "Dua angka pada satu posisi berjumlah 180.",
+   "explain": "180 − 70 = 110°, sudut tumpul. Sudut 70° harus terlihat lancip.",
+   "error": "salah-baca-alat-ukur",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Sudut lancip $\\angle ABC = 70^\\circ$ dengan kaki BC dan BA.",
+ "visual": {
+  "type": "angle",
+  "degrees": 70
+ }
+}
+```
 
 ### Contoh 4: Soal cerita tentang putaran
 
-**Soal.** Dimas mulai mengerjakan PR pukul 07.00 dan selesai pukul 07.45. Berapa bagian putaran yang dilalui jarum menit? Berapa derajat?
-
-1. **Langkah 1: Pahami soal.** Jarum menit berputar 1 putaran penuh dalam 60 menit. Dimas belajar 45 menit.
-2. **Langkah 2: Cari bagian putaran.** Jarum menit bergerak dari angka 12 ke angka 9. 15 menit adalah $\frac{1}{4}$ putaran, jadi 45 menit adalah $\frac{3}{4}$ putaran.
-3. **Langkah 3: Ubah ke derajat.** $\frac{3}{4}$ putaran $= 270^\circ$. Atau hitung: $\frac{1}{4}$ putaran $= 90^\circ$, dan $3 \times 90^\circ = 270^\circ$.
-4. **Cek jawaban.** Satu putaran penuh $360^\circ$. Sisa dari 07.45 ke 08.00 adalah 15 menit, yaitu $90^\circ$. $270^\circ + 90^\circ = 360^\circ$. Cocok.
-
-**Jawaban:** $\frac{3}{4}$ putaran, yaitu $270^\circ$.
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Dimas mulai mengerjakan PR pukul 07.00 dan selesai pukul 07.45. Berapa bagian putaran yang dilalui jarum menit? Berapa derajat?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Pahami soal. Berapa menit Dimas belajar?",
+   "answer": "45",
+   "hint": "Dari 07.00 sampai 07.45.",
+   "explain": "45 menit. Satu putaran jarum menit = 60 menit.",
+   "error": "salah-lama-waktu",
+   "suffix": "menit"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 2: Berapa bagian putaran? (paling sederhana)",
+   "answer": {
+    "num": 3,
+    "den": 4
+   },
+   "hint": "15 menit adalah 1/4 putaran. 45 menit ada berapa kali 15 menit?",
+   "explain": "45 menit = 3 × 15 menit = 3/4 putaran.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: 1/4 putaran = 90°. Berapa derajat 3/4 putaran?",
+   "answer": "270",
+   "hint": "3 × 90.",
+   "explain": "3 × 90° = 270°.",
+   "error": "salah-fakta-kali",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 270° + 90° (sisa 15 menit) = ?",
+   "answer": "360",
+   "hint": "Harus sama dengan satu putaran penuh.",
+   "explain": "360°, satu putaran penuh. Cocok.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jarum menit berputar $\\frac{3}{4}$ putaran, yaitu $270^\\circ$.",
+ "visual": {
+  "type": "clock",
+  "hour": 7,
+  "minute": 45
+ }
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -146,16 +378,220 @@ Aturan emas: **pakai skala yang dimulai dari 0 pada kaki pertama.**
 
 ## Cek pemahaman
 
-1. Pada $\angle KLM$, titik mana yang menjadi titik sudut? Sebutkan kedua kakinya.
-2. Tentukan jenis sudut: $89^\circ$, $90^\circ$, $91^\circ$.
-3. Pada $\angle AOB$, kaki OA tepat di angka 0 skala luar. Kaki OB melewati angka 40 di skala luar dan 140 di skala dalam. Berapa besar $\angle AOB$?
-4. Berapa derajat $\frac{1}{2}$ putaran? Berapa derajat $\frac{3}{4}$ putaran?
-5. Jarum menit bergerak dari pukul 08.15 sampai pukul 08.45. Berapa derajat jarum menit berputar?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. L adalah titik sudut, karena huruf tengah. Kakinya LK dan LM.
-2. $89^\circ$ lancip, $90^\circ$ siku-siku, $91^\circ$ tumpul.
-3. $40^\circ$. Kaki OA ada di 0 skala luar, jadi baca skala luar. Sudutnya lancip.
-4. $\frac{1}{2}$ putaran $= 180^\circ$, $\frac{3}{4}$ putaran $= 270^\circ$.
-5. $180^\circ$. 30 menit adalah $\frac{1}{2}$ putaran.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Perhatikan $\\angle KLM$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Titik mana yang menjadi titik sudut?",
+   "options": [
+    "L",
+    "K",
+    "M"
+   ],
+   "answer": "L",
+   "hint": "Lihat huruf tengah.",
+   "explain": "L adalah huruf tengah, jadi titik sudut.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Apa kedua kakinya?",
+   "options": [
+    "LK dan LM",
+    "KL dan KM",
+    "KM dan LM"
+   ],
+   "answer": "LK dan LM",
+   "hint": "Kaki berawal dari titik sudut.",
+   "explain": "Kakinya LK dan LM.",
+   "error": "salah-titik-sudut"
+  }
+ ],
+ "conclusion": "L titik sudut, kakinya LK dan LM."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Tentukan jenis sudut $89^\\circ$, $90^\\circ$, dan $91^\\circ$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: 89° termasuk sudut apa?",
+   "options": [
+    "Lancip",
+    "Siku-siku",
+    "Tumpul"
+   ],
+   "answer": "Lancip",
+   "hint": "Bandingkan dengan 90°.",
+   "explain": "89° kurang dari 90°, jadi lancip.",
+   "error": "salah-banding-siku"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: 90° termasuk sudut apa?",
+   "options": [
+    "Lancip",
+    "Siku-siku",
+    "Tumpul"
+   ],
+   "answer": "Siku-siku",
+   "hint": "Tepat 90°.",
+   "explain": "90° tepat siku-siku.",
+   "error": "salah-banding-siku"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: 91° termasuk sudut apa?",
+   "options": [
+    "Lancip",
+    "Siku-siku",
+    "Tumpul"
+   ],
+   "answer": "Tumpul",
+   "hint": "Lebih dari 90° tetapi kurang dari 180°.",
+   "explain": "91° lebih dari 90°, jadi tumpul.",
+   "error": "salah-banding-siku"
+  }
+ ],
+ "conclusion": "89° lancip, 90° siku-siku, 91° tumpul."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Pada $\\angle AOB$, kaki OA tepat di angka 0 skala luar. Kaki OB melewati angka 40 di skala luar dan 140 di skala dalam. Berapa besar $\\angle AOB$?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Skala mana yang dibaca?",
+   "options": [
+    "Skala luar",
+    "Skala dalam"
+   ],
+   "answer": "Skala luar",
+   "hint": "Skala yang 0-nya di kaki pertama.",
+   "explain": "OA di 0 skala luar, jadi baca skala luar.",
+   "error": "salah-baca-alat-ukur"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Dari gambar, sudut ini jenis apa?",
+   "options": [
+    "Lancip",
+    "Siku-siku",
+    "Tumpul"
+   ],
+   "answer": "Lancip",
+   "hint": "Bandingkan dengan pojok buku.",
+   "explain": "Pintunya terbuka sedikit: lancip.",
+   "error": "salah-banding-siku"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $\\angle AOB$ = ?",
+   "answer": "40",
+   "hint": "Angka skala luar yang dilewati OB.",
+   "explain": "40°, cocok dengan sudut lancip.",
+   "error": "salah-baca-alat-ukur",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle AOB = 40^\\circ$.",
+ "visual": {
+  "type": "angle",
+  "degrees": 40
+ }
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Berapa derajat $\\frac{1}{2}$ putaran? Berapa derajat $\\frac{3}{4}$ putaran?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: 1/2 putaran = ?",
+   "answer": "180",
+   "hint": "Satu putaran 360°.",
+   "explain": "360° ÷ 2 = 180°.",
+   "error": "salah-fakta-bagi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: 3/4 putaran = ?",
+   "answer": "270",
+   "hint": "1/4 putaran = 90°.",
+   "explain": "3 × 90° = 270°.",
+   "error": "salah-fakta-kali",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$\\frac{1}{2}$ putaran $= 180^\\circ$, $\\frac{3}{4}$ putaran $= 270^\\circ$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Jarum menit bergerak dari pukul 08.15 sampai pukul 08.45. Berapa derajat jarum menit berputar?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Berapa menit berlalu?",
+   "answer": "30",
+   "hint": "Dari menit 15 ke menit 45.",
+   "explain": "45 − 15 = 30 menit.",
+   "error": "salah-lama-waktu",
+   "suffix": "menit"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 2: Berapa bagian putaran? (paling sederhana)",
+   "answer": {
+    "num": 1,
+    "den": 2
+   },
+   "hint": "Satu putaran = 60 menit.",
+   "explain": "30 dari 60 menit = 1/2 putaran.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Berapa derajat?",
+   "answer": "180",
+   "hint": "1/2 putaran.",
+   "explain": "1/2 putaran = 180°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jarum menit berputar $180^\\circ$.",
+ "visual": {
+  "type": "clock",
+  "hour": 8,
+  "minute": 45
+ }
+}
+```

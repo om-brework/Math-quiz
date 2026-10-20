@@ -22,6 +22,10 @@ Bayangkan sebuah **martabak manis bundar** dengan jari-jari $r$.
 
 Semua rumus bab ini menjawab satu pertanyaan: **potongan ini berapa bagian dari martabak utuh?**
 
+```anim
+{"type": "bangun", "title": "Bagian-bagian martabak", "titik": {"O": [0, 0], "A": [3.0, 0.0], "B": [1.026, 2.819]}, "sisi": [["O", "A", "r"], ["O", "B", "r"], ["A", "B", "\\text{tali busur}"]], "sudut": [{"di": "O", "dari": "A", "ke": "B", "label": "\\theta"}], "lingkaran": [{"pusat": [0, 0], "r": 3}], "langkah": [{"say": "Martabak bundar berjari-jari $r$ dengan pusat $O$.", "sisi": 0, "lingkaran": 1}, {"say": "Dua irisan dari pusat membentuk potongan kipas: **juring** $OAB$ bersudut $\\theta$.", "sisi": 2, "sudut": 1, "lingkaran": 1, "sorot": ["OA", "OB"]}, {"say": "Pinggiran lengkung dari $A$ ke $B$ adalah **busur**.", "sisi": 2, "sudut": 1, "lingkaran": 1, "sorot": ["A", "B"]}, {"say": "Irisan lurus $AB$ adalah tali busur. Bagian kecil antara tali busur dan busur disebut **tembereng**.", "sisi": 3, "sudut": 1, "lingkaran": 1, "sorot": ["AB"]}]}
+```
+
 ## Konsep
 
 ### Panjang busur dan luas juring dengan derajat
@@ -38,6 +42,10 @@ Berapa tali sepanjang $r$ yang muat mengelilingi martabak? Keliling $2\pi r$ dib
 
 $$\pi \text{ rad} = 180^\circ, \qquad 1 \text{ rad} = \frac{180^\circ}{\pi} \approx 57{,}3^\circ$$
 
+```anim
+{"type": "bangun", "title": "Satu radian", "titik": {"O": [0, 0], "A": [3.0, 0.0], "B": [1.621, 2.524]}, "sisi": [["O", "A", "r"], ["O", "B", "r"]], "sudut": [{"di": "O", "dari": "A", "ke": "B", "label": "1\\ \\text{rad}"}], "lingkaran": [{"pusat": [0, 0], "r": 3}], "langkah": [{"say": "Gambar jari-jari $OA$ sepanjang $r$.", "sisi": 1, "lingkaran": 1}, {"say": "Tempelkan tali sepanjang $r$ di pinggiran, mulai dari $A$ sampai $B$.", "sisi": 1, "lingkaran": 1, "sorot": ["A", "B"]}, {"say": "Tarik jari-jari $OB$. Sudut $AOB$ yang busurnya sepanjang $r$ itulah **1 radian**, kira-kira $57{,}3^\\circ$.", "sisi": 2, "sudut": 1, "lingkaran": 1, "sorot": ["O"]}]}
+```
+
 Cara konversi:
 
 - Derajat ke radian: kalikan $\frac{\pi}{180}$.
@@ -53,6 +61,10 @@ Potongan bersudut $\theta$ radian adalah $\frac{\theta}{2\pi}$ bagian martabak. 
 
 $$s = \frac{\theta}{2\pi} \times 2\pi r = r\theta, \qquad L = \frac{\theta}{2\pi} \times \pi r^2 = \frac{1}{2}r^2\theta$$
 
+```anim
+{"type": "persamaan", "title": "Kenapa rumus radian lebih bersih", "baris": [{"tex": "s = \\frac{\\theta}{2\\pi} \\times 2\\pi r", "say": "Potongan bersudut $\\theta$ radian adalah $\\frac{\\theta}{2\\pi}$ bagian keliling."}, {"tex": "s = \\theta \\times r", "say": "$2\\pi$ di pembilang dan penyebut saling meniadakan.", "op": "coret $2\\pi$"}, {"tex": "L = \\frac{\\theta}{2\\pi} \\times \\pi r^2", "say": "Dengan cara yang sama untuk luas."}, {"tex": "L = \\frac{1}{2} r^2 \\theta", "say": "$\\pi$ saling meniadakan, tersisa $\\frac{1}{2}$.", "op": "coret $\\pi$"}]}
+```
+
 Rumusnya jauh lebih bersih karena $2\pi$ saling meniadakan. Ini juga cocok dengan definisi: setiap 1 radian memberi busur sepanjang $r$, jadi $\theta$ radian memberi $r\theta$.
 
 Dua rumus ini bisa digabung: $L = \frac{1}{2}r^2\theta = \frac{1}{2}r(r\theta) = \frac{1}{2}rs$.
@@ -65,55 +77,275 @@ Tembereng = juring dikurangi segitiga $OAB$ (segitiga yang dibentuk dua jari-jar
 
 $$\text{luas tembereng} = \frac{1}{2}r^2\theta - \frac{1}{2}r^2\sin\theta = \frac{1}{2}r^2(\theta - \sin\theta)$$
 
+```anim
+{"type": "bangun", "title": "Tembereng = juring − segitiga", "titik": {"O": [0, 0], "A": [1.928, -2.298], "B": [1.928, 2.298], "M": [1.928, 0.0]}, "sisi": [["O", "A", "r"], ["O", "B", "r"], ["A", "B"], ["O", "M"]], "sudut": [{"di": "O", "dari": "A", "ke": "B", "label": "\\theta"}, {"di": "M", "dari": "O", "ke": "B", "siku": true}], "lingkaran": [{"pusat": [0, 0], "r": 3}], "langkah": [{"say": "Juring $OAB$: luasnya $\\frac{1}{2}r^2\\theta$.", "sisi": 2, "sudut": 1}, {"say": "Segitiga $OAB$ dibatasi dua jari-jari dan tali busur $AB$: luasnya $\\frac{1}{2}r^2\\sin\\theta$.", "sisi": 3, "sudut": 1, "sorot": ["AB"]}, {"say": "Tembereng adalah bagian di luar segitiga tetapi di dalam juring. Kurangkan kedua luas.", "sisi": 3, "sudut": 1, "sorot": ["A", "B"]}, {"say": "Garis $OM$ membagi segitiga menjadi dua segitiga siku-siku, sehingga $AB = 2r\\sin\\frac{\\theta}{2}$.", "sisi": 4, "sudut": 2, "sorot": ["OM", "AB"]}]}
+```
+
 Panjang tali busur bisa dihitung dengan membagi segitiga sama kaki menjadi dua segitiga siku-siku: $AB = 2r\sin\frac{\theta}{2}$.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Konversi derajat dan radian
 
-**Soal.** (a) Ubah $60^\circ$ dan $225^\circ$ ke radian dalam $\pi$. (b) Ubah $2{,}5$ rad ke derajat.
-
-1. **Langkah 1: Pilih faktor (a).** Derajat ke radian, kalikan $\frac{\pi}{180}$.
-2. **Langkah 2: Hitung (a).** $60 \times \frac{\pi}{180} = \frac{\pi}{3}$ dan $225 \times \frac{\pi}{180} = \frac{5\pi}{4}$.
-3. **Langkah 3: Hitung (b).** $2{,}5 \times \frac{180}{\pi} = \frac{450}{\pi} \approx 143{,}2^\circ$.
-4. **Cek jawaban.** $1$ rad $\approx 57{,}3^\circ$, jadi $2{,}5$ rad $\approx 2{,}5 \times 57{,}3 = 143{,}25^\circ$. Cocok. Dan $\frac{5\pi}{4} = \pi + \frac{\pi}{4}$, sama dengan $180^\circ + 45^\circ = 225^\circ$.
-
-**Jawaban:** $60^\circ = \frac{\pi}{3}$, $225^\circ = \frac{5\pi}{4}$, $2{,}5$ rad $\approx 143{,}2^\circ$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "(a) Ubah $60^\\circ$ dan $225^\\circ$ ke radian dalam $\\pi$. (b) Ubah $2{,}5$ rad ke derajat.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Untuk mengubah derajat ke radian, kalikan dengan ...",
+   "options": [
+    "$\\frac{\\pi}{180}$",
+    "$\\frac{180}{\\pi}$",
+    "$2\\pi$"
+   ],
+   "answer": "$\\frac{\\pi}{180}$",
+   "hint": "Ingat $180^\\circ = \\pi$ rad. Satuan derajat harus hilang.",
+   "explain": "Kalikan $\\frac{\\pi}{180}$ sehingga derajat berubah menjadi radian.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $60 \\times \\frac{\\pi}{180}$ = ...",
+   "options": [
+    "$\\frac{\\pi}{3}$",
+    "$\\frac{\\pi}{6}$",
+    "$60\\pi$",
+    "$\\frac{3}{\\pi}$"
+   ],
+   "answer": "$\\frac{\\pi}{3}$",
+   "hint": "Sederhanakan $\\frac{60}{180}$.",
+   "explain": "$\\frac{60}{180} = \\frac{1}{3}$, jadi $\\frac{\\pi}{3}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$225 \\times \\frac{\\pi}{180}$ = ...",
+   "options": [
+    "$\\frac{5\\pi}{4}$",
+    "$\\frac{4\\pi}{5}$",
+    "$\\frac{5\\pi}{2}$",
+    "$\\frac{9\\pi}{4}$"
+   ],
+   "answer": "$\\frac{5\\pi}{4}$",
+   "hint": "Bagi 225 dan 180 dengan FPB-nya, 45.",
+   "explain": "$\\frac{225}{180} = \\frac{5}{4}$, jadi $\\frac{5\\pi}{4}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $2{,}5 \\times \\frac{180}{\\pi}$ = ? (bulatkan ke 1 desimal)",
+   "answer": "143,2",
+   "hint": "Hitung $\\frac{450}{\\pi}$ dengan kalkulator.",
+   "explain": "$\\frac{450}{\\pi} \\approx 143{,}2^\\circ$.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $1$ rad $\\approx 57{,}3^\\circ$. Berapa $2{,}5 \\times 57{,}3$? (2 desimal)",
+   "answer": "143,25",
+   "hint": "Kalikan biasa.",
+   "explain": "$143{,}25^\\circ$, hampir sama dengan $143{,}2^\\circ$. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $60^\\circ = \\frac{\\pi}{3}$, $225^\\circ = \\frac{5\\pi}{4}$, dan $2{,}5$ rad $\\approx 143{,}2^\\circ$."
+}
+```
 
 ### Contoh 2: Busur dan juring dalam derajat
 
-**Soal.** Juring lingkaran berjari-jari 14 cm bersudut $72^\circ$. Hitung panjang busur dan luas juring (3 angka penting).
-
-1. **Langkah 1: Hitung bagian dari lingkaran.** $\frac{72}{360} = \frac{1}{5}$. Potongan ini seperlima martabak.
-2. **Langkah 2: Panjang busur.** $\frac{1}{5} \times 2\pi(14) = \frac{28\pi}{5} \approx 17{,}6$ cm.
-3. **Langkah 3: Luas juring.** $\frac{1}{5} \times \pi(14)^2 = \frac{196\pi}{5} \approx 123$ cm$^2$.
-4. **Cek jawaban.** Pakai rumus $L = \frac{1}{2}rs$: $\frac{1}{2} \times 14 \times 17{,}59 \approx 123$ cm$^2$. Sama.
-
-**Jawaban:** Busur $\approx 17{,}6$ cm, luas $\approx 123$ cm$^2$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Juring lingkaran berjari-jari 14 cm bersudut $72^\\circ$. Hitung panjang busur dan luas juring (3 angka penting).",
+ "steps": [
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 1: Juring ini berapa bagian dari lingkaran? $\\frac{72}{360}$ = ?",
+   "answer": {
+    "num": 1,
+    "den": 5
+   },
+   "hint": "Sederhanakan dengan membagi 72.",
+   "explain": "$\\frac{72}{360} = \\frac{1}{5}$: seperlima martabak.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Panjang busur $= \\frac{1}{5} \\times 2\\pi(14)$ = ? (3 angka penting)",
+   "answer": "17,6",
+   "hint": "Hitung $\\frac{28\\pi}{5}$.",
+   "explain": "$\\frac{28\\pi}{5} \\approx 17{,}6$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Luas juring $= \\frac{1}{5} \\times \\pi(14)^2$ = ? (3 angka penting)",
+   "answer": "123",
+   "hint": "Hitung $\\frac{196\\pi}{5}$.",
+   "explain": "$\\frac{196\\pi}{5} \\approx 123$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $\\frac{1}{2}rs = \\frac{1}{2} \\times 14 \\times 17{,}59$ = ? (bulatkan ke satuan)",
+   "answer": "123",
+   "hint": "Kalikan $7 \\times 17{,}59$.",
+   "explain": "$\\approx 123$ cm². Sama.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Panjang busur ≈ 17,6 cm dan luas juring ≈ 123 cm²."
+}
+```
 
 ### Contoh 3: Mencari sudut dalam radian
 
-**Soal.** Busur sebuah juring panjangnya 15 cm dan jari-jarinya 6 cm. Hitung sudut juring dalam radian, luas juring, dan kelilingnya.
-
-1. **Langkah 1: Pakai $s = r\theta$.** $15 = 6\theta$, jadi $\theta = 2{,}5$ rad. Artinya pinggiran potongan ini sepanjang $2{,}5$ tali jari-jari.
-2. **Langkah 2: Luas.** $L = \frac{1}{2}(6)^2(2{,}5) = \frac{1}{2} \times 36 \times 2{,}5 = 45$ cm$^2$.
-3. **Langkah 3: Keliling juring.** $15 + 2(6) = 27$ cm.
-4. **Cek jawaban.** $L = \frac{1}{2}rs = \frac{1}{2} \times 6 \times 15 = 45$ cm$^2$. Sama.
-
-**Jawaban:** $\theta = 2{,}5$ rad, luas 45 cm$^2$, keliling 27 cm.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Busur sebuah juring panjangnya 15 cm dan jari-jarinya 6 cm. Hitung sudut juring dalam radian, luas juring, dan kelilingnya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Pakai $s = r\\theta$, yaitu $15 = 6\\theta$. Berapa $\\theta$?",
+   "answer": "2,5",
+   "hint": "Bagi 15 dengan 6.",
+   "explain": "$\\theta = 2{,}5$ rad: pinggirannya sepanjang $2{,}5$ tali jari-jari.",
+   "error": "salah-langkah-materi",
+   "suffix": "rad"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Luas $= \\frac{1}{2}(6)^2(2{,}5)$ = ?",
+   "answer": "45",
+   "hint": "$\\frac{1}{2} \\times 36 = 18$, lalu kali $2{,}5$.",
+   "explain": "$18 \\times 2{,}5 = 45$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Keliling juring = busur + dua jari-jari = ?",
+   "answer": "27",
+   "hint": "Jangan lupa dua sisi lurus potongan.",
+   "explain": "$15 + 2(6) = 27$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $\\frac{1}{2}rs = \\frac{1}{2} \\times 6 \\times 15$ = ?",
+   "answer": "45",
+   "hint": "Kalikan $3 \\times 15$.",
+   "explain": "45 cm². Sama dengan Langkah 2.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\theta = 2{,}5$ rad, luas 45 cm², dan keliling 27 cm."
+}
+```
 
 ### Contoh 4: Soal cerita, tembereng martabak
 
-**Soal.** Martabak manis berjari-jari 12 cm. Bu Siti mengiris lurus dari titik $A$ ke titik $B$ di pinggiran, dengan $\angle AOB = 120^\circ$ di pusat $O$. Hitung luas bagian kecil yang terpotong (tembereng) dan kelilingnya.
-
-1. **Langkah 1: Ubah sudut ke radian.** $120^\circ = \frac{2\pi}{3}$.
-2. **Langkah 2: Luas juring $OAB$.** $\frac{1}{2}(12)^2 \times \frac{2\pi}{3} = 72 \times \frac{2\pi}{3} = 48\pi \approx 150{,}80$ cm$^2$.
-3. **Langkah 3: Luas segitiga $OAB$.** $\frac{1}{2}(12)^2\sin 120^\circ = 72 \times 0{,}8660 \approx 62{,}35$ cm$^2$.
-4. **Langkah 4: Luas tembereng.** $150{,}80 - 62{,}35 = 88{,}45$, kira-kira $88{,}4$ cm$^2$ (3 angka penting; dengan nilai tak dibulatkan hasilnya $88{,}44$).
-5. **Langkah 5: Keliling tembereng.** Busur $= 12 \times \frac{2\pi}{3} = 8\pi \approx 25{,}13$ cm. Tali busur $= 2(12)\sin 60^\circ \approx 20{,}78$ cm. Keliling $\approx 25{,}13 + 20{,}78 = 45{,}91$, kira-kira $45{,}9$ cm.
-6. **Cek jawaban.** Tembereng harus lebih kecil dari juring (150,8) dan lebih besar dari nol. Juga, luas martabak utuh $144\pi \approx 452$ cm$^2$, dan juringnya tepat sepertiga ($150{,}8 \times 3 \approx 452$). Konsisten.
-
-**Jawaban:** Luas tembereng $\approx 88{,}4$ cm$^2$, keliling $\approx 45{,}9$ cm.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Martabak manis berjari-jari 12 cm. Bu Siti mengiris lurus dari titik $A$ ke titik $B$ di pinggiran, dengan $\\angle AOB = 120^\\circ$ di pusat $O$. Hitung luas bagian kecil yang terpotong (tembereng) dan kelilingnya.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: $120^\\circ$ dalam radian = ...",
+   "options": [
+    "$\\frac{2\\pi}{3}$",
+    "$\\frac{3\\pi}{2}$",
+    "$\\frac{\\pi}{3}$",
+    "$\\frac{2}{3}$"
+   ],
+   "answer": "$\\frac{2\\pi}{3}$",
+   "hint": "Kalikan $\\frac{\\pi}{180}$.",
+   "explain": "$\\frac{120}{180}\\pi = \\frac{2\\pi}{3}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Luas juring $= \\frac{1}{2}(12)^2 \\times \\frac{2\\pi}{3}$ = ? (2 desimal)",
+   "answer": "150,80",
+   "hint": "$\\frac{1}{2} \\times 144 = 72$, lalu $72 \\times \\frac{2\\pi}{3} = 48\\pi$.",
+   "explain": "$48\\pi \\approx 150{,}80$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Luas segitiga $OAB = \\frac{1}{2}(12)^2\\sin 120^\\circ$ = ? (2 desimal)",
+   "answer": "62,35",
+   "hint": "$\\sin 120^\\circ \\approx 0{,}8660$.",
+   "explain": "$72 \\times 0{,}8660 \\approx 62{,}35$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Luas tembereng = juring − segitiga = ? (3 angka penting)",
+   "answer": "88,4",
+   "hint": "Pakai nilai yang belum dibulatkan bila bisa.",
+   "explain": "$150{,}80 - 62{,}35 \\approx 88{,}4$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: Panjang busur $= 12 \\times \\frac{2\\pi}{3}$ = ? (2 desimal)",
+   "answer": "25,13",
+   "hint": "$12 \\times \\frac{2\\pi}{3} = 8\\pi$.",
+   "explain": "$8\\pi \\approx 25{,}13$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Tali busur $AB = 2(12)\\sin 60^\\circ$ = ? (2 desimal)",
+   "answer": "20,78",
+   "hint": "$\\sin 60^\\circ \\approx 0{,}8660$.",
+   "explain": "$24 \\times 0{,}8660 \\approx 20{,}78$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Keliling tembereng = busur + tali busur = ? (3 angka penting)",
+   "answer": "45,9",
+   "hint": "Jumlahkan dua hasil terakhir.",
+   "explain": "$25{,}13 + 20{,}78 = 45{,}91 \\approx 45{,}9$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: juring $120^\\circ$ adalah berapa bagian martabak utuh?",
+   "options": [
+    "Sepertiga",
+    "Seperempat",
+    "Setengah"
+   ],
+   "answer": "Sepertiga",
+   "hint": "$\\frac{120}{360}$.",
+   "explain": "Luas utuh $144\\pi \\approx 452$ cm², dan $150{,}8 \\times 3 \\approx 452$. Tembereng 88,4 lebih kecil dari juring. Konsisten.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Luas tembereng ≈ 88,4 cm² dan kelilingnya ≈ 45,9 cm."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -133,16 +365,204 @@ Panjang tali busur bisa dihitung dengan membagi segitiga sama kaki menjadi dua s
 
 ## Cek pemahaman
 
-1. Ubah $150^\circ$ ke radian dalam $\pi$.
-2. Ubah $\frac{3\pi}{4}$ rad ke derajat.
-3. Hitung panjang busur juring berjari-jari 9 cm dengan sudut $40^\circ$.
-4. Juring berjari-jari 5 cm bersudut $1{,}6$ rad. Hitung panjang busur, luas, dan keliling juring.
-5. Hitung luas tembereng lingkaran berjari-jari 6 cm dengan sudut pusat $\frac{\pi}{2}$.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $150 \times \frac{\pi}{180} = \frac{5\pi}{6}$.
-2. $\frac{3\pi}{4} \times \frac{180}{\pi} = 135^\circ$.
-3. $\frac{40}{360} \times 2\pi(9) = 2\pi \approx 6{,}28$ cm.
-4. $s = 5(1{,}6) = 8$ cm; $L = \frac{1}{2}(25)(1{,}6) = 20$ cm$^2$; keliling $= 8 + 10 = 18$ cm.
-5. $\frac{1}{2}(36)\left(\frac{\pi}{2} - 1\right) = 9\pi - 18 \approx 10{,}3$ cm$^2$, karena $\sin\frac{\pi}{2} = 1$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Ubah $150^\\circ$ ke radian dalam $\\pi$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Kalikan dengan ...",
+   "options": [
+    "$\\frac{\\pi}{180}$",
+    "$\\frac{180}{\\pi}$"
+   ],
+   "answer": "$\\frac{\\pi}{180}$",
+   "hint": "Derajat ke radian.",
+   "explain": "$150 \\times \\frac{\\pi}{180}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$\\frac{150}{180}\\pi$ = ...",
+   "options": [
+    "$\\frac{5\\pi}{6}$",
+    "$\\frac{6\\pi}{5}$",
+    "$\\frac{5\\pi}{3}$",
+    "$\\frac{3\\pi}{5}$"
+   ],
+   "answer": "$\\frac{5\\pi}{6}$",
+   "hint": "Bagi 150 dan 180 dengan 30.",
+   "explain": "$\\frac{150}{180} = \\frac{5}{6}$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$150^\\circ = \\frac{5\\pi}{6}$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Ubah $\\frac{3\\pi}{4}$ rad ke derajat.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Kalikan dengan ...",
+   "options": [
+    "$\\frac{180}{\\pi}$",
+    "$\\frac{\\pi}{180}$"
+   ],
+   "answer": "$\\frac{180}{\\pi}$",
+   "hint": "Radian ke derajat: $\\pi$ harus hilang.",
+   "explain": "$\\frac{3\\pi}{4} \\times \\frac{180}{\\pi}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\frac{3}{4} \\times 180$ = ?",
+   "answer": "135",
+   "hint": "Seperempat dari 180 adalah 45.",
+   "explain": "$3 \\times 45 = 135^\\circ$.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$\\frac{3\\pi}{4}$ rad $= 135^\\circ$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung panjang busur juring berjari-jari 9 cm dengan sudut $40^\\circ$.",
+ "steps": [
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 1: $\\frac{40}{360}$ = ?",
+   "answer": {
+    "num": 1,
+    "den": 9
+   },
+   "hint": "Bagi pembilang dan penyebut dengan 40.",
+   "explain": "$\\frac{40}{360} = \\frac{1}{9}$.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $\\frac{1}{9} \\times 2\\pi(9)$ = ...",
+   "options": [
+    "$2\\pi$",
+    "$18\\pi$",
+    "$\\pi$",
+    "$9\\pi$"
+   ],
+   "answer": "$2\\pi$",
+   "hint": "9 di pembilang dan penyebut saling meniadakan.",
+   "explain": "$\\frac{18\\pi}{9} = 2\\pi$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $2\\pi$ = ? (2 desimal)",
+   "answer": "6,28",
+   "hint": "$\\pi \\approx 3{,}1416$.",
+   "explain": "$\\approx 6{,}28$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Panjang busur $2\\pi \\approx 6{,}28$ cm."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Juring berjari-jari 5 cm bersudut $1{,}6$ rad. Hitung panjang busur, luas, dan keliling juring.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Panjang busur $s = r\\theta$ = ?",
+   "answer": "8",
+   "hint": "$5 \\times 1{,}6$.",
+   "explain": "$s = 8$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Luas $= \\frac{1}{2}r^2\\theta$ = ?",
+   "answer": "20",
+   "hint": "$\\frac{1}{2} \\times 25 \\times 1{,}6$.",
+   "explain": "$12{,}5 \\times 1{,}6 = 20$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Keliling juring = ?",
+   "answer": "18",
+   "hint": "Busur ditambah dua jari-jari.",
+   "explain": "$8 + 2(5) = 18$ cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  }
+ ],
+ "conclusion": "Busur 8 cm, luas 20 cm², keliling 18 cm."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Hitung luas tembereng lingkaran berjari-jari 6 cm dengan sudut pusat $\\frac{\\pi}{2}$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: $\\sin\\frac{\\pi}{2}$ = ?",
+   "answer": "1",
+   "hint": "$\\frac{\\pi}{2} = 90^\\circ$.",
+   "explain": "$\\sin 90^\\circ = 1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $\\frac{1}{2}(36)\\left(\\frac{\\pi}{2} - 1\\right)$ = ...",
+   "options": [
+    "$9\\pi - 18$",
+    "$18\\pi - 18$",
+    "$9\\pi - 1$",
+    "$9\\pi$"
+   ],
+   "answer": "$9\\pi - 18$",
+   "hint": "Kalikan 18 ke setiap suku di dalam kurung.",
+   "explain": "$18 \\times \\frac{\\pi}{2} - 18 \\times 1 = 9\\pi - 18$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Nilainya = ? (3 angka penting)",
+   "answer": "10,3",
+   "hint": "$9\\pi \\approx 28{,}27$.",
+   "explain": "$28{,}27 - 18 \\approx 10{,}3$ cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  }
+ ],
+ "conclusion": "Luas tembereng $= 9\\pi - 18 \\approx 10{,}3$ cm²."
+}
+```

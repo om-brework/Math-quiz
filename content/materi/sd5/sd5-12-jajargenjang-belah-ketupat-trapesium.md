@@ -18,20 +18,19 @@ Bayangkan kamu membuat **bingkai dari 4 stik es krim** yang ujung-ujungnya disam
 - Mula-mula bingkai berbentuk **persegi panjang**. Lalu **dorong** bagian atasnya ke samping. Bingkai menjadi **jajargenjang**. Sisi yang berhadapan tetap sejajar dan tetap sama panjang, karena stiknya tidak berubah.
 - Kalau keempat stik **sama panjang** (mula-mula persegi), bingkai yang didorong menjadi **belah ketupat**.
 - Saat didorong, satu sudut **membesar** dan sudut di sebelahnya **mengecil** dengan jumlah yang sama. Jadi dua sudut bersebelahan selalu berjumlah $180^\circ$.
+```anim
+{"type": "bangun", "title": "Bingkai stik es krim didorong", "titik": {"D": [0, 0], "C": [6, 0], "B": [6, 4], "A": [0, 4], "A'": [2.0, 3.464], "B'": [8.0, 3.464]}, "sisi": [["D", "C"], ["C", "B"], ["B", "A"], ["A", "D"], ["D", "A'"], ["A'", "B'"], ["B'", "C"]], "sudut": [{"di": "D", "dari": "C", "ke": "A'", "label": "60^\\circ"}, {"di": "C", "dari": "B'", "ke": "D", "label": "120^\\circ"}], "langkah": [{"say": "Mula-mula bingkai berbentuk persegi panjang ABCD.", "sisi": 4}, {"say": "Dorong bagian atas ke samping. Bingkai menjadi jajargenjang A'B'CD; stiknya tetap sama panjang.", "sisi": 7, "sorot": ["DA'", "A'B'", "B'C"]}, {"say": "Sudut D mengecil menjadi 60°, sudut C membesar menjadi 120°. Jumlahnya tetap 180°.", "sisi": 7, "sudut": 2, "sorot": ["D", "C"]}]}
+```
+
 - **Trapesium** berbeda: bentuknya seperti tumpeng yang puncaknya dipotong datar. Hanya **satu pasang** sisinya yang sejajar.
 
 ## Konsep
 
 ### Jajargenjang
 
+```anim
+{"type": "bangun", "title": "Jajargenjang ABCD", "titik": {"A": [0, 4], "B": [7, 4], "C": [9, 0], "D": [2, 0]}, "sisi": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"]], "sudut": [{"di": "A", "dari": "B", "ke": "D", "label": "x"}, {"di": "C", "dari": "D", "ke": "B", "label": "x"}, {"di": "B", "dari": "C", "ke": "A", "label": "y"}, {"di": "D", "dari": "A", "ke": "C", "label": "y"}], "langkah": [{"say": "AB sejajar DC, dan AD sejajar BC.", "sorot": ["AB", "CD"]}, {"say": "Sudut berhadapan sama besar: ∠A = ∠C.", "sudut": 2, "sorot": ["A", "C"]}, {"say": "∠B = ∠D. Sudut bersebelahan, misalnya x + y, berjumlah 180°.", "sudut": 4, "sorot": ["B", "D"]}]}
 ```
-   A __________ B
-     \          \
-      \          \
-       \__________\
-       D           C
-```
-
 - Dua pasang sisi berhadapan **sejajar**: AB sejajar DC, AD sejajar BC.
 - Sisi berhadapan **sama panjang**: AB = DC, AD = BC.
 - Sudut berhadapan **sama besar**: $\angle A = \angle C$, $\angle B = \angle D$.
@@ -48,14 +47,9 @@ Belah ketupat adalah jajargenjang yang **keempat sisinya sama panjang**. Jadi se
 
 ### Trapesium
 
+```anim
+{"type": "bangun", "title": "Trapesium ABCD", "titik": {"A": [2, 4], "B": [6, 4], "C": [8, 0], "D": [0, 0]}, "sisi": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"]], "sudut": [{"di": "A", "dari": "B", "ke": "D"}, {"di": "D", "dari": "A", "ke": "C"}, {"di": "B", "dari": "C", "ke": "A"}, {"di": "C", "dari": "D", "ke": "B"}], "langkah": [{"say": "Hanya AB dan DC yang sejajar.", "sorot": ["AB", "CD"]}, {"say": "Pada kaki AD: ∠A + ∠D = 180°.", "sudut": 2, "sorot": ["DA", "A", "D"]}, {"say": "Pada kaki BC: ∠B + ∠C = 180°.", "sudut": 4, "sorot": ["BC", "B", "C"]}]}
 ```
-      A ______ B
-       /      \
-      /        \
-     /__________\
-    D            C
-```
-
 - Tepat **satu pasang** sisi sejajar: AB sejajar DC.
 - Dua sudut di antara sepasang sisi sejajar, pada **kaki yang sama**, jumlahnya $180^\circ$: $\angle A + \angle D = 180^\circ$ dan $\angle B + \angle C = 180^\circ$.
 - Jumlah keempat sudut $360^\circ$.
@@ -66,76 +60,287 @@ Perpanjang sisi DC ke kanan melewati C. Sudut di luar C dan $\angle C$ berada pa
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Sudut jajargenjang
 
-**Soal.** Pada jajargenjang ABCD, $\angle A = 65^\circ$. Hitung $\angle B$, $\angle C$, dan $\angle D$.
-
-1. **Langkah 1: Cari sudut berhadapan.** $\angle C$ berhadapan dengan $\angle A$, jadi $\angle C = 65^\circ$.
-2. **Langkah 2: Cari sudut bersebelahan.** $\angle B$ bersebelahan dengan $\angle A$: $\angle B = 180^\circ - 65^\circ = 115^\circ$. Bingkai didorong sehingga sudut A mengecil dan sudut B membesar.
-3. **Langkah 3: Sudut berhadapan lagi.** $\angle D$ berhadapan dengan $\angle B$, jadi $\angle D = 115^\circ$.
-4. **Cek jawaban.** $65^\circ + 115^\circ + 65^\circ + 115^\circ = 360^\circ$. Benar.
-
-**Jawaban:** $\angle B = 115^\circ$, $\angle C = 65^\circ$, $\angle D = 115^\circ$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Pada jajargenjang ABCD, $\\angle A = 65^\\circ$. Hitung $\\angle B$, $\\angle C$, dan $\\angle D$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: ∠C berhadapan dengan ∠A. ∠C = ?",
+   "answer": "65",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "∠C = 65°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: ∠B bersebelahan dengan ∠A. ∠B = ?",
+   "answer": "115",
+   "hint": "Sudut bersebelahan berjumlah 180°.",
+   "explain": "180° − 65° = 115°. Sudut A mengecil, sudut B membesar.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: ∠D berhadapan dengan ∠B. ∠D = ?",
+   "answer": "115",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "∠D = 115°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 65° + 115° + 65° + 115° = ?",
+   "answer": "360",
+   "hint": "Jumlah sudut segi empat.",
+   "explain": "Jumlahnya 360°. Benar.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi ∠B = 115°, ∠C = 65°, dan ∠D = 115°."
+}
+```
 
 ### Contoh 2: Belah ketupat
 
-**Soal.** PQRS adalah belah ketupat dengan sisi PQ = 7 cm dan $\angle P = 128^\circ$. Hitung panjang QR, keliling PQRS, $\angle Q$, dan $\angle R$.
-
-1. **Langkah 1: Pakai sifat sisi.** Semua sisi belah ketupat sama panjang, jadi QR = 7 cm.
-2. **Langkah 2: Hitung keliling.** $4 \times 7 = 28$ cm.
-3. **Langkah 3: Sudut bersebelahan.** $\angle Q = 180^\circ - 128^\circ = 52^\circ$.
-4. **Langkah 4: Sudut berhadapan.** $\angle R$ berhadapan dengan $\angle P$, jadi $\angle R = 128^\circ$.
-5. **Cek jawaban.** $\angle S = \angle Q = 52^\circ$. Jumlah $128^\circ + 52^\circ + 128^\circ + 52^\circ = 360^\circ$. Benar.
-
-**Jawaban:** QR = 7 cm, keliling 28 cm, $\angle Q = 52^\circ$, $\angle R = 128^\circ$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "PQRS adalah belah ketupat dengan sisi PQ = 7 cm dan $\\angle P = 128^\\circ$. Hitung panjang QR, keliling PQRS, $\\angle Q$, dan $\\angle R$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: QR = ?",
+   "answer": "7",
+   "hint": "Semua sisi belah ketupat sama panjang.",
+   "explain": "QR = 7 cm.",
+   "error": "lupa-sisi-bangun",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Keliling = 4 × 7 = ?",
+   "answer": "28",
+   "hint": "Ada empat sisi sama panjang.",
+   "explain": "Keliling 28 cm.",
+   "error": "lupa-sisi-bangun",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: ∠Q bersebelahan dengan ∠P. ∠Q = ?",
+   "answer": "52",
+   "hint": "180° − 128°.",
+   "explain": "∠Q = 52°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: ∠R berhadapan dengan ∠P. ∠R = ?",
+   "answer": "128",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "∠R = 128°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 128° + 52° + 128° + 52° = ?",
+   "answer": "360",
+   "hint": "∠S = ∠Q = 52°.",
+   "explain": "Jumlahnya 360°. Benar.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "QR = 7 cm, keliling 28 cm, ∠Q = 52°, dan ∠R = 128°."
+}
+```
 
 ### Contoh 3: Trapesium
 
-**Soal.** Pada trapesium ABCD (gambar di atas), AB sejajar DC. $\angle A = 108^\circ$ dan $\angle B = 105^\circ$. Hitung $\angle D$ dan $\angle C$.
-
-1. **Langkah 1: Tentukan pasangan sudut.** Kaki AD menghubungkan dua sisi sejajar, jadi $\angle A + \angle D = 180^\circ$. Kaki BC juga, jadi $\angle B + \angle C = 180^\circ$.
-2. **Langkah 2: Hitung** $\angle D$. $180^\circ - 108^\circ = 72^\circ$.
-3. **Langkah 3: Hitung** $\angle C$. $180^\circ - 105^\circ = 75^\circ$.
-4. **Cek jawaban.** $108^\circ + 105^\circ + 75^\circ + 72^\circ = 360^\circ$. Benar.
-
-**Jawaban:** $\angle D = 72^\circ$, $\angle C = 75^\circ$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Pada trapesium ABCD (gambar di atas), AB sejajar DC. $\\angle A = 108^\\circ$ dan $\\angle B = 105^\\circ$. Hitung $\\angle D$ dan $\\angle C$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pasangan sudut mana yang berjumlah 180°?",
+   "options": [
+    "∠A dengan ∠D, dan ∠B dengan ∠C",
+    "∠A dengan ∠B, dan ∠C dengan ∠D",
+    "∠A dengan ∠C, dan ∠B dengan ∠D"
+   ],
+   "answer": "∠A dengan ∠D, dan ∠B dengan ∠C",
+   "hint": "Pasangannya ada pada kaki yang sama.",
+   "explain": "Kaki AD dan kaki BC menghubungkan dua sisi sejajar.",
+   "error": "salah-hitung-sudut"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: ∠D = 180° − 108° = ?",
+   "answer": "72",
+   "hint": "Kurangkan dari 180.",
+   "explain": "∠D = 72°.",
+   "error": "salah-fakta-kurang",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: ∠C = 180° − 105° = ?",
+   "answer": "75",
+   "hint": "Kurangkan dari 180.",
+   "explain": "∠C = 75°.",
+   "error": "salah-fakta-kurang",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 108° + 105° + 75° + 72° = ?",
+   "answer": "360",
+   "hint": "Jumlahkan keempatnya.",
+   "explain": "Jumlahnya 360°. Benar.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi ∠D = 72° dan ∠C = 75°."
+}
+```
 
 ### Contoh 4: Jajargenjang dengan segitiga di dalamnya
 
-**Soal.** ABCD adalah jajargenjang dengan $\angle ABC = 110^\circ$. Titik E terletak pada sisi DC. Garis AE membentuk $\angle DAE = 30^\circ$. Hitung $\angle AED$.
-
-```
-   A ____________ B
-     \`.          \
-      \  `.        \
-       \____`.______\
-       D     E      C
+```anim
+{"type": "bangun", "title": "Segitiga ADE di dalam jajargenjang", "titik": {"A": [-1.539, 4.229], "B": [6.461, 4.229], "C": [8, 0], "D": [0, 0], "E": [3.501, 0]}, "sisi": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"], ["A", "E"]], "sudut": [{"di": "B", "dari": "C", "ke": "A", "label": "110^\\circ"}, {"di": "A", "dari": "D", "ke": "E", "label": "30^\\circ"}, {"di": "D", "dari": "E", "ke": "A", "label": "?"}, {"di": "E", "dari": "A", "ke": "D", "label": "?"}], "langkah": [{"say": "Jajargenjang ABCD dengan ∠ABC = 110°.", "sisi": 4, "sudut": 1}, {"say": "Garis AE membentuk ∠DAE = 30°.", "sisi": 5, "sudut": 2, "sorot": ["AE"]}, {"say": "Lihat segitiga ADE: cari ∠ADE dulu, lalu ∠AED.", "sisi": 5, "sudut": 4, "sorot": ["DA", "AE", "D", "E"]}]}
 ```
 
-1. **Langkah 1: Cari** $\angle D$. Pada jajargenjang, $\angle D$ berhadapan dengan $\angle B$, jadi $\angle ADE = 110^\circ$.
-2. **Langkah 2: Lihat segitiga ADE.** Dua sudutnya sudah diketahui: $\angle DAE = 30^\circ$ dan $\angle ADE = 110^\circ$.
-3. **Langkah 3: Pakai jumlah sudut segitiga.** $\angle AED = 180^\circ - 30^\circ - 110^\circ = 40^\circ$.
-4. **Cek jawaban.** $30^\circ + 110^\circ + 40^\circ = 180^\circ$. Benar.
-
-**Jawaban:** $\angle AED = 40^\circ$.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "ABCD adalah jajargenjang dengan $\\angle ABC = 110^\\circ$. Titik E terletak pada sisi DC. Garis AE membentuk $\\angle DAE = 30^\\circ$. Hitung $\\angle AED$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: ∠ADE berhadapan dengan ∠ABC. ∠ADE = ?",
+   "answer": "110",
+   "hint": "Sudut berhadapan jajargenjang sama besar.",
+   "explain": "∠ADE = 110°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Di segitiga ADE, 30° + 110° = ?",
+   "answer": "140",
+   "hint": "Jumlahkan dua sudut yang diketahui.",
+   "explain": "140°.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: ∠AED = 180° − 140° = ?",
+   "answer": "40",
+   "hint": "Jumlah sudut segitiga 180°.",
+   "explain": "∠AED = 40°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 30° + 110° + 40° = ?",
+   "answer": "180",
+   "hint": "Jumlahkan sudut segitiga ADE.",
+   "explain": "Jumlahnya 180°. Benar.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi ∠AED = 40°."
+}
+```
 
 ### Contoh 5: Soal cerita ubin belah ketupat
 
-**Soal.** Putu memasang ubin berbentuk belah ketupat. Sudut tumpul ubin itu 2 kali sudut lancipnya. Berapa besar sudut lancip dan sudut tumpul ubin?
-
+```soal
+{
+ "title": "Contoh 5",
+ "text": "Putu memasang ubin berbentuk belah ketupat. Sudut tumpul ubin itu 2 kali sudut lancipnya. Berapa besar sudut lancip dan sudut tumpul ubin?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Sudut lancip + sudut tumpul = ?",
+   "answer": "180",
+   "hint": "Kedua sudut itu bersebelahan.",
+   "explain": "Sudut bersebelahan berjumlah 180°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Lancip 1 unit, tumpul 2 unit. Jumlahnya berapa unit?",
+   "answer": "3",
+   "hint": "1 + 2.",
+   "explain": "Ada 3 unit = 180°.",
+   "error": "lupa-batang",
+   "suffix": "unit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: 1 unit = 180° ÷ 3 = ?",
+   "answer": "60",
+   "hint": "Bagi rata ke 3 unit.",
+   "explain": "1 unit = 60°: sudut lancip.",
+   "error": "salah-fakta-bagi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Sudut tumpul = 2 × 60° = ?",
+   "answer": "120",
+   "hint": "Dua unit.",
+   "explain": "Sudut tumpul 120°.",
+   "error": "salah-fakta-kali",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 60° + 120° = ?",
+   "answer": "180",
+   "hint": "Jumlahnya harus 180°.",
+   "explain": "60° + 120° = 180°, dan 120° = 2 × 60°. Benar.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Sudut lancip 60° dan sudut tumpul 120°.",
+ "visual": {
+  "type": "barModel",
+  "bars": [
+   {
+    "label": "Lancip",
+    "units": 1
+   },
+   {
+    "label": "Tumpul",
+    "units": 2
+   }
+  ],
+  "total": "180°"
+ }
+}
 ```
-Sudut lancip  |  1u  |
-Sudut tumpul  |  1u  |  1u  |
-Jumlah        3 unit = 180 derajat
-```
-
-1. **Langkah 1: Pahami soal.** Sudut lancip dan sudut tumpul belah ketupat bersebelahan, jadi jumlahnya $180^\circ$.
-2. **Langkah 2: Buat model batang.** Sudut lancip = 1 unit, sudut tumpul = 2 unit. Jumlahnya 3 unit.
-3. **Langkah 3: Cari nilai 1 unit.** 3 unit $= 180^\circ$, jadi 1 unit $= 180^\circ \div 3 = 60^\circ$.
-4. **Langkah 4: Hitung sudut tumpul.** 2 unit $= 2 \times 60^\circ = 120^\circ$.
-5. **Cek jawaban.** $60^\circ + 120^\circ = 180^\circ$, dan $120^\circ = 2 \times 60^\circ$. Benar.
-
-**Jawaban:** Sudut lancip $60^\circ$, sudut tumpul $120^\circ$.
 
 ## Kesalahan yang sering terjadi
 
@@ -155,16 +360,163 @@ Jumlah        3 unit = 180 derajat
 
 ## Cek pemahaman
 
-1. Pada jajargenjang KLMN, $\angle K = 58^\circ$. Hitung $\angle L$, $\angle M$, dan $\angle N$.
-2. Sebuah belah ketupat punya sisi 9 cm dan salah satu sudutnya $140^\circ$. Hitung kelilingnya dan besar sudut yang bersebelahan dengan sudut $140^\circ$ itu.
-3. Pada trapesium PQRS, PQ sejajar SR. $\angle P = 80^\circ$ dan $\angle Q = 65^\circ$. Hitung $\angle S$ dan $\angle R$.
-4. Pada jajargenjang ABCD, $\angle B$ sama dengan 3 kali $\angle A$. Hitung $\angle A$ dan $\angle B$.
-5. ABCD adalah jajargenjang dengan $\angle D = 70^\circ$. Titik E terletak pada DC, dan $\angle DAE = 45^\circ$. Hitung $\angle AED$.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $\angle L = 122^\circ$, $\angle M = 58^\circ$, $\angle N = 122^\circ$. Sudut bersebelahan $180^\circ - 58^\circ = 122^\circ$; sudut berhadapan sama besar.
-2. Keliling 36 cm dan sudut $40^\circ$. $4 \times 9 = 36$; $180^\circ - 140^\circ = 40^\circ$.
-3. $\angle S = 100^\circ$, $\angle R = 115^\circ$. $180^\circ - 80^\circ = 100^\circ$ dan $180^\circ - 65^\circ = 115^\circ$.
-4. $\angle A = 45^\circ$, $\angle B = 135^\circ$. 4 unit $= 180^\circ$, jadi 1 unit $= 45^\circ$ dan 3 unit $= 135^\circ$.
-5. $65^\circ$. Pada segitiga ADE: $180^\circ - 70^\circ - 45^\circ = 65^\circ$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Pada jajargenjang KLMN, $\\angle K = 58^\\circ$. Hitung $\\angle L$, $\\angle M$, dan $\\angle N$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "∠L (bersebelahan dengan ∠K)?",
+   "answer": "122",
+   "hint": "180° − 58°.",
+   "explain": "∠L = 122°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "∠M (berhadapan dengan ∠K)?",
+   "answer": "58",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "∠M = 58°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "∠N (berhadapan dengan ∠L)?",
+   "answer": "122",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "∠N = 122°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "∠L = 122°, ∠M = 58°, ∠N = 122°."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Sebuah belah ketupat punya sisi 9 cm dan salah satu sudutnya $140^\\circ$. Hitung kelilingnya dan besar sudut yang bersebelahan dengan sudut $140^\\circ$ itu.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Keliling?",
+   "answer": "36",
+   "hint": "Empat sisi sama panjang.",
+   "explain": "4 × 9 = 36 cm.",
+   "error": "lupa-sisi-bangun",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sudut yang bersebelahan?",
+   "answer": "40",
+   "hint": "Sudut bersebelahan berjumlah 180°.",
+   "explain": "180° − 140° = 40°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Keliling 36 cm dan sudutnya 40°."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Pada trapesium PQRS, PQ sejajar SR. $\\angle P = 80^\\circ$ dan $\\angle Q = 65^\\circ$. Hitung $\\angle S$ dan $\\angle R$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "∠S (satu kaki dengan ∠P)?",
+   "answer": "100",
+   "hint": "∠P + ∠S = 180°.",
+   "explain": "180° − 80° = 100°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "∠R (satu kaki dengan ∠Q)?",
+   "answer": "115",
+   "hint": "∠Q + ∠R = 180°.",
+   "explain": "180° − 65° = 115°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "∠S = 100° dan ∠R = 115°."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Pada jajargenjang ABCD, $\\angle B$ sama dengan 3 kali $\\angle A$. Hitung $\\angle A$ dan $\\angle B$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "∠A = 1 unit, ∠B = 3 unit, jumlahnya 180°. 1 unit = ?",
+   "answer": "45",
+   "hint": "Ada 4 unit: 180° ÷ 4.",
+   "explain": "1 unit = 45°.",
+   "error": "salah-fakta-bagi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "∠B = 3 unit = ?",
+   "answer": "135",
+   "hint": "3 × 45°.",
+   "explain": "∠B = 135°.",
+   "error": "salah-fakta-kali",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "∠A = 45° dan ∠B = 135°."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "ABCD adalah jajargenjang dengan $\\angle D = 70^\\circ$. Titik E terletak pada DC, dan $\\angle DAE = 45^\\circ$. Hitung $\\angle AED$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Di segitiga ADE, 70° + 45° = ?",
+   "answer": "115",
+   "hint": "Jumlahkan dua sudut yang diketahui.",
+   "explain": "115°.",
+   "error": "salah-fakta-tambah",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "∠AED = ?",
+   "answer": "65",
+   "hint": "Jumlah sudut segitiga 180°.",
+   "explain": "180° − 115° = 65°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi ∠AED = 65°."
+}
+```

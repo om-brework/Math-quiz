@@ -21,9 +21,17 @@ Ingat lagi **pabrik permen**:
 
 **Menyimpan** itu seperti mengemas. Kalau permen lepas ada 10 atau lebih, 10 di antaranya dikemas menjadi 1 bungkus. Bungkus itu pindah ke kolom bungkus.
 
+```anim
+{"type": "stik", "op": "+", "a": 8, "b": 5, "title": "8 + 5: sepuluh stik diikat menjadi 1 ikat"}
+```
+
 **Meminjam** itu seperti membongkar. Kalau permen lepas kurang untuk diambil, kita bongkar 1 bungkus menjadi 10 permen lepas.
 
 Kalau bungkusnya kosong (angka 0), kita bongkar kotak dulu. 1 kotak menjadi 10 bungkus. Baru 1 bungkus dibongkar menjadi 10 permen. Inilah **meminjam melewati nol**.
+
+```visual
+{"type": "base10", "thousands": 5, "hundreds": 0, "tens": 0, "ones": 3, "caption": "5.003: tidak ada kotak dan bungkus. Untuk meminjam, bongkar 1 kardus dulu."}
+```
 
 ## Konsep
 
@@ -37,11 +45,19 @@ Kalau bungkusnya kosong (angka 0), kita bongkar kotak dulu. 1 kotak menjadi 10 b
 
 Pada penjumlahan, setiap kolom bisa menghasilkan 10 atau lebih. Tulis angka satuannya di bawah. Angka puluhannya disimpan (ditulis kecil) di atas kolom sebelah kiri. Ini bisa terjadi di beberapa kolom berturut-turut.
 
+```anim
+{"type": "susun", "op": "+", "a": 3658, "b": 2475, "title": "3.658 + 2.475: menyimpan tiga kali"}
+```
+
 ### Meminjam melewati nol
 
 Pada pengurangan, kalau angka atas lebih kecil dari angka bawah, pinjam 1 dari kolom kiri. Kalau kolom kiri berisi 0, terus ke kiri sampai menemukan angka yang bukan 0. Bongkar angka itu, lalu turunkan pinjaman satu per satu ke kanan.
 
 Contoh: pada 5.003, pinjaman dari ribuan membuat angka atas menjadi 4, 9, 9, 13.
+
+```anim
+{"type": "susun", "op": "-", "a": 5003, "b": 1278, "title": "5.003 − 1.278: meminjam melewati nol"}
+```
 
 ### Cek dengan operasi kebalikan
 
@@ -55,82 +71,255 @@ Penjumlahan dan pengurangan saling membalik.
 Untuk bilangan 2 angka, kita bisa menghitung di kepala dengan **membulatkan ke puluhan terdekat**, lalu membetulkan.
 
 - 47 + 38: 38 dekat dengan 40. 47 + 40 = 87. Karena kita menambah 2 terlalu banyak, kurangi 2: 85.
+
+```anim
+{"type": "garis", "from": 45, "to": 90, "start": 47, "jumps": [40, -2], "step": 1, "title": "47 + 38 = 47 + 40 − 2"}
+```
 - 83 − 29: 29 dekat dengan 30. 83 − 30 = 53. Karena kita mengurangi 1 terlalu banyak, tambah 1: 54.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Penjumlahan dengan menyimpan berkali-kali
 
-**Soal.** 3.658 + 2.475 = ...
-
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Hitung $3.658 + 2.475$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Jumlahkan satuan. 8 + 5 = ?",
+   "answer": "13",
+   "hint": "Hitung 8 + 2 dulu, lalu tambah 3.",
+   "explain": "13. Tulis 3, simpan 1 di atas puluhan.",
+   "error": "salah-fakta-tambah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Jumlahkan puluhan. 5 + 7 + 1 (simpanan) = ?",
+   "answer": "13",
+   "hint": "Jangan lupa simpanan 1 dari satuan.",
+   "explain": "13. Tulis 3, simpan 1 di atas ratusan.",
+   "error": "lupa-simpan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Jumlahkan ratusan. 6 + 4 + 1 (simpanan) = ?",
+   "answer": "11",
+   "hint": "6 + 4 = 10, lalu tambah simpanan.",
+   "explain": "11. Tulis 1, simpan 1 di atas ribuan.",
+   "error": "lupa-simpan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Jumlahkan ribuan. 3 + 2 + 1 (simpanan) = ?",
+   "answer": "6",
+   "hint": "Ada simpanan dari ratusan.",
+   "explain": "6. Tulis 6.",
+   "error": "lupa-simpan"
+  },
+  {
+   "kind": "column",
+   "op": "+",
+   "a": 3658,
+   "b": 2475,
+   "prompt": "Langkah 5: Tulis semuanya di hitung susun.",
+   "hint": "Isi kolom dari kanan, simpanan di atas.",
+   "explain": "3.658 + 2.475 = 6.133."
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 6.133 − 2.475 = ?",
+   "answer": "3.658",
+   "hint": "Kalau benar, hasilnya bilangan pertama.",
+   "explain": "6.133 − 2.475 = 3.658. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Jadi 3.658 + 2.475 = 6.133."
+}
 ```
-    1  1  1
-    3  6  5  8
- +  2  4  7  5
- -------------
-    6  1  3  3
-```
-
-1. **Langkah 1: Jumlahkan satuan.** 8 + 5 = 13. Ada 13 permen lepas. Kemas 10 menjadi 1 bungkus. Tulis **3**, simpan **1** di atas puluhan.
-2. **Langkah 2: Jumlahkan puluhan.** 5 + 7 + 1 (simpanan) = 13. Ada 13 bungkus. Kemas 10 menjadi 1 kotak. Tulis **3**, simpan **1** di atas ratusan.
-3. **Langkah 3: Jumlahkan ratusan.** 6 + 4 + 1 = 11. Ada 11 kotak. Kemas 10 menjadi 1 kardus. Tulis **1**, simpan **1** di atas ribuan.
-4. **Langkah 4: Jumlahkan ribuan.** 3 + 2 + 1 = 6. Tulis **6**.
-5. **Cek jawaban.** Pakai pengurangan: 6.133 − 2.475 = 3.658. Sama dengan bilangan pertama, jadi benar.
-
-**Jawaban:** 6.133.
 
 ### Contoh 2: Pengurangan dengan meminjam melewati nol
 
-**Soal.** 5.003 − 1.278 = ...
-
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Hitung $5.003 - 1.278$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Lihat satuan, 3 − 8. Apa yang dilakukan?",
+   "options": [
+    "Pinjam dari kiri",
+    "Hitung 8 − 3 = 5"
+   ],
+   "answer": "Pinjam dari kiri",
+   "hint": "Angka atas 3 lebih kecil dari angka bawah 8.",
+   "explain": "3 lebih kecil dari 8, jadi kita perlu meminjam.",
+   "error": "kurang-terbalik"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Puluhan dan ratusan 0. Dari mana kita meminjam?",
+   "options": [
+    "Ribuan",
+    "Puluhan",
+    "Ratusan"
+   ],
+   "answer": "Ribuan",
+   "hint": "Cari angka bukan 0 terdekat di kiri.",
+   "explain": "Bongkar 1 kardus. Ribuan menjadi 4.",
+   "error": "salah-pinjam-lewat-nol"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Setelah dibongkar, angka puluhan menjadi berapa?",
+   "answer": "9",
+   "hint": "1 kotak menjadi 10 bungkus, lalu 1 bungkus dipinjam satuan.",
+   "explain": "10 − 1 = 9. Ratusan juga menjadi 9.",
+   "error": "salah-pinjam-lewat-nol"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Satuan sekarang berapa?",
+   "answer": "13",
+   "hint": "3 ditambah 10 permen dari bungkus yang dibongkar.",
+   "explain": "3 + 10 = 13, dan 13 − 8 = 5.",
+   "error": "lupa-pinjam"
+  },
+  {
+   "kind": "column",
+   "op": "-",
+   "a": 5003,
+   "b": 1278,
+   "prompt": "Langkah 5: Kerjakan hitung susunnya.",
+   "hint": "Angka atas setelah dibongkar: 4, 9, 9, 13.",
+   "explain": "5.003 − 1.278 = 3.725."
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 3.725 + 1.278 = ?",
+   "answer": "5.003",
+   "hint": "Jumlahkan hasil dengan bilangan pengurang.",
+   "explain": "3.725 + 1.278 = 5.003. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Jadi 5.003 − 1.278 = 3.725."
+}
 ```
-    4  9  9 13
-    5  0  0  3
- −  1  2  7  8
- -------------
-    3  7  2  5
-```
-
-Angka kecil di baris paling atas adalah isi setiap kolom setelah dibongkar.
-
-1. **Langkah 1: Lihat satuan.** 3 − 8 tidak bisa, karena 3 lebih kecil dari 8. Kita perlu meminjam.
-2. **Langkah 2: Cari tempat meminjam.** Puluhan 0, ratusan 0. Tidak ada bungkus dan kotak. Ribuan berisi 5, jadi bongkar 1 kardus. Ribuan menjadi **4**.
-3. **Langkah 3: Turunkan pinjaman ke kanan.** 1 kardus = 10 kotak. Bongkar 1 kotak menjadi 10 bungkus, jadi ratusan tinggal **9**. Bongkar 1 bungkus menjadi 10 permen, jadi puluhan tinggal **9**. Satuan menjadi 3 + 10 = **13**.
-4. **Langkah 4: Kurangi setiap kolom.** Satuan 13 − 8 = 5. Puluhan 9 − 7 = 2. Ratusan 9 − 2 = 7. Ribuan 4 − 1 = 3.
-5. **Cek jawaban.** Pakai penjumlahan: 3.725 + 1.278 = 5.003. Benar.
-
-**Jawaban:** 3.725.
 
 ### Contoh 3: Soal cerita
 
-**Soal.** Perpustakaan sekolah punya 4.060 buku. Sebanyak 1.385 buku sedang dipinjam siswa. Berapa buku yang masih ada di rak?
-
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Perpustakaan sekolah punya 4.060 buku. Sebanyak 1.385 buku sedang dipinjam siswa. Berapa buku yang masih ada di rak?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pahami soal. Hitungan apa yang dipakai?",
+   "options": [
+    "4.060 − 1.385",
+    "4.060 + 1.385"
+   ],
+   "answer": "4.060 − 1.385",
+   "hint": "\"Masih ada\" berarti sisa.",
+   "explain": "Sisa dicari dengan pengurangan.",
+   "error": "salah-pilih-operasi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Satuan 0 − 5 tidak bisa. Pinjam dari puluhan. Satuan menjadi 10. 10 − 5 = ?",
+   "answer": "5",
+   "hint": "Sepuluh dikurangi lima.",
+   "explain": "5. Puluhan tinggal 5.",
+   "error": "lupa-pinjam"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Puluhan 5 − 8 tidak bisa. Pinjam dari ribuan melewati ratusan 0. Puluhan menjadi 15. 15 − 8 = ?",
+   "answer": "7",
+   "hint": "15 − 5 = 10, lalu kurangi 3 lagi.",
+   "explain": "7. Ratusan menjadi 9, ribuan menjadi 3.",
+   "error": "salah-pinjam-lewat-nol"
+  },
+  {
+   "kind": "column",
+   "op": "-",
+   "a": 4060,
+   "b": 1385,
+   "prompt": "Langkah 4: Kerjakan hitung susunnya.",
+   "hint": "Ingat, 0 di ratusan berubah menjadi 9.",
+   "explain": "4.060 − 1.385 = 2.675."
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 2.675 + 1.385 = ?",
+   "answer": "4.060",
+   "hint": "Jumlahkan sisa dengan yang dipinjam.",
+   "explain": "Hasilnya 4.060. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Masih ada 2.675 buku di rak."
+}
 ```
-    3  9 15 10
-    4  0  6  0
- −  1  3  8  5
- -------------
-    2  6  7  5
-```
-
-1. **Langkah 1: Pahami soal.** "Masih ada" berarti sisa. Kita hitung 4.060 − 1.385.
-2. **Langkah 2: Kurangi satuan.** 0 − 5 tidak bisa. Pinjam dari puluhan: puluhan 6 menjadi 5, satuan menjadi **10**. 10 − 5 = 5.
-3. **Langkah 3: Kurangi puluhan.** Sekarang puluhan 5, dan 5 − 8 tidak bisa. Ratusan 0, jadi pinjam dari ribuan (melewati nol). Ribuan menjadi **3**, ratusan menjadi **9**, puluhan menjadi 5 + 10 = **15**. 15 − 8 = 7.
-4. **Langkah 4: Kurangi ratusan dan ribuan.** Ratusan 9 − 3 = 6. Ribuan 3 − 1 = 2.
-5. **Cek jawaban.** 2.675 + 1.385 = 4.060. Benar.
-
-**Jawaban:** Masih ada 2.675 buku di rak.
 
 ### Contoh 4: Hitung cepat
 
-**Soal.** Hitung di kepala: a) 56 + 37, b) 92 − 48.
-
-1. **Langkah 1: Bulatkan bilangan kedua.** 37 dekat dengan 40. 48 dekat dengan 50.
-2. **Langkah 2: Hitung dengan bilangan bulat puluhan.** 56 + 40 = 96. 92 − 50 = 42.
-3. **Langkah 3: Betulkan.** a) Kita menambah 3 terlalu banyak, jadi 96 − 3 = 93. b) Kita mengurangi 2 terlalu banyak, jadi 42 + 2 = 44.
-4. **Cek jawaban.** a) 93 − 37 = 56. b) 44 + 48 = 92. Keduanya benar.
-
-**Jawaban:** a) 93, b) 44.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Hitung di kepala: a) $56 + 37$, b) $92 - 48$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: a) 37 dibulatkan menjadi 40. 56 + 40 = ?",
+   "answer": "96",
+   "hint": "Tambah 4 puluhan pada 56.",
+   "explain": "56 + 40 = 96.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: a) Kita menambah 3 terlalu banyak. 96 − 3 = ?",
+   "answer": "93",
+   "hint": "Kurangi kelebihannya.",
+   "explain": "96 − 3 = 93.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: b) 48 dibulatkan menjadi 50. 92 − 50 = ?",
+   "answer": "42",
+   "hint": "Kurangi 5 puluhan dari 92.",
+   "explain": "92 − 50 = 42.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: b) Kita mengurangi 2 terlalu banyak. 42 + 2 = ?",
+   "answer": "44",
+   "hint": "Kembalikan yang terlalu banyak diambil.",
+   "explain": "42 + 2 = 44.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 44 + 48 = ?",
+   "answer": "92",
+   "hint": "Kalau benar, hasilnya 92.",
+   "explain": "44 + 48 = 92. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Jadi a) 56 + 37 = 93, b) 92 − 48 = 44."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -150,16 +339,184 @@ Angka kecil di baris paling atas adalah isi setiap kolom setelah dibongkar.
 
 ## Cek pemahaman
 
-1. 2.786 + 4.548 = ...
-2. 6.000 − 2.457 = ...
-3. 7.205 − 3.869 = ...
-4. Hitung di kepala: a) 56 + 29, b) 71 − 38.
-5. Minggu lalu sekolah mengumpulkan 2.347 botol plastik. Minggu ini terkumpul 1.968 botol. Berapa botol semuanya? Cek jawabanmu dengan pengurangan.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. 7.334. Satuan 6 + 8 = 14 (simpan 1), puluhan 8 + 4 + 1 = 13 (simpan 1), ratusan 7 + 5 + 1 = 13 (simpan 1), ribuan 2 + 4 + 1 = 7.
-2. 3.543. Pinjam melewati dua nol, sehingga angka atas menjadi 5, 9, 9, 10. Cek: 3.543 + 2.457 = 6.000.
-3. 3.336. Cek: 3.336 + 3.869 = 7.205.
-4. a) 85, karena 56 + 30 = 86, lalu kurangi 1. b) 33, karena 71 − 40 = 31, lalu tambah 2.
-5. 4.315 botol. 2.347 + 1.968 = 4.315. Cek: 4.315 − 1.968 = 2.347.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Hitung $2.786 + 4.548$.",
+ "steps": [
+  {
+   "kind": "column",
+   "op": "+",
+   "a": 2786,
+   "b": 4548,
+   "prompt": "Langkah 1: Kerjakan hitung susun.",
+   "hint": "Mulai dari satuan: 6 + 8 = 14, tulis 4 simpan 1.",
+   "explain": "Simpan di satuan, puluhan, dan ratusan. Hasilnya 7.334."
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Cek: 7.334 − 4.548 = ?",
+   "answer": "2.786",
+   "hint": "Hasilnya harus bilangan pertama.",
+   "explain": "7.334 − 4.548 = 2.786. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Jadi 2.786 + 4.548 = 7.334."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Hitung $6.000 - 2.457$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Setelah meminjam melewati nol, angka atas satuan menjadi berapa?",
+   "answer": "10",
+   "hint": "0 ditambah 10 dari bungkus yang dibongkar.",
+   "explain": "Angka atas menjadi 5, 9, 9, 10.",
+   "error": "salah-pinjam-lewat-nol"
+  },
+  {
+   "kind": "column",
+   "op": "-",
+   "a": 6000,
+   "b": 2457,
+   "prompt": "Langkah 2: Kerjakan hitung susun.",
+   "hint": "Setiap 0 yang dilewati menjadi 9.",
+   "explain": "6.000 − 2.457 = 3.543."
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Cek: 3.543 + 2.457 = ?",
+   "answer": "6.000",
+   "hint": "Jumlahkan hasil dengan pengurang.",
+   "explain": "Hasilnya 6.000. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Jadi 6.000 − 2.457 = 3.543."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung $7.205 - 3.869$.",
+ "steps": [
+  {
+   "kind": "column",
+   "op": "-",
+   "a": 7205,
+   "b": 3869,
+   "prompt": "Langkah 1: Kerjakan hitung susun.",
+   "hint": "Satuan 5 − 9 tidak bisa. Puluhan 0, jadi pinjam lewat nol.",
+   "explain": "7.205 − 3.869 = 3.336."
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Cek: 3.336 + 3.869 = ?",
+   "answer": "7.205",
+   "hint": "Jumlahkan hasil dengan pengurang.",
+   "explain": "Hasilnya 7.205. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Jadi 7.205 − 3.869 = 3.336."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Hitung di kepala: a) $56 + 29$, b) $71 - 38$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: a) 56 + 30 = ?",
+   "answer": "86",
+   "hint": "29 dibulatkan menjadi 30.",
+   "explain": "56 + 30 = 86.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: a) Betulkan. Berapa 56 + 29?",
+   "answer": "85",
+   "hint": "Kita menambah 1 terlalu banyak.",
+   "explain": "86 − 1 = 85.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: b) 71 − 40 = ?",
+   "answer": "31",
+   "hint": "38 dibulatkan menjadi 40.",
+   "explain": "71 − 40 = 31.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: b) Betulkan. Berapa 71 − 38?",
+   "answer": "33",
+   "hint": "Kita mengurangi 2 terlalu banyak, jadi tambahkan kembali.",
+   "explain": "31 + 2 = 33.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi a) 85, b) 33."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Minggu lalu sekolah mengumpulkan 2.347 botol plastik. Minggu ini terkumpul 1.968 botol. Berapa botol semuanya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Hitungan apa yang dipakai?",
+   "options": [
+    "2.347 + 1.968",
+    "2.347 − 1.968"
+   ],
+   "answer": "2.347 + 1.968",
+   "hint": "\"Semuanya\" berarti digabung.",
+   "explain": "Menggabungkan dua kumpulan: penjumlahan.",
+   "error": "salah-pilih-operasi"
+  },
+  {
+   "kind": "column",
+   "op": "+",
+   "a": 2347,
+   "b": 1968,
+   "prompt": "Langkah 2: Kerjakan hitung susun.",
+   "hint": "Mulai dari satuan: 7 + 8 = 15.",
+   "explain": "2.347 + 1.968 = 4.315."
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Cek: 4.315 − 1.968 = ?",
+   "answer": "2.347",
+   "hint": "Hasilnya harus bilangan pertama.",
+   "explain": "4.315 − 1.968 = 2.347. Benar.",
+   "error": "salah-operasi-kebalikan"
+  }
+ ],
+ "conclusion": "Semuanya ada 4.315 botol."
+}
+```

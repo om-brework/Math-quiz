@@ -68,7 +68,7 @@ export function Objects({ item, count, group, crossed = 0 }: { item: ObjectName;
                         {i >= n - cross && (
                             <g strokeLinecap="round">
                                 <path d={`M${p.x + 4} ${p.y + 4} L${p.x + icon - 4} ${p.y + icon - 4} M${p.x + icon - 4} ${p.y + 4} L${p.x + 4} ${p.y + icon - 4}`} stroke="var(--v-paper)" strokeWidth={7} />
-                                <path d={`M${p.x + 4} ${p.y + 4} L${p.x + icon - 4} ${p.y + icon - 4} M${p.x + icon - 4} ${p.y + 4} L${p.x + 4} ${p.y + icon - 4}`} stroke="#dc2626" strokeWidth={3.5} />
+                                <path d={`M${p.x + 4} ${p.y + 4} L${p.x + icon - 4} ${p.y + icon - 4} M${p.x + icon - 4} ${p.y + 4} L${p.x + 4} ${p.y + icon - 4}`} stroke="#C23B29" strokeWidth={3.5} />
                             </g>
                         )}
                     </g>
@@ -105,7 +105,7 @@ function Cube({ x, y }: { x: number; y: number }) {
     return (
         <g strokeLinejoin="round">
             <path d={`M${x} ${y + d} L${x + d} ${y} H${x + s + d} L${x + s} ${y + d}Z`} fill="#e9d5ff" stroke={st} strokeWidth={1.4} />
-            <path d={`M${x + s} ${y + d} L${x + s + d} ${y} V${y + s} L${x + s} ${y + d + s}Z`} fill="#a855f7" stroke={st} strokeWidth={1.4} />
+            <path d={`M${x + s} ${y + d} L${x + s + d} ${y} V${y + s} L${x + s} ${y + d + s}Z`} fill="#7E5FC0" stroke={st} strokeWidth={1.4} />
             <rect x={x} y={y + d} width={s} height={s} fill={f} stroke={st} strokeWidth={1.4} />
             <path d={lines.join(' ')} stroke={st} strokeWidth={0.6} opacity={0.7} fill="none" />
         </g>
@@ -261,7 +261,7 @@ const COINS: Record<number, { r: number; fill: string; inner?: string; stroke: s
     100: { r: 21, fill: '#e5e7eb', stroke: '#6b7280' },
     200: { r: 23, fill: '#cbd5e1', stroke: '#475569' },
     500: { r: 25, fill: '#fcd34d', stroke: '#a16207' },
-    1000: { r: 27, fill: '#e2e8f0', inner: '#fbbf24', stroke: '#64748b' },
+    1000: { r: 27, fill: '#e2e8f0', inner: '#EFAA3C', stroke: '#64748b' },
 };
 const NOTES: Record<number, { fill: string; dark: string }> = {
     1000: { fill: '#b5d3a8', dark: '#3f6212' },

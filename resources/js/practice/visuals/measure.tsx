@@ -114,7 +114,7 @@ export function Scale({ kind, value, unit, max, step }: { kind: 'mass' | 'volume
             <Svg w={280} h={286} label={`Timbangan jarum, skala 0 sampai ${idNum(max)} ${unit}, jarum menunjuk ${idNum(value)} ${unit}`} maxWidth={300}>
                 <rect x={60} y={6} width={160} height={18} rx={9} fill="#94a3b8" stroke="#475569" strokeWidth={1.5} />
                 <rect x={128} y={22} width={24} height={14} fill="#64748b" />
-                <rect x={20} y={34} width={240} height={246} rx={36} fill="#e11d48" stroke="#9f1239" strokeWidth={2} />
+                <rect x={20} y={34} width={240} height={246} rx={36} fill="#C23B29" stroke="#9f1239" strokeWidth={2} />
                 <circle cx={cx} cy={cy} r={face} fill="#f8fafc" stroke="#9f1239" strokeWidth={3} />
                 <path d={`M${fmt(pt(a0, R)[0])} ${fmt(pt(a0, R)[1])} A${R} ${R} 0 1 1 ${fmt(pt(135, R)[0])} ${fmt(pt(135, R)[1])}`} fill="none" stroke="#1f2937" strokeWidth={1.4} />
                 {Array.from({ length: n + 1 }, (_, i) => {
@@ -129,7 +129,7 @@ export function Scale({ kind, value, unit, max, step }: { kind: 'mass' | 'volume
                     return <T key={i} x={x} y={y} size={n > 12 ? 12 : 13.5} weight={700} fill="#1f2937">{idNum(Math.round(i * st * 1000) / 1000)}</T>;
                 })}
                 <T x={cx} y={cy + 46} size={16} weight={800} fill="#475569">{unit}</T>
-                <line x1={fmt(bx)} y1={fmt(by)} x2={fmt(nx)} y2={fmt(ny)} stroke="#dc2626" strokeWidth={3.5} strokeLinecap="round" />
+                <line x1={fmt(bx)} y1={fmt(by)} x2={fmt(nx)} y2={fmt(ny)} stroke="#C23B29" strokeWidth={3.5} strokeLinecap="round" />
                 <circle cx={cx} cy={cy} r={8} fill="#1f2937" />
             </Svg>
         );
@@ -145,7 +145,7 @@ export function Scale({ kind, value, unit, max, step }: { kind: 'mass' | 'volume
     return (
         <Svg w={300} h={330} label={`Gelas ukur, skala 0 sampai ${idNum(max)} ${unit}, berisi air sampai ${idNum(value)} ${unit}`} maxWidth={280}>
             <path d={`M${tubeX} ${ly} H${tubeX + tubeW} V${bottom + 6} Q${tubeX + tubeW} ${bottom + 12} ${tubeX + tubeW - 6} ${bottom + 12} H${tubeX + 6} Q${tubeX} ${bottom + 12} ${tubeX} ${bottom + 6}Z`} fill="#7dd3fc" opacity={0.85} />
-            <path d={`M${tubeX} ${ly - 3} Q${tubeX + tubeW / 2} ${ly + 5} ${tubeX + tubeW} ${ly - 3}`} fill="none" stroke="#0284c7" strokeWidth={2} />
+            <path d={`M${tubeX} ${ly - 3} Q${tubeX + tubeW / 2} ${ly + 5} ${tubeX + tubeW} ${ly - 3}`} fill="none" stroke="#2D4FD6" strokeWidth={2} />
             <path d={`M${tubeX - 4} ${top - 22} H${tubeX} V${bottom + 6} Q${tubeX} ${bottom + 12} ${tubeX + 6} ${bottom + 12} H${tubeX + tubeW - 6} Q${tubeX + tubeW} ${bottom + 12} ${tubeX + tubeW} ${bottom + 6} V${top - 22} Q${tubeX + tubeW + 4} ${top - 28} ${tubeX + tubeW + 12} ${top - 30}`} fill="none" stroke="currentColor" strokeWidth={3} strokeLinejoin="round" />
             <rect x={tubeX - 30} y={bottom + 12} width={tubeW + 60} height={12} rx={4} fill="var(--v-line)" />
             {Array.from({ length: n + 1 }, (_, i) => {
