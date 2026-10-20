@@ -62,7 +62,7 @@ export function StaticVisual({ source }: { source: string }) {
     let spec: VisualSpec & { caption?: string };
     try { spec = JSON.parse(source); } catch { return <Broken msg="format JSON salah" />; }
     return (
-        <figure className="not-prose my-4 rounded-3xl border-2 border-slate-100 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
+        <figure className="not-prose my-4 rounded-2xl border border-slate-100 bg-white p-4 dark:border-slate-800 dark:bg-slate-900">
             <Visual spec={spec} />
             {spec.caption && <figcaption className="mt-2 text-center text-sm font-semibold text-slate-500">{spec.caption}</figcaption>}
         </figure>

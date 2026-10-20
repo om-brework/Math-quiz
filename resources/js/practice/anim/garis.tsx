@@ -34,7 +34,7 @@ export function GarisAnim({ from, to, start, jumps, step = 1, title }: { from: n
                         {ticks.map((v, k) => (
                             <g key={v}>
                                 <line x1={xs(v)} x2={xs(v)} y1={Y - 7} y2={Y + 7} stroke="currentColor" strokeWidth={v === s.at ? 3 : 1.5} />
-                                {(k % labelEvery === 0 || v === start || v === s.at) && <text x={xs(v)} y={Y + 24} textAnchor="middle" fontSize={13} fontWeight={v === s.at ? 800 : 600} fill={v === s.at ? '#059669' : 'currentColor'}>{v}</text>}
+                                {(k % labelEvery === 0 || v === start || v === s.at) && <text x={xs(v)} y={Y + 24} textAnchor="middle" fontSize={13} fontWeight={v === s.at ? 800 : 600} fill={v === s.at ? '#1A7A56' : 'currentColor'}>{v}</text>}
                             </g>
                         ))}
                         {s.arcs.map((a, k) => {
@@ -43,13 +43,13 @@ export function GarisAnim({ from, to, start, jumps, step = 1, title }: { from: n
                             const up = a.b > a.a;
                             return (
                                 <g key={k}>
-                                    <motion.path d={d} fill="none" stroke={up ? '#0ea5e9' : '#f97316'} strokeWidth={3} strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.7 }} />
-                                    <text x={mid} y={Y - 14 - hgt} textAnchor="middle" fontSize={13} fontWeight={800} fill={up ? '#0369a1' : '#c2410c'}>{up ? '+' : '−'}{Math.abs(a.b - a.a)}</text>
+                                    <motion.path d={d} fill="none" stroke={up ? '#4467E0' : '#E2761F'} strokeWidth={3} strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.7 }} />
+                                    <text x={mid} y={Y - 14 - hgt} textAnchor="middle" fontSize={13} fontWeight={800} fill={up ? '#2440B4' : '#c2410c'}>{up ? '+' : '−'}{Math.abs(a.b - a.a)}</text>
                                 </g>
                             );
                         })}
                         <motion.g initial={false} animate={{ x: xs(s.at), y: Y - 22 }} transition={{ type: 'spring', stiffness: 90, damping: 12 }}>
-                            <ellipse cx={0} cy={4} rx={13} ry={10} fill="#22c55e" stroke="#15803d" strokeWidth={2} />
+                            <ellipse cx={0} cy={4} rx={13} ry={10} fill="#279469" stroke="#15803d" strokeWidth={2} />
                             <circle cx={-6} cy={-5} r={4.5} fill="#fff" stroke="#15803d" strokeWidth={1.5} /><circle cx={6} cy={-5} r={4.5} fill="#fff" stroke="#15803d" strokeWidth={1.5} />
                             <circle cx={-6} cy={-5} r={2} fill="#111" /><circle cx={6} cy={-5} r={2} fill="#111" />
                         </motion.g>

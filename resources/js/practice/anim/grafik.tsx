@@ -17,7 +17,7 @@ export interface GrafikSpec {
 }
 
 const W = 440, H = 300, PAD = 30;
-const COLORS = ['#0ea5e9', '#f97316', '#22c55e', '#a855f7'];
+const COLORS = ['#4467E0', '#E2761F', '#279469', '#7E5FC0'];
 
 function niceStep(range: number) {
     const raw = range / 8, p = 10 ** Math.floor(Math.log10(raw)), m = raw / p;
@@ -79,8 +79,8 @@ export function GrafikAnim(spec: GrafikSpec) {
                             ))}</g>
                             {titik.slice(0, nt).map((t, k) => (
                                 <motion.g key={`t${k}`} initial={{ scale: 0, opacity: 0 }} animate={{ scale: 1, opacity: 1 }} transition={{ delay: k * 0.25, type: 'spring' }} style={{ originX: `${sx(t.x)}px`, originY: `${sy(t.y)}px` }}>
-                                    <circle cx={sx(t.x)} cy={sy(t.y)} r={5.5} fill="#e11d48" stroke="#fff" strokeWidth={2} />
-                                    {t.label && <text x={sx(t.x) + 8} y={sy(t.y) - 8} fontSize={12} fontWeight={700} fill="#be123c">{t.label}</text>}
+                                    <circle cx={sx(t.x)} cy={sy(t.y)} r={5.5} fill="#C23B29" stroke="#fff" strokeWidth={2} />
+                                    {t.label && <text x={sx(t.x) + 8} y={sy(t.y) - 8} fontSize={12} fontWeight={700} fill="#A12F21">{t.label}</text>}
                                 </motion.g>
                             ))}
                         </svg>

@@ -88,7 +88,7 @@ export function BendaAnim({ op, a, b, item = 'apel', title }: { op: '+' | '-' | 
                     <svg viewBox={`0 0 ${W} ${h}`} width="100%" style={{ maxWidth: W }} role="img" aria-label={s.say}>
                         {s.boxes?.map((bx, k) => (
                             <motion.g key={`box${k}`} initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }}>
-                                <rect x={bx.x} y={bx.y} width={bx.w} height={bx.h} rx={op === '÷' ? bx.h / 2.5 : 12} fill={op === '÷' ? '#f1f5f9' : 'none'} stroke={op === '÷' ? '#cbd5e1' : '#38bdf8'} strokeWidth={2} strokeDasharray={op === '÷' ? undefined : '6 5'} />
+                                <rect x={bx.x} y={bx.y} width={bx.w} height={bx.h} rx={op === '÷' ? bx.h / 2.5 : 12} fill={op === '÷' ? '#f1f5f9' : 'none'} stroke={op === '÷' ? '#cbd5e1' : '#6F8BEA'} strokeWidth={2} strokeDasharray={op === '÷' ? undefined : '6 5'} />
                                 {bx.label && <text x={bx.x + bx.w / 2} y={bx.y + bx.h + 16} textAnchor="middle" fontSize={12} fontWeight={700} fill="#64748b">{bx.label}</text>}
                             </motion.g>
                         ))}
@@ -101,7 +101,7 @@ export function BendaAnim({ op, a, b, item = 'apel', title }: { op: '+' | '-' | 
                                 </motion.g>
                             );
                         })}
-                        {s.total && <motion.text initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} x={W / 2} y={h - 12} textAnchor="middle" fontSize={22} fontWeight={800} fill="#059669">{s.total}</motion.text>}
+                        {s.total && <motion.text initial={{ opacity: 0, y: 8 }} animate={{ opacity: 1, y: 0 }} x={W / 2} y={h - 12} textAnchor="middle" fontSize={22} fontWeight={800} fill="#1A7A56">{s.total}</motion.text>}
                     </svg>
                 );
             }}

@@ -4,7 +4,7 @@ import { isi, pilih } from './_bantu';
 
 interface Bangun { shape: ShapeName; warna: string; size: 'small' | 'big'; rotate: number }
 
-const WARNA: Record<string, string> = { merah: '#ef4444', biru: '#3b82f6', kuning: '#eab308', hijau: '#22c55e', ungu: '#a855f7' };
+const WARNA: Record<string, string> = { merah: '#D9503D', biru: '#3b82f6', kuning: '#eab308', hijau: '#279469', ungu: '#7E5FC0' };
 const NAMA_WARNA = Object.keys(WARNA);
 const BENTUK: ShapeName[] = ['persegi', 'segitiga', 'lingkaran', 'persegi-panjang', 'setengah-lingkaran'];
 const namaBentuk = (s: ShapeName) => s.replace(/-/g, ' ');

@@ -224,7 +224,7 @@ export function Fraction({ shape, parts: partsIn, shaded: shadedIn, wholes: whol
 /* ---------- Model batang ---------- */
 
 const BAR_COLORS = [
-    ['#bae6fd', '#0369a1'],
+    ['#bae6fd', '#2440B4'],
     ['#fde68a', '#a16207'],
     ['#bbf7d0', '#15803d'],
     ['#fbcfe8', '#be185d'],

@@ -7,7 +7,7 @@ import { AnimFrame, type AnimStep } from './frame';
 const W = 440;
 const ZONE_T = { x: 12, w: 196 }, ZONE_S = { x: 232, w: 196 };
 const STICK = { w: 7, h: 58, gap: 12 }, BUNDLE = { w: 34, gap: 38 };
-const COLOR = { a: ['#f59e0b', '#b45309'], b: ['#38bdf8', '#0369a1'], n: ['#a3e635', '#4d7c0f'] } as const;
+const COLOR = { a: ['#E2901F', '#b45309'], b: ['#6F8BEA', '#2440B4'], n: ['#a3e635', '#4d7c0f'] } as const;
 
 type Kind = 'stick' | 'bundle';
 interface Item { id: string; kind: Kind; color: keyof typeof COLOR; x: number; y: number; gone?: boolean; packed?: boolean }
@@ -89,7 +89,7 @@ function Bundle({ color }: { color: keyof typeof COLOR }) {
     return (
         <g>
             {Array.from({ length: 10 }, (_, i) => <rect key={i} x={i * 3.2} width={5} height={STICK.h} rx={2.5} fill={f} stroke={s} strokeWidth={1} />)}
-            <rect x={-2} y={STICK.h / 2 - 5} width={BUNDLE.w + 2} height={10} rx={3} fill="#e11d48" />
+            <rect x={-2} y={STICK.h / 2 - 5} width={BUNDLE.w + 2} height={10} rx={3} fill="#C23B29" />
         </g>
     );
 }
@@ -119,8 +119,8 @@ export function StikAnim({ op, a, b, title }: { op: '+' | '-'; a: number; b: num
                                 </motion.g>
                             );
                         })}
-                        {s.band && <motion.rect initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} x={s.band.x - 3} y={s.band.y + STICK.h / 2 - 5} width={52} height={10} rx={3} fill="#e11d48" />}
-                        {s.total && <motion.text initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} x={W / 2} y={height - 12} textAnchor="middle" fontSize={22} fontWeight={800} fill="#059669">= {s.total}</motion.text>}
+                        {s.band && <motion.rect initial={{ scaleX: 0 }} animate={{ scaleX: 1 }} x={s.band.x - 3} y={s.band.y + STICK.h / 2 - 5} width={52} height={10} rx={3} fill="#C23B29" />}
+                        {s.total && <motion.text initial={{ opacity: 0, y: 10 }} animate={{ opacity: 1, y: 0 }} x={W / 2} y={height - 12} textAnchor="middle" fontSize={22} fontWeight={800} fill="#1A7A56">= {s.total}</motion.text>}
                     </svg>
                 );
             }}

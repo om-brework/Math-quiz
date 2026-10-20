@@ -48,7 +48,7 @@ export function AnimFrame({ title, steps, children, auto = true, interval = 2200
     const btn = 'flex size-10 items-center justify-center rounded-full border-2 border-slate-200 bg-white text-slate-600 hover:bg-slate-50 disabled:opacity-30 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300';
     return (
         <MotionConfig reducedMotion="user">
-            <figure ref={ref} className="anim not-prose my-5 overflow-hidden rounded-3xl border-2 border-sky-100 bg-gradient-to-b from-sky-50 to-white dark:border-slate-700 dark:from-slate-900 dark:to-slate-950">
+            <figure ref={ref} className="anim not-prose my-5 overflow-hidden rounded-2xl border border-sky-100 bg-gradient-to-b from-sky-50 to-white dark:border-slate-700 dark:from-slate-900 dark:to-slate-950">
                 {title && <figcaption className="flex items-center gap-2 px-4 pt-3 text-xs font-bold tracking-wide text-sky-700 uppercase dark:text-sky-300">
                     <Play className="size-3.5 fill-current" /> {title}
                 </figcaption>}
@@ -61,11 +61,11 @@ export function AnimFrame({ title, steps, children, auto = true, interval = 2200
                     <div className="mt-3 flex items-center justify-center gap-2">
                         <button type="button" className={btn} onClick={() => { setPlaying(false); setI(Math.max(0, i - 1)); }} disabled={i === 0} aria-label="Langkah sebelumnya"><SkipBack className="size-4" /></button>
                         {i < last ? (
-                            <button type="button" className="flex h-10 items-center gap-1.5 rounded-full bg-sky-600 px-4 font-bold text-white shadow-[0_3px_0_#0369a1] active:translate-y-0.5" onClick={() => setPlaying(!playing)}>
+                            <button type="button" className="flex h-10 items-center gap-1.5 rounded-full bg-sky-600 px-4 font-bold text-white shadow-sm active:translate-y-0.5" onClick={() => setPlaying(!playing)}>
                                 {playing ? <><Pause className="size-4" /> Jeda</> : <><Play className="size-4 fill-current" /> Putar</>}
                             </button>
                         ) : (
-                            <button type="button" className="flex h-10 items-center gap-1.5 rounded-full bg-emerald-600 px-4 font-bold text-white shadow-[0_3px_0_#047857] active:translate-y-0.5" onClick={() => { setI(0); setPlaying(true); }}>
+                            <button type="button" className="flex h-10 items-center gap-1.5 rounded-full bg-brand-700 px-4 font-bold text-white shadow-sm active:translate-y-0.5" onClick={() => { setI(0); setPlaying(true); }}>
                                 <RotateCcw className="size-4" /> Ulang
                             </button>
                         )}

@@ -24,7 +24,7 @@ export default function Beranda({ grade, grades, topics, hasAccess }: { grade: s
         <SiswaLayout title="Belajar" wide>
             <div className="mb-6 flex flex-wrap items-end gap-3">
                 <div className="flex-1">
-                    <p className="text-sm font-semibold text-emerald-700 dark:text-emerald-400">Halo, {s.name}!</p>
+                    <p className="text-sm font-semibold text-brand-700 dark:text-brand-400">Halo, {s.name}!</p>
                     <h1 className="font-display text-3xl leading-tight font-bold">{grades[grade]}</h1>
                     <p className="text-sm text-slate-500">{topics.length} topik · {practiced} sudah dilatih</p>
                 </div>
@@ -36,15 +36,15 @@ export default function Beranda({ grade, grades, topics, hasAccess }: { grade: s
                 </label>
             </div>
             {!hasAccess && (
-                <div className="mb-5 rounded-2xl border-2 border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
+                <div className="mb-5 rounded-2xl border border-amber-200 bg-amber-50 p-4 text-sm text-amber-900 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-200">
                     Topik bergembok bisa dibuka setelah orang tuamu berlangganan. Topik pertama di setiap kelas tetap gratis.
                 </div>
             )}
             <ol className="grid gap-3 sm:grid-cols-2">
                 {topics.map((t) => (
                     <li key={t.id}>
-                        <Link href={route('siswa.topic', t.id)} className={cn('group flex h-full gap-3 rounded-2xl border-2 bg-white p-4 transition hover:-translate-y-0.5 dark:bg-slate-900', t.locked ? 'border-slate-200 opacity-75 dark:border-slate-800' : 'border-emerald-100 shadow-[0_4px_0_#d1fae9] dark:border-slate-700 dark:shadow-none')}>
-                            <span className={cn('font-display flex size-11 flex-none items-center justify-center rounded-xl text-xl font-bold', t.locked ? 'bg-slate-100 text-slate-400 dark:bg-slate-800' : 'bg-emerald-600 text-white')}>
+                        <Link href={route('siswa.topic', t.id)} className={cn('group flex h-full gap-3 rounded-2xl border bg-white p-4 transition-colors dark:bg-slate-900', t.locked ? 'border-slate-200 opacity-75 dark:border-slate-800' : 'border-slate-200 hover:border-brand-300 dark:border-slate-700')}>
+                            <span className={cn('font-display flex size-10 flex-none items-center justify-center rounded-lg text-lg font-bold', t.locked ? 'bg-slate-100 text-slate-400 dark:bg-slate-800' : 'bg-brand-50 text-brand-700 ring-1 ring-brand-100 tabular-nums dark:bg-brand-900/40 dark:text-brand-200 dark:ring-brand-800')}>
                                 {t.locked ? <Lock className="size-5" /> : t.number}
                             </span>
                             <span className="flex min-w-0 flex-1 flex-col gap-1">
@@ -52,7 +52,7 @@ export default function Beranda({ grade, grades, topics, hasAccess }: { grade: s
                                 <span className="line-clamp-2 text-xs text-slate-500">{t.scope}</span>
                                 <span className="mt-auto flex items-center gap-3 pt-1 text-xs font-semibold text-slate-500">
                                     <span className="flex items-center gap-1"><BookOpen className="size-3.5" /> {t.minutes} menit</span>
-                                    {t.hasPractice ? <span className="flex items-center gap-1 text-emerald-700 dark:text-emerald-400"><PencilLine className="size-3.5" /> Latihan</span> : <span>Latihan segera</span>}
+                                    {t.hasPractice ? <span className="flex items-center gap-1 text-brand-700 dark:text-brand-400"><PencilLine className="size-3.5" /> Latihan</span> : <span>Latihan segera</span>}
                                     <span className="flex-1" />
                                     {t.hasPractice && <Stars mastery={t.mastery} />}
                                 </span>

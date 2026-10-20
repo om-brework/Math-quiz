@@ -139,7 +139,7 @@ export function LongDivisionWidget({ step, onDone }: { step: LongDivisionStep; o
                     </p>
                     <div className="flex items-center gap-3">
                         <span aria-live="polite" className="flex h-12 min-w-20 items-center justify-center rounded-xl border-2 border-sky-400 px-3 text-2xl font-bold">{typed}</span>
-                        <button type="button" onClick={commit} disabled={!typed} className="rounded-xl bg-emerald-600 px-5 py-3 font-bold text-white disabled:opacity-40">Periksa</button>
+                        <button type="button" onClick={commit} disabled={!typed} className="rounded-xl bg-brand-600 px-5 py-3 font-bold text-white disabled:opacity-40">Periksa</button>
                     </div>
                     <Keypad onDigit={(d) => { setWrong(false); setTyped((t) => (t + d).slice(0, 4)); }} onErase={() => setTyped((t) => t.slice(0, -1))} />
                 </>

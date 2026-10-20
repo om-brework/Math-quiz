@@ -38,7 +38,7 @@ export function BangunAnim({ titik, sisi, sudut = [], lingkaran = [], langkah, t
                     <svg viewBox={`0 0 ${W} ${H}`} width="100%" style={{ maxWidth: W }} className="text-slate-700 dark:text-slate-200" role="img" aria-label={s.say}>
                         {lingkaran.slice(0, nl).map((c, j) => {
                             const [x, y] = [ox + (c.pusat[0] - minX) * k, H - (oy + (c.pusat[1] - minY) * k)];
-                            return <motion.circle key={`l${j}`} cx={x} cy={y} r={c.r * k} fill="none" stroke="#38bdf8" strokeWidth={2.5} initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.2 }} />;
+                            return <motion.circle key={`l${j}`} cx={x} cy={y} r={c.r * k} fill="none" stroke="#6F8BEA" strokeWidth={2.5} initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 1.2 }} />;
                         })}
                         {sisi.slice(0, ns).map(([a, b, label], j) => {
                             const [x1, y1] = P(a), [x2, y2] = P(b);
@@ -47,7 +47,7 @@ export function BangunAnim({ titik, sisi, sudut = [], lingkaran = [], langkah, t
                             const nx = mx - cx, ny = my - cy, len = Math.hypot(nx, ny) || 1;
                             return (
                                 <g key={`s${j}`}>
-                                    <motion.line x1={x1} y1={y1} x2={x2} y2={y2} stroke={on ? '#f97316' : 'currentColor'} strokeWidth={on ? 5 : 3} strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6 }} />
+                                    <motion.line x1={x1} y1={y1} x2={x2} y2={y2} stroke={on ? '#E2761F' : 'currentColor'} strokeWidth={on ? 5 : 3} strokeLinecap="round" initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} transition={{ duration: 0.6 }} />
                                     {label && <foreignObject x={mx + (nx / len) * 18 - 40} y={my + (ny / len) * 18 - 12} width={80} height={24}><div className={`text-center text-sm font-bold ${on ? 'text-orange-600' : ''}`}><MathText>{`$${label}$`}</MathText></div></foreignObject>}
                                 </g>
                             );
@@ -64,7 +64,7 @@ export function BangunAnim({ titik, sisi, sudut = [], lingkaran = [], langkah, t
                                 : `M ${p1[0]} ${p1[1]} A ${r} ${r} 0 0 ${d > 0 ? 1 : 0} ${p2[0]} ${p2[1]}`;
                             return (
                                 <g key={`a${j}`}>
-                                    <motion.path d={path} fill="none" stroke={on ? '#f97316' : '#a855f7'} strokeWidth={2.6} initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} />
+                                    <motion.path d={path} fill="none" stroke={on ? '#E2761F' : '#7E5FC0'} strokeWidth={2.6} initial={{ pathLength: 0 }} animate={{ pathLength: 1 }} />
                                     {g.label && <foreignObject x={x + 44 * Math.cos(mid) - 34} y={y + 44 * Math.sin(mid) - 12} width={68} height={24}><div className="text-center text-sm font-bold text-violet-600 dark:text-violet-300"><MathText>{`$${g.label}$`}</MathText></div></foreignObject>}
                                 </g>
                             );
@@ -74,7 +74,7 @@ export function BangunAnim({ titik, sisi, sudut = [], lingkaran = [], langkah, t
                             return (
                                 <g key={n}>
                                     <circle cx={x} cy={y} r={4} fill="currentColor" />
-                                    <text x={x + (dx / len) * 16} y={y + (dy / len) * 16 + 5} textAnchor="middle" fontSize={15} fontWeight={800} fill={hot.has(n) ? '#ea580c' : 'currentColor'}>{n}</text>
+                                    <text x={x + (dx / len) * 16} y={y + (dy / len) * 16 + 5} textAnchor="middle" fontSize={15} fontWeight={800} fill={hot.has(n) ? '#C65D16' : 'currentColor'}>{n}</text>
                                 </g>
                             );
                         })}

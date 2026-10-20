@@ -12,7 +12,7 @@ interface Props {
 
 export default function MateriPage({ topic, locked, prev, next }: Props) {
     const practice = topic.hasPractice && !locked && (
-        <Link href={route('siswa.practice', topic.id)} className="flex items-center justify-center gap-2 rounded-2xl bg-emerald-600 px-5 py-3 text-lg font-bold text-white shadow-[0_4px_0_#065f46] active:translate-y-0.5">
+        <Link href={route('siswa.practice', topic.id)} className="flex items-center justify-center gap-2 rounded-2xl bg-brand-600 px-5 py-3 text-lg font-bold text-white shadow-sm active:translate-y-0.5">
             <PencilLine className="size-5" /> Mulai latihan
         </Link>
     );
@@ -21,16 +21,16 @@ export default function MateriPage({ topic, locked, prev, next }: Props) {
             <button type="button" onClick={() => router.get(route('siswa.home'), { kelas: topic.grade })} className="mb-3 flex items-center gap-1 text-sm font-semibold text-slate-500 hover:text-slate-800">
                 <ArrowLeft className="size-4" /> {topic.gradeName}
             </button>
-            <p className="text-sm font-bold text-emerald-700 dark:text-emerald-400">Topik {topic.number} · {topic.minutes} menit</p>
+            <p className="text-sm font-bold text-brand-700 dark:text-brand-400">Topik {topic.number} · {topic.minutes} menit</p>
             <h1 className="font-display mb-2 text-3xl leading-tight font-bold sm:text-4xl">{topic.title}</h1>
             {topic.prerequisites.length > 0 && (
                 <p className="mb-4 text-sm text-slate-500">
                     Sebaiknya sudah paham:{' '}
-                    {topic.prerequisites.map((p, i) => <span key={p.id}>{i > 0 && ', '}<Link className="font-semibold text-emerald-700 underline dark:text-emerald-400" href={route('siswa.topic', p.id)}>{p.title}</Link></span>)}
+                    {topic.prerequisites.map((p, i) => <span key={p.id}>{i > 0 && ', '}<Link className="font-semibold text-brand-700 underline dark:text-brand-400" href={route('siswa.topic', p.id)}>{p.title}</Link></span>)}
                 </p>
             )}
             {locked ? (
-                <div className="mt-6 flex flex-col items-center gap-3 rounded-3xl border-2 border-amber-200 bg-amber-50 p-8 text-center dark:border-amber-900 dark:bg-amber-950/40">
+                <div className="mt-6 flex flex-col items-center gap-3 rounded-2xl border border-amber-200 bg-amber-50 p-8 text-center dark:border-amber-900 dark:bg-amber-950/40">
                     <Lock className="size-10 text-amber-600" />
                     <p className="font-display text-xl font-bold">Topik ini masih terkunci</p>
                     <p className="text-sm text-slate-600 dark:text-slate-300">Minta orang tuamu untuk berlangganan supaya semua materi dan latihan terbuka.</p>

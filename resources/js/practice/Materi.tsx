@@ -89,13 +89,13 @@ function bullets(body: string): { intro: string; items: string[] } {
 /* ---------- Kartu ---------- */
 
 const THEME: Record<string, { icon: LucideIcon; ring: string; head: string; chip: string }> = {
-    kenapa: { icon: Lightbulb, ring: 'border-amber-200 bg-amber-50 dark:border-amber-900 dark:bg-amber-950/30', head: 'text-amber-800 dark:text-amber-300', chip: 'bg-amber-400' },
-    analogi: { icon: Sparkles, ring: 'border-violet-200 bg-violet-50 dark:border-violet-900 dark:bg-violet-950/30', head: 'text-violet-800 dark:text-violet-300', chip: 'bg-violet-500' },
-    konsep: { icon: BookOpen, ring: 'border-sky-200 bg-white dark:border-sky-900 dark:bg-slate-900', head: 'text-sky-800 dark:text-sky-300', chip: 'bg-sky-500' },
-    contoh: { icon: ListOrdered, ring: 'border-emerald-200 bg-white dark:border-emerald-900 dark:bg-slate-900', head: 'text-emerald-800 dark:text-emerald-300', chip: 'bg-emerald-500' },
-    kesalahan: { icon: AlertTriangle, ring: 'border-rose-200 bg-rose-50/60 dark:border-rose-900 dark:bg-rose-950/20', head: 'text-rose-800 dark:text-rose-300', chip: 'bg-rose-500' },
-    ringkasan: { icon: CheckCircle2, ring: 'border-emerald-200 bg-emerald-50 dark:border-emerald-900 dark:bg-emerald-950/30', head: 'text-emerald-800 dark:text-emerald-300', chip: 'bg-emerald-500' },
-    cek: { icon: PencilLine, ring: 'border-orange-200 bg-orange-50/60 dark:border-orange-900 dark:bg-orange-950/20', head: 'text-orange-800 dark:text-orange-300', chip: 'bg-orange-500' },
+    kenapa: { icon: Lightbulb, ring: 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300' },
+    analogi: { icon: Sparkles, ring: 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-violet-100 text-violet-700 dark:bg-violet-900/40 dark:text-violet-300' },
+    konsep: { icon: BookOpen, ring: 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-brand-100 text-brand-700 dark:bg-brand-900/50 dark:text-brand-200' },
+    contoh: { icon: ListOrdered, ring: 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-brand-100 text-brand-700 dark:bg-brand-900/50 dark:text-brand-200' },
+    kesalahan: { icon: AlertTriangle, ring: 'border-rose-200 bg-rose-50/50 dark:border-rose-900 dark:bg-rose-950/20', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-rose-100 text-rose-700 dark:bg-rose-900/40 dark:text-rose-300' },
+    ringkasan: { icon: CheckCircle2, ring: 'border-emerald-200 bg-emerald-50/60 dark:border-emerald-900 dark:bg-emerald-950/20', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-emerald-100 text-emerald-700 dark:bg-emerald-900/40 dark:text-emerald-300' },
+    cek: { icon: PencilLine, ring: 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900', head: 'text-slate-900 dark:text-slate-50', chip: 'bg-amber-100 text-amber-700 dark:bg-amber-900/40 dark:text-amber-300' },
     lain: { icon: BookOpen, ring: 'border-slate-200 bg-white dark:border-slate-800 dark:bg-slate-900', head: 'text-slate-800 dark:text-slate-200', chip: 'bg-slate-400' },
 };
 
@@ -117,14 +117,13 @@ function Card({ title, kind, children }: { title: string; kind: keyof typeof THE
     const th = THEME[kind];
     const Icon = th.icon;
     return (
-        <motion.section id={slug(title)} initial={{ opacity: 0, y: 24 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: true, margin: '-60px' }} transition={{ duration: 0.45 }}
-            className={cn('-mx-1 scroll-mt-20 rounded-3xl border-2 p-4 sm:mx-0 sm:p-7', th.ring)}>
-            <h2 className={cn('font-display mb-3 flex items-center gap-3 text-2xl leading-tight font-bold sm:text-3xl', th.head)}>
-                <span className={cn('flex size-11 flex-none items-center justify-center rounded-2xl text-white shadow-sm', th.chip)}><Icon className="size-6" /></span>
+        <section id={slug(title)} className={cn('-mx-1 scroll-mt-20 rounded-2xl border p-4 shadow-[0_1px_2px_rgb(26_31_54/0.04)] sm:mx-0 sm:p-7', th.ring)}>
+            <h2 className={cn('font-display mb-4 flex items-center gap-3 text-xl leading-tight font-bold sm:text-2xl', th.head)}>
+                <span className={cn('flex size-9 flex-none items-center justify-center rounded-lg', th.chip)}><Icon className="size-5" /></span>
                 {title}
             </h2>
             {children}
-        </motion.section>
+        </section>
     );
 }
 
@@ -145,14 +144,14 @@ function Example({ title, body }: { title: string; body: string }) {
     const all = shown >= items.length;
     if (interactive) {
         return (
-            <div className="-mx-2 mt-5 overflow-hidden rounded-2xl border-2 border-emerald-100 sm:mx-0 dark:border-emerald-900">
-                <h3 className="bg-emerald-600 px-4 py-2 font-bold text-white">{title}</h3>
-                <div className="p-3 sm:p-4"><Md>{body.replace(/^\*\*Jawaban.*$/m, '').replace(/^\*\*Soal\.\*\*.*$/m, '')}</Md></div>
+            <div className="mt-6">
+                <h3 className="text-lg font-bold text-slate-900 dark:text-slate-50">{title}</h3>
+                <Md>{body.replace(/^\*\*Jawaban.*$/m, '').replace(/^\*\*Soal\.\*\*.*$/m, '')}</Md>
             </div>
         );
     }
     return (
-        <div className="-mx-2 mt-5 overflow-hidden rounded-2xl border-2 border-emerald-100 sm:mx-0 dark:border-emerald-900">
+        <div className="-mx-2 mt-5 overflow-hidden rounded-2xl border border-emerald-100 sm:mx-0 dark:border-emerald-900">
             <h3 className="bg-emerald-600 px-4 py-2 font-bold text-white">{title}</h3>
             <div className="p-3 sm:p-4">
                 {intro && <Md>{intro}</Md>}
@@ -167,7 +166,7 @@ function Example({ title, body }: { title: string; body: string }) {
                 )}
                 {!all ? (
                     <div className="mt-3 flex flex-wrap gap-2">
-                        <button type="button" onClick={() => setShown(shown + 1)} className="flex items-center gap-1.5 rounded-full bg-emerald-600 px-4 py-2 font-bold text-white shadow-[0_3px_0_#047857] active:translate-y-0.5">
+                        <button type="button" onClick={() => setShown(shown + 1)} className="flex items-center gap-1.5 rounded-full bg-emerald-600 px-4 py-2 font-bold text-white shadow-sm active:translate-y-0.5">
                             Langkah berikutnya <ChevronDown className="size-4" />
                         </button>
                         <button type="button" onClick={() => setShown(items.length)} className="rounded-full px-3 py-2 text-sm font-semibold text-slate-500 hover:bg-slate-100 dark:hover:bg-slate-800">Tampilkan semua</button>
@@ -263,7 +262,7 @@ export function Materi({ body }: { body: string }) {
                     const th = THEME[kindOf(s.title)];
                     const Icon = th.icon;
                     return (
-                        <a key={s.title} href={`#${slug(s.title)}`} className="flex flex-none items-center gap-1.5 rounded-full border-2 border-slate-200 bg-white px-3 py-1.5 text-sm font-bold whitespace-nowrap text-slate-600 hover:border-slate-300 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
+                        <a key={s.title} href={`#${slug(s.title)}`} className="flex flex-none items-center gap-1.5 rounded-full border border-slate-200 bg-white px-3 py-1.5 text-sm font-semibold whitespace-nowrap text-slate-600 hover:border-brand-300 hover:text-brand-700 dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
                             <Icon className="size-4" /> {s.title}
                         </a>
                     );
@@ -288,7 +287,7 @@ export function Materi({ body }: { body: string }) {
                             {sub.intro && <Md>{sub.intro}</Md>}
                             <div className="flex flex-col gap-4">
                                 {sub.list.map((c) => (
-                                    <div key={c.title} className="rounded-2xl border-2 border-sky-100 bg-sky-50/40 p-4 dark:border-sky-900 dark:bg-sky-950/20">
+                                    <div key={c.title} className="rounded-2xl border border-sky-100 bg-sky-50/40 p-4 dark:border-sky-900 dark:bg-sky-950/20">
                                         <h3 className="mb-1 text-lg font-extrabold text-sky-900 dark:text-sky-200">{c.title}</h3>
                                         <Md>{c.body}</Md>
                                     </div>

@@ -55,13 +55,13 @@ export function idNum(n: number): string {
 
 /** Warna bernama (bahasa Indonesia) → [isi, garis]. */
 const PALETTE: Record<string, [string, string]> = {
-    merah: ['#ef4444', '#b91c1c'],
+    merah: ['#D9503D', '#b91c1c'],
     biru: ['#3b82f6', '#1d4ed8'],
     kuning: ['#facc15', '#a16207'],
-    hijau: ['#22c55e', '#15803d'],
+    hijau: ['#279469', '#15803d'],
     oranye: ['#fb923c', '#c2410c'],
     jingga: ['#fb923c', '#c2410c'],
-    ungu: ['#a855f7', '#7e22ce'],
+    ungu: ['#7E5FC0', '#7e22ce'],
     'merah muda': ['#f472b6', '#be185d'],
     pink: ['#f472b6', '#be185d'],
     coklat: ['#a16207', '#713f12'],

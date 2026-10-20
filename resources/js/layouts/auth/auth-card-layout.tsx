@@ -13,7 +13,7 @@ export default function AuthCardLayout({
     description?: string;
 }) {
     return (
-        <div className="flex min-h-svh flex-col items-center justify-center gap-6 bg-[#fffaf2] p-6 md:p-10 dark:bg-zinc-950">
+        <div className="flex min-h-svh flex-col items-center justify-center gap-6 p-6 md:p-10 dark:bg-zinc-950">
             <div className="flex w-full max-w-md flex-col gap-6">
                 <Link href={route('home')} className="flex w-fit items-center self-center" aria-label="Langkah, ke beranda">
                     <AppLogo />

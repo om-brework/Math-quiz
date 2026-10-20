@@ -14,7 +14,7 @@ export function PecahanAnim({ parts, shaded, shape = 'lingkaran', name, title }:
         out.push({ say: `${shaded} dari ${parts} bagian = $\\frac{${shaded}}{${parts}}$. Pembilang ${shaded} (yang diambil), penyebut ${parts} (semua bagian).`, tag: 'Pecahan', cut: true, n: shaded });
         return out;
     }, [parts, shaded, benda]);
-    const fill = shape === 'lingkaran' ? '#fbbf24' : '#a16207', on = shape === 'lingkaran' ? '#ef4444' : '#f472b6';
+    const fill = shape === 'lingkaran' ? '#EFAA3C' : '#a16207', on = shape === 'lingkaran' ? '#D9503D' : '#f472b6';
     return (
         <AnimFrame title={title ?? 'Animasi pecahan'} steps={states} interval={1700}>
             {(i) => {

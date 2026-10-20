@@ -131,7 +131,7 @@ export function Solid({ solid }: { solid: SolidName }) {
             body = (
                 <>
                     <path d={`M${x} ${y} L${x + dx} ${y + dy} H${x + dx + bw} L${x + bw} ${y}Z`} fill="#bbf7d0" {...edge} />
-                    <path d={`M${x + bw} ${y} L${x + bw + dx} ${y + dy} V${y + dy + bh} L${x + bw} ${y + bh}Z`} fill="#16a34a" {...edge} />
+                    <path d={`M${x + bw} ${y} L${x + bw + dx} ${y + dy} V${y + dy + bh} L${x + bw} ${y + bh}Z`} fill="#1A7A56" {...edge} />
                     <rect x={x} y={y} width={bw} height={bh} fill="#4ade80" {...edge} />
                     <path d={`M${x + dx} ${y + dy + bh} L${x} ${y + bh} M${x + dx} ${y + dy + bh} H${x + dx + bw} M${x + dx} ${y + dy + bh} V${y + dy}`} {...dash} />
                 </>

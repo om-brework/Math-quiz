@@ -37,12 +37,12 @@ export function SoalBlock({ source }: { source: string }) {
     if (!parsed) return <div className="my-3 rounded-xl border-2 border-dashed border-rose-300 bg-rose-50 p-3 text-sm text-rose-700">Soal tidak bisa ditampilkan: format JSON salah.</div>;
     const q = toQuestion(parsed);
     return (
-        <div className="not-prose my-4 overflow-hidden rounded-2xl border-2 border-sky-200 bg-white dark:border-sky-900 dark:bg-slate-900">
-            <div className="flex items-center gap-2 bg-sky-600 px-4 py-2 text-white">
+        <div className="not-prose my-4 overflow-hidden rounded-2xl border border-slate-200 bg-white dark:border-slate-700 dark:bg-slate-900">
+            <div className="flex items-center gap-2 border-b border-slate-200 bg-brand-50 px-4 py-2 text-brand-800 dark:border-slate-700 dark:bg-brand-950 dark:text-brand-100">
                 <PencilLine className="size-4" />
                 <b className="flex-1">{parsed.title ?? 'Coba kerjakan'}</b>
                 {done && (
-                    <button type="button" onClick={() => { setRound(round + 1); setDone(false); }} className="flex items-center gap-1 rounded-full bg-white/20 px-3 py-1 text-sm font-bold hover:bg-white/30">
+                    <button type="button" onClick={() => { setRound(round + 1); setDone(false); }} className="flex items-center gap-1 rounded-full bg-white px-3 py-1 text-sm font-semibold ring-1 ring-brand-200 hover:bg-brand-100 dark:bg-brand-900 dark:ring-brand-800">
                         <RotateCcw className="size-3.5" /> Ulangi
                     </button>
                 )}

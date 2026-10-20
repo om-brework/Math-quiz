@@ -136,7 +136,7 @@ export function ColumnWidget({ step, onDone }: { step: ColumnStep; onDone: (r: O
                     </p>
                     <Keypad onDigit={put} onErase={erase} />
                     <button type="button" onClick={submit} disabled={result.every((r) => r === '')}
-                        className="w-full max-w-sm rounded-xl bg-emerald-600 py-3 text-lg font-bold text-white disabled:opacity-40">
+                        className="w-full max-w-sm rounded-xl bg-brand-600 py-3 text-lg font-bold text-white disabled:opacity-40">
                         Periksa
                     </button>
                     {check && <p className="text-sm font-semibold text-rose-600">Kotak merah belum tepat. Coba lagi ({MAX_TRIES - tries} kesempatan).</p>}
