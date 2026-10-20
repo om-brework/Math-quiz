@@ -108,7 +108,7 @@ $$s = \text{Keliling} \div 4$$
                 10 cm
 ```
 
-1. **Langkah 1: Cari sisi yang belum tertulis.** Ada dua sisi tanpa angka: sisi datar di tengah dan sisi tegak di kanan atas.
+1. **Langkah 1: Cari sisi yang belum tertulis.** Hanya satu sisi tanpa angka, yaitu sisi datar di tengah. Sisi tegak di kanan atas perlu dicek.
    - Sisi datar: $10 - 4 = 6$ cm.
    - Sisi tegak kanan B sudah tertulis 5 cm. Cek: $5 + 3 = 8$ cm, sama dengan sisi kiri.
 2. **Langkah 2: Jumlahkan semua sisi luar (keliling).** Berjalan menyusuri pagar mulai dari kiri bawah: $10 + 3 + 6 + 5 + 4 + 8 = 36$ cm.

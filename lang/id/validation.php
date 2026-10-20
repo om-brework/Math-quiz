@@ -1,0 +1,31 @@
+<?php
+
+return [
+    'accepted' => ':attribute harus disetujui.',
+    'alpha_dash' => ':attribute hanya boleh berisi huruf, angka, tanda hubung, dan garis bawah.',
+    'array' => ':attribute harus berupa daftar.',
+    'between' => ['numeric' => ':attribute harus antara :min dan :max.', 'string' => ':attribute harus antara :min dan :max karakter.', 'array' => ':attribute harus berisi :min sampai :max item.'],
+    'boolean' => ':attribute harus benar atau salah.',
+    'confirmed' => 'Konfirmasi :attribute tidak cocok.',
+    'current_password' => 'Kata sandi salah.',
+    'digits_between' => ':attribute harus :min sampai :max angka.',
+    'email' => ':attribute harus alamat email yang valid.',
+    'exists' => ':attribute yang dipilih tidak ditemukan.',
+    'in' => ':attribute yang dipilih tidak valid.',
+    'integer' => ':attribute harus bilangan bulat.',
+    'lowercase' => ':attribute harus huruf kecil.',
+    'max' => ['numeric' => ':attribute tidak boleh lebih dari :max.', 'string' => ':attribute tidak boleh lebih dari :max karakter.', 'array' => ':attribute tidak boleh lebih dari :max item.'],
+    'min' => ['numeric' => ':attribute minimal :min.', 'string' => ':attribute minimal :min karakter.', 'array' => ':attribute minimal :min item.'],
+    'numeric' => ':attribute harus berupa angka.',
+    'password' => ['letters' => ':attribute harus berisi huruf.', 'mixed' => ':attribute harus berisi huruf besar dan kecil.', 'numbers' => ':attribute harus berisi angka.', 'symbols' => ':attribute harus berisi simbol.', 'uncompromised' => ':attribute ini pernah bocor di internet. Pilih yang lain.'],
+    'present' => ':attribute wajib ada.',
+    'regex' => 'Format :attribute tidak valid.',
+    'required' => ':attribute wajib diisi.',
+    'string' => ':attribute harus berupa teks.',
+    'unique' => ':attribute sudah dipakai.',
+    'attributes' => [
+        'name' => 'nama', 'email' => 'email', 'password' => 'kata sandi', 'phone' => 'nomor WhatsApp', 'grade' => 'kelas', 'username' => 'username', 'pin' => 'PIN',
+        'avatar' => 'gambar', 'days' => 'jumlah hari', 'note' => 'catatan', 'price' => 'harga', 'period_months' => 'lama periode', 'max_students' => 'jumlah anak',
+        'slug' => 'kode paket', 'description' => 'keterangan', 'plan_id' => 'paket',
+    ],
+];

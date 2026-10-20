@@ -94,7 +94,8 @@ const SETENGAH = 'setengah putaran (30 menit)';
 const lama: Generator = (rng, level) => {
     const nama = rng.pick(NAMA);
     const keg = rng.pick(['les menggambar', 'latihan menari', 'bermain sepak bola', 'mengaji', 'les berenang', 'membaca di perpustakaan']);
-    let h = rng.int(1, 12), m: number, satuJam: boolean;
+    const h = rng.int(1, 12);
+    let m: number, satuJam: boolean;
     if (level === 1) { m = 0; satuJam = true; }
     else if (level === 2) { satuJam = rng.chance(0.5); m = satuJam ? rng.pick([15, 30, 45]) : 0; }
     else { satuJam = rng.chance(0.3); m = satuJam ? rng.pick([10, 20, 40, 50]) : rng.pick([30, 35, 40, 45]); }

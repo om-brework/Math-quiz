@@ -11,7 +11,7 @@ const sisaTabel: Generator = (rng, level) => {
     const r = rng.int(1, divisor - 1);
     const n = divisor * q + r;
     const steps: Step[] = [
-        { kind: 'number', id: 'kelipatan', prompt: `Cari kelipatan ${divisor} terbesar yang tidak lebih dari ${n}. ${divisor} × ? `, answer: String(q), suffix: `(${divisor} × ? ≤ ${n})`,
+        { kind: 'number', id: 'kelipatan', prompt: `Cari kelipatan ${divisor} terbesar yang tidak lebih dari ${n}: ${divisor} × ? ≤ ${n}`, answer: String(q),
           hint: `Hitung loncat ${divisor}: ${divisor}, ${divisor * 2}, ${divisor * 3}, … berhenti sebelum melewati ${n}.`, explain: `${divisor} × ${q} = ${divisor * q}, dan ${divisor} × ${q + 1} = ${divisor * (q + 1)} sudah lebih dari ${n}.`, error: 'tebakan-bagi-kebesaran' },
         { kind: 'number', id: 'sisa', prompt: `Berapa sisanya? ${n} − ${divisor * q} = ?`, answer: String(r),
           hint: `Kurangkan ${n} dengan ${divisor * q}.`, explain: `Sisa ${r}, dan ${r} lebih kecil dari ${divisor}, jadi sudah benar.`, error: 'salah-kurang-porogapit' },

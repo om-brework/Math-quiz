@@ -47,8 +47,9 @@ export function QuestionPlayer({ question, onFinish }: { question: Question; onF
                                 </span>
                                 <div className="font-semibold"><MathText>{step.prompt}</MathText></div>
                             </div>
-                            {!r ? <StepInput key={step.id} step={step} onDone={(d) => stepDone(step, d)} /> : (
-                                <div className="pl-9 text-sm text-slate-700 dark:text-slate-300">
+                            {(step.kind === 'column' || step.kind === 'longdiv') && <StepInput key={step.id} step={step} onDone={(d) => !r && stepDone(step, d)} />}
+                            {!r ? (step.kind !== 'column' && step.kind !== 'longdiv' && <StepInput key={step.id} step={step} onDone={(d) => stepDone(step, d)} />) : (
+                                <div className={cn('text-sm text-slate-700 dark:text-slate-300', step.kind === 'column' || step.kind === 'longdiv' ? 'mt-3 text-center' : 'pl-9')}>
                                     {step.kind !== 'column' && step.kind !== 'longdiv' && <p className="font-bold">{answerText(step)}</p>}
                                     <MathText>{step.explain}</MathText>
                                 </div>

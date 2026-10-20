@@ -117,7 +117,7 @@ $$10 \div 3 = 3{,}333\ldots \approx 3{,}33 \quad \text{(2 tempat desimal)}$$
 **Soal.** $9{,}45 \div 7 = \ldots$
 
 ```
-      1 , 3 5
+    1 , 3 5
     ---------
 7 ) 9 , 4 5
     7

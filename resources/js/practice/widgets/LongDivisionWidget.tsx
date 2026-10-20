@@ -117,7 +117,7 @@ export function LongDivisionWidget({ step, onDone }: { step: LongDivisionStep; o
                 else if (e.key === 'Backspace') { e.preventDefault(); setTyped((t) => t.slice(0, -1)); }
                 else if (e.key === 'Enter') { e.preventDefault(); commit(); }
             }}>
-            <div className="grid items-center gap-x-1 gap-y-1 font-mono tabular-nums" style={{ gridTemplateColumns: `2.5rem 0.75rem repeat(${cols}, 2.25rem)` }}>
+            <div className="grid items-center gap-x-0 gap-y-1 font-mono tabular-nums" style={{ gridTemplateColumns: `2.5rem 0.75rem repeat(${cols}, 2.5rem)` }}>
                 {/* baris hasil bagi */}
                 <span /><span />
                 {ds.map((_, at) => {
@@ -138,7 +138,7 @@ export function LongDivisionWidget({ step, onDone }: { step: LongDivisionStep; o
                         {wrong ? `Belum tepat. ${hint}` : hint}
                     </p>
                     <div className="flex items-center gap-3">
-                        <span className="min-w-16 rounded-xl border-2 border-sky-400 px-3 py-2 text-center text-2xl font-bold">{typed || ' '}</span>
+                        <span aria-live="polite" className="flex h-12 min-w-20 items-center justify-center rounded-xl border-2 border-sky-400 px-3 text-2xl font-bold">{typed}</span>
                         <button type="button" onClick={commit} disabled={!typed} className="rounded-xl bg-emerald-600 px-5 py-3 font-bold text-white disabled:opacity-40">Periksa</button>
                     </div>
                     <Keypad onDigit={(d) => { setWrong(false); setTyped((t) => (t + d).slice(0, 4)); }} onErase={() => setTyped((t) => t.slice(0, -1))} />

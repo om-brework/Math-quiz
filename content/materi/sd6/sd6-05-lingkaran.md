@@ -142,7 +142,7 @@ $$L = \frac{1}{2} \times 3{,}14 \times 10 \times 10 = \frac{1}{2} \times 314 = 1
 5. **Langkah 5: Tentukan sisi luar.** Pagar mengelilingi: dua sisi 20 m, satu sisi 14 m di kiri, dan lengkungan di kanan. Sisi 14 m di kanan berada di dalam taman, jadi tidak dipagari.
 6. **Langkah 6: Hitung lengkungan.** $\frac{1}{2} \times \frac{22}{7} \times 14 = \frac{1}{2} \times 44 = 22$ m.
 7. **Langkah 7: Jumlahkan pagar.** $20 + 20 + 14 + 22 = 76$ m.
-8. **Cek jawaban.** Luas setengah lingkaran (77 m²) lebih kecil dari persegi 14 m × 7 m (98 m²) yang memuatnya. Wajar. Lengkungan 22 m lebih panjang dari garis lurus 14 m. Wajar.
+8. **Cek jawaban.** Luas setengah lingkaran (77 m²) lebih kecil dari persegi panjang 14 m × 7 m (98 m²) yang memuatnya. Wajar. Lengkungan 22 m lebih panjang dari garis lurus 14 m. Wajar.
 
 **Jawaban:** Luas taman 357 m², panjang pagar 76 m.
 

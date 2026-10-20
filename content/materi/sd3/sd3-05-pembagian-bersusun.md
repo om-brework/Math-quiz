@@ -45,7 +45,7 @@ Kita tulis: 14 ÷ 3 = 4 sisa 2.
 Di sekolah Indonesia, pembagian bersusun ditulis dengan **porogapit**. Pembagi ditulis di kiri, yang dibagi di dalam "kurung", dan hasil bagi di atas.
 
 ```
-     2 4
+    2 4
    -----
 4 ) 9 6
     8
@@ -88,7 +88,7 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 **Soal.** 75 ÷ 6 = ...
 
 ```
-     1 2
+    1 2
    -----
 6 ) 7 5
     6

@@ -108,7 +108,8 @@ const nilaiTempat: Generator = (rng, level) => {
 const bandingkan: Generator = (rng, level) => {
     if (level === 1) {
         const [pa, pb] = berbeda(rng, 2, 1, 9);
-        let a = pa * 10 + rng.int(0, 9), b = pb * 10 + rng.int(0, 9);
+        const a = pa * 10 + rng.int(0, 9);
+        let b = pb * 10 + rng.int(0, 9);
         if (rng.chance(0.5) && sat(a) !== pa && sat(a) !== 0) b = tukar(a); // jebakan angka tertukar
         if (pul(a) === pul(b)) b = (pul(b) % 9 + 1) * 10 + sat(b);
         const besar = Math.max(a, b), kecil = Math.min(a, b);

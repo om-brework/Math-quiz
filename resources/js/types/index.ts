@@ -1,7 +1,23 @@
 import { LucideIcon } from 'lucide-react';
 
 export interface Auth {
-    user: User;
+    user: User | null;
+    /** siswa yang sedang login di guard "student" (bisa bersamaan dengan orang tua di perangkat yang sama) */
+    student: StudentUser | null;
+}
+
+export interface StudentUser {
+    id: number;
+    name: string;
+    grade: string;
+    avatar: string;
+    username: string;
+}
+
+export interface Flash {
+    success?: string | null;
+    error?: string | null;
+    pay?: { snapToken?: string; redirectUrl?: string; orderId?: string; paymentId?: number } | null;
 }
 
 export interface BreadcrumbItem {
@@ -23,8 +39,8 @@ export interface NavItem {
 
 export interface SharedData {
     name: string;
-    quote: { message: string; author: string };
     auth: Auth;
+    flash: Flash;
     [key: string]: unknown;
 }
 
@@ -32,6 +48,7 @@ export interface User {
     id: number;
     name: string;
     email: string;
+    role: 'admin' | 'parent';
     avatar?: string;
     email_verified_at: string | null;
     created_at: string;

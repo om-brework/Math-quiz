@@ -92,7 +92,7 @@ const jumlahSelisih: Generator = (rng, level) => {
             conclusion: `${labels[hi]} ${dg * skala} ${k.satuan} lebih banyak daripada ${labels[lo]}.` };
     }
     // tingkat 3: jumlah semua baris (4–5 baris)
-    const { k, labels, gambar, vis } = data(rng, rng.pick([4, 5]), skala, false);
+    const { k, gambar, vis } = data(rng, rng.pick([4, 5]), skala, false);
     const tg = gambar.reduce((a, b) => a + b, 0);
     const steps: Step[] = [
         skalaStep(skala, k.satuan),

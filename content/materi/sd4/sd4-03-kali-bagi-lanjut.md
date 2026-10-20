@@ -53,7 +53,7 @@ Ikuti empat tahap:
 **Soal.** $4.327 \times 6 = \ldots$
 
 ```
-    1 1 4      (simpanan)
+  1 1 4        (simpanan)
   4 3 2 7
 ×       6
 ---------
@@ -95,7 +95,7 @@ Ikuti empat tahap:
 **Soal.** $5.184 \div 6 = \ldots$
 
 ```
-        8 6 4
+      8 6 4
     ---------
 6 ) 5 1 8 4
     4 8
