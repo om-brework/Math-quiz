@@ -21,6 +21,14 @@ Bayangkan data sebagai **pemandangan**, dan setiap jenis penyajian adalah **kaca
 - **Diagram lingkaran** adalah kacamata "bagian dari keseluruhan": berapa bagian dari 100%.
 - **Piktogram** adalah kacamata menarik: cepat dimengerti, tetapi kurang teliti.
 
+```visual
+{"type": "table", "head": ["Buah", "Frekuensi"], "rows": [["Mangga", "8"], ["Jeruk", "5"], ["Pisang", "4"], ["Salak", "3"]], "caption": "Kacamata baca: tabel menampilkan angka tepat"}
+```
+
+```visual
+{"type": "barChart", "scaleStep": 2, "max": 10, "title": "Buah kesukaan 20 siswa", "unit": "siswa", "bars": [{"label": "Mangga", "value": 8}, {"label": "Jeruk", "value": 5}, {"label": "Pisang", "value": 4}, {"label": "Salak", "value": 3}], "caption": "Kacamata pembanding: data yang sama sebagai diagram batang"}
+```
+
 Ada juga **cermin lucu** di pasar malam yang membuat orang tampak gemuk atau kurus. Diagram yang menyesatkan seperti cermin lucu: datanya benar, tetapi bentuknya dibengkokkan.
 
 ## Konsep
@@ -44,13 +52,8 @@ Setiap kategori digambar sebagai batang. **Tinggi batang = frekuensi.** Batang m
 
 Data digambar dengan simbol. Setiap simbol mewakili jumlah tertentu yang ditulis di **keterangan**.
 
-```
-Buku yang dibaca bulan ini
-Keterangan: # = 4 buku, + = setengah simbol = 2 buku
-
-Budi   # # #
-Siti   # # # # #
-Made   # # +
+```visual
+{"type": "pictogram", "item": "buku", "scale": 4, "title": "Buku yang dibaca bulan ini", "rows": [{"label": "Budi", "value": 12}, {"label": "Siti", "value": 20}, {"label": "Made", "value": 10}], "caption": "Satu gambar = 4 buku, setengah gambar = 2 buku"}
 ```
 
 Di sini Budi membaca 12 buku, Siti 20 buku, dan Made 8 + 2 = 10 buku.
@@ -73,6 +76,12 @@ $$\text{sudut juring} = \frac{\text{frekuensi}}{\text{jumlah semua data}} \times
 
 Kenapa $360^\circ$? Karena seluruh data (100%) digambar sebagai satu lingkaran penuh.
 
+```anim
+{"type": "pecahan", "parts": 20, "shaded": 8, "shape": "lingkaran", "name": "8 dari 20 siswa", "title": "Juring mangga: 8 dari 20 siswa"}
+```
+
+Setiap siswa mendapat $\frac{360^\circ}{20} = 18^\circ$, jadi juring mangga $8 \times 18^\circ = 144^\circ$.
+
 - Kelebihan: bagian dari keseluruhan terlihat jelas.
 - Kekurangan: sulit membandingkan juring yang hampir sama besar; nilai tepat tidak terlihat tanpa label.
 
@@ -86,77 +95,285 @@ Beberapa cara cermin lucu bekerja:
 - **Diagram 3D yang dimiringkan.** Juring di depan tampak lebih besar.
 - **Tanpa judul, label, atau satuan.**
 
+Bandingkan dengan diagram jujur berikut. Toko A menjual 55 ponsel dan Toko B 50 ponsel. Kalau sumbu dimulai dari 45, batang A tampak dua kali batang B. Dengan sumbu dari 0, keduanya tampak hampir sama, sesuai kenyataan:
+
+```visual
+{"type": "barChart", "scaleStep": 10, "max": 60, "title": "Penjualan ponsel", "unit": "ponsel", "bars": [{"label": "Toko A", "value": 55}, {"label": "Toko B", "value": 50}], "caption": "Sumbu tegak mulai dari 0: selisihnya kecil"}
+```
+
 Saat membaca diagram, selalu periksa angka di sumbu, bukan hanya bentuknya.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Menabelkan data
 
-**Soal.** Buah kesukaan 20 siswa (M = mangga, J = jeruk, P = pisang, S = salak):
-
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Buah kesukaan 20 siswa (M = mangga, J = jeruk, P = pisang, S = salak): M J P M S M J P M M J S P M J M P J M S. Buat tabel frekuensi.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Ada berapa kategori buah?",
+   "answer": "4",
+   "hint": "M, J, P, S.",
+   "explain": "Empat kategori, setiap data masuk tepat satu.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2–3: Beri turus dan hitung. Frekuensi mangga?",
+   "answer": "8",
+   "hint": "Hitung semua huruf M, coret yang sudah dihitung.",
+   "explain": "Mangga 8.",
+   "error": "salah-membilang-benda"
+  },
+  {
+   "kind": "number",
+   "prompt": "Frekuensi jeruk?",
+   "answer": "5",
+   "hint": "Hitung huruf J.",
+   "explain": "Jeruk 5.",
+   "error": "salah-membilang-benda"
+  },
+  {
+   "kind": "number",
+   "prompt": "Frekuensi pisang?",
+   "answer": "4",
+   "hint": "Hitung huruf P.",
+   "explain": "Pisang 4, sehingga salak 3.",
+   "error": "salah-membilang-benda"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 8 + 5 + 4 + 3 = ?",
+   "answer": "20",
+   "hint": "Harus sama dengan banyak siswa.",
+   "explain": "20. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Mangga 8, jeruk 5, pisang 4, salak 3.",
+ "visual": {
+  "type": "table",
+  "head": [
+   "Buah",
+   "Turus",
+   "Frekuensi"
+  ],
+  "rows": [
+   [
+    "Mangga",
+    "?",
+    "?"
+   ],
+   [
+    "Jeruk",
+    "?",
+    "?"
+   ],
+   [
+    "Pisang",
+    "?",
+    "?"
+   ],
+   [
+    "Salak",
+    "?",
+    "?"
+   ]
+  ]
+ }
+}
 ```
-M J P M S M J P M M
-J S P M J M P J M S
-```
-
-Buat tabel frekuensi.
-
-Hasil akhir yang akan kita dapat dengan langkah-langkah di bawah:
-
-```
-Buah     | Turus      | Frekuensi
----------+------------+----------
-Mangga   | ||||/ |||  |    8
-Jeruk    | ||||/      |    5
-Pisang   | ||||       |    4
-Salak    | |||        |    3
----------+------------+----------
-Jumlah                |   20
-```
-
-Tanda ||||/ artinya lima: empat garis tegak dan satu garis miring melintang.
-
-1. **Langkah 1: Tentukan kategori.** Ada empat: M, J, P, S. Setiap data pasti masuk tepat satu kategori.
-2. **Langkah 2: Beri turus.** Baca data satu per satu dari kiri ke kanan. Setiap data diberi satu garis di baris buahnya, lalu dicoret dari daftar supaya tidak terhitung dua kali. Garis kelima selalu melintang, jadi mudah dihitung per lima.
-3. **Langkah 3: Hitung frekuensi.** Jumlahkan turus tiap baris: mangga 8, jeruk 5, pisang 4, salak 3.
-4. **Cek jawaban.** $8 + 5 + 4 + 3 = 20$, sama dengan banyak siswa.
-
-**Jawaban:** Mangga 8, jeruk 5, pisang 4, salak 3.
 
 ### Contoh 2: Menghitung sudut diagram lingkaran
 
-**Soal.** Gambarkan data Contoh 1 sebagai diagram lingkaran. Hitung sudut setiap juring.
-
-1. **Langkah 1: Hitung sudut per siswa.** $\frac{360^\circ}{20} = 18^\circ$ per siswa.
-2. **Langkah 2: Kalikan dengan frekuensi.** Mangga $8 \times 18^\circ = 144^\circ$. Jeruk $5 \times 18^\circ = 90^\circ$. Pisang $4 \times 18^\circ = 72^\circ$. Salak $3 \times 18^\circ = 54^\circ$.
-3. **Langkah 3: Lukis.** Tarik satu jari-jari, ukur $144^\circ$ dengan busur derajat, tarik jari-jari kedua, dan seterusnya. Beri label setiap juring.
-4. **Cek jawaban.** $144 + 90 + 72 + 54 = 360$. Lingkaran penuh.
-
-**Jawaban:** $144^\circ$, $90^\circ$, $72^\circ$, $54^\circ$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Gambarkan data Contoh 1 (mangga 8, jeruk 5, pisang 4, salak 3) sebagai diagram lingkaran. Hitung sudut setiap juring.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Sudut per siswa = 360° ÷ 20 = ?",
+   "answer": "18",
+   "hint": "Seluruh lingkaran untuk 20 siswa.",
+   "explain": "18° per siswa.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Juring mangga = 8 × 18° = ?",
+   "answer": "144",
+   "hint": "Kalikan frekuensi.",
+   "explain": "144°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Juring jeruk?",
+   "answer": "90",
+   "hint": "5 × 18°.",
+   "explain": "90°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Juring pisang?",
+   "answer": "72",
+   "hint": "4 × 18°.",
+   "explain": "72°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Juring salak?",
+   "answer": "54",
+   "hint": "3 × 18°.",
+   "explain": "54°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: jumlah semua juring?",
+   "answer": "360",
+   "hint": "144 + 90 + 72 + 54.",
+   "explain": "360°, lingkaran penuh.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Mangga 144°, jeruk 90°, pisang 72°, salak 54°."
+}
+```
 
 ### Contoh 3: Mengenali diagram yang menyesatkan
 
-**Soal.** Iklan Toko A memasang diagram batang: Toko A menjual 55 ponsel, Toko B 50 ponsel. Sumbu tegaknya mulai dari 45. Batang Toko A tampak dua kali tinggi batang Toko B. Benarkah Toko A menjual dua kali lipat?
-
-1. **Langkah 1: Ukur tinggi batang yang terlihat.** Toko A: $55 - 45 = 10$ satuan. Toko B: $50 - 45 = 5$ satuan. Memang tampak dua kali.
-2. **Langkah 2: Bandingkan data sebenarnya.** Selisihnya $55 - 50 = 5$ ponsel.
-3. **Langkah 3: Nyatakan dalam persen.** $\frac{5}{50} \times 100\% = 10\%$. Toko A hanya menjual 10% lebih banyak.
-4. **Langkah 4: Perbaiki diagram.** Mulai sumbu tegak dari 0. Tinggi batang 55 dan 50 akan tampak hampir sama.
-5. **Cek jawaban.** $50 \times 1{,}1 = 55$. Benar 10% lebih banyak, bukan 100%.
-
-**Jawaban:** Tidak. Toko A hanya menjual 10% lebih banyak; diagramnya menyesatkan karena sumbu tidak mulai dari 0.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Iklan Toko A memasang diagram batang: Toko A menjual 55 ponsel, Toko B 50 ponsel. Sumbu tegaknya mulai dari 45. Batang Toko A tampak dua kali tinggi batang Toko B. Benarkah Toko A menjual dua kali lipat?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Tinggi batang Toko A yang terlihat (55 − 45)?",
+   "answer": "10",
+   "hint": "Ukur dari 45.",
+   "explain": "10 satuan; Toko B 5 satuan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Selisih penjualan sebenarnya?",
+   "answer": "5",
+   "hint": "55 − 50.",
+   "explain": "5 ponsel.",
+   "error": "salah-langkah-materi",
+   "suffix": "ponsel"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Selisih itu berapa persen dari penjualan Toko B?",
+   "answer": "10",
+   "hint": "$\\frac{5}{50} \\times 100\\%$.",
+   "explain": "Hanya 10% lebih banyak.",
+   "error": "salah-langkah-materi",
+   "suffix": "%"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Cara memperbaiki diagram",
+   "options": [
+    "Mulai sumbu tegak dari 0",
+    "Perlebar batang Toko A",
+    "Hapus angka di sumbu"
+   ],
+   "answer": "Mulai sumbu tegak dari 0",
+   "hint": "Apa yang membuat selisih tampak besar?",
+   "explain": "Dengan sumbu dari 0, batang 55 dan 50 tampak hampir sama.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Tidak. Toko A hanya menjual 10% lebih banyak; diagramnya menyesatkan karena sumbu tidak mulai dari 0."
+}
+```
 
 ### Contoh 4: Soal cerita membaca diagram lingkaran
 
-**Soal.** Uang saku Putu sebulan Rp600.000. Diagram lingkaran pengeluarannya: makan $150^\circ$, transportasi $90^\circ$, tabungan $72^\circ$, lain-lain $48^\circ$. Berapa rupiah untuk setiap bagian?
-
-1. **Langkah 1: Pilih cara.** Seluruh lingkaran $360^\circ$ mewakili Rp600.000. Setiap juring adalah pecahan dari $360^\circ$, jadi uangnya pecahan yang sama dari Rp600.000.
-2. **Langkah 2: Makan.** $\frac{150}{360} \times 600.000 = \frac{5}{12} \times 600.000 = 250.000$.
-3. **Langkah 3: Transportasi.** $\frac{90}{360} = \frac{1}{4}$, jadi $150.000$.
-4. **Langkah 4: Tabungan dan lain-lain.** $\frac{72}{360} = \frac{1}{5}$, jadi $120.000$. $\frac{48}{360} = \frac{2}{15}$, jadi $80.000$.
-5. **Cek jawaban.** $250.000 + 150.000 + 120.000 + 80.000 = 600.000$. Cocok dengan uang saku.
-
-**Jawaban:** Makan Rp250.000, transportasi Rp150.000, tabungan Rp120.000, lain-lain Rp80.000.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Uang saku Putu sebulan Rp600.000. Diagram lingkaran pengeluarannya: makan 150°, transportasi 90°, tabungan 72°, lain-lain 48°. Berapa rupiah untuk setiap bagian?",
+ "steps": [
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 1: Juring makan adalah pecahan berapa dari lingkaran? ($\\frac{150}{360}$ paling sederhana)",
+   "answer": {
+    "num": 5,
+    "den": 12
+   },
+   "hint": "Bagi pembilang dan penyebut dengan 30.",
+   "explain": "$\\frac{150}{360} = \\frac{5}{12}$.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Uang makan?",
+   "answer": "250000",
+   "hint": "$\\frac{5}{12} \\times 600.000$.",
+   "explain": "Rp250.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Uang transportasi (90°)?",
+   "answer": "150000",
+   "hint": "90° adalah seperempat lingkaran.",
+   "explain": "Rp150.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Uang tabungan (72°)?",
+   "answer": "120000",
+   "hint": "$\\frac{72}{360} = \\frac{1}{5}$.",
+   "explain": "Rp120.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Uang lain-lain (48°)?",
+   "answer": "80000",
+   "hint": "$\\frac{48}{360} = \\frac{2}{15}$.",
+   "explain": "Rp80.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: jumlah keempatnya?",
+   "answer": "600000",
+   "hint": "Jumlahkan.",
+   "explain": "Rp600.000, sama dengan uang saku.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "Makan Rp250.000, transportasi Rp150.000, tabungan Rp120.000, lain-lain Rp80.000."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -176,16 +393,184 @@ Tanda ||||/ artinya lima: empat garis tegak dan satu garis miring melintang.
 
 ## Cek pemahaman
 
-1. Diagram apa yang paling cocok untuk menyajikan suhu udara setiap hari selama seminggu? Jelaskan.
-2. Dari 30 siswa, 12 siswa berjalan kaki ke sekolah. Berapa sudut juring untuk "jalan kaki" pada diagram lingkaran?
-3. Pada diagram lingkaran, juring $90^\circ$ mewakili 45 siswa. Berapa banyak siswa seluruhnya?
-4. Pada piktogram, 1 simbol mewakili 4 buku. Baris Siti berisi 3 simbol utuh dan setengah simbol. Berapa buku Siti?
-5. Diagram batang menunjukkan nilai rata-rata kelas 7A 80 dan kelas 7B 88, dengan sumbu tegak mulai dari 76. Batang 7B tampak berapa kali tinggi batang 7A? Berapa persen sebenarnya nilai 7B lebih tinggi?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. Diagram garis, karena datanya berubah menurut waktu dan kita ingin melihat naik turunnya.
-2. $144^\circ$. $\frac{12}{30} \times 360^\circ = 144^\circ$.
-3. 180 siswa. $90^\circ$ adalah $\frac{1}{4}$ lingkaran, jadi $45 \times 4 = 180$.
-4. 14 buku. $3 \times 4 + 2 = 14$.
-5. Tampak 3 kali, karena $88 - 76 = 12$ dan $80 - 76 = 4$. Sebenarnya hanya 10% lebih tinggi: $\frac{8}{80} \times 100\% = 10\%$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Diagram apa yang paling cocok untuk menyajikan suhu udara setiap hari selama seminggu?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Pilih diagram",
+   "options": [
+    "Diagram garis",
+    "Diagram lingkaran",
+    "Piktogram",
+    "Diagram batang"
+   ],
+   "answer": "Diagram garis",
+   "hint": "Datanya berubah menurut apa?",
+   "explain": "Suhu berubah menurut waktu.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Alasannya",
+   "options": [
+    "Naik turun dari hari ke hari terlihat jelas",
+    "Bagian dari keseluruhan terlihat jelas",
+    "Lebih menarik untuk anak-anak"
+   ],
+   "answer": "Naik turun dari hari ke hari terlihat jelas",
+   "hint": "Kacamata waktu.",
+   "explain": "Diagram garis menunjukkan kecenderungan naik atau turun.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Diagram garis, karena data berubah menurut waktu."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Dari 30 siswa, 12 siswa berjalan kaki ke sekolah. Berapa sudut juring untuk \"jalan kaki\" pada diagram lingkaran?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Sudut per siswa = 360° ÷ 30 = ?",
+   "answer": "12",
+   "hint": "Seluruh lingkaran untuk 30 siswa.",
+   "explain": "12° per siswa.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sudut juring jalan kaki?",
+   "answer": "144",
+   "hint": "12 × 12°.",
+   "explain": "144°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Sudut juringnya 144°."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Pada diagram lingkaran, juring 90° mewakili 45 siswa. Berapa banyak siswa seluruhnya?",
+ "steps": [
+  {
+   "kind": "fraction",
+   "prompt": "Juring 90° adalah pecahan berapa dari lingkaran?",
+   "answer": {
+    "num": 1,
+    "den": 4
+   },
+   "hint": "90 dari 360.",
+   "explain": "Seperempat lingkaran.",
+   "error": "pecahan-belum-sederhana",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Banyak siswa seluruhnya?",
+   "answer": "180",
+   "hint": "Seperempat = 45 siswa.",
+   "explain": "45 × 4 = 180 siswa.",
+   "error": "salah-langkah-materi",
+   "suffix": "siswa"
+  }
+ ],
+ "conclusion": "Seluruhnya 180 siswa."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Pada piktogram, 1 simbol mewakili 4 buku. Baris Siti berisi 3 simbol utuh dan setengah simbol. Berapa buku Siti?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Setengah simbol mewakili berapa buku?",
+   "answer": "2",
+   "hint": "Setengah dari 4.",
+   "explain": "2 buku.",
+   "error": "lupa-skala-piktogram",
+   "suffix": "buku"
+  },
+  {
+   "kind": "number",
+   "prompt": "Banyak buku Siti?",
+   "answer": "14",
+   "hint": "3 × 4 + 2.",
+   "explain": "14 buku.",
+   "error": "lupa-skala-piktogram",
+   "suffix": "buku"
+  }
+ ],
+ "conclusion": "Siti membaca 14 buku.",
+ "visual": {
+  "type": "pictogram",
+  "item": "buku",
+  "scale": 4,
+  "rows": [
+   {
+    "label": "Siti",
+    "value": 14
+   }
+  ]
+ }
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Diagram batang menunjukkan nilai rata-rata kelas 7A 80 dan kelas 7B 88, dengan sumbu tegak mulai dari 76. Batang 7B tampak berapa kali tinggi batang 7A? Berapa persen sebenarnya nilai 7B lebih tinggi?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Tinggi batang 7B yang terlihat (88 − 76)?",
+   "answer": "12",
+   "hint": "Ukur dari 76.",
+   "explain": "12 satuan; 7A hanya 4 satuan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Batang 7B tampak berapa kali batang 7A?",
+   "answer": "3",
+   "hint": "12 ÷ 4.",
+   "explain": "Tampak 3 kali.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sebenarnya 7B lebih tinggi berapa persen?",
+   "answer": "10",
+   "hint": "$\\frac{88 - 80}{80} \\times 100\\%$.",
+   "explain": "Hanya 10%.",
+   "error": "salah-langkah-materi",
+   "suffix": "%"
+  }
+ ],
+ "conclusion": "Tampak 3 kali, padahal hanya 10% lebih tinggi."
+}
+```

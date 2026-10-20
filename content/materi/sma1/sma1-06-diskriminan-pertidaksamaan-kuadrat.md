@@ -21,6 +21,10 @@ Bayangkan parabola sebagai **mangkuk** dan sumbu $x$ sebagai **permukaan air**.
 
 Diskriminan memberi tahu kita posisi dasar mangkuk terhadap air. Untuk garis dan kurva, kita "memiringkan" permukaan air menjadi garis, dan pertanyaannya tetap sama.
 
+```anim
+{"type": "grafik", "title": "Mangkuk dan permukaan air", "xmin": -8, "xmax": 8, "ymin": -3, "ymax": 8, "kurva": [{"f": "(x+4)^2-2", "label": "D > 0"}, {"f": "x^2", "label": "D = 0"}, {"f": "(x-4)^2+2", "label": "D < 0"}], "titik": [{"x": -5.414, "y": 0}, {"x": -2.586, "y": 0}, {"x": 0, "y": 0, "label": "menyentuh"}], "langkah": [{"say": "Sumbu $x$ adalah permukaan air.", "kurva": 0, "titik": 0}, {"say": "Dasar mangkuk di bawah air: memotong di dua titik ($D > 0$).", "kurva": 1, "titik": 2}, {"say": "Dasar mangkuk tepat di permukaan: satu titik sentuh ($D = 0$).", "kurva": 2, "titik": 3}, {"say": "Mangkuk melayang di atas air: tidak ada titik potong ($D < 0$).", "kurva": 3, "titik": 3}]}
+```
+
 ## Konsep
 
 ### Diskriminan dan jenis akar
@@ -57,6 +61,10 @@ Hitung $D$ persamaan baru ini:
 - $D = 0$: garis **menyinggung** kurva (garis singgung).
 - $D < 0$: garis **tidak memotong** kurva.
 
+```anim
+{"type": "grafik", "title": "Tiga garis dan kurva y = x² + 1", "xmin": -3, "xmax": 4, "ymin": -3, "ymax": 10, "kurva": [{"f": "x^2+1", "label": "y = x^2 + 1"}, {"f": "3x-1", "label": "y = 3x - 1\\ (D = 1)"}, {"f": "2x", "label": "y = 2x\\ (D = 0)"}, {"f": "x-1", "label": "y = x - 1\\ (D = -7)"}], "titik": [{"x": 1, "y": 2, "label": "(1, 2)"}, {"x": 2, "y": 5, "label": "(2, 5)"}], "langkah": [{"say": "Kurva $y = x^2 + 1$.", "kurva": 1, "titik": 0}, {"say": "$y = 3x - 1$: $x^2 - 3x + 2 = 0$, $D = 9 - 8 = 1 > 0$. Memotong di dua titik.", "kurva": 2, "titik": 2}, {"say": "$y = 2x$: $x^2 - 2x + 1 = 0$, $D = 0$. Menyinggung di $(1, 2)$.", "kurva": 3, "titik": 2}, {"say": "$y = x - 1$: $x^2 - x + 2 = 0$, $D = 1 - 8 = -7 < 0$. Tidak memotong.", "kurva": 4, "titik": 2}]}
+```
+
 ### Persamaan simultan linear dan kuadrat
 
 Untuk menyelesaikan satu persamaan linear dan satu persamaan kuadrat:
@@ -65,6 +73,10 @@ Untuk menyelesaikan satu persamaan linear dan satu persamaan kuadrat:
 2. Substitusikan ke persamaan kuadrat.
 3. Selesaikan persamaan kuadrat yang muncul.
 4. Hitung variabel kedua dari persamaan **linear**, lalu cek ke kedua persamaan.
+
+```anim
+{"type": "persamaan", "title": "Menyelesaikan y = 2x dan y = x² − 3", "baris": [{"tex": "x^2 - 3 = 2x", "say": "Substitusikan $y = 2x$ dari persamaan linear ke persamaan kuadrat."}, {"tex": "x^2 - 2x - 3 = 0", "say": "Pindahkan semua suku ke satu ruas.", "op": "$-2x$"}, {"tex": "(x - 3)(x + 1) = 0", "say": "Faktorkan.", "op": "faktorkan"}, {"tex": "x = 3 \\ \\text{atau}\\ x = -1", "say": "Dua nilai $x$.", "op": "nolkan faktor"}, {"tex": "(3, 6) \\ \\text{dan}\\ (-1, -2)", "say": "Hitung $y$ dari persamaan linear $y = 2x$.", "op": "$y = 2x$"}]}
+```
 
 ### Pertidaksamaan kuadrat
 
@@ -82,54 +94,288 @@ $$
 
 Dalam analogi: bagian mangkuk yang terendam air ada **di antara** dua titik potong.
 
+```anim
+{"type": "grafik", "title": "Membaca x² − 2x − 3 < 0", "xmin": -3, "xmax": 5, "ymin": -5, "ymax": 6, "kurva": [{"f": "x^2-2x-3", "label": "y = (x+1)(x-3)"}, {"f": "x^2-2x-3", "dari": -1, "sampai": 3, "warna": "#e11d48", "label": "\\text{bagian} < 0"}], "titik": [{"x": -1, "y": 0, "label": "-1"}, {"x": 3, "y": 0, "label": "3"}], "langkah": [{"say": "Akar-akarnya $-1$ dan $3$. Karena $a > 0$, grafiknya lembah.", "kurva": 1, "titik": 2}, {"say": "Bagian yang terendam (di bawah sumbu $x$) ada di antara akar: $-1 < x < 3$.", "kurva": 2, "titik": 2}, {"say": "Bagian di atas sumbu $x$ ada di luar akar: $x < -1$ atau $x > 3$ untuk $> 0$.", "kurva": 2, "titik": 2}]}
+```
+
 ## Contoh langkah demi langkah
+
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
 
 ### Contoh 1: Akar kembar
 
-**Soal.** Tentukan nilai $k$ agar $x^2 - 6x + k = 0$ memiliki dua akar kembar. Tentukan juga akarnya.
-
-1. **Langkah 1: Tulis syarat.** Akar kembar berarti $D = 0$.
-2. **Langkah 2: Hitung $D$.** $D = (-6)^2 - 4(1)(k) = 36 - 4k$.
-3. **Langkah 3: Selesaikan.** $36 - 4k = 0 \Rightarrow k = 9$.
-4. **Langkah 4: Cari akar.** $x = -\frac{b}{2a} = \frac{6}{2} = 3$.
-5. **Cek jawaban.** $x^2 - 6x + 9 = (x-3)^2$, nol hanya di $x = 3$. Cocok.
-
-**Jawaban:** $k = 9$, akar kembarnya $x = 3$. (Untuk $k < 9$ akarnya real berbeda, untuk $k > 9$ tidak real.)
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Tentukan nilai $k$ agar $x^2 - 6x + k = 0$ memiliki dua akar kembar. Tentukan juga akarnya.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Akar kembar berarti ...",
+   "options": [
+    "$D = 0$",
+    "$D > 0$",
+    "$D < 0$"
+   ],
+   "answer": "$D = 0$",
+   "hint": "Mangkuk tepat menyentuh air.",
+   "explain": "Akar kembar: $D = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $D = (-6)^2 - 4(1)(k)$ = ...",
+   "options": [
+    "$36 - 4k$",
+    "$-36 - 4k$",
+    "$36 + 4k$",
+    "$12 - 4k$"
+   ],
+   "answer": "$36 - 4k$",
+   "hint": "$(-6)^2$ positif.",
+   "explain": "$D = 36 - 4k$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Dari $36 - 4k = 0$, $k$ = ?",
+   "answer": "9",
+   "hint": "Pindahkan $4k$, lalu bagi 4.",
+   "explain": "$k = 9$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Akarnya $x = -\\frac{b}{2a}$ = ?",
+   "answer": "3",
+   "hint": "$b = -6$, $a = 1$.",
+   "explain": "$\\frac{6}{2} = 3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: $x^2 - 6x + 9$ = ...",
+   "options": [
+    "$(x-3)^2$",
+    "$(x+3)^2$",
+    "$(x-9)(x+1)$"
+   ],
+   "answer": "$(x-3)^2$",
+   "hint": "Bentuk kuadrat sempurna.",
+   "explain": "Nol hanya di $x = 3$. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$k = 9$, dan akar kembarnya $x = 3$. (Untuk $k < 9$ akarnya real berbeda, untuk $k > 9$ tidak real.)"
+}
+```
 
 ### Contoh 2: Garis yang tidak memotong kurva
 
-**Soal.** Tentukan nilai $m$ agar garis $y = mx - 1$ tidak memotong kurva $y = x^2 + 3$.
-
-1. **Langkah 1: Samakan $y$.** $x^2 + 3 = mx - 1 \Rightarrow x^2 - mx + 4 = 0$.
-2. **Langkah 2: Tulis syarat.** Tidak memotong berarti $D < 0$. $D = m^2 - 16$.
-3. **Langkah 3: Selesaikan pertidaksamaan.** $m^2 - 16 < 0 \Rightarrow (m-4)(m+4) < 0$. Bagian "terendam" ada di antara akar: $-4 < m < 4$.
-4. **Cek jawaban.** Untuk $m = 0$: garis $y = -1$, sedangkan $x^2 + 3 \ge 3$, jadi memang tidak bertemu. Untuk $m = 5$: $x^2 - 5x + 4 = 0$ memberi $x = 1$ dan $x = 4$, jadi memotong. Cocok.
-
-**Jawaban:** $-4 < m < 4$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Tentukan nilai $m$ agar garis $y = mx - 1$ tidak memotong kurva $y = x^2 + 3$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Samakan $y$ dan susun menjadi $= 0$.",
+   "options": [
+    "$x^2 - mx + 4 = 0$",
+    "$x^2 + mx + 2 = 0$",
+    "$x^2 + 3 = 0$"
+   ],
+   "answer": "$x^2 - mx + 4 = 0$",
+   "hint": "$x^2 + 3 = mx - 1$, lalu pindahkan semua ke kiri.",
+   "explain": "$x^2 - mx + 3 + 1 = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Syarat tidak memotong dan nilai $D$-nya ...",
+   "options": [
+    "$D = m^2 - 16 < 0$",
+    "$D = m^2 - 16 > 0$",
+    "$D = m^2 + 16 < 0$"
+   ],
+   "answer": "$D = m^2 - 16 < 0$",
+   "hint": "$D = b^2 - 4ac$ dengan $b = -m$, $c = 4$.",
+   "explain": "$(-m)^2 - 4(1)(4) = m^2 - 16$, dan tidak memotong berarti $D < 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: $(m - 4)(m + 4) < 0$ berarti ...",
+   "options": [
+    "$-4 < m < 4$",
+    "$m < -4$ atau $m > 4$",
+    "$m < 4$"
+   ],
+   "answer": "$-4 < m < 4$",
+   "hint": "Bagian negatif lembah ada di antara akar.",
+   "explain": "$-4 < m < 4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: untuk $m = 5$, $x^2 - 5x + 4 = 0$. Ada berapa titik potong?",
+   "answer": "2",
+   "hint": "Faktorkan: $(x-1)(x-4)$.",
+   "explain": "Dua titik ($x = 1$ dan $x = 4$), jadi $m = 5$ memang di luar jawaban. Untuk $m = 0$, garis $y = -1$ tidak bertemu $y \\ge 3$. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$-4 < m < 4$."
+}
+```
 
 ### Contoh 3: Pertidaksamaan kuadrat
 
-**Soal.** Selesaikan $2x^2 + 5x - 3 \ge 0$.
-
-1. **Langkah 1: Faktorkan.** $2x^2 + 5x - 3 = (2x - 1)(x + 3)$. Akarnya $x = \frac{1}{2}$ dan $x = -3$.
-2. **Langkah 2: Sketsa.** $a = 2 > 0$, jadi lembah yang memotong sumbu $x$ di $-3$ dan $\frac{1}{2}$.
-3. **Langkah 3: Pilih daerah.** Kita butuh $\ge 0$, yaitu bagian di atas atau pada sumbu $x$: di luar kedua akar, termasuk akarnya.
-4. **Cek jawaban.** $x = 0$ (di antara akar): $-3 \ge 0$ salah, jadi $0$ memang tidak termasuk. $x = 1$: $2 + 5 - 3 = 4 \ge 0$ benar. $x = -4$: $32 - 20 - 3 = 9 \ge 0$ benar.
-
-**Jawaban:** $x \le -3$ atau $x \ge \frac{1}{2}$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Selesaikan $2x^2 + 5x - 3 \\ge 0$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Faktorkan $2x^2 + 5x - 3$.",
+   "options": [
+    "$(2x - 1)(x + 3)$",
+    "$(2x + 1)(x - 3)$",
+    "$(2x - 3)(x + 1)$"
+   ],
+   "answer": "$(2x - 1)(x + 3)$",
+   "hint": "Cek dengan mengalikan kembali.",
+   "explain": "Akar-akarnya $x = \\frac{1}{2}$ dan $x = -3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Sketsa. Grafiknya ...",
+   "options": [
+    "Lembah yang memotong sumbu $x$ di $-3$ dan $\\frac{1}{2}$",
+    "Bukit yang memotong sumbu $x$ di $-3$ dan $\\frac{1}{2}$"
+   ],
+   "answer": "Lembah yang memotong sumbu $x$ di $-3$ dan $\\frac{1}{2}$",
+   "hint": "$a = 2$.",
+   "explain": "$a > 0$: lembah.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Uji titik di antara akar. Nilai $2x^2 + 5x - 3$ saat $x = 0$ = ?",
+   "answer": "-3",
+   "hint": "Substitusikan $x = 0$.",
+   "explain": "$-3 < 0$, jadi daerah di antara akar tidak memenuhi.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Daerah penyelesaiannya ...",
+   "options": [
+    "$x \\le -3$ atau $x \\ge \\frac{1}{2}$",
+    "$-3 \\le x \\le \\frac{1}{2}$",
+    "$x < -3$ atau $x > \\frac{1}{2}$"
+   ],
+   "answer": "$x \\le -3$ atau $x \\ge \\frac{1}{2}$",
+   "hint": "Pakai $\\ge$, jadi akar ikut.",
+   "explain": "Di luar kedua akar, termasuk akarnya.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: nilai saat $x = -4$ = ?",
+   "answer": "9",
+   "hint": "$2(16) - 20 - 3$.",
+   "explain": "$9 \\ge 0$, benar. Juga $x = 1$ memberi $4 \\ge 0$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$x \\le -3$ atau $x \\ge \\frac{1}{2}$."
+}
+```
 
 ### Contoh 4: Soal cerita, taman Bu Siti
 
-**Soal.** Taman Bu Siti berbentuk persegi panjang dengan keliling 34 m. Jalan setapak dibuat sepanjang diagonalnya, yaitu 13 m. Tentukan panjang dan lebar taman.
-
-1. **Langkah 1: Susun persamaan.** Misalkan panjang $p$ dan lebar $l$. Keliling: $2(p + l) = 34$, jadi $p + l = 17$ (linear). Diagonal (Pythagoras): $p^2 + l^2 = 169$ (kuadrat).
-2. **Langkah 2: Substitusi.** Dari persamaan linear, $l = 17 - p$. Maka $p^2 + (17 - p)^2 = 169$.
-3. **Langkah 3: Sederhanakan.** $p^2 + 289 - 34p + p^2 = 169 \Rightarrow 2p^2 - 34p + 120 = 0 \Rightarrow p^2 - 17p + 60 = 0$.
-4. **Langkah 4: Faktorkan.** $(p - 12)(p - 5) = 0$, jadi $p = 12$ atau $p = 5$.
-5. **Langkah 5: Cari variabel kedua.** Jika $p = 12$ maka $l = 5$. Jika $p = 5$ maka $l = 12$. Karena panjang biasanya sisi yang lebih besar, panjang 12 m dan lebar 5 m.
-6. **Cek jawaban.** Keliling $2(12 + 5) = 34$. Diagonal $\sqrt{144 + 25} = \sqrt{169} = 13$. Cocok.
-
-**Jawaban:** panjang 12 m, lebar 5 m.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Taman Bu Siti berbentuk persegi panjang dengan keliling 34 m. Jalan setapak dibuat sepanjang diagonalnya, yaitu 13 m. Tentukan panjang dan lebar taman.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Persamaan dari keliling adalah ...",
+   "options": [
+    "$p + l = 17$",
+    "$p + l = 34$",
+    "$pl = 34$"
+   ],
+   "answer": "$p + l = 17$",
+   "hint": "$2(p + l) = 34$.",
+   "explain": "Persamaan linear: $p + l = 17$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Persamaan dari diagonal adalah ...",
+   "options": [
+    "$p^2 + l^2 = 169$",
+    "$p + l = 13$",
+    "$p^2 + l^2 = 13$"
+   ],
+   "answer": "$p^2 + l^2 = 169$",
+   "hint": "Pythagoras: $p^2 + l^2 = 13^2$.",
+   "explain": "Persamaan kuadrat: $p^2 + l^2 = 169$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2–3: Substitusi $l = 17 - p$ dan sederhanakan.",
+   "options": [
+    "$p^2 - 17p + 60 = 0$",
+    "$p^2 - 17p + 120 = 0$",
+    "$p^2 + 17p - 60 = 0$"
+   ],
+   "answer": "$p^2 - 17p + 60 = 0$",
+   "hint": "$(17 - p)^2 = 289 - 34p + p^2$.",
+   "explain": "$2p^2 - 34p + 120 = 0$, lalu bagi 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Akar-akarnya ...",
+   "options": [
+    "$p = 12$ atau $p = 5$",
+    "$p = 15$ atau $p = 4$",
+    "$p = 10$ atau $p = 6$"
+   ],
+   "answer": "$p = 12$ atau $p = 5$",
+   "hint": "Dua bilangan yang hasil kalinya 60 dan jumlahnya 17.",
+   "explain": "$(p - 12)(p - 5) = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: Jika $p = 12$, berapa $l$?",
+   "answer": "5",
+   "hint": "Pakai persamaan linear $l = 17 - p$.",
+   "explain": "$l = 5$. Panjang adalah sisi yang lebih besar: 12 m.",
+   "error": "salah-langkah-materi",
+   "suffix": "m"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: diagonal $\\sqrt{12^2 + 5^2}$ = ?",
+   "answer": "13",
+   "hint": "$144 + 25$.",
+   "explain": "$\\sqrt{169} = 13$, dan keliling $2(17) = 34$. Cocok.",
+   "error": "salah-langkah-materi",
+   "suffix": "m"
+  }
+ ],
+ "conclusion": "Panjang 12 m dan lebar 5 m."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -148,16 +394,218 @@ Dalam analogi: bagian mangkuk yang terendam air ada **di antara** dua titik poto
 
 ## Cek pemahaman
 
-1. Tentukan jenis akar persamaan $3x^2 - 4x + 2 = 0$.
-2. Tentukan nilai $p$ agar $x^2 + px + 9 = 0$ memiliki akar kembar.
-3. Selesaikan $x^2 - 7x + 10 \le 0$.
-4. Selesaikan sistem $y = x + 1$ dan $y = x^2 - 1$.
-5. Tentukan nilai $k$ agar garis $y = kx + 2$ memotong kurva $y = x^2 + x + 3$ di dua titik berbeda.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. Tidak real, karena $D = 16 - 24 = -8 < 0$.
-2. $p = 6$ atau $p = -6$, karena $D = p^2 - 36 = 0$.
-3. $2 \le x \le 5$, karena $(x-2)(x-5) \le 0$ dan nilai tak positif ada di antara akar, termasuk akarnya.
-4. $(2, 3)$ dan $(-1, 0)$, karena $x^2 - 1 = x + 1$ memberi $x^2 - x - 2 = (x-2)(x+1) = 0$.
-5. $k < -1$ atau $k > 3$, karena $x^2 + (1-k)x + 1 = 0$ butuh $D = (1-k)^2 - 4 > 0$, yaitu $(k-3)(k+1) > 0$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Tentukan jenis akar persamaan $3x^2 - 4x + 2 = 0$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$D = (-4)^2 - 4(3)(2)$ = ?",
+   "answer": "-8",
+   "hint": "$16 - 24$.",
+   "explain": "$D = -8$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Jenis akarnya ...",
+   "options": [
+    "Tidak real",
+    "Dua akar real berbeda",
+    "Akar kembar"
+   ],
+   "answer": "Tidak real",
+   "hint": "Lihat tanda $D$.",
+   "explain": "$D < 0$: tidak ada akar real.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Akarnya tidak real karena $D = -8 < 0$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Tentukan nilai $p$ agar $x^2 + px + 9 = 0$ memiliki akar kembar.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "$D$ = ...",
+   "options": [
+    "$p^2 - 36$",
+    "$p^2 - 9$",
+    "$p^2 + 36$"
+   ],
+   "answer": "$p^2 - 36$",
+   "hint": "$b^2 - 4ac$ dengan $a = 1$, $c = 9$.",
+   "explain": "$D = p^2 - 36$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$p^2 - 36 = 0$ memberi ...",
+   "options": [
+    "$p = 6$ atau $p = -6$",
+    "$p = 6$ saja",
+    "$p = 18$"
+   ],
+   "answer": "$p = 6$ atau $p = -6$",
+   "hint": "Bilangan yang kuadratnya 36 ada dua.",
+   "explain": "$p = \\pm 6$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$p = 6$ atau $p = -6$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Selesaikan $x^2 - 7x + 10 \\le 0$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Akar-akar $x^2 - 7x + 10 = 0$ ...",
+   "options": [
+    "$2$ dan $5$",
+    "$-2$ dan $-5$",
+    "$1$ dan $10$"
+   ],
+   "answer": "$2$ dan $5$",
+   "hint": "Dua bilangan yang hasil kalinya 10 dan jumlahnya 7.",
+   "explain": "$(x-2)(x-5) = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Penyelesaiannya ...",
+   "options": [
+    "$2 \\le x \\le 5$",
+    "$x \\le 2$ atau $x \\ge 5$",
+    "$2 < x < 5$"
+   ],
+   "answer": "$2 \\le x \\le 5$",
+   "hint": "Lembah: nilai tak positif ada di antara akar.",
+   "explain": "Di antara akar, termasuk akarnya.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$2 \\le x \\le 5$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Selesaikan sistem $y = x + 1$ dan $y = x^2 - 1$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Samakan $y$ dan susun.",
+   "options": [
+    "$x^2 - x - 2 = 0$",
+    "$x^2 + x = 0$",
+    "$x^2 - x + 2 = 0$"
+   ],
+   "answer": "$x^2 - x - 2 = 0$",
+   "hint": "$x^2 - 1 = x + 1$.",
+   "explain": "Pindahkan $x + 1$ ke kiri.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Nilai $x$ ...",
+   "options": [
+    "$x = 2$ atau $x = -1$",
+    "$x = -2$ atau $x = 1$",
+    "$x = 2$ saja"
+   ],
+   "answer": "$x = 2$ atau $x = -1$",
+   "hint": "Faktorkan.",
+   "explain": "$(x - 2)(x + 1) = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Untuk $x = 2$, $y$ = ?",
+   "answer": "3",
+   "hint": "Pakai persamaan linear.",
+   "explain": "$y = 2 + 1 = 3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Untuk $x = -1$, $y$ = ?",
+   "answer": "0",
+   "hint": "Pakai persamaan linear.",
+   "explain": "$y = -1 + 1 = 0$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Penyelesaiannya $(2, 3)$ dan $(-1, 0)$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Tentukan nilai $k$ agar garis $y = kx + 2$ memotong kurva $y = x^2 + x + 3$ di dua titik berbeda.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Samakan $y$.",
+   "options": [
+    "$x^2 + (1-k)x + 1 = 0$",
+    "$x^2 + (1+k)x + 5 = 0$",
+    "$x^2 + x + 1 = 0$"
+   ],
+   "answer": "$x^2 + (1-k)x + 1 = 0$",
+   "hint": "$x^2 + x + 3 - kx - 2 = 0$.",
+   "explain": "Kelompokkan suku $x$: $(1 - k)x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Syarat dua titik berbeda ...",
+   "options": [
+    "$(1-k)^2 - 4 > 0$",
+    "$(1-k)^2 - 4 = 0$",
+    "$(1-k)^2 - 4 < 0$"
+   ],
+   "answer": "$(1-k)^2 - 4 > 0$",
+   "hint": "Dua titik berbeda: $D > 0$.",
+   "explain": "$D = (1-k)^2 - 4(1)(1)$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: $(k - 3)(k + 1) > 0$ memberi ...",
+   "options": [
+    "$k < -1$ atau $k > 3$",
+    "$-1 < k < 3$",
+    "$k > 3$"
+   ],
+   "answer": "$k < -1$ atau $k > 3$",
+   "hint": "Lembah: nilai positif ada di luar akar.",
+   "explain": "$k < -1$ atau $k > 3$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$k < -1$ atau $k > 3$."
+}
+```

@@ -18,6 +18,10 @@ Kita memakai dua gerakan dengan **kertas dan gunting**:
 1. **Potong dan geser** untuk luas. Bangun yang miring dipotong, lalu potongannya digeser sehingga menjadi persegi panjang yang luasnya mudah dihitung. Luas tidak berubah, karena tidak ada kertas yang hilang.
 2. **Tumpuk** untuk volume. Prisma dan tabung seperti **tumpukan roti tawar**: setiap lembar bentuknya sama persis. Volume = luas satu lembar × tinggi tumpukan.
 
+```visual
+{"type": "solid", "solid": "tabung", "caption": "Tabung seperti tumpukan lembaran lingkaran yang sama: volume = luas satu lembar × tinggi"}
+```
+
 Untuk luas permukaan, bayangkan **membuka bungkus kado** sampai menjadi lembaran datar (jaring-jaring), lalu hitung luas semua bagiannya.
 
 ## Konsep
@@ -25,6 +29,10 @@ Untuk luas permukaan, bayangkan **membuka bungkus kado** sampai menjadi lembaran
 ### Luas jajargenjang
 
 Potong segitiga di satu ujung jajargenjang, lalu geser ke ujung lain. Hasilnya persegi panjang dengan panjang = alas dan lebar = tinggi.
+
+```anim
+{"type": "bangun", "title": "Potong dan geser jajargenjang", "titik": {"A": [0, 0], "B": [6, 0], "C": [8, 3], "D": [2, 3], "H": [2, 0], "E": [8, 0]}, "sisi": [["A", "B", "a"], ["B", "C"], ["C", "D"], ["D", "A"], ["D", "H", "t"], ["B", "E"], ["E", "C"]], "sudut": [{"di": "H", "dari": "B", "ke": "D", "siku": true}], "langkah": [{"say": "Jajargenjang ABCD dengan alas a.", "sisi": 4}, {"say": "Tinggi t adalah garis DH yang tegak lurus alas.", "sisi": 5, "sudut": 1, "sorot": ["DH"]}, {"say": "Potong segitiga ADH, lalu geser ke kanan menempel di sisi BC.", "sisi": 7, "sudut": 1, "sorot": ["BE", "EC"]}, {"say": "Terbentuk persegi panjang HECD dengan panjang a dan lebar t. Luasnya a × t.", "sisi": 7, "sudut": 1, "sorot": ["DH", "EC"]}]}
+```
 
 $$L = a \times t$$
 
@@ -37,6 +45,10 @@ Ambil dua trapesium yang sama. Putar salah satunya, lalu tempelkan. Hasilnya jaj
 $$L = \frac{1}{2} (a + b) \times t$$
 
 dengan $a$ dan $b$ panjang dua sisi yang sejajar.
+
+```anim
+{"type": "bangun", "title": "Dua trapesium menjadi jajargenjang", "titik": {"A": [0, 0], "B": [5, 0], "C": [4, 3], "D": [1, 3], "E": [9, 3], "F": [8, 0]}, "sisi": [["A", "B", "b"], ["B", "C"], ["C", "D", "a"], ["D", "A"], ["C", "E", "b"], ["E", "F"], ["F", "B", "a"]], "langkah": [{"say": "Trapesium ABCD dengan sisi sejajar a dan b, tinggi t.", "sisi": 4}, {"say": "Salinannya diputar setengah putaran dan ditempel di sisi BC.", "sisi": 7, "sorot": ["CE", "FB"]}, {"say": "Hasilnya jajargenjang dengan alas a + b. Satu trapesium = setengahnya: ½(a + b) × t.", "sisi": 7, "sorot": ["AB", "FB"]}]}
+```
 
 ### Bangun datar gabungan
 
@@ -64,6 +76,10 @@ Bangun ruang gabungan, misalnya balok dengan atap setengah tabung, dipecah menja
 
 ### Mengubah satuan luas dan volume
 
+```visual
+{"type": "table", "head": ["Satuan", "Dikali", "Hasil"], "rows": [["1 m", "100", "100 cm"], ["1 m²", "100 × 100", "10.000 cm²"], ["1 m³", "100 × 100 × 100", "1.000.000 cm³"]], "caption": "Setiap dimensi dikali 100"}
+```
+
 $1 \text{ m} = 100 \text{ cm}$. Satu persegi berukuran $1 \text{ m} \times 1 \text{ m}$ sama dengan $100 \text{ cm} \times 100 \text{ cm}$. Jadi
 
 $$1 \text{ m}^2 = 10.000 \text{ cm}^2, \qquad 1 \text{ m}^3 = 100 \times 100 \times 100 = 1.000.000 \text{ cm}^3$$
@@ -72,54 +88,211 @@ Juga $1 \text{ liter} = 1.000 \text{ cm}^3$, sehingga $1 \text{ m}^3 = 1.000$ li
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Luas bangun datar gabungan
 
-**Soal.** Sebuah lahan terdiri dari jajargenjang (alas 12 m, tinggi 7 m) yang menempel pada trapesium (sisi sejajar 8 m dan 14 m, tinggi 6 m). Hitung luas lahan.
-
-1. **Langkah 1: Pecah bangunnya.** Lahan = jajargenjang + trapesium.
-2. **Langkah 2: Luas jajargenjang.** Potong dan geser menjadi persegi panjang: $12 \times 7 = 84 \text{ m}^2$.
-3. **Langkah 3: Luas trapesium.** $\frac{1}{2}(8 + 14) \times 6 = \frac{1}{2} \times 22 \times 6 = 66 \text{ m}^2$.
-4. **Langkah 4: Jumlahkan.** $84 + 66 = 150 \text{ m}^2$.
-5. **Cek jawaban.** Trapesium setara persegi panjang dengan lebar rata-rata $\frac{8 + 14}{2} = 11$ m. $11 \times 6 = 66$. Cocok.
-
-**Jawaban:** $150 \text{ m}^2$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Sebuah lahan terdiri dari jajargenjang (alas 12 m, tinggi 7 m) yang menempel pada trapesium (sisi sejajar 8 m dan 14 m, tinggi 6 m). Hitung luas lahan.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Luas lahan dihitung sebagai",
+   "options": [
+    "luas jajargenjang + luas trapesium",
+    "luas jajargenjang − luas trapesium",
+    "luas jajargenjang × luas trapesium"
+   ],
+   "answer": "luas jajargenjang + luas trapesium",
+   "hint": "Lahan terdiri dari dua bagian yang menempel.",
+   "explain": "Pecah, lalu jumlahkan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Luas jajargenjang?",
+   "answer": "84",
+   "hint": "Alas × tinggi.",
+   "explain": "12 × 7 = 84 m².",
+   "error": "salah-langkah-materi",
+   "suffix": "m²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Luas trapesium?",
+   "answer": "66",
+   "hint": "½ × (8 + 14) × 6.",
+   "explain": "½ × 22 × 6 = 66 m².",
+   "error": "salah-langkah-materi",
+   "suffix": "m²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Luas lahan?",
+   "answer": "150",
+   "hint": "Jumlahkan.",
+   "explain": "84 + 66 = 150 m².",
+   "error": "salah-langkah-materi",
+   "suffix": "m²"
+  }
+ ],
+ "conclusion": "Luas lahan 150 m²."
+}
+```
 
 ### Contoh 2: Prisma segitiga
 
-**Soal.** Sebuah prisma beralas segitiga siku-siku dengan sisi 6 cm, 8 cm, dan 10 cm. Tinggi prisma 15 cm. Hitung volume dan luas permukaannya.
-
-1. **Langkah 1: Hitung luas alas.** Sisi siku-sikunya 6 cm dan 8 cm (sisi terpanjang 10 cm adalah sisi miring). Luas $= \frac{1}{2} \times 6 \times 8 = 24 \text{ cm}^2$.
-2. **Langkah 2: Hitung volume dengan menumpuk.** $V = 24 \times 15 = 360 \text{ cm}^3$.
-3. **Langkah 3: Hitung keliling alas.** $6 + 8 + 10 = 24$ cm.
-4. **Langkah 4: Hitung luas permukaan dengan membuka bungkus.**
-$$LP = 2 \times 24 + 24 \times 15 = 48 + 360 = 408 \text{ cm}^2$$
-5. **Cek jawaban.** Hitung sisi tegak satu per satu: $6 \times 15 + 8 \times 15 + 10 \times 15 = 90 + 120 + 150 = 360$. Ditambah dua alas 48, hasilnya 408. Sama.
-
-**Jawaban:** $V = 360 \text{ cm}^3$, $LP = 408 \text{ cm}^2$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Sebuah prisma beralas segitiga siku-siku dengan sisi 6 cm, 8 cm, dan 10 cm. Tinggi prisma 15 cm. Hitung volume dan luas permukaannya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Luas alas segitiga?",
+   "answer": "24",
+   "hint": "Sisi siku-sikunya 6 dan 8; 10 cm adalah sisi miring.",
+   "explain": "½ × 6 × 8 = 24 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Volume?",
+   "answer": "360",
+   "hint": "Luas alas × tinggi.",
+   "explain": "24 × 15 = 360 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Keliling alas?",
+   "answer": "24",
+   "hint": "Jumlah ketiga sisi.",
+   "explain": "6 + 8 + 10 = 24 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Luas permukaan?",
+   "answer": "408",
+   "hint": "2 × luas alas + keliling alas × tinggi.",
+   "explain": "48 + 360 = 408 cm².",
+   "error": "lupa-sisi-bangun",
+   "suffix": "cm²"
+  }
+ ],
+ "conclusion": "V = 360 cm³ dan LP = 408 cm²."
+}
+```
 
 ### Contoh 3: Tabung
 
-**Soal.** Sebuah kaleng berbentuk tabung dengan jari-jari 7 cm dan tinggi 10 cm. Gunakan $\pi = \frac{22}{7}$. Hitung volume dan luas permukaannya.
-
-1. **Langkah 1: Hitung luas alas.** $\pi r^2 = \frac{22}{7} \times 7 \times 7 = 154 \text{ cm}^2$.
-2. **Langkah 2: Tumpuk.** $V = 154 \times 10 = 1.540 \text{ cm}^3$.
-3. **Langkah 3: Hitung luas selimut.** Keliling $2\pi r = 2 \times \frac{22}{7} \times 7 = 44$ cm. Selimut $= 44 \times 10 = 440 \text{ cm}^2$.
-4. **Langkah 4: Jumlahkan bungkusnya.** $LP = 2 \times 154 + 440 = 308 + 440 = 748 \text{ cm}^2$.
-5. **Cek jawaban.** Perkiraan dengan $\pi \approx 3$: $V \approx 3 \times 49 \times 10 = 1.470$. Dekat dengan 1.540, jadi wajar.
-
-**Jawaban:** $V = 1.540 \text{ cm}^3$, $LP = 748 \text{ cm}^2$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Sebuah kaleng berbentuk tabung dengan jari-jari 7 cm dan tinggi 10 cm. Gunakan $\\pi = \\frac{22}{7}$. Hitung volume dan luas permukaannya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Luas alas $\\pi r^2$?",
+   "answer": "154",
+   "hint": "$\\frac{22}{7} \\times 7 \\times 7$.",
+   "explain": "154 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Volume?",
+   "answer": "1540",
+   "hint": "Luas alas × tinggi.",
+   "explain": "154 × 10 = 1.540 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Keliling alas $2\\pi r$?",
+   "answer": "44",
+   "hint": "$2 \\times \\frac{22}{7} \\times 7$.",
+   "explain": "44 cm; selimut = 44 × 10 = 440 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Luas permukaan = 2 × 154 + 440 = ?",
+   "answer": "748",
+   "hint": "Dua alas ditambah selimut.",
+   "explain": "308 + 440 = 748 cm².",
+   "error": "lupa-sisi-bangun",
+   "suffix": "cm²"
+  }
+ ],
+ "conclusion": "V = 1.540 cm³ dan LP = 748 cm².",
+ "visual": {
+  "type": "solid",
+  "solid": "tabung"
+ }
+}
+```
 
 ### Contoh 4: Soal cerita kolam renang
 
-**Soal.** Kolam renang anak panjangnya 10 m dan lebarnya 4 m. Dasarnya miring: di ujung dangkal kedalamannya 0,8 m dan di ujung dalam 1,6 m. Berapa liter air untuk mengisi penuh kolam?
-
-1. **Langkah 1: Kenali bangunnya.** Dilihat dari samping, penampang kolam berbentuk trapesium: sisi sejajar 0,8 m dan 1,6 m, jaraknya 10 m. Kolam adalah prisma trapesium dengan "tinggi tumpukan" 4 m (lebar kolam).
-2. **Langkah 2: Luas penampang.** $\frac{1}{2}(0{,}8 + 1{,}6) \times 10 = \frac{1}{2} \times 2{,}4 \times 10 = 12 \text{ m}^2$.
-3. **Langkah 3: Volume.** $12 \times 4 = 48 \text{ m}^3$.
-4. **Langkah 4: Ubah ke liter.** $1 \text{ m}^3 = 1.000$ liter, jadi $48 \times 1.000 = 48.000$ liter.
-5. **Cek jawaban.** Kedalaman rata-rata 1,2 m. Volume $\approx 10 \times 4 \times 1{,}2 = 48 \text{ m}^3$. Cocok.
-
-**Jawaban:** 48.000 liter.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Kolam renang anak panjangnya 10 m dan lebarnya 4 m. Dasarnya miring: di ujung dangkal kedalamannya 0,8 m dan di ujung dalam 1,6 m. Berapa liter air untuk mengisi penuh kolam?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Penampang samping kolam berbentuk",
+   "options": [
+    "trapesium",
+    "persegi panjang",
+    "segitiga"
+   ],
+   "answer": "trapesium",
+   "hint": "Dua sisi tegak (0,8 m dan 1,6 m) sejajar.",
+   "explain": "Kolam adalah prisma trapesium dengan tebal 4 m.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Luas penampang ½ × (0,8 + 1,6) × 10 = ?",
+   "answer": "12",
+   "hint": "½ × 2,4 × 10.",
+   "explain": "12 m².",
+   "error": "salah-langkah-materi",
+   "suffix": "m²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Volume = 12 × 4 = ?",
+   "answer": "48",
+   "hint": "Luas penampang × lebar kolam.",
+   "explain": "48 m³.",
+   "error": "salah-langkah-materi",
+   "suffix": "m³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Ubah ke liter.",
+   "answer": "48000",
+   "hint": "1 m³ = 1.000 liter.",
+   "explain": "48 × 1.000 = 48.000 liter.",
+   "error": "salah-pilih-satuan",
+   "suffix": "liter"
+  }
+ ],
+ "conclusion": "Perlu 48.000 liter air."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -139,16 +312,193 @@ $$LP = 2 \times 24 + 24 \times 15 = 48 + 360 = 408 \text{ cm}^2$$
 
 ## Cek pemahaman
 
-1. Hitung luas trapesium dengan sisi sejajar 9 cm dan 15 cm serta tinggi 8 cm.
-2. Ubah $3{,}5 \text{ m}^2$ ke $\text{cm}^2$, dan ubah $2.400.000 \text{ cm}^3$ ke $\text{m}^3$.
-3. Sebuah prisma memiliki alas dengan luas $30 \text{ cm}^2$ dan tinggi 12 cm. Hitung volumenya.
-4. Sebuah tabung berjari-jari 14 cm dan tinggi 20 cm. Dengan $\pi = \frac{22}{7}$, hitung volume dan luas permukaannya.
-5. Kotak pensil berbentuk balok $20 \text{ cm} \times 14 \text{ cm} \times 10 \text{ cm}$ dengan atap setengah tabung. Diameter setengah tabung 14 cm dan panjangnya 20 cm, menempel pas di atas balok. Dengan $\pi = \frac{22}{7}$, hitung volume kotak pensil.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $96 \text{ cm}^2$. $\frac{1}{2}(9 + 15) \times 8 = 12 \times 8 = 96$.
-2. $35.000 \text{ cm}^2$ dan $2{,}4 \text{ m}^3$. $3{,}5 \times 10.000 = 35.000$, dan $2.400.000 \div 1.000.000 = 2{,}4$.
-3. $360 \text{ cm}^3$. $30 \times 12 = 360$.
-4. $V = 12.320 \text{ cm}^3$ dan $LP = 2.992 \text{ cm}^2$. Luas alas $616$, $V = 616 \times 20$; selimut $88 \times 20 = 1.760$, ditambah $2 \times 616 = 1.232$.
-5. $4.340 \text{ cm}^3$. Balok $20 \times 14 \times 10 = 2.800$; setengah tabung $\frac{1}{2} \times \frac{22}{7} \times 7^2 \times 20 = 1.540$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Hitung luas trapesium dengan sisi sejajar 9 cm dan 15 cm serta tinggi 8 cm.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Jumlah sisi sejajar?",
+   "answer": "24",
+   "hint": "9 + 15.",
+   "explain": "24 cm.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Luas?",
+   "answer": "96",
+   "hint": "½ × 24 × 8.",
+   "explain": "12 × 8 = 96 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  }
+ ],
+ "conclusion": "Luasnya 96 cm²."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Ubah $3{,}5 \\text{ m}^2$ ke $\\text{cm}^2$, dan ubah $2.400.000 \\text{ cm}^3$ ke $\\text{m}^3$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "3,5 m² = ? cm²",
+   "answer": "35000",
+   "hint": "1 m² = 10.000 cm².",
+   "explain": "3,5 × 10.000 = 35.000 cm².",
+   "error": "salah-satuan-luas",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "2.400.000 cm³ = ? m³",
+   "answer": "2,4",
+   "hint": "1 m³ = 1.000.000 cm³.",
+   "explain": "2.400.000 ÷ 1.000.000 = 2,4 m³.",
+   "error": "salah-satuan-luas",
+   "suffix": "m³"
+  }
+ ],
+ "conclusion": "35.000 cm² dan 2,4 m³."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Sebuah prisma memiliki alas dengan luas $30 \\text{ cm}^2$ dan tinggi 12 cm. Hitung volumenya.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Rumus volume prisma",
+   "options": [
+    "luas alas × tinggi",
+    "keliling alas × tinggi",
+    "½ × luas alas × tinggi"
+   ],
+   "answer": "luas alas × tinggi",
+   "hint": "Tumpukan lembar yang sama.",
+   "explain": "Luas alas × tinggi.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Volume?",
+   "answer": "360",
+   "hint": "30 × 12.",
+   "explain": "360 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Volumenya 360 cm³."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Sebuah tabung berjari-jari 14 cm dan tinggi 20 cm. Dengan $\\pi = \\frac{22}{7}$, hitung volume dan luas permukaannya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Luas alas?",
+   "answer": "616",
+   "hint": "$\\frac{22}{7} \\times 14 \\times 14$.",
+   "explain": "616 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm²"
+  },
+  {
+   "kind": "number",
+   "prompt": "Volume?",
+   "answer": "12320",
+   "hint": "616 × 20.",
+   "explain": "12.320 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Keliling alas?",
+   "answer": "88",
+   "hint": "$2 \\times \\frac{22}{7} \\times 14$.",
+   "explain": "88 cm; selimut 88 × 20 = 1.760 cm².",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Luas permukaan?",
+   "answer": "2992",
+   "hint": "2 × 616 + 1.760.",
+   "explain": "1.232 + 1.760 = 2.992 cm².",
+   "error": "lupa-sisi-bangun",
+   "suffix": "cm²"
+  }
+ ],
+ "conclusion": "V = 12.320 cm³ dan LP = 2.992 cm²."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Kotak pensil berbentuk balok $20 \\text{ cm} \\times 14 \\text{ cm} \\times 10 \\text{ cm}$ dengan atap setengah tabung berdiameter 14 cm dan panjang 20 cm yang menempel pas di atas balok. Dengan $\\pi = \\frac{22}{7}$, hitung volume kotak pensil.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Volume balok?",
+   "answer": "2800",
+   "hint": "20 × 14 × 10.",
+   "explain": "2.800 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jari-jari setengah tabung?",
+   "answer": "7",
+   "hint": "Setengah diameter.",
+   "explain": "r = 7 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Volume setengah tabung?",
+   "answer": "1540",
+   "hint": "$\\frac{1}{2} \\times \\frac{22}{7} \\times 7^2 \\times 20$.",
+   "explain": "1.540 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  },
+  {
+   "kind": "number",
+   "prompt": "Volume kotak pensil?",
+   "answer": "4340",
+   "hint": "Jumlahkan.",
+   "explain": "2.800 + 1.540 = 4.340 cm³.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm³"
+  }
+ ],
+ "conclusion": "Volume kotak pensil 4.340 cm³."
+}
+```

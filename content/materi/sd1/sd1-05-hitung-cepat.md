@@ -15,9 +15,8 @@ Tidak setiap hitungan perlu ditulis bersusun. Saat bermain kelereng atau menghit
 
 Bayangkan sebuah **rak telur berisi 10 lubang**.
 
-```
-[O][O][O][O][O]
-[O][O][O][ ][ ]
+```visual
+{"type": "objects", "item": "bola", "count": 8, "group": 10, "caption": "Rak 10 lubang berisi 8 telur. Masih ada 2 lubang kosong."}
 ```
 
 Rak di atas berisi 8 telur. Ada 2 lubang kosong.
@@ -26,6 +25,10 @@ Hitung cepat sering memakai satu kebiasaan: **penuhi rak dulu**. Rak yang penuh 
 
 Untuk bilangan besar, bayangkan banyak rak penuh (puluhan) dan beberapa telur lepas (satuan).
 
+```visual
+{"type": "base10", "tens": 4, "ones": 3, "caption": "43: 4 rak penuh dan 3 telur lepas"}
+```
+
 ## Konsep
 
 ### Strategi 1: Membuat 10
@@ -33,6 +36,10 @@ Untuk bilangan besar, bayangkan banyak rak penuh (puluhan) dan beberapa telur le
 Pecah bilangan kedua supaya bilangan pertama menjadi 10.
 
 8 + 5: rak berisi 8, kurang 2 untuk penuh. Pecah 5 menjadi 2 dan 3. Pakai 2 untuk memenuhi rak (8 + 2 = 10), lalu tambah sisanya 3. Hasilnya 13.
+
+```anim
+{"type": "garis", "from": 0, "to": 15, "start": 8, "jumps": [2, 3], "title": "8 + 5: lompat 2 ke 10, lalu lompat 3 ke 13"}
+```
 
 Hafalkan pasangan 10: 1 dan 9, 2 dan 8, 3 dan 7, 4 dan 6, 5 dan 5.
 
@@ -45,9 +52,17 @@ Dobel membantu soal yang **hampir dobel**:
 - 6 + 7 = 6 + 6 + 1 = 12 + 1 = 13.
 - 8 + 7 = 7 + 7 + 1 = 14 + 1 = 15.
 
+```visual
+{"type": "objects", "item": "kelereng", "count": 13, "group": 6, "caption": "6 + 7: dua kelompok 6 (dobel = 12), ditambah 1 lagi = 13"}
+```
+
 ### Strategi 3: Mengurangi lewat 10
 
 14 − 6: ambil 4 telur dulu supaya tersisa tepat 1 rak penuh (14 − 4 = 10). Masih harus diambil 2 lagi (karena 6 = 4 + 2). 10 − 2 = 8.
+
+```anim
+{"type": "garis", "from": 0, "to": 15, "start": 14, "jumps": [-4, -2], "title": "14 − 6: mundur 4 ke 10, lalu mundur 2 ke 8"}
+```
 
 Cara lain: pikirkan penjumlahan. 6 + ... = 14? Jawabannya 8.
 
@@ -63,65 +78,268 @@ Strategi ini dipakai kalau satuannya **tidak** melewati 10 (tidak perlu menyimpa
 
 35 + 20: menambah 2 rak penuh. Telur lepas tetap 5. Puluhan 3 + 2 = 5. Hasilnya 55.
 
+```anim
+{"type": "garis", "from": 0, "to": 60, "start": 35, "jumps": [10, 10], "title": "35 + 20: lompat 10 dua kali", "step": 5}
+```
+
 81 − 30: mengambil 3 rak penuh. Satuan tetap 1. Puluhan 8 − 3 = 5. Hasilnya 51.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Membuat 10
 
-**Soal.** 9 + 6 = ...
-
-1. **Langkah 1: Lihat rak.** Rak berisi 9. Kurang 1 untuk penuh.
-2. **Langkah 2: Pecah bilangan kedua.** 6 = 1 + 5.
-3. **Langkah 3: Penuhi rak.** 9 + 1 = 10.
-4. **Langkah 4: Tambah sisanya.** 10 + 5 = 15.
-5. **Cek jawaban.** 15 − 6 = 9. Benar.
-
-**Jawaban:** 15.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Hitung $9 + 6$ dengan membuat 10.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Lihat rak. Rak berisi 9. Kurang berapa untuk penuh?",
+   "answer": "1",
+   "hint": "Pasangan 10 dari 9.",
+   "explain": "9 + 1 = 10, jadi kurang 1.",
+   "error": "salah-pasangan-sepuluh"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Pecah 6 menjadi 1 dan berapa?",
+   "answer": "5",
+   "hint": "1 + ? = 6",
+   "explain": "6 = 1 + 5.",
+   "error": "salah-pecah-bilangan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Penuhi rak. 9 + 1 = ?",
+   "answer": "10",
+   "hint": "Rak menjadi penuh.",
+   "explain": "9 + 1 = 10.",
+   "error": "salah-fakta-tambah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Tambah sisanya. 10 + 5 = ?",
+   "answer": "15",
+   "hint": "Sisa dari 6 adalah 5.",
+   "explain": "10 + 5 = 15.",
+   "error": "lupa-sisa-ambil"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 15 − 6 = ?",
+   "answer": "9",
+   "hint": "Harus kembali ke 9.",
+   "explain": "15 − 6 = 9. Benar.",
+   "error": "salah-fakta-kurang"
+  }
+ ],
+ "conclusion": "Jadi 9 + 6 = 15.",
+ "visual": {
+  "type": "objects",
+  "item": "bola",
+  "count": 15,
+  "group": 10
+ }
+}
+```
 
 ### Contoh 2: Hampir dobel
 
-**Soal.** 7 + 8 = ...
-
-1. **Langkah 1: Cari dobel terdekat.** 7 dan 8 berdekatan. Dobel 7 adalah 7 + 7 = 14.
-2. **Langkah 2: Sesuaikan.** 8 adalah 7 + 1. Jadi 7 + 8 = 14 + 1.
-3. **Langkah 3: Hitung.** 14 + 1 = 15.
-4. **Cek jawaban.** Pakai membuat 10: 8 + 2 = 10, sisa dari 7 adalah 5, 10 + 5 = 15. Sama.
-
-**Jawaban:** 15.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Hitung $7 + 8$ dengan dobel.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Cari dobel terdekat. 7 + 7 = ?",
+   "answer": "14",
+   "hint": "Dobel 7.",
+   "explain": "7 + 7 = 14.",
+   "error": "salah-fakta-tambah"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Sesuaikan. 8 adalah 7 + 1. Jadi 7 + 8 sama dengan ...",
+   "options": [
+    "14 + 1",
+    "14 − 1",
+    "16 + 1"
+   ],
+   "answer": "14 + 1",
+   "hint": "8 lebih besar 1 dari 7.",
+   "explain": "Karena 8 = 7 + 1, maka 7 + 8 = 14 + 1.",
+   "error": "salah-sesuaikan-dobel"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Hitung. 14 + 1 = ?",
+   "answer": "15",
+   "hint": "Satu lagi sesudah 14.",
+   "explain": "14 + 1 = 15.",
+   "error": "salah-sesuaikan-dobel"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban dengan membuat 10: 8 + 2 = 10, sisa dari 7 adalah 5. 10 + 5 = ?",
+   "answer": "15",
+   "hint": "Tambahkan sisanya ke 10.",
+   "explain": "10 + 5 = 15. Sama.",
+   "error": "salah-fakta-tambah"
+  }
+ ],
+ "conclusion": "Jadi 7 + 8 = 15."
+}
+```
 
 ### Contoh 3: Mengurangi lewat 10
 
-**Soal.** 15 − 7 = ...
-
-1. **Langkah 1: Turun ke 10.** Ambil 5 dulu: 15 − 5 = 10. Tinggal 1 rak penuh.
-2. **Langkah 2: Hitung sisa yang harus diambil.** 7 = 5 + 2. Masih harus diambil 2.
-3. **Langkah 3: Ambil sisanya.** 10 − 2 = 8.
-4. **Cek jawaban.** 8 + 7 = 15. Benar.
-
-**Jawaban:** 8.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Hitung $15 - 7$ lewat 10.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Turun ke 10. 15 dikurangi berapa supaya menjadi 10?",
+   "answer": "5",
+   "hint": "15 − ? = 10",
+   "explain": "15 − 5 = 10.",
+   "error": "salah-pecah-bilangan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: 7 = 5 + ?. Berapa lagi yang harus diambil?",
+   "answer": "2",
+   "hint": "Sudah diambil 5 dari 7.",
+   "explain": "7 = 5 + 2, jadi masih harus diambil 2.",
+   "error": "lupa-sisa-ambil"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Ambil sisanya. 10 − 2 = ?",
+   "answer": "8",
+   "hint": "Mundur 2 dari 10.",
+   "explain": "10 − 2 = 8.",
+   "error": "salah-fakta-kurang"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 8 + 7 = ?",
+   "answer": "15",
+   "hint": "Harus kembali ke 15.",
+   "explain": "8 + 7 = 15. Benar.",
+   "error": "salah-fakta-tambah"
+  }
+ ],
+ "conclusion": "Jadi 15 − 7 = 8."
+}
+```
 
 ### Contoh 4: Satuan dan puluhan
 
-**Soal.** Hitung di kepala: (a) 52 + 6, (b) 52 + 30.
-
-1. **Langkah 1: Lihat yang ditambah.** Pada (a) yang ditambah satuan. Pada (b) yang ditambah puluhan.
-2. **Langkah 2: Hitung (a).** Puluhan tetap 5. Satuan 2 + 6 = 8. Hasilnya 58.
-3. **Langkah 3: Hitung (b).** Satuan tetap 2. Puluhan 5 + 3 = 8. Hasilnya 82.
-4. **Cek jawaban.** 58 − 6 = 52 dan 82 − 30 = 52. Benar.
-
-**Jawaban:** (a) 58, (b) 82.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Hitung di kepala: (a) $52 + 6$, (b) $52 + 30$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pada 52 + 6, angka mana yang berubah?",
+   "options": [
+    "satuan",
+    "puluhan"
+   ],
+   "answer": "satuan",
+   "hint": "6 adalah satuan.",
+   "explain": "Yang ditambah satuan, jadi angka satuan yang berubah.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Hitung (a). Satuan 2 + 6 = 8, puluhan tetap 5. 52 + 6 = ?",
+   "answer": "58",
+   "hint": "Puluhan 5, satuan 8.",
+   "explain": "52 + 6 = 58.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Hitung (b). 30 adalah 3 puluhan. Puluhan 5 + 3 = 8, satuan tetap 2. 52 + 30 = ?",
+   "answer": "82",
+   "hint": "Puluhan 8, satuan 2.",
+   "explain": "52 + 30 = 82.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 82 − 30 = ?",
+   "answer": "52",
+   "hint": "Kurangi puluhannya.",
+   "explain": "82 − 30 = 52. Benar.",
+   "error": "ubah-tempat-salah"
+  }
+ ],
+ "conclusion": "Jadi (a) 52 + 6 = 58 dan (b) 52 + 30 = 82.",
+ "visual": {
+  "type": "base10",
+  "tens": 5,
+  "ones": 2
+ }
+}
+```
 
 ### Contoh 5: Soal cerita
 
-**Soal.** Rina punya 74 stiker. Kakak memberinya 20 stiker. Lalu Rina memberi 3 stiker kepada adiknya. Berapa stiker Rina sekarang?
-
-1. **Langkah 1: Pahami soal.** Ada dua kejadian. Dapat 20 (tambah), lalu memberi 3 (kurang).
-2. **Langkah 2: Tambah puluhan.** 74 + 20: satuan tetap 4, puluhan 7 + 2 = 9. Hasilnya 94.
-3. **Langkah 3: Kurangi satuan.** 94 − 3: puluhan tetap 9, satuan 4 − 3 = 1. Hasilnya 91.
-4. **Cek jawaban.** Mundur: 91 + 3 = 94, lalu 94 − 20 = 74. Kembali ke awal. Benar.
-
-**Jawaban:** 91 stiker.
+```soal
+{
+ "title": "Contoh 5",
+ "text": "Rina punya 74 stiker. Kakak memberinya 20 stiker. Lalu Rina memberi 3 stiker kepada adiknya. Berapa stiker Rina sekarang?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pahami soal. Apa yang dilakukan berurutan?",
+   "options": [
+    "tambah 20, lalu kurang 3",
+    "kurang 20, lalu tambah 3",
+    "tambah 20, lalu tambah 3"
+   ],
+   "answer": "tambah 20, lalu kurang 3",
+   "hint": "Diberi berarti bertambah, memberi berarti berkurang.",
+   "explain": "Dapat 20 (tambah), lalu memberi 3 (kurang).",
+   "error": "salah-pilih-tambah-kurang"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Tambah puluhan. 74 + 20 = ?",
+   "answer": "94",
+   "hint": "Satuan tetap 4, puluhan 7 + 2.",
+   "explain": "74 + 20 = 94.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Kurangi satuan. 94 − 3 = ?",
+   "answer": "91",
+   "hint": "Puluhan tetap 9, satuan 4 − 3.",
+   "explain": "94 − 3 = 91.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: mundur. 91 + 3 = 94, lalu 94 − 20 = ?",
+   "answer": "74",
+   "hint": "Kurangi 2 puluhan.",
+   "explain": "94 − 20 = 74, kembali ke awal. Benar.",
+   "error": "ubah-tempat-salah"
+  }
+ ],
+ "conclusion": "Jadi Rina sekarang punya 91 stiker."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -141,16 +359,182 @@ Strategi ini dipakai kalau satuannya **tidak** melewati 10 (tidak perlu menyimpa
 
 ## Cek pemahaman
 
-1. 8 + 7 = ... (pakai membuat 10)
-2. 6 + 5 = ... (pakai dobel)
-3. 13 − 5 = ...
-4. 64 − 3 = ...
-5. Di perpustakaan ada 38 buku cerita. Datang 40 buku cerita baru. Berapa buku cerita sekarang?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. 15. 8 butuh 2 untuk menjadi 10; 7 = 2 + 5; 10 + 5 = 15.
-2. 11. Dobel 5 + 5 = 10, dan 6 = 5 + 1, jadi 10 + 1 = 11.
-3. 8. 13 − 3 = 10, lalu ambil 2 lagi (5 = 3 + 2): 10 − 2 = 8.
-4. 61. Puluhan tetap 6, satuan 4 − 3 = 1.
-5. 78 buku. 38 + 40: satuan tetap 8, puluhan 3 + 4 = 7.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Hitung $8 + 7$ dengan membuat 10.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "8 butuh berapa untuk menjadi 10?",
+   "answer": "2",
+   "hint": "Pasangan 10 dari 8.",
+   "explain": "8 + 2 = 10.",
+   "error": "salah-pasangan-sepuluh"
+  },
+  {
+   "kind": "number",
+   "prompt": "7 = 2 + ?",
+   "answer": "5",
+   "hint": "Sisa dari 7 setelah diambil 2.",
+   "explain": "7 = 2 + 5.",
+   "error": "salah-pecah-bilangan"
+  },
+  {
+   "kind": "number",
+   "prompt": "10 + 5 = ?",
+   "answer": "15",
+   "hint": "Tambahkan sisanya.",
+   "explain": "10 + 5 = 15.",
+   "error": "lupa-sisa-ambil"
+  }
+ ],
+ "conclusion": "Jadi 8 + 7 = 15."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Hitung $6 + 5$ dengan dobel.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Dobel 5: 5 + 5 = ?",
+   "answer": "10",
+   "hint": "Lima ditambah lima.",
+   "explain": "5 + 5 = 10.",
+   "error": "salah-fakta-tambah"
+  },
+  {
+   "kind": "choice",
+   "prompt": "6 = 5 + 1. Jadi 6 + 5 sama dengan ...",
+   "options": [
+    "10 + 1",
+    "10 − 1",
+    "12 + 1"
+   ],
+   "answer": "10 + 1",
+   "hint": "6 lebih besar 1 dari 5.",
+   "explain": "6 + 5 = 10 + 1.",
+   "error": "salah-sesuaikan-dobel"
+  },
+  {
+   "kind": "number",
+   "prompt": "10 + 1 = ?",
+   "answer": "11",
+   "hint": "Satu lagi sesudah 10.",
+   "explain": "10 + 1 = 11.",
+   "error": "salah-sesuaikan-dobel"
+  }
+ ],
+ "conclusion": "Jadi 6 + 5 = 11."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung $13 - 5$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Turun ke 10 dulu. 13 − ? = 10",
+   "answer": "3",
+   "hint": "Berapa telur lepas di atas 10?",
+   "explain": "13 − 3 = 10.",
+   "error": "salah-pecah-bilangan"
+  },
+  {
+   "kind": "number",
+   "prompt": "5 = 3 + ?. Masih harus diambil berapa?",
+   "answer": "2",
+   "hint": "Sudah diambil 3 dari 5.",
+   "explain": "5 = 3 + 2.",
+   "error": "lupa-sisa-ambil"
+  },
+  {
+   "kind": "number",
+   "prompt": "10 − 2 = ?",
+   "answer": "8",
+   "hint": "Mundur 2 dari 10.",
+   "explain": "10 − 2 = 8.",
+   "error": "salah-fakta-kurang"
+  }
+ ],
+ "conclusion": "Jadi 13 − 5 = 8."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Hitung $64 - 3$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Angka mana yang berubah?",
+   "options": [
+    "satuan",
+    "puluhan"
+   ],
+   "answer": "satuan",
+   "hint": "3 adalah satuan.",
+   "explain": "Yang dikurangi satuan, puluhan tetap 6.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Satuan 4 − 3 = 1. Jadi 64 − 3 = ?",
+   "answer": "61",
+   "hint": "Puluhan 6, satuan 1.",
+   "explain": "64 − 3 = 61.",
+   "error": "ubah-tempat-salah"
+  }
+ ],
+ "conclusion": "Jadi 64 − 3 = 61."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Di perpustakaan ada 38 buku cerita. Datang 40 buku cerita baru. Berapa buku cerita sekarang?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "40 adalah ...",
+   "options": [
+    "4 puluhan",
+    "4 satuan"
+   ],
+   "answer": "4 puluhan",
+   "hint": "40 = 4 rak penuh.",
+   "explain": "40 adalah 4 puluhan, jadi angka puluhan yang berubah.",
+   "error": "ubah-tempat-salah"
+  },
+  {
+   "kind": "number",
+   "prompt": "Puluhan 3 + 4 = 7, satuan tetap 8. 38 + 40 = ?",
+   "answer": "78",
+   "hint": "Puluhan 7, satuan 8.",
+   "explain": "38 + 40 = 78.",
+   "error": "ubah-tempat-salah",
+   "suffix": "buku"
+  }
+ ],
+ "conclusion": "Jadi sekarang ada 78 buku cerita."
+}
+```

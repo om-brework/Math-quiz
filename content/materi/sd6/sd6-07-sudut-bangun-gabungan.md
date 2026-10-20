@@ -31,6 +31,10 @@ Setiap langkah di contoh nanti akan menyebut kartu petunjuk yang dipakai.
 - **Kartu B, satu titik:** sudut-sudut di sekeliling satu titik jumlahnya $360^\circ$.
 - **Kartu C, bertolak belakang:** dua sudut yang bertolak belakang sama besar.
 
+```anim
+{"type": "bangun", "title": "Kartu A: sudut pada garis lurus", "titik": {"A": [-4, 0], "B": [0, 0], "C": [4, 0], "D": [2.0, 3.46]}, "sisi": [["A", "B"], ["B", "C"], ["B", "D"]], "sudut": [{"di": "B", "dari": "D", "ke": "A", "label": "120^\\circ"}, {"di": "B", "dari": "C", "ke": "D", "label": "60^\\circ"}], "langkah": [{"say": "ABC adalah garis lurus. Garis BD memotongnya di B.", "sisi": 3, "sudut": 0}, {"say": "Sudut ABD = 120°.", "sisi": 3, "sudut": 1, "sorot": ["A", "B", "D"]}, {"say": "Sudut DBC = 180° − 120° = 60°. Jumlahnya 180°.", "sisi": 3, "sudut": 2, "sorot": ["D", "B", "C"]}]}
+```
+
 ### Kartu petunjuk tentang segitiga
 
 - **Kartu D, jumlah sudut segitiga:** $180^\circ$.
@@ -49,88 +53,251 @@ Setiap langkah di contoh nanti akan menyebut kartu petunjuk yang dipakai.
 
 $\angle ABC$ adalah sudut di titik $B$, di antara garis $BA$ dan $BC$. Huruf tengah selalu titik sudutnya.
 
+```anim
+{"type": "bangun", "title": "Membaca nama sudut ABC", "titik": {"A": [1, 4], "B": [0, 0], "C": [5, 0]}, "sisi": [["B", "A"], ["B", "C"]], "sudut": [{"di": "B", "dari": "C", "ke": "A", "label": "\\angle ABC"}], "langkah": [{"say": "Garis BA dan garis BC bertemu di titik B.", "sudut": 0}, {"say": "Sudut ABC ada di titik B, huruf tengahnya.", "sudut": 1, "sorot": ["B"]}]}
+```
+
 ## Contoh langkah demi langkah
+
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
 
 ### Contoh 1: Persegi panjang dan segitiga
 
-**Soal.** $ABCD$ adalah persegi panjang. Titik $E$ terletak pada sisi $DC$. Garis $AE$ ditarik. $\angle DAE = 35^\circ$. Hitung $\angle AED$ dan $\angle AEC$.
-
-```
- A +--------------------+ B
-   |\                   |
-   | \                  |
-   |  \                 |
- D +---E----------------+ C
+```anim
+{"type": "bangun", "title": "Persegi panjang ABCD dan garis AE", "titik": {"A": [0, 4], "B": [8, 4], "C": [8, 0], "D": [0, 0], "E": [2.8, 0]}, "sisi": [["A", "B"], ["B", "C"], ["C", "E"], ["E", "D"], ["D", "A"], ["A", "E"]], "sudut": [{"di": "A", "dari": "D", "ke": "E", "label": "35^\\circ"}, {"di": "D", "dari": "E", "ke": "A", "siku": true}, {"di": "E", "dari": "A", "ke": "D", "label": "?"}, {"di": "E", "dari": "C", "ke": "A", "label": "?"}], "langkah": [{"say": "ABCD persegi panjang, E pada DC. Sudut DAE = 35°, sudut ADE = 90°.", "sudut": 2}, {"say": "Segitiga ADE: sudut AED dicari dengan Kartu D.", "sudut": 3, "sorot": ["A", "D", "E"]}, {"say": "Garis lurus DEC: sudut AEC dicari dengan Kartu A.", "sudut": 4, "sorot": ["D", "E", "C"]}]}
 ```
 
-1. **Langkah 1: Cari sudut yang diketahui.** $\angle DAE = 35^\circ$. $\angle ADE = 90^\circ$ (Kartu H, sudut persegi panjang).
-2. **Langkah 2: Pakai segitiga $ADE$.** Kartu D: $\angle AED = 180^\circ - 90^\circ - 35^\circ = 55^\circ$.
-3. **Langkah 3: Pakai garis lurus $DEC$.** Kartu A: $\angle AEC = 180^\circ - 55^\circ = 125^\circ$.
-4. **Cek jawaban.** Segitiga $ADE$: $90 + 35 + 55 = 180$. Garis $DC$: $55 + 125 = 180$. Benar.
-
-**Jawaban:** $\angle AED = 55^\circ$, $\angle AEC = 125^\circ$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "$ABCD$ adalah persegi panjang. Titik $E$ terletak pada sisi $DC$. Garis $AE$ ditarik. $\\angle DAE = 35^\\circ$. Hitung $\\angle AED$ dan $\\angle AEC$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Kartu H. Berapa besar $\\angle ADE$?",
+   "answer": "90",
+   "hint": "D adalah pojok persegi panjang.",
+   "explain": "Semua sudut persegi panjang $90^\\circ$.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Kartu D pada segitiga $ADE$. $\\angle AED$ = ?",
+   "answer": "55",
+   "hint": "$180^\\circ - 90^\\circ - 35^\\circ$.",
+   "explain": "$\\angle AED = 55^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Kartu A pada garis lurus $DEC$. $\\angle AEC$ = ?",
+   "answer": "125",
+   "hint": "$180^\\circ - 55^\\circ$.",
+   "explain": "$\\angle AEC = 125^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $55^\\circ + 125^\\circ$ = ?",
+   "answer": "180",
+   "hint": "Sudut pada garis lurus.",
+   "explain": "$180^\\circ$. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle AED = 55^\\circ$ dan $\\angle AEC = 125^\\circ$."
+}
+```
 
 ### Contoh 2: Jajargenjang dan segitiga
 
-**Soal.** $PQRS$ adalah jajargenjang. $\angle SPQ = 70^\circ$. Titik $T$ terletak pada $PQ$, dan $\angle PST = 40^\circ$. Hitung $\angle PTS$, $\angle STQ$, dan $\angle QRS$.
-
-```
-      S +---------------------+ R
-       /  \                  /
-      /     \               /
-     /        \            /
-  P +-----------+---------+ Q
-                T
+```anim
+{"type": "bangun", "title": "Jajargenjang PQRS dan garis ST", "titik": {"P": [0, 0], "Q": [8, 0], "R": [9.54, 4.23], "S": [1.54, 4.23], "T": [3.08, 0]}, "sisi": [["P", "T"], ["T", "Q"], ["Q", "R"], ["R", "S"], ["S", "P"], ["S", "T"]], "sudut": [{"di": "P", "dari": "T", "ke": "S", "label": "70^\\circ"}, {"di": "S", "dari": "P", "ke": "T", "label": "40^\\circ"}, {"di": "T", "dari": "S", "ke": "P", "label": "?"}, {"di": "T", "dari": "Q", "ke": "S", "label": "?"}, {"di": "R", "dari": "S", "ke": "Q", "label": "?"}], "langkah": [{"say": "Diketahui sudut SPQ = 70° dan sudut PST = 40°.", "sudut": 2}, {"say": "Segitiga PST memberi sudut PTS (Kartu D).", "sudut": 3, "sorot": ["P", "S", "T"]}, {"say": "Garis lurus PTQ memberi sudut STQ (Kartu A).", "sudut": 4, "sorot": ["P", "T", "Q"]}, {"say": "Sudut QRS berhadapan dengan sudut SPQ (Kartu I).", "sudut": 5, "sorot": ["R", "P"]}]}
 ```
 
-1. **Langkah 1: Pakai segitiga $PST$.** Diketahui $\angle SPT = 70^\circ$ dan $\angle PST = 40^\circ$. Kartu D: $\angle PTS = 180^\circ - 70^\circ - 40^\circ = 70^\circ$.
-2. **Langkah 2: Pakai garis lurus $PTQ$.** Kartu A: $\angle STQ = 180^\circ - 70^\circ = 110^\circ$.
-3. **Langkah 3: Pakai sifat jajargenjang.** Kartu I: $\angle QRS$ berhadapan dengan $\angle SPQ$, jadi $\angle QRS = 70^\circ$.
-4. **Cek jawaban.** Segitiga $PST$: $70 + 40 + 70 = 180$. Jajargenjang: $\angle PSR = 180^\circ - 70^\circ = 110^\circ$ (Kartu I). Keempat sudut: $70 + 110 + 70 + 110 = 360$ (Kartu K). Benar.
-
-**Jawaban:** $\angle PTS = 70^\circ$, $\angle STQ = 110^\circ$, $\angle QRS = 70^\circ$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "$PQRS$ adalah jajargenjang. $\\angle SPQ = 70^\\circ$. Titik $T$ terletak pada $PQ$, dan $\\angle PST = 40^\\circ$. Hitung $\\angle PTS$, $\\angle STQ$, dan $\\angle QRS$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Kartu D pada segitiga $PST$. $\\angle PTS$ = ?",
+   "answer": "70",
+   "hint": "$180^\\circ - 70^\\circ - 40^\\circ$.",
+   "explain": "$\\angle PTS = 70^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Kartu A pada garis $PTQ$. $\\angle STQ$ = ?",
+   "answer": "110",
+   "hint": "$180^\\circ - 70^\\circ$.",
+   "explain": "$\\angle STQ = 110^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Sudut mana yang berhadapan dengan $\\angle QRS$?",
+   "options": [
+    "$\\angle SPQ$",
+    "$\\angle PQR$",
+    "$\\angle PSR$"
+   ],
+   "answer": "$\\angle SPQ$",
+   "hint": "Sudut berhadapan ada di pojok seberang.",
+   "explain": "R berseberangan dengan P, jadi $\\angle QRS = \\angle SPQ$.",
+   "error": "salah-titik-sudut"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Kartu I. $\\angle QRS$ = ?",
+   "answer": "70",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "$\\angle QRS = 70^\\circ$.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $70^\\circ + 110^\\circ + 70^\\circ + 110^\\circ$ = ?",
+   "answer": "360",
+   "hint": "Jumlah sudut segiempat (Kartu K).",
+   "explain": "$360^\\circ$. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle PTS = 70^\\circ$, $\\angle STQ = 110^\\circ$, dan $\\angle QRS = 70^\\circ$."
+}
+```
 
 ### Contoh 3: Soal cerita rangka trapesium
 
-**Soal.** Pak Made membuat rangka dinding depan rumah berbentuk trapesium sama kaki $ABCD$. Sisi $AB$ (bawah) sejajar dengan sisi $DC$ (atas), dan $AD = BC$. $\angle DAB = 50^\circ$. Ia memasang tiang $DE$ dari $D$ tegak lurus ke $AB$. Hitung $\angle ADC$, $\angle ADE$, dan $\angle EDC$.
-
-```
-          D +-----------+ C
-           /|            \
-          / |             \
-         /  |              \
-      A +---+---------------+ B
-            E
+```anim
+{"type": "bangun", "title": "Rangka trapesium sama kaki ABCD dengan tiang DE", "titik": {"A": [0, 0], "B": [10, 0], "C": [6.79, 3.83], "D": [3.21, 3.83], "E": [3.21, 0]}, "sisi": [["A", "E"], ["E", "B"], ["B", "C"], ["C", "D"], ["D", "A"], ["D", "E"]], "sudut": [{"di": "A", "dari": "B", "ke": "D", "label": "50^\\circ"}, {"di": "E", "dari": "D", "ke": "A", "siku": true}, {"di": "D", "dari": "A", "ke": "E", "label": "?"}, {"di": "D", "dari": "E", "ke": "C", "label": "?"}], "langkah": [{"say": "AB sejajar DC. Sudut DAB = 50°.", "sisi": 5, "sudut": 1}, {"say": "Tiang DE tegak lurus AB, jadi sudut AED = 90°.", "sudut": 2, "sorot": ["D", "E"]}, {"say": "Segitiga siku-siku AED memberi sudut ADE (Kartu G).", "sudut": 3, "sorot": ["A", "E", "D"]}, {"say": "Sudut EDC = sudut ADC dikurangi sudut ADE.", "sudut": 4, "sorot": ["E", "D", "C"]}]}
 ```
 
-1. **Langkah 1: Pakai sifat trapesium.** $\angle DAB$ dan $\angle ADC$ terletak di antara sisi sejajar $AB$ dan $DC$, pada kaki $AD$. Kartu J: $\angle ADC = 180^\circ - 50^\circ = 130^\circ$.
-2. **Langkah 2: Pakai segitiga siku-siku $AED$.** $DE$ tegak lurus $AB$, jadi $\angle AED = 90^\circ$. Kartu G: $\angle ADE = 90^\circ - 50^\circ = 40^\circ$.
-3. **Langkah 3: Kurangkan sudut.** $\angle ADC$ terbagi oleh tiang menjadi $\angle ADE$ dan $\angle EDC$. Jadi $\angle EDC = 130^\circ - 40^\circ = 90^\circ$.
-4. **Cek jawaban.** Tiang $DE$ tegak lurus $AB$, dan $DC$ sejajar $AB$, jadi tiang juga tegak lurus $DC$. Hasil $90^\circ$ cocok. Trapesium sama kaki: $\angle ABC = 50^\circ$ dan $\angle BCD = 130^\circ$, jumlah $50 + 130 + 130 + 50 = 360$ (Kartu K). Benar.
-
-**Jawaban:** $\angle ADC = 130^\circ$, $\angle ADE = 40^\circ$, $\angle EDC = 90^\circ$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Rangka dinding berbentuk trapesium sama kaki $ABCD$, dengan $AB$ sejajar $DC$ dan $AD = BC$. $\\angle DAB = 50^\\circ$. Tiang $DE$ dipasang dari $D$ tegak lurus ke $AB$. Hitung $\\angle ADC$, $\\angle ADE$, dan $\\angle EDC$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Kartu J. $\\angle ADC$ = ?",
+   "answer": "130",
+   "hint": "$\\angle DAB$ dan $\\angle ADC$ ada pada kaki yang sama, di antara sisi sejajar.",
+   "explain": "$180^\\circ - 50^\\circ = 130^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Kartu G pada segitiga siku-siku $AED$. $\\angle ADE$ = ?",
+   "answer": "40",
+   "hint": "$90^\\circ - 50^\\circ$.",
+   "explain": "$\\angle ADE = 40^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $\\angle EDC = \\angle ADC - \\angle ADE$ = ?",
+   "answer": "90",
+   "hint": "$130^\\circ - 40^\\circ$.",
+   "explain": "$\\angle EDC = 90^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: kenapa $\\angle EDC = 90^\\circ$ masuk akal?",
+   "options": [
+    "Tiang tegak lurus AB, dan DC sejajar AB",
+    "Karena semua sudut trapesium 90°",
+    "Karena DE sama panjang dengan AD"
+   ],
+   "answer": "Tiang tegak lurus AB, dan DC sejajar AB",
+   "hint": "Ingat hubungan DC dan AB.",
+   "explain": "Garis yang tegak lurus AB juga tegak lurus DC karena keduanya sejajar.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\angle ADC = 130^\\circ$, $\\angle ADE = 40^\\circ$, dan $\\angle EDC = 90^\\circ$."
+}
+```
 
 ### Contoh 4: Persegi dan segitiga sama sisi
 
-**Soal.** $ABCD$ adalah persegi. Segitiga sama sisi $BCE$ digambar di luar persegi, menempel pada sisi $BC$. Garis $AE$ ditarik. Hitung $\angle BAE$.
-
-```
-   A +---------+ B
-     |         |  \
-     |         |    \
-     |         |      + E
-     |         |    /
-     |         |  /
-   D +---------+ C
+```anim
+{"type": "bangun", "title": "Persegi ABCD dan segitiga sama sisi BCE", "titik": {"A": [0, 4], "B": [4, 4], "C": [4, 0], "D": [0, 0], "E": [7.46, 2]}, "sisi": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "A"], ["B", "E"], ["E", "C"], ["A", "E"]], "sudut": [{"di": "B", "dari": "C", "ke": "A", "siku": true}, {"di": "B", "dari": "E", "ke": "C", "label": "60^\\circ"}, {"di": "A", "dari": "E", "ke": "B", "label": "?"}], "langkah": [{"say": "Persegi ABCD dan segitiga sama sisi BCE.", "sisi": 6, "sudut": 0}, {"say": "Di titik B: 90° dari persegi dan 60° dari segitiga.", "sisi": 6, "sudut": 2, "sorot": ["B"]}, {"say": "Tarik AE. AB = BC = BE, jadi segitiga ABE sama kaki.", "sisi": 7, "sudut": 2, "sorot": ["A", "B", "E"]}, {"say": "Sudut BAE dicari dari segitiga sama kaki ABE.", "sisi": 7, "sudut": 3, "sorot": ["A"]}]}
 ```
 
-1. **Langkah 1: Cari sudut di titik $B$.** $\angle ABC = 90^\circ$ (Kartu H). $\angle CBE = 60^\circ$ (Kartu F). Jadi $\angle ABE = 90^\circ + 60^\circ = 150^\circ$.
-2. **Langkah 2: Cari sisi yang sama panjang.** $AB = BC$ (sisi persegi). $BC = BE$ (sisi segitiga sama sisi). Jadi $AB = BE$. Segitiga $ABE$ adalah segitiga sama kaki.
-3. **Langkah 3: Pakai segitiga sama kaki.** Kartu E: $\angle BAE = \angle BEA$. Kartu D: kedua sudut itu jumlahnya $180^\circ - 150^\circ = 30^\circ$.
-4. **Langkah 4: Bagi dua.** $\angle BAE = 30^\circ \div 2 = 15^\circ$.
-5. **Cek jawaban.** Segitiga $ABE$: $150 + 15 + 15 = 180$. Benar.
-
-**Jawaban:** $\angle BAE = 15^\circ$.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "$ABCD$ adalah persegi. Segitiga sama sisi $BCE$ digambar di luar persegi, menempel pada sisi $BC$. Garis $AE$ ditarik. Hitung $\\angle BAE$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Kartu H dan F. $\\angle ABE = \\angle ABC + \\angle CBE$ = ?",
+   "answer": "150",
+   "hint": "$90^\\circ + 60^\\circ$.",
+   "explain": "$\\angle ABE = 150^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Mengapa $AB = BE$?",
+   "options": [
+    "AB = BC (persegi) dan BC = BE (sama sisi)",
+    "Karena keduanya garis miring",
+    "Karena sudutnya sama"
+   ],
+   "answer": "AB = BC (persegi) dan BC = BE (sama sisi)",
+   "hint": "Cari sisi yang dipakai bersama oleh kedua bangun.",
+   "explain": "Jadi segitiga $ABE$ sama kaki.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Kartu D. $\\angle BAE + \\angle BEA$ = ?",
+   "answer": "30",
+   "hint": "$180^\\circ - 150^\\circ$.",
+   "explain": "Kedua sudut alas jumlahnya $30^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Kartu E. $\\angle BAE$ = ?",
+   "answer": "15",
+   "hint": "Kedua sudut alas sama besar.",
+   "explain": "$30^\\circ \\div 2 = 15^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $150^\\circ + 15^\\circ + 15^\\circ$ = ?",
+   "answer": "180",
+   "hint": "Jumlah sudut segitiga.",
+   "explain": "$180^\\circ$. Benar.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle BAE = 15^\\circ$."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -151,16 +318,180 @@ $\angle ABC$ adalah sudut di titik $B$, di antara garis $BA$ dan $BC$. Huruf ten
 
 ## Cek pemahaman
 
-1. Pada segitiga $ABC$, $\angle A = 48^\circ$ dan $\angle B = 77^\circ$. Hitung $\angle C$.
-2. $KLMN$ adalah jajargenjang dengan $\angle K = 64^\circ$. Hitung $\angle L$ dan $\angle M$.
-3. $ABCD$ adalah belah ketupat dengan $\angle ABC = 120^\circ$. Diagonal $AC$ ditarik. Hitung $\angle BAC$.
-4. $PQRS$ adalah trapesium dengan $PQ$ sejajar $SR$. $\angle SPQ = 72^\circ$ dan $\angle PQR = 58^\circ$. Hitung $\angle PSR$ dan $\angle QRS$.
-5. $ABCD$ adalah persegi panjang. Diagonal $AC$ ditarik. $\angle BAC = 28^\circ$. Hitung $\angle CAD$ dan $\angle ACB$.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $55^\circ$. $180 - 48 - 77 = 55$.
-2. $\angle L = 116^\circ$, $\angle M = 64^\circ$. Sudut berdekatan: $180 - 64 = 116$; sudut berhadapan sama.
-3. $30^\circ$. $AB = BC$, jadi segitiga $ABC$ sama kaki: $(180 - 120) \div 2 = 30$.
-4. $\angle PSR = 108^\circ$, $\angle QRS = 122^\circ$. $180 - 72 = 108$ dan $180 - 58 = 122$.
-5. $\angle CAD = 62^\circ$, $\angle ACB = 62^\circ$. $\angle DAB = 90^\circ$, jadi $\angle CAD = 90 - 28 = 62$; segitiga $ABC$ siku-siku di $B$, jadi $\angle ACB = 90 - 28 = 62$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Pada segitiga $ABC$, $\\angle A = 48^\\circ$ dan $\\angle B = 77^\\circ$. Hitung $\\angle C$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\angle A + \\angle B$ = ?",
+   "answer": "125",
+   "hint": "48 + 77.",
+   "explain": "$125^\\circ$.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle C$ = ?",
+   "answer": "55",
+   "hint": "Jumlah sudut segitiga $180^\\circ$.",
+   "explain": "$180^\\circ - 125^\\circ = 55^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle C = 55^\\circ$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "$KLMN$ adalah jajargenjang dengan $\\angle K = 64^\\circ$. Hitung $\\angle L$ dan $\\angle M$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\angle L$ berdekatan dengan $\\angle K$. $\\angle L$ = ?",
+   "answer": "116",
+   "hint": "Sudut berdekatan jumlahnya $180^\\circ$.",
+   "explain": "$180^\\circ - 64^\\circ = 116^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle M$ berhadapan dengan $\\angle K$. $\\angle M$ = ?",
+   "answer": "64",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "$\\angle M = 64^\\circ$.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle L = 116^\\circ$ dan $\\angle M = 64^\\circ$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "$ABCD$ adalah belah ketupat dengan $\\angle ABC = 120^\\circ$. Diagonal $AC$ ditarik. Hitung $\\angle BAC$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Segitiga $ABC$ termasuk segitiga ...",
+   "options": [
+    "sama kaki, karena AB = BC",
+    "sama sisi",
+    "siku-siku"
+   ],
+   "answer": "sama kaki, karena AB = BC",
+   "hint": "Semua sisi belah ketupat sama panjang.",
+   "explain": "$AB = BC$, jadi $\\angle BAC = \\angle BCA$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle BAC + \\angle BCA$ = ?",
+   "answer": "60",
+   "hint": "$180^\\circ - 120^\\circ$.",
+   "explain": "$60^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle BAC$ = ?",
+   "answer": "30",
+   "hint": "Bagi dua sama besar.",
+   "explain": "$60^\\circ \\div 2 = 30^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle BAC = 30^\\circ$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "$PQRS$ adalah trapesium dengan $PQ$ sejajar $SR$. $\\angle SPQ = 72^\\circ$ dan $\\angle PQR = 58^\\circ$. Hitung $\\angle PSR$ dan $\\angle QRS$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Pasangan sudut yang jumlahnya $180^\\circ$ adalah ...",
+   "options": [
+    "$\\angle SPQ$ dan $\\angle PSR$",
+    "$\\angle SPQ$ dan $\\angle PQR$",
+    "$\\angle SPQ$ dan $\\angle QRS$"
+   ],
+   "answer": "$\\angle SPQ$ dan $\\angle PSR$",
+   "hint": "Dua sudut pada kaki yang sama, di antara sisi sejajar.",
+   "explain": "Kaki $PS$: $\\angle SPQ + \\angle PSR = 180^\\circ$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle PSR$ = ?",
+   "answer": "108",
+   "hint": "$180^\\circ - 72^\\circ$.",
+   "explain": "$\\angle PSR = 108^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "$\\angle QRS$ = ?",
+   "answer": "122",
+   "hint": "Kaki $QR$: $180^\\circ - 58^\\circ$.",
+   "explain": "$\\angle QRS = 122^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle PSR = 108^\\circ$ dan $\\angle QRS = 122^\\circ$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "$ABCD$ adalah persegi panjang. Diagonal $AC$ ditarik. $\\angle BAC = 28^\\circ$. Hitung $\\angle CAD$ dan $\\angle ACB$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$\\angle CAD = \\angle DAB - \\angle BAC$ = ?",
+   "answer": "62",
+   "hint": "$\\angle DAB = 90^\\circ$.",
+   "explain": "$90^\\circ - 28^\\circ = 62^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Segitiga $ABC$ siku-siku di $B$. $\\angle ACB$ = ?",
+   "answer": "62",
+   "hint": "Dua sudut lain jumlahnya $90^\\circ$.",
+   "explain": "$90^\\circ - 28^\\circ = 62^\\circ$.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Jadi $\\angle CAD = 62^\\circ$ dan $\\angle ACB = 62^\\circ$."
+}
+```

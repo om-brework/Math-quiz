@@ -19,6 +19,10 @@ Sekarang ada **pintu penyaring**: "hanya siswa yang memakai kacamata boleh tetap
 
 Analogi aula dan pintu penyaring ini dipakai terus di bawah.
 
+```anim
+{"type": "batang", "title": "Aula dan pintu penyaring", "bars": [{"label": "Aula", "units": 10, "unitValue": "10", "known": "100 siswa"}, {"label": "Berkacamata", "units": 4, "unitValue": "10", "known": "40 siswa"}, {"label": "Kacamata, pramuka", "units": 1, "unitValue": "10", "known": "10 siswa"}], "langkah": [{"say": "Aula berisi 100 siswa. Setiap siswa sama mungkin terpilih.", "bars": 1}, {"say": "Pintu penyaring: hanya 40 siswa berkacamata yang tetap di aula.", "bars": 2}, {"say": "Dari 40 siswa itu, 10 ikut pramuka. Peluang pramuka dengan syarat berkacamata $= \\frac{10}{40} = \\frac{1}{4}$, bukan $\\frac{10}{100}$.", "bars": 3}]}
+```
+
 ## Konsep
 
 ### Mengingat dasar: komplemen dan aturan penjumlahan
@@ -49,6 +53,10 @@ $$P(A \mid B) = \frac{n(A \cap B)}{n(B)} = \frac{n(A \cap B)/n(S)}{n(B)/n(S)} = 
 
 Rumus terakhir dipakai sebagai definisi umum.
 
+```visual
+{"type": "table", "head": ["", "Pramuka", "Bukan pramuka", "Jumlah"], "rows": [["Berkacamata", "10", "30", "40"], ["Tidak berkacamata", "20", "40", "60"], ["Jumlah", "30", "70", "100"]], "caption": "Aula 100 siswa: P(pramuka | kacamata) = 10/40, hanya baris berkacamata yang dilihat"}
+```
+
 ### Aturan perkalian
 
 Dengan menyusun ulang definisi tadi:
@@ -75,69 +83,301 @@ Diagram pohon menyajikan kejadian bertahap. Cabang pada tahap kedua adalah **pel
 - **Jumlahkan** hasil beberapa jalur yang berbeda (jalur-jalur itu saling lepas).
 - Jumlah peluang cabang yang keluar dari satu titik selalu 1.
 
+```anim
+{"type": "bangun", "title": "Pohon: ambil 2 kelereng dari 3 merah dan 2 biru", "titik": {"S": [0, 0], "M": [4, 2], "B": [4, -2], "MM": [8, 3], "MB": [8, 1], "BM": [8, -1], "BB": [8, -3]}, "sisi": [["S", "M", "\\frac{3}{5}"], ["S", "B", "\\frac{2}{5}"], ["M", "MM", "\\frac{2}{4}"], ["M", "MB", "\\frac{2}{4}"], ["B", "BM", "\\frac{3}{4}"], ["B", "BB", "\\frac{1}{4}"]], "langkah": [{"say": "Tahap 1: kelereng pertama merah ($\\frac{3}{5}$) atau biru ($\\frac{2}{5}$). Jumlahnya 1.", "sisi": 2}, {"say": "Tahap 2: cabang adalah peluang bersyarat. Setelah merah terambil, sisa 2 merah dan 2 biru.", "sisi": 4, "sorot": ["M"]}, {"say": "Setelah biru terambil, sisa 3 merah dan 1 biru.", "sisi": 6, "sorot": ["B"]}, {"say": "Kalikan sepanjang jalur: $P(MM) = \\frac{3}{5} \\times \\frac{2}{4} = \\frac{3}{10}$.", "sisi": 6, "sorot": ["S", "M", "MM"]}, {"say": "Jumlahkan antarjalur: $P(\\text{satu merah, satu biru}) = \\frac{3}{10} + \\frac{3}{10} = \\frac{3}{5}$.", "sisi": 6, "sorot": ["MB", "BM"]}]}
+```
+
 Untuk "membalik" syarat, misalnya mencari $P(\text{tahap 1} \mid \text{tahap 2})$, pakai definisi: peluang jalur yang diinginkan dibagi jumlah peluang semua jalur yang memenuhi syarat.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Dua dadu
 
-**Soal.** Dua dadu dilempar. $A$: jumlah mata dadu 8. $B$: mata dadu pertama genap. Tentukan $P(A \mid B)$ dan selidiki apakah $A$ dan $B$ saling bebas.
-
-1. **Langkah 1: Tentukan ruang sampel.** Ada $6 \times 6 = 36$ pasangan yang sama mungkin.
-2. **Langkah 2: Daftar kejadian.** $A = \{(2,6), (3,5), (4,4), (5,3), (6,2)\}$, jadi $P(A) = \frac{5}{36}$. $B$ memuat $3 \times 6 = 18$ pasangan, jadi $P(B) = \frac{1}{2}$.
-3. **Langkah 3: Cari irisan.** $A \cap B = \{(2,6), (4,4), (6,2)\}$, jadi $P(A \cap B) = \frac{3}{36} = \frac{1}{12}$.
-4. **Langkah 4: Hitung peluang bersyarat.** $P(A \mid B) = \dfrac{1/12}{1/2} = \dfrac{1}{6}$.
-5. **Langkah 5: Uji kebebasan.** $P(A) = \frac{5}{36} \approx 0{,}139$, sedangkan $P(A \mid B) = \frac{1}{6} \approx 0{,}167$. Tidak sama, jadi tidak saling bebas.
-6. **Cek jawaban.** Dengan pintu penyaring: aula tersisa 18 pasangan dengan mata pertama genap. Yang berjumlah 8 ada 3. Proporsinya $\frac{3}{18} = \frac{1}{6}$. Cocok.
-
-**Jawaban:** $P(A \mid B) = \frac{1}{6}$; $A$ dan $B$ tidak saling bebas.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Dua dadu dilempar. $A$: jumlah mata dadu 8. $B$: mata dadu pertama genap. Tentukan $P(A \\mid B)$ dan selidiki apakah $A$ dan $B$ saling bebas.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Banyak pasangan dalam ruang sampel = ?",
+   "answer": "36",
+   "hint": "$6 \\times 6$.",
+   "explain": "36 pasangan yang sama mungkin.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Banyak anggota $A$ (jumlah 8) = ?",
+   "answer": "5",
+   "hint": "Daftar: (2,6), (3,5), ...",
+   "explain": "$A = \\{(2,6), (3,5), (4,4), (5,3), (6,2)\\}$, jadi $P(A) = \\frac{5}{36}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Banyak anggota $B$ (mata pertama genap) = ?",
+   "answer": "18",
+   "hint": "Mata pertama 2, 4, atau 6; mata kedua bebas.",
+   "explain": "$3 \\times 6 = 18$, jadi $P(B) = \\frac{1}{2}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Banyak anggota $A \\cap B$ = ?",
+   "answer": "3",
+   "hint": "Dari daftar $A$, pilih yang mata pertamanya genap.",
+   "explain": "(2,6), (4,4), (6,2): 3 pasangan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 4: $P(A \\mid B) = \\frac{n(A \\cap B)}{n(B)}$ = ?",
+   "answer": {
+    "num": 1,
+    "den": 6
+   },
+   "hint": "Di aula tersaring ada 18 pasangan.",
+   "explain": "$\\frac{3}{18} = \\frac{1}{6}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 5: Apakah $A$ dan $B$ saling bebas?",
+   "options": [
+    "Tidak, karena $P(A \\mid B) \\ne P(A)$",
+    "Ya, karena $P(A \\mid B) = P(A)$",
+    "Ya, karena keduanya bisa terjadi bersamaan"
+   ],
+   "answer": "Tidak, karena $P(A \\mid B) \\ne P(A)$",
+   "hint": "Bandingkan $\\frac{1}{6} \\approx 0{,}167$ dengan $\\frac{5}{36} \\approx 0{,}139$.",
+   "explain": "Informasi $B$ mengubah peluang $A$, jadi tidak saling bebas.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P(A \\mid B) = \\frac{1}{6}$, dan $A$, $B$ tidak saling bebas."
+}
+```
 
 ### Contoh 2: Memakai aturan penjumlahan
 
-**Soal.** Diketahui $P(A) = 0{,}4$, $P(B) = 0{,}5$, dan $P(A \cup B) = 0{,}7$. Tentukan $P(A \cap B)$, $P(A \mid B)$, dan $P(A' \cap B)$. Apakah $A$ dan $B$ saling bebas?
-
-1. **Langkah 1: Pakai aturan penjumlahan.** $0{,}7 = 0{,}4 + 0{,}5 - P(A \cap B)$, jadi $P(A \cap B) = 0{,}2$.
-2. **Langkah 2: Peluang bersyarat.** $P(A \mid B) = \dfrac{0{,}2}{0{,}5} = 0{,}4$.
-3. **Langkah 3: Daerah $B$ tanpa $A$.** $P(A' \cap B) = P(B) - P(A \cap B) = 0{,}5 - 0{,}2 = 0{,}3$.
-4. **Langkah 4: Uji kebebasan.** $P(A)\,P(B) = 0{,}4 \times 0{,}5 = 0{,}2 = P(A \cap B)$. Jadi saling bebas.
-5. **Cek jawaban.** Isi diagram Venn: hanya $A$ = 0,2, irisan 0,2, hanya $B$ = 0,3, di luar keduanya 0,3. Jumlahnya $0{,}2 + 0{,}2 + 0{,}3 + 0{,}3 = 1$. Konsisten, dan $P(A \mid B) = P(A) = 0{,}4$ sesuai Langkah 4.
-
-**Jawaban:** $P(A \cap B) = 0{,}2$, $P(A \mid B) = 0{,}4$, $P(A' \cap B) = 0{,}3$; saling bebas.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Diketahui $P(A) = 0{,}4$, $P(B) = 0{,}5$, dan $P(A \\cup B) = 0{,}7$. Tentukan $P(A \\cap B)$, $P(A \\mid B)$, dan $P(A' \\cap B)$. Apakah $A$ dan $B$ saling bebas?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: $0{,}7 = 0{,}4 + 0{,}5 - P(A \\cap B)$. $P(A \\cap B)$ = ?",
+   "answer": "0,2",
+   "hint": "$0{,}9 - 0{,}7$.",
+   "explain": "$P(A \\cap B) = 0{,}2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $P(A \\mid B) = \\frac{0{,}2}{0{,}5}$ = ?",
+   "answer": "0,4",
+   "hint": "Penyebutnya peluang syarat $B$.",
+   "explain": "$P(A \\mid B) = 0{,}4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $P(A' \\cap B) = P(B) - P(A \\cap B)$ = ?",
+   "answer": "0,3",
+   "hint": "$0{,}5 - 0{,}2$.",
+   "explain": "Daerah $B$ tanpa $A$: 0,3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: $P(A) \\times P(B)$ = ?",
+   "answer": "0,2",
+   "hint": "$0{,}4 \\times 0{,}5$.",
+   "explain": "$0{,}2 = P(A \\cap B)$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Jadi $A$ dan $B$...",
+   "options": [
+    "saling bebas",
+    "tidak saling bebas",
+    "saling lepas"
+   ],
+   "answer": "saling bebas",
+   "hint": "Bandingkan $P(A)P(B)$ dengan $P(A \\cap B)$.",
+   "explain": "Keduanya 0,2, jadi saling bebas. Bukan saling lepas, karena irisannya tidak 0.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: di diagram Venn, peluang di luar $A$ dan $B$ = ?",
+   "answer": "0,3",
+   "hint": "$1 - P(A \\cup B)$.",
+   "explain": "$1 - 0{,}7 = 0{,}3$; total $0{,}2 + 0{,}2 + 0{,}3 + 0{,}3 = 1$. Konsisten.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P(A \\cap B) = 0{,}2$, $P(A \\mid B) = 0{,}4$, $P(A' \\cap B) = 0{,}3$, dan $A$, $B$ saling bebas."
+}
+```
 
 ### Contoh 3: Soal cerita dengan diagram pohon
 
-**Soal.** Di Jakarta, peluang hari hujan adalah 0,3. Jika hujan, peluang Rina terlambat ke sekolah 0,4. Jika tidak hujan, peluangnya 0,1. (a) Berapa peluang Rina terlambat? (b) Diketahui Rina terlambat, berapa peluang hari itu hujan?
-
-1. **Langkah 1: Beri nama kejadian.** $H$: hujan, $T$: terlambat. Diketahui $P(H) = 0{,}3$, $P(T \mid H) = 0{,}4$, $P(T \mid H') = 0{,}1$.
-2. **Langkah 2: Gambar pohon.**
-
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Di Jakarta, peluang hari hujan adalah 0,3. Jika hujan, peluang Rina terlambat ke sekolah 0,4. Jika tidak hujan, peluangnya 0,1. (a) Berapa peluang Rina terlambat? (b) Diketahui Rina terlambat, berapa peluang hari itu hujan?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Jalur hujan lalu terlambat: $P(H \\cap T) = 0{,}3 \\times 0{,}4$ = ?",
+   "answer": "0,12",
+   "hint": "Kalikan sepanjang jalur.",
+   "explain": "$0{,}12$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jalur tidak hujan lalu terlambat: $0{,}7 \\times 0{,}1$ = ?",
+   "answer": "0,07",
+   "hint": "$P(H') = 1 - 0{,}3$.",
+   "explain": "$0{,}07$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: (a) $P(T)$ = ?",
+   "answer": "0,19",
+   "hint": "Jumlahkan jalur yang berakhir di $T$.",
+   "explain": "$0{,}12 + 0{,}07 = 0{,}19$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 4: (b) $P(H \\mid T) = \\frac{P(H \\cap T)}{P(T)}$ = ?",
+   "answer": {
+    "num": 12,
+    "den": 19
+   },
+   "hint": "Penyebutnya peluang syarat: terlambat.",
+   "explain": "$\\frac{0{,}12}{0{,}19} = \\frac{12}{19}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Nilai $\\frac{12}{19}$, bulatkan ke 3 desimal.",
+   "answer": "0,632",
+   "hint": "Bagi 12 dengan 19.",
+   "explain": "$\\approx 0{,}632$.",
+   "error": "salah-pembulatan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: jumlah keempat ujung jalur 0,12 + 0,18 + 0,07 + 0,63 = ?",
+   "answer": "1",
+   "hint": "Jumlahkan.",
+   "explain": "Hasilnya 1. Konsisten.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi (a) $P(T) = 0{,}19$ dan (b) $P(H \\mid T) = \\frac{12}{19} \\approx 0{,}632$.",
+ "visual": {
+  "type": "table",
+  "head": [
+   "Cuaca",
+   "Peluang cuaca",
+   "Peluang terlambat"
+  ],
+  "rows": [
+   [
+    "Hujan (H)",
+    "0,3",
+    "0,4"
+   ],
+   [
+    "Tidak hujan (H')",
+    "0,7",
+    "0,1"
+   ]
+  ]
+ }
+}
 ```
-           T   0,4   ->  0,3 x 0,4 = 0,12
-  H  0,3 <
-           T'  0,6   ->  0,3 x 0,6 = 0,18
-           T   0,1   ->  0,7 x 0,1 = 0,07
-  H' 0,7 <
-           T'  0,9   ->  0,7 x 0,9 = 0,63
-```
-
-3. **Langkah 3: Jumlahkan jalur yang berakhir di $T$.** $P(T) = 0{,}12 + 0{,}07 = 0{,}19$.
-4. **Langkah 4: Balik syaratnya.** Pintu penyaring sekarang adalah "Rina terlambat". Di aula itu, bagian karena hujan adalah
-$$P(H \mid T) = \frac{P(H \cap T)}{P(T)} = \frac{0{,}12}{0{,}19} = \frac{12}{19} \approx 0{,}632.$$
-5. **Cek jawaban.** Keempat ujung jalur berjumlah $0{,}12 + 0{,}18 + 0{,}07 + 0{,}63 = 1$. Hasil (b) juga masuk akal: hujan hanya 30% hari, tetapi menyumbang sebagian besar keterlambatan.
-
-**Jawaban:** (a) 0,19; (b) $\frac{12}{19} \approx 0{,}632$.
 
 ### Contoh 4: Tanpa pengembalian, memakai kombinasi
 
-**Soal.** Sebuah kantong berisi 5 kelereng merah dan 3 kelereng biru. Tiga kelereng diambil sekaligus secara acak. (a) Tentukan peluang terambil tepat 2 merah. (b) Diketahui paling sedikit 2 kelereng merah, tentukan peluang ketiganya merah.
-
-1. **Langkah 1: Ruang sampel.** Mengambil sekaligus berarti urutan tidak penting: $\binom{8}{3} = 56$ cara yang sama mungkin.
-2. **Langkah 2: Bagian (a).** Pilih 2 dari 5 merah dan 1 dari 3 biru: $\binom{5}{2}\binom{3}{1} = 10 \times 3 = 30$. Peluangnya $\frac{30}{56} = \frac{15}{28}$.
-3. **Langkah 3: Peluang syarat "paling sedikit 2 merah".** Tiga merah: $\binom{5}{3} = 10$ cara. Jadi paling sedikit 2 merah: $30 + 10 = 40$ cara.
-4. **Langkah 4: Peluang bersyarat.** Aula hanya berisi 40 hasil itu. Yang semuanya merah ada 10. $P = \frac{10}{40} = \frac{1}{4}$.
-5. **Cek jawaban.** Dengan rumus: $P(\text{3 merah} \cap \text{min. 2 merah}) = \frac{10}{56}$ dan $P(\text{min. 2 merah}) = \frac{40}{56}$. Hasil bagi $\frac{10}{40} = \frac{1}{4}$. Sama.
-
-**Jawaban:** (a) $\frac{15}{28}$; (b) $\frac{1}{4}$.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Sebuah kantong berisi 5 kelereng merah dan 3 kelereng biru. Tiga kelereng diambil sekaligus secara acak. (a) Tentukan peluang terambil tepat 2 merah. (b) Diketahui paling sedikit 2 kelereng merah, tentukan peluang ketiganya merah.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Ruang sampel $\\binom{8}{3}$ = ?",
+   "answer": "56",
+   "hint": "$\\frac{8 \\times 7 \\times 6}{6}$.",
+   "explain": "56 cara yang sama mungkin.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Tepat 2 merah: $\\binom{5}{2}\\binom{3}{1}$ = ?",
+   "answer": "30",
+   "hint": "$10 \\times 3$.",
+   "explain": "30 cara.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Peluang (a), paling sederhana = ?",
+   "answer": {
+    "num": 15,
+    "den": 28
+   },
+   "hint": "$\\frac{30}{56}$, sederhanakan.",
+   "explain": "$\\frac{30}{56} = \\frac{15}{28}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Tiga merah: $\\binom{5}{3}$ = ?",
+   "answer": "10",
+   "hint": "$\\frac{5 \\times 4 \\times 3}{6}$.",
+   "explain": "10 cara.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Paling sedikit 2 merah = ?",
+   "answer": "40",
+   "hint": "Tepat 2 merah ditambah tiga merah.",
+   "explain": "$30 + 10 = 40$ cara.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 4: (b) Peluang ketiganya merah di aula tersaring = ?",
+   "answer": {
+    "num": 1,
+    "den": 4
+   },
+   "hint": "Aula hanya berisi 40 hasil; berapa yang semuanya merah?",
+   "explain": "$\\frac{10}{40} = \\frac{1}{4}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  }
+ ],
+ "conclusion": "Jadi (a) $\\frac{15}{28}$ dan (b) $\\frac{1}{4}$."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -157,16 +397,177 @@ $$P(H \mid T) = \frac{P(H \cap T)}{P(T)} = \frac{0{,}12}{0{,}19} = \frac{12}{19}
 
 ## Cek pemahaman
 
-1. $A$ dan $B$ saling lepas dengan $P(A) = 0{,}3$ dan $P(B) = 0{,}5$. Tentukan $P(A \cup B)$.
-2. $A$ dan $B$ saling bebas dengan $P(A) = 0{,}3$ dan $P(B) = 0{,}5$. Tentukan $P(A \cup B)$.
-3. Diketahui $P(A \cap B) = 0{,}12$ dan $P(B) = 0{,}4$. Tentukan $P(A \mid B)$.
-4. Sebuah dadu dilempar dan diketahui hasilnya lebih dari 3. Berapa peluang hasilnya genap?
-5. Kotak I berisi 3 bola merah dan 2 putih. Kotak II berisi 1 bola merah dan 4 putih. Sebuah koin dilempar: jika muncul angka, satu bola diambil dari kotak I; jika gambar, dari kotak II. Tentukan peluang bola merah, dan peluang bola berasal dari kotak I jika diketahui bola itu merah.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. 0,8. Saling lepas, jadi $P(A \cup B) = 0{,}3 + 0{,}5 = 0{,}8$.
-2. 0,65. $P(A \cap B) = 0{,}3 \times 0{,}5 = 0{,}15$, jadi $0{,}3 + 0{,}5 - 0{,}15 = 0{,}65$.
-3. 0,3. $P(A \mid B) = \frac{0{,}12}{0{,}4} = 0{,}3$.
-4. $\frac{2}{3}$. Aula tersaring berisi {4, 5, 6}; yang genap {4, 6}.
-5. $P(\text{merah}) = 0{,}5 \times 0{,}6 + 0{,}5 \times 0{,}2 = 0{,}4$, dan $P(\text{kotak I} \mid \text{merah}) = \frac{0{,}3}{0{,}4} = 0{,}75$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "$A$ dan $B$ saling lepas dengan $P(A) = 0{,}3$ dan $P(B) = 0{,}5$. Tentukan $P(A \\cup B)$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Untuk kejadian saling lepas, $P(A \\cap B)$ = ?",
+   "answer": "0",
+   "hint": "Bisakah keduanya terjadi bersamaan?",
+   "explain": "Tidak bisa, jadi irisannya 0.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$P(A \\cup B)$ = ?",
+   "answer": "0,8",
+   "hint": "$0{,}3 + 0{,}5 - 0$.",
+   "explain": "$0{,}8$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P(A \\cup B) = 0{,}8$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "$A$ dan $B$ saling bebas dengan $P(A) = 0{,}3$ dan $P(B) = 0{,}5$. Tentukan $P(A \\cup B)$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Saling bebas: $P(A \\cap B) = P(A)P(B)$ = ?",
+   "answer": "0,15",
+   "hint": "$0{,}3 \\times 0{,}5$.",
+   "explain": "$0{,}15$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$P(A \\cup B)$ = ?",
+   "answer": "0,65",
+   "hint": "$0{,}3 + 0{,}5 - 0{,}15$.",
+   "explain": "$0{,}65$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P(A \\cup B) = 0{,}65$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Diketahui $P(A \\cap B) = 0{,}12$ dan $P(B) = 0{,}4$. Tentukan $P(A \\mid B)$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Rumus yang tepat?",
+   "options": [
+    "$\\frac{P(A \\cap B)}{P(B)}$",
+    "$\\frac{P(B)}{P(A \\cap B)}$",
+    "$P(A \\cap B) \\times P(B)$"
+   ],
+   "answer": "$\\frac{P(A \\cap B)}{P(B)}$",
+   "hint": "Penyebutnya peluang syarat.",
+   "explain": "$P(A \\mid B) = \\frac{P(A \\cap B)}{P(B)}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$P(A \\mid B)$ = ?",
+   "answer": "0,3",
+   "hint": "$\\frac{0{,}12}{0{,}4}$.",
+   "explain": "$0{,}3$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P(A \\mid B) = 0{,}3$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Sebuah dadu dilempar dan diketahui hasilnya lebih dari 3. Berapa peluang hasilnya genap?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Aula tersaring {hasil > 3} berisi berapa hasil?",
+   "answer": "3",
+   "hint": "Hasil lebih dari 3.",
+   "explain": "{4, 5, 6}: 3 hasil.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa yang genap?",
+   "answer": "2",
+   "hint": "Dari {4, 5, 6}.",
+   "explain": "{4, 6}: 2 hasil.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Peluangnya = ?",
+   "answer": {
+    "num": 2,
+    "den": 3
+   },
+   "hint": "Bagi dengan ukuran aula tersaring.",
+   "explain": "$\\frac{2}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  }
+ ],
+ "conclusion": "Jadi peluangnya $\\frac{2}{3}$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Kotak I berisi 3 bola merah dan 2 putih. Kotak II berisi 1 bola merah dan 4 putih. Sebuah koin dilempar: jika muncul angka, satu bola diambil dari kotak I; jika gambar, dari kotak II. Tentukan peluang bola merah, dan peluang bola berasal dari kotak I jika diketahui bola itu merah.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Jalur kotak I lalu merah: $0{,}5 \\times \\frac{3}{5}$ = ?",
+   "answer": "0,3",
+   "hint": "$\\frac{3}{5} = 0{,}6$.",
+   "explain": "$0{,}5 \\times 0{,}6 = 0{,}3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jalur kotak II lalu merah: $0{,}5 \\times \\frac{1}{5}$ = ?",
+   "answer": "0,1",
+   "hint": "$\\frac{1}{5} = 0{,}2$.",
+   "explain": "$0{,}5 \\times 0{,}2 = 0{,}1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$P(\\text{merah})$ = ?",
+   "answer": "0,4",
+   "hint": "Jumlahkan kedua jalur.",
+   "explain": "$0{,}3 + 0{,}1 = 0{,}4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$P(\\text{kotak I} \\mid \\text{merah})$ = ?",
+   "answer": "0,75",
+   "hint": "$\\frac{0{,}3}{0{,}4}$.",
+   "explain": "$0{,}75$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P(\\text{merah}) = 0{,}4$ dan $P(\\text{kotak I} \\mid \\text{merah}) = 0{,}75$."
+}
+```

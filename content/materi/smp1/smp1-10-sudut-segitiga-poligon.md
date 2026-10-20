@@ -15,6 +15,10 @@ Tukang kayu memeriksa apakah dua rangka atap sejajar. Arsitek menghitung sudut u
 
 Bayangkan sudut sebagai **besar putaran badanmu**. Kalau kamu berdiri menghadap utara lalu berputar sampai menghadap timur, kamu berputar $90^\circ$. Berputar satu keliling penuh berarti $360^\circ$.
 
+```visual
+{"type": "angle", "degrees": 90, "showRightMark": true, "caption": "Dari menghadap utara berputar ke timur: seperempat putaran, 90°"}
+```
+
 Analogi ini kita pakai dalam tiga cara:
 
 - **Berjalan di garis lurus lalu berbalik arah** = putaran $180^\circ$. Karena itu sudut pada garis lurus berjumlah $180^\circ$.
@@ -37,17 +41,8 @@ Dua sudut yang jumlahnya $90^\circ$ disebut **berpenyiku**. Dua sudut yang jumla
 
 Dua garis sejajar dipotong oleh satu garis lain (garis **transversal**):
 
-```
-  t \
-     \
-    a \  b
--------+--------------  garis 1
-     d  \ c
-         \
-        e \  f
------------+----------  garis 2
-         h  \ g
-             \
+```anim
+{"type": "bangun", "title": "Dua garis sejajar dipotong transversal", "titik": {"K": [-4, 2], "L": [6, 2], "M": [-4, -1], "N": [6, -1], "T": [-1, 3.5], "P": [0, 2], "Q": [2, -1], "U": [3, -2.5]}, "sisi": [["K", "L"], ["M", "N"], ["T", "P"], ["P", "Q"], ["Q", "U"]], "sudut": [{"di": "P", "dari": "K", "ke": "T", "label": "a"}, {"di": "Q", "dari": "M", "ke": "P", "label": "e"}, {"di": "P", "dari": "L", "ke": "Q", "label": "c"}, {"di": "Q", "dari": "P", "ke": "N", "label": "f"}], "langkah": [{"say": "Garis 1 (KL) sejajar garis 2 (MN). Garis TU memotong keduanya di P dan Q.", "sudut": 0}, {"say": "Sudut a: kiri atas di titik potong P.", "sudut": 1, "sorot": ["P"]}, {"say": "Sudut e: kiri atas di Q. a dan e sehadap, sama besar.", "sudut": 2, "sorot": ["Q"]}, {"say": "Sudut c: kanan bawah di P, bertolak belakang dengan a. c dan e dalam berseberangan, sama besar.", "sudut": 3, "sorot": ["P", "Q"]}, {"say": "Sudut f: kanan atas di Q. c dan f dalam sepihak, jumlahnya 180°.", "sudut": 4, "sorot": ["PQ"]}]}
 ```
 
 Di setiap titik potong ada empat sudut: kiri atas ($a$, $e$), kanan atas ($b$, $f$), kanan bawah ($c$, $g$), dan kiri bawah ($d$, $h$).
@@ -61,6 +56,10 @@ Kebalikannya juga berlaku: kalau sudut sehadap sama besar, kedua garis pasti sej
 ### Sifat segitiga
 
 - **Jumlah sudut dalam segitiga $180^\circ$.** Kenapa? Tarik garis melalui puncak yang sejajar alas. Dua sudut alas "pindah" ke puncak sebagai sudut berseberangan. Ketiga sudut lalu berjajar membentuk garis lurus, yaitu $180^\circ$.
+```anim
+{"type": "bangun", "title": "Kenapa jumlah sudut segitiga 180°", "titik": {"A": [0, 0], "B": [6, 0], "C": [2, 3.5], "D": [-1.5, 3.5], "E": [5.5, 3.5]}, "sisi": [["A", "B"], ["B", "C"], ["C", "A"], ["D", "E"]], "sudut": [{"di": "A", "dari": "B", "ke": "C", "label": "\\alpha"}, {"di": "B", "dari": "C", "ke": "A", "label": "\\beta"}, {"di": "C", "dari": "A", "ke": "B", "label": "\\gamma"}, {"di": "C", "dari": "D", "ke": "A", "label": "\\alpha"}, {"di": "C", "dari": "B", "ke": "E", "label": "\\beta"}], "langkah": [{"say": "Segitiga ABC dengan sudut α, β, γ.", "sisi": 3, "sudut": 3}, {"say": "Tarik garis DE melalui C, sejajar alas AB.", "sisi": 4, "sudut": 3, "sorot": ["DE"]}, {"say": "Sudut DCA = α, karena dalam berseberangan dengan sudut A.", "sisi": 4, "sudut": 4, "sorot": ["A", "C"]}, {"say": "Sudut BCE = β, juga dalam berseberangan. α, γ, β berjajar di garis lurus DE: jumlahnya 180°.", "sisi": 4, "sudut": 5, "sorot": ["B", "C"]}]}
+```
+
 - **Sudut luar segitiga** sama dengan jumlah dua sudut dalam yang tidak bersebelahan dengannya.
 - **Segitiga sama kaki**: dua sisi sama panjang, dua sudut alas sama besar.
 - **Segitiga sama sisi**: tiga sisi sama, setiap sudut $60^\circ$.
@@ -84,6 +83,10 @@ Dari satu titik sudut, poligon bersisi $n$ bisa dibagi menjadi $(n - 2)$ segitig
 
 $$\text{jumlah sudut dalam} = (n - 2) \times 180^\circ$$
 
+```anim
+{"type": "bangun", "title": "Segi lima dibagi menjadi 3 segitiga", "titik": {"A": [0, 0], "B": [4, 0], "C": [5.2, 3.8], "D": [2, 6.2], "E": [-1.2, 3.8]}, "sisi": [["A", "B"], ["B", "C"], ["C", "D"], ["D", "E"], ["E", "A"], ["A", "C"], ["A", "D"]], "langkah": [{"say": "Segi lima: n = 5 sisi.", "sisi": 5}, {"say": "Tarik diagonal dari titik A ke C.", "sisi": 6, "sorot": ["AC"]}, {"say": "dan dari A ke D. Terbentuk 5 − 2 = 3 segitiga, jadi jumlah sudut dalam 3 × 180° = 540°.", "sisi": 7, "sorot": ["AD"]}]}
+```
+
 Sudut luar adalah besar belokan di setiap pojok saat mengelilingi poligon. Total belokan satu keliling:
 
 $$\text{jumlah sudut luar} = 360^\circ$$
@@ -97,61 +100,281 @@ Untuk poligon beraturan bersisi $n$: setiap sudut luar $= \frac{360^\circ}{n}$, 
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Garis sejajar
 
-**Soal.** Dua garis sejajar dipotong transversal. Sudut $a = 65^\circ$ (letak seperti gambar di atas). Tentukan $e$, $c$, dan $f$.
-
-1. **Langkah 1: Cari hubungan $a$ dan $e$.** Keduanya sehadap. Jadi $e = 65^\circ$.
-2. **Langkah 2: Cari $c$.** $c$ bertolak belakang dengan $a$. Jadi $c = 65^\circ$.
-3. **Langkah 3: Cari $f$.** $c$ dan $f$ sudut dalam sepihak, jadi $f = 180^\circ - 65^\circ = 115^\circ$.
-4. **Cek jawaban.** $e$ dan $f$ berada pada garis lurus: $65^\circ + 115^\circ = 180^\circ$. Cocok.
-
-**Jawaban:** $e = 65^\circ$, $c = 65^\circ$, $f = 115^\circ$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Dua garis sejajar dipotong transversal seperti gambar di bagian Konsep. Sudut $a = 65^\\circ$. Tentukan $e$, $c$, dan $f$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Hubungan a dan e",
+   "options": [
+    "sehadap",
+    "dalam sepihak",
+    "bertolak belakang"
+   ],
+   "answer": "sehadap",
+   "hint": "Keduanya di kiri atas titik potong masing-masing.",
+   "explain": "Sudut sehadap sama besar.",
+   "error": "salah-hitung-sudut"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jadi e = ?",
+   "answer": "65",
+   "hint": "Sehadap sama besar.",
+   "explain": "e = 65°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: c bertolak belakang dengan a. c = ?",
+   "answer": "65",
+   "hint": "Bertolak belakang sama besar.",
+   "explain": "c = 65°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: c dan f dalam sepihak. f = ?",
+   "answer": "115",
+   "hint": "Dalam sepihak berjumlah 180°.",
+   "explain": "f = 180° − 65° = 115°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: e + f = ?",
+   "answer": "180",
+   "hint": "e dan f ada di garis lurus.",
+   "explain": "65° + 115° = 180°. Cocok.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$e = 65^\\circ$, $c = 65^\\circ$, $f = 115^\\circ$."
+}
+```
 
 ### Contoh 2: Segitiga sama kaki dan sudut luar
 
-**Soal.** Segitiga $PQR$ sama kaki dengan $PQ = PR$ dan $\angle P = 40^\circ$. Sisi $QR$ diperpanjang melewati $R$ ke titik $S$. Hitung $\angle Q$, $\angle R$, dan sudut luar $\angle PRS$.
-
-1. **Langkah 1: Tentukan sudut yang sama.** Sisi yang sama $PQ$ dan $PR$, jadi sudut alas $\angle Q = \angle R$.
-2. **Langkah 2: Pakai jumlah sudut segitiga.** $\angle Q + \angle R = 180^\circ - 40^\circ = 140^\circ$. Masing-masing $70^\circ$.
-3. **Langkah 3: Hitung sudut luar.** $\angle PRS = \angle P + \angle Q = 40^\circ + 70^\circ = 110^\circ$.
-4. **Cek jawaban.** $\angle PRS$ dan $\angle R$ berpelurus: $110^\circ + 70^\circ = 180^\circ$. Cocok.
-
-**Jawaban:** $\angle Q = \angle R = 70^\circ$, $\angle PRS = 110^\circ$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Segitiga $PQR$ sama kaki dengan $PQ = PR$ dan $\\angle P = 40^\\circ$. Sisi $QR$ diperpanjang melewati $R$ ke titik $S$. Hitung $\\angle Q$, $\\angle R$, dan sudut luar $\\angle PRS$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Sudut mana yang sama besar?",
+   "options": [
+    "$\\angle Q = \\angle R$",
+    "$\\angle P = \\angle Q$",
+    "$\\angle P = \\angle R$"
+   ],
+   "answer": "$\\angle Q = \\angle R$",
+   "hint": "Sudut alas berhadapan dengan sisi yang sama panjang.",
+   "explain": "PQ = PR, jadi sudut di Q dan R sama.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $\\angle Q + \\angle R = 180^\\circ - 40^\\circ = ?$",
+   "answer": "140",
+   "hint": "Jumlah sudut segitiga 180°.",
+   "explain": "140°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jadi $\\angle Q = ?$",
+   "answer": "70",
+   "hint": "Bagi dua.",
+   "explain": "70°, begitu juga ∠R.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $\\angle PRS = \\angle P + \\angle Q = ?$",
+   "answer": "110",
+   "hint": "Sudut luar = jumlah dua sudut dalam yang berjauhan.",
+   "explain": "40° + 70° = 110°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $\\angle PRS + \\angle R = ?$",
+   "answer": "180",
+   "hint": "Keduanya berpelurus.",
+   "explain": "110° + 70° = 180°. Cocok.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$\\angle Q = \\angle R = 70^\\circ$, $\\angle PRS = 110^\\circ$."
+}
+```
 
 ### Contoh 3: Poligon beraturan
 
-**Soal.** Setiap sudut luar sebuah poligon beraturan $24^\circ$. Berapa banyak sisinya, dan berapa besar setiap sudut dalamnya?
-
-1. **Langkah 1: Pakai total belokan.** Total sudut luar $360^\circ$, dan semuanya sama.
-2. **Langkah 2: Hitung banyak sisi.** $n = \frac{360^\circ}{24^\circ} = 15$.
-3. **Langkah 3: Hitung sudut dalam.** $180^\circ - 24^\circ = 156^\circ$.
-4. **Cek jawaban.** Jumlah sudut dalam $= (15 - 2) \times 180^\circ = 2.340^\circ$. Dan $15 \times 156^\circ = 2.340^\circ$. Sama.
-
-**Jawaban:** 15 sisi, setiap sudut dalam $156^\circ$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Setiap sudut luar sebuah poligon beraturan $24^\\circ$. Berapa banyak sisinya, dan berapa besar setiap sudut dalamnya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Total semua sudut luar poligon?",
+   "answer": "360",
+   "hint": "Total belokan satu keliling.",
+   "explain": "360°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Banyak sisi n = 360° ÷ 24° = ?",
+   "answer": "15",
+   "hint": "Semua sudut luar sama.",
+   "explain": "15 sisi.",
+   "error": "salah-langkah-materi",
+   "suffix": "sisi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Sudut dalam = 180° − 24° = ?",
+   "answer": "156",
+   "hint": "Sudut dalam dan sudut luar berpelurus.",
+   "explain": "156°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: (15 − 2) × 180° = ?",
+   "answer": "2340",
+   "hint": "13 × 180.",
+   "explain": "2.340° = 15 × 156°. Sama.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "15 sisi, setiap sudut dalam $156^\\circ$."
+}
+```
 
 ### Contoh 4: Soal cerita taman segi lima
 
-**Soal.** Pak Made membuat taman berbentuk segi lima. Tiga sudut dalamnya $100^\circ$, $110^\circ$, dan $120^\circ$. Dua sudut lainnya $x$ dan $2x$. Hitung kedua sudut itu.
-
-1. **Langkah 1: Hitung jumlah sudut dalam segi lima.** $(5 - 2) \times 180^\circ = 540^\circ$.
-2. **Langkah 2: Susun persamaan.** $100 + 110 + 120 + x + 2x = 540$, jadi $330 + 3x = 540$.
-3. **Langkah 3: Selesaikan.** $3x = 210$, sehingga $x = 70$. Sudut lainnya $2x = 140^\circ$.
-4. **Cek jawaban.** $100 + 110 + 120 + 70 + 140 = 540$. Cocok.
-
-**Jawaban:** $70^\circ$ dan $140^\circ$.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Taman Pak Made berbentuk segi lima. Tiga sudut dalamnya $100^\\circ$, $110^\\circ$, dan $120^\\circ$. Dua sudut lainnya $x$ dan $2x$. Hitung kedua sudut itu.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Jumlah sudut dalam segi lima?",
+   "answer": "540",
+   "hint": "(5 − 2) × 180°.",
+   "explain": "540°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Persamaannya",
+   "options": [
+    "$330 + 3x = 540$",
+    "$330 + 2x = 540$",
+    "$330 + 3x = 360$"
+   ],
+   "answer": "$330 + 3x = 540$",
+   "hint": "Jumlahkan semua sudut.",
+   "explain": "100 + 110 + 120 = 330, ditambah x + 2x.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: x = ?",
+   "answer": "70",
+   "hint": "3x = 210.",
+   "explain": "x = 70°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sudut 2x = ?",
+   "answer": "140",
+   "hint": "Kalikan 2.",
+   "explain": "140°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Kedua sudut itu $70^\\circ$ dan $140^\\circ$."
+}
+```
 
 ### Contoh 5: Melukis segitiga
 
-**Soal.** Lukis segitiga $ABC$ dengan $AB = 6$ cm, $AC = 5$ cm, dan $BC = 4$ cm.
-
-1. **Langkah 1: Lukis alas.** Tarik garis $AB$ sepanjang 6 cm dengan penggaris.
-2. **Langkah 2: Busur dari $A$.** Buka jangka 5 cm, tusukkan di $A$, buat busur di atas $AB$.
-3. **Langkah 3: Busur dari $B$.** Buka jangka 4 cm, tusukkan di $B$, buat busur yang memotong busur pertama.
-4. **Langkah 4: Hubungkan.** Titik potong busur adalah $C$. Tarik $AC$ dan $BC$.
-5. **Cek jawaban.** Ukur $AC$ dan $BC$ dengan penggaris. Hasilnya harus 5 cm dan 4 cm.
-
-**Jawaban:** Segitiga $ABC$ terlukis dengan sisi 6 cm, 5 cm, dan 4 cm.
+```soal
+{
+ "title": "Contoh 5",
+ "text": "Lukis segitiga ABC dengan AB = 6 cm, AC = 5 cm, dan BC = 4 cm.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Alas AB dilukis dengan penggaris sepanjang?",
+   "answer": "6",
+   "hint": "Lihat soal.",
+   "explain": "AB = 6 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Jangka ditusuk di A dan dibuka selebar?",
+   "answer": "5",
+   "hint": "Busur dari A menandai jarak ke C.",
+   "explain": "AC = 5 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Jangka ditusuk di B dan dibuka selebar?",
+   "answer": "4",
+   "hint": "Busur dari B menandai jarak ke C.",
+   "explain": "BC = 4 cm.",
+   "error": "salah-langkah-materi",
+   "suffix": "cm"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Titik C adalah",
+   "options": [
+    "titik potong kedua busur",
+    "titik tengah AB",
+    "ujung busur dari A"
+   ],
+   "answer": "titik potong kedua busur",
+   "hint": "C harus berjarak 5 cm dari A dan 4 cm dari B sekaligus.",
+   "explain": "Tarik AC dan BC. Cek dengan penggaris: 5 cm dan 4 cm.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Segitiga ABC terlukis dengan sisi 6 cm, 5 cm, dan 4 cm."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -171,16 +394,167 @@ Untuk poligon beraturan bersisi $n$: setiap sudut luar $= \frac{360^\circ}{n}$, 
 
 ## Cek pemahaman
 
-1. Sudut $128^\circ$ termasuk jenis apa? Kalau sudut ini adalah sudut dalam sepihak pada dua garis sejajar, berapa pasangannya?
-2. Sudut-sudut sebuah segitiga $3x$, $4x$, dan $5x$. Hitung ketiga sudutnya.
-3. Hitung jumlah sudut dalam segi delapan dan besar setiap sudut dalam segi delapan beraturan.
-4. Setiap sudut dalam sebuah poligon beraturan $140^\circ$. Berapa banyak sisinya?
-5. Salah satu sudut jajargenjang $72^\circ$. Tentukan tiga sudut lainnya.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. Sudut tumpul; pasangannya $180^\circ - 128^\circ = 52^\circ$.
-2. $45^\circ$, $60^\circ$, $75^\circ$. $12x = 180$, jadi $x = 15$.
-3. $1.080^\circ$ dan $135^\circ$. $(8 - 2) \times 180^\circ = 1.080^\circ$, lalu $1.080^\circ \div 8 = 135^\circ$.
-4. 9 sisi. Sudut luar $180^\circ - 140^\circ = 40^\circ$, dan $360^\circ \div 40^\circ = 9$.
-5. $108^\circ$, $72^\circ$, $108^\circ$. Sudut berdekatan berjumlah $180^\circ$ dan sudut berhadapan sama.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Sudut $128^\\circ$ termasuk jenis apa? Kalau sudut ini adalah sudut dalam sepihak pada dua garis sejajar, berapa pasangannya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Jenis sudut 128°",
+   "options": [
+    "tumpul",
+    "lancip",
+    "refleks",
+    "lurus"
+   ],
+   "answer": "tumpul",
+   "hint": "Antara 90° dan 180°.",
+   "explain": "128° tumpul.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Pasangan sudut dalam sepihaknya?",
+   "answer": "52",
+   "hint": "Jumlahnya 180°.",
+   "explain": "180° − 128° = 52°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Tumpul; pasangannya $52^\\circ$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Sudut-sudut sebuah segitiga $3x$, $4x$, dan $5x$. Hitung ketiga sudutnya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "12x = 180, jadi x = ?",
+   "answer": "15",
+   "hint": "3x + 4x + 5x = 12x.",
+   "explain": "x = 15.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sudut 3x = ?",
+   "answer": "45",
+   "hint": "3 × 15.",
+   "explain": "45°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sudut 5x = ?",
+   "answer": "75",
+   "hint": "5 × 15.",
+   "explain": "75°. Sudut 4x = 60°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$45^\\circ$, $60^\\circ$, $75^\\circ$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung jumlah sudut dalam segi delapan dan besar setiap sudut dalam segi delapan beraturan.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Jumlah sudut dalam segi delapan?",
+   "answer": "1080",
+   "hint": "(8 − 2) × 180°.",
+   "explain": "1.080°.",
+   "error": "salah-hitung-sudut",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Setiap sudut dalam segi delapan beraturan?",
+   "answer": "135",
+   "hint": "Bagi 8.",
+   "explain": "1.080° ÷ 8 = 135°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "$1.080^\\circ$ dan $135^\\circ$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Setiap sudut dalam sebuah poligon beraturan $140^\\circ$. Berapa banyak sisinya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Sudut luar = ?",
+   "answer": "40",
+   "hint": "180° − 140°.",
+   "explain": "40°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Banyak sisi?",
+   "answer": "9",
+   "hint": "360° ÷ sudut luar.",
+   "explain": "360 ÷ 40 = 9.",
+   "error": "salah-langkah-materi",
+   "suffix": "sisi"
+  }
+ ],
+ "conclusion": "Poligon itu bersisi 9."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Salah satu sudut jajargenjang $72^\\circ$. Tentukan tiga sudut lainnya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Sudut yang berdekatan dengan 72°?",
+   "answer": "108",
+   "hint": "Sudut berdekatan berjumlah 180°.",
+   "explain": "108°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  },
+  {
+   "kind": "number",
+   "prompt": "Sudut yang berhadapan dengan 72°?",
+   "answer": "72",
+   "hint": "Sudut berhadapan sama besar.",
+   "explain": "72°.",
+   "error": "salah-langkah-materi",
+   "suffix": "°"
+  }
+ ],
+ "conclusion": "Tiga sudut lainnya $108^\\circ$, $72^\\circ$, $108^\\circ$."
+}
+```

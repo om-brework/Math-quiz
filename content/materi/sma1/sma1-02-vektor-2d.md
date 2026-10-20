@@ -20,6 +20,10 @@ Bayangkan **kurir paket** yang menerima instruksi singkat dari aplikasi: "**gese
 - Instruksi "lakukan dua kali" adalah **perkalian skalar**. Instruksi "putar balik" adalah **vektor negatif**.
 - Instruksi yang selalu dihitung **dari kantor pusat $O$** disebut **vektor posisi**. Ia menunjukkan alamat setiap titik.
 
+```anim
+{"type": "bangun", "title": "Instruksi kurir sebagai vektor", "titik": {"G": [0, 0], "T": [3, 0], "K": [3, 4]}, "sisi": [["G", "T", "3\\ \\text{timur}"], ["T", "K", "4\\ \\text{utara}"], ["G", "K", "\\text{gabungan}"]], "sudut": [{"di": "T", "dari": "G", "ke": "K", "siku": true}], "langkah": [{"say": "Kurir berangkat dari gudang $G$ dan bergeser 3 blok ke timur.", "sisi": 1}, {"say": "Lalu 4 blok ke utara, sampai di $K$.", "sisi": 2, "sudut": 1}, {"say": "Dua instruksi itu bisa diganti satu instruksi gabungan: panah langsung dari $G$ ke $K$.", "sisi": 3, "sudut": 1, "sorot": ["GK"]}, {"say": "Geser timur dan geser utara saling tegak lurus, jadi panjang panah gabungan dihitung dengan Pythagoras.", "sisi": 3, "sudut": 1, "sorot": ["GK", "T"]}]}
+```
+
 ## Konsep
 
 ### Notasi vektor kolom dan ruas garis berarah
@@ -43,6 +47,10 @@ $$\left|\begin{pmatrix} x \\ y \end{pmatrix}\right| = \sqrt{x^2 + y^2}$$
 $$\begin{pmatrix} a \\ b \end{pmatrix} + \begin{pmatrix} c \\ d \end{pmatrix} = \begin{pmatrix} a + c \\ b + d \end{pmatrix}$$
 
 Secara gambar: letakkan pangkal panah kedua di ujung panah pertama. Panah dari pangkal pertama ke ujung kedua adalah jumlahnya (**aturan segitiga**). Dalam bahasa titik: $\overrightarrow{AB} + \overrightarrow{BC} = \overrightarrow{AC}$.
+
+```anim
+{"type": "bangun", "title": "Aturan segitiga", "titik": {"A": [0, 0], "B": [4, 1], "C": [5, 4]}, "sisi": [["A", "B", "\\mathbf{a}"], ["B", "C", "\\mathbf{b}"], ["A", "C", "\\mathbf{a}+\\mathbf{b}"]], "langkah": [{"say": "Gambar panah $\\mathbf{a}$ dari $A$ ke $B$.", "sisi": 1}, {"say": "Pangkal panah $\\mathbf{b}$ diletakkan di ujung $\\mathbf{a}$, yaitu di $B$.", "sisi": 2, "sorot": ["B"]}, {"say": "Panah dari pangkal pertama ($A$) ke ujung kedua ($C$) adalah $\\mathbf{a} + \\mathbf{b}$.", "sisi": 3, "sorot": ["AC"]}]}
+```
 
 **Vektor negatif** $-\mathbf{a}$ sama besar dengan $\mathbf{a}$ tetapi berlawanan arah: $\overrightarrow{BA} = -\overrightarrow{AB}$. **Vektor nol** $\mathbf{0} = \begin{pmatrix} 0 \\ 0 \end{pmatrix}$ berarti tidak berpindah.
 
@@ -71,6 +79,14 @@ $$\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = \overrightar
 
 "Ujung dikurangi pangkal."
 
+```anim
+{"type": "bangun", "title": "Ujung dikurangi pangkal", "titik": {"O": [0, 0], "A": [1, 3], "B": [5, 1]}, "sisi": [["O", "A", "\\overrightarrow{OA}"], ["O", "B", "\\overrightarrow{OB}"], ["A", "B", "\\overrightarrow{AB}"]], "langkah": [{"say": "Vektor posisi $A(1, 3)$ adalah panah dari $O$ ke $A$.", "sisi": 1}, {"say": "Vektor posisi $B(5, 1)$ adalah panah dari $O$ ke $B$.", "sisi": 2}, {"say": "Dari $A$ ke $B$: mundur ke $O$ (yaitu $-\\overrightarrow{OA}$), lalu maju ke $B$.", "sisi": 3, "sorot": ["AB", "OA", "OB"]}, {"say": "Jadi $\\overrightarrow{AB} = \\overrightarrow{OB} - \\overrightarrow{OA}$.", "sisi": 3, "sorot": ["AB"]}]}
+```
+
+```anim
+{"type": "persamaan", "title": "Menghitung AB dari vektor posisi", "baris": [{"tex": "\\overrightarrow{AB} = \\overrightarrow{OB} - \\overrightarrow{OA}", "say": "Ujung ($B$) dikurangi pangkal ($A$)."}, {"tex": "= \\begin{pmatrix} 5 \\\\ 1 \\end{pmatrix} - \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}", "say": "Tulis vektor posisi masing-masing.", "op": "substitusi"}, {"tex": "= \\begin{pmatrix} 5 - 1 \\\\ 1 - 3 \\end{pmatrix}", "say": "Kurangkan komponen seletak.", "op": "per komponen"}, {"tex": "= \\begin{pmatrix} 4 \\\\ -2 \\end{pmatrix}", "say": "Dari $A$ ke $B$: geser 4 ke kanan dan 2 ke bawah."}]}
+```
+
 ### Soal geometri dengan vektor
 
 - **Sejajar:** $\overrightarrow{PQ} = k\,\overrightarrow{RS}$.
@@ -79,65 +95,411 @@ $$\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = \overrightar
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Operasi dan besar vektor
 
-**Soal.** Diketahui $\mathbf{a} = \begin{pmatrix} 3 \\ -4 \end{pmatrix}$ dan $\mathbf{b} = \begin{pmatrix} -1 \\ 2 \end{pmatrix}$. Hitung $|\mathbf{a}|$, $2\mathbf{a} - 3\mathbf{b}$, dan $|\mathbf{a} + \mathbf{b}|$.
-
-1. **Langkah 1: Besar $\mathbf{a}$.** $|\mathbf{a}| = \sqrt{3^2 + (-4)^2} = \sqrt{25} = 5$.
-2. **Langkah 2: Perkalian skalar.** $2\mathbf{a} = \begin{pmatrix} 6 \\ -8 \end{pmatrix}$ dan $3\mathbf{b} = \begin{pmatrix} -3 \\ 6 \end{pmatrix}$.
-3. **Langkah 3: Kurangkan.** $2\mathbf{a} - 3\mathbf{b} = \begin{pmatrix} 6 - (-3) \\ -8 - 6 \end{pmatrix} = \begin{pmatrix} 9 \\ -14 \end{pmatrix}$.
-4. **Langkah 4: Jumlah lalu besar.** $\mathbf{a} + \mathbf{b} = \begin{pmatrix} 2 \\ -2 \end{pmatrix}$, jadi $|\mathbf{a} + \mathbf{b}| = \sqrt{4 + 4} = \sqrt{8} = 2\sqrt{2} \approx 2{,}83$.
-5. **Cek jawaban.** Besar jumlah tidak boleh melebihi $|\mathbf{a}| + |\mathbf{b}| = 5 + \sqrt{5} \approx 7{,}24$. Nilai $2{,}83$ wajar, karena $\mathbf{a}$ dan $\mathbf{b}$ hampir berlawanan arah.
-
-**Jawaban:** $|\mathbf{a}| = 5$, $2\mathbf{a} - 3\mathbf{b} = \begin{pmatrix} 9 \\ -14 \end{pmatrix}$, $|\mathbf{a} + \mathbf{b}| = 2\sqrt{2} \approx 2{,}83$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Diketahui $\\mathbf{a} = \\begin{pmatrix} 3 \\\\ -4 \\end{pmatrix}$ dan $\\mathbf{b} = \\begin{pmatrix} -1 \\\\ 2 \\end{pmatrix}$. Hitung $|\\mathbf{a}|$, $2\\mathbf{a} - 3\\mathbf{b}$, dan $|\\mathbf{a} + \\mathbf{b}|$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Besar $\\mathbf{a}$. $\\sqrt{3^2 + (-4)^2}$ = ?",
+   "answer": "5",
+   "hint": "Ingat $(-4)^2 = 16$.",
+   "explain": "$\\sqrt{9 + 16} = \\sqrt{25} = 5$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Perkalian skalar. $2\\mathbf{a}$ dan $3\\mathbf{b}$ adalah ...",
+   "options": [
+    "$2\\mathbf{a} = \\begin{pmatrix} 6 \\\\ -8 \\end{pmatrix}$, $3\\mathbf{b} = \\begin{pmatrix} -3 \\\\ 6 \\end{pmatrix}$",
+    "$2\\mathbf{a} = \\begin{pmatrix} 5 \\\\ -2 \\end{pmatrix}$, $3\\mathbf{b} = \\begin{pmatrix} 2 \\\\ 5 \\end{pmatrix}$",
+    "$2\\mathbf{a} = \\begin{pmatrix} 6 \\\\ 8 \\end{pmatrix}$, $3\\mathbf{b} = \\begin{pmatrix} 3 \\\\ 6 \\end{pmatrix}$"
+   ],
+   "answer": "$2\\mathbf{a} = \\begin{pmatrix} 6 \\\\ -8 \\end{pmatrix}$, $3\\mathbf{b} = \\begin{pmatrix} -3 \\\\ 6 \\end{pmatrix}$",
+   "hint": "Kalikan setiap komponen; tanda negatif tetap ikut.",
+   "explain": "Setiap komponen dikali skalar, tandanya dipertahankan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Komponen atas $2\\mathbf{a} - 3\\mathbf{b}$: $6 - (-3)$ = ?",
+   "answer": "9",
+   "hint": "Mengurangi negatif sama dengan menambah.",
+   "explain": "$6 + 3 = 9$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen bawah $2\\mathbf{a} - 3\\mathbf{b}$: $-8 - 6$ = ?",
+   "answer": "-14",
+   "hint": "Dari $-8$ bergerak 6 lagi ke kiri.",
+   "explain": "$-8 - 6 = -14$, jadi $2\\mathbf{a} - 3\\mathbf{b} = \\begin{pmatrix} 9 \\\\ -14 \\end{pmatrix}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: $\\mathbf{a} + \\mathbf{b} = \\begin{pmatrix} 2 \\\\ -2 \\end{pmatrix}$. Besarnya $|\\mathbf{a} + \\mathbf{b}|$ adalah ...",
+   "options": [
+    "$2\\sqrt{2}$",
+    "$4$",
+    "$0$",
+    "$5 + \\sqrt{5}$"
+   ],
+   "answer": "$2\\sqrt{2}$",
+   "hint": "Jumlahkan komponen dulu, baru hitung $\\sqrt{x^2 + y^2}$.",
+   "explain": "$\\sqrt{4 + 4} = \\sqrt{8} = 2\\sqrt{2}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Bulatkan $2\\sqrt{2}$ ke 2 desimal.",
+   "answer": "2,83",
+   "hint": "$\\sqrt{2} \\approx 1{,}414$.",
+   "explain": "$2 \\times 1{,}414 \\approx 2{,}83$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $|\\mathbf{a}| + |\\mathbf{b}| = 5 + \\sqrt{5}$. Bulatkan ke 2 desimal.",
+   "answer": "7,24",
+   "hint": "$\\sqrt{5} \\approx 2{,}236$.",
+   "explain": "$7{,}24$. Besar jumlah ($2{,}83$) memang tidak melebihi $7{,}24$; wajar karena $\\mathbf{a}$ dan $\\mathbf{b}$ hampir berlawanan arah.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $|\\mathbf{a}| = 5$, $2\\mathbf{a} - 3\\mathbf{b} = \\begin{pmatrix} 9 \\\\ -14 \\end{pmatrix}$, dan $|\\mathbf{a} + \\mathbf{b}| = 2\\sqrt{2} \\approx 2{,}83$."
+}
+```
 
 ### Contoh 2: Vektor posisi dan translasi
 
-**Soal.** Titik $A(2, 1)$ dan $B(7, -3)$. Tentukan $\overrightarrow{AB}$ dan $|\overrightarrow{AB}|$. Lalu titik $P(-1, 4)$ ditranslasikan oleh $\overrightarrow{AB}$. Tentukan bayangannya.
-
-1. **Langkah 1: Tulis vektor posisi.** $\overrightarrow{OA} = \begin{pmatrix} 2 \\ 1 \end{pmatrix}$, $\overrightarrow{OB} = \begin{pmatrix} 7 \\ -3 \end{pmatrix}$.
-2. **Langkah 2: Ujung dikurangi pangkal.** $\overrightarrow{AB} = \begin{pmatrix} 7 - 2 \\ -3 - 1 \end{pmatrix} = \begin{pmatrix} 5 \\ -4 \end{pmatrix}$.
-3. **Langkah 3: Besar.** $|\overrightarrow{AB}| = \sqrt{25 + 16} = \sqrt{41} \approx 6{,}40$.
-4. **Langkah 4: Translasi.** $P'(-1 + 5, 4 + (-4)) = P'(4, 0)$.
-5. **Cek jawaban.** Dari $A(2, 1)$, geser 5 ke kanan dan 4 ke bawah, sampai di $(7, -3) = B$. Benar.
-
-**Jawaban:** $\overrightarrow{AB} = \begin{pmatrix} 5 \\ -4 \end{pmatrix}$, $|\overrightarrow{AB}| = \sqrt{41} \approx 6{,}40$, bayangan $P'(4, 0)$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Titik $A(2, 1)$ dan $B(7, -3)$. Tentukan $\\overrightarrow{AB}$ dan $|\\overrightarrow{AB}|$. Lalu titik $P(-1, 4)$ ditranslasikan oleh $\\overrightarrow{AB}$. Tentukan bayangannya.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Rumus $\\overrightarrow{AB}$ dari vektor posisi adalah ...",
+   "options": [
+    "$\\overrightarrow{OB} - \\overrightarrow{OA}$",
+    "$\\overrightarrow{OA} - \\overrightarrow{OB}$",
+    "$\\overrightarrow{OA} + \\overrightarrow{OB}$"
+   ],
+   "answer": "$\\overrightarrow{OB} - \\overrightarrow{OA}$",
+   "hint": "Ujung dikurangi pangkal.",
+   "explain": "Ujung $B$ dikurangi pangkal $A$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Komponen atas $\\overrightarrow{AB}$: $7 - 2$ = ?",
+   "answer": "5",
+   "hint": "Koordinat $x$ ujung dikurangi koordinat $x$ pangkal.",
+   "explain": "$7 - 2 = 5$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen bawah $\\overrightarrow{AB}$: $-3 - 1$ = ?",
+   "answer": "-4",
+   "hint": "Koordinat $y$ ujung dikurangi koordinat $y$ pangkal.",
+   "explain": "$-3 - 1 = -4$, jadi $\\overrightarrow{AB} = \\begin{pmatrix} 5 \\\\ -4 \\end{pmatrix}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: $|\\overrightarrow{AB}|$ = ...",
+   "options": [
+    "$\\sqrt{41}$",
+    "$\\sqrt{9}$",
+    "$9$",
+    "$1$"
+   ],
+   "answer": "$\\sqrt{41}$",
+   "hint": "Kuadratkan setiap komponen, jumlahkan, lalu akarkan.",
+   "explain": "$\\sqrt{25 + 16} = \\sqrt{41}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Bulatkan $\\sqrt{41}$ ke 1 desimal.",
+   "answer": "6,4",
+   "hint": "$6^2 = 36$ dan $7^2 = 49$, jadi hasilnya antara 6 dan 7.",
+   "explain": "$\\sqrt{41} \\approx 6{,}40$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Translasi. Koordinat $x$ bayangan $P$: $-1 + 5$ = ?",
+   "answer": "4",
+   "hint": "Tambahkan komponen atas vektor ke $x$.",
+   "explain": "$-1 + 5 = 4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Koordinat $y$ bayangan $P$: $4 + (-4)$ = ?",
+   "answer": "0",
+   "hint": "Tambahkan komponen bawah vektor ke $y$.",
+   "explain": "$4 - 4 = 0$, jadi $P'(4, 0)$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: dari $A(2, 1)$ geser 5 ke kanan. Koordinat $x$ yang dicapai = ?",
+   "answer": "7",
+   "hint": "Kalau benar, kamu sampai di koordinat $x$ titik $B$.",
+   "explain": "$2 + 5 = 7$, dan $1 - 4 = -3$. Sampai tepat di $B(7, -3)$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\overrightarrow{AB} = \\begin{pmatrix} 5 \\\\ -4 \\end{pmatrix}$, $|\\overrightarrow{AB}| = \\sqrt{41} \\approx 6{,}40$, dan bayangan $P$ adalah $P'(4, 0)$."
+}
+```
 
 ### Contoh 3: Membuktikan teorema titik tengah
 
-**Soal.** Pada segitiga $OAB$, $\overrightarrow{OA} = \mathbf{a}$ dan $\overrightarrow{OB} = \mathbf{b}$. $P$ titik tengah $OA$ dan $Q$ titik tengah $OB$. Buktikan $PQ$ sejajar $AB$ dan panjangnya setengah $AB$.
-
-1. **Langkah 1: Nyatakan vektor yang diketahui.** $\overrightarrow{OP} = \frac{1}{2}\mathbf{a}$ dan $\overrightarrow{OQ} = \frac{1}{2}\mathbf{b}$.
-2. **Langkah 2: Hitung $\overrightarrow{AB}$.** Ujung dikurangi pangkal: $\overrightarrow{AB} = \mathbf{b} - \mathbf{a}$.
-3. **Langkah 3: Hitung $\overrightarrow{PQ}$.** $\overrightarrow{PQ} = \overrightarrow{OQ} - \overrightarrow{OP} = \frac{1}{2}\mathbf{b} - \frac{1}{2}\mathbf{a} = \frac{1}{2}(\mathbf{b} - \mathbf{a})$.
-4. **Langkah 4: Bandingkan.** $\overrightarrow{PQ} = \frac{1}{2}\overrightarrow{AB}$. Kelipatan skalar berarti sejajar, dan faktor $\frac{1}{2}$ berarti panjangnya setengah.
-5. **Cek jawaban.** Coba angka: $\mathbf{a} = \begin{pmatrix} 4 \\ 0 \end{pmatrix}$, $\mathbf{b} = \begin{pmatrix} 2 \\ 6 \end{pmatrix}$. Maka $\overrightarrow{AB} = \begin{pmatrix} -2 \\ 6 \end{pmatrix}$ dan $\overrightarrow{PQ} = \begin{pmatrix} 1 \\ 3 \end{pmatrix} - \begin{pmatrix} 2 \\ 0 \end{pmatrix} = \begin{pmatrix} -1 \\ 3 \end{pmatrix}$, tepat setengahnya.
-
-**Jawaban:** $\overrightarrow{PQ} = \frac{1}{2}\overrightarrow{AB}$, jadi $PQ \parallel AB$ dan $PQ = \frac{1}{2}AB$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Pada segitiga $OAB$, $\\overrightarrow{OA} = \\mathbf{a}$ dan $\\overrightarrow{OB} = \\mathbf{b}$. $P$ titik tengah $OA$ dan $Q$ titik tengah $OB$. Buktikan $PQ$ sejajar $AB$ dan panjangnya setengah $AB$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: $\\overrightarrow{OP}$ = ...",
+   "options": [
+    "$\\frac{1}{2}\\mathbf{a}$",
+    "$2\\mathbf{a}$",
+    "$\\frac{1}{2}\\mathbf{b}$"
+   ],
+   "answer": "$\\frac{1}{2}\\mathbf{a}$",
+   "hint": "$P$ ada di tengah $OA$.",
+   "explain": "$\\overrightarrow{OP} = \\frac{1}{2}\\mathbf{a}$, dan dengan cara sama $\\overrightarrow{OQ} = \\frac{1}{2}\\mathbf{b}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $\\overrightarrow{AB}$ = ...",
+   "options": [
+    "$\\mathbf{b} - \\mathbf{a}$",
+    "$\\mathbf{a} - \\mathbf{b}$",
+    "$\\mathbf{a} + \\mathbf{b}$"
+   ],
+   "answer": "$\\mathbf{b} - \\mathbf{a}$",
+   "hint": "Ujung dikurangi pangkal.",
+   "explain": "Ujung $B$ ($\\mathbf{b}$) dikurangi pangkal $A$ ($\\mathbf{a}$).",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: $\\overrightarrow{PQ} = \\overrightarrow{OQ} - \\overrightarrow{OP}$ = ...",
+   "options": [
+    "$\\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$",
+    "$\\frac{1}{2}(\\mathbf{a} - \\mathbf{b})$",
+    "$\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$"
+   ],
+   "answer": "$\\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$",
+   "hint": "Substitusikan $\\frac{1}{2}\\mathbf{b}$ dan $\\frac{1}{2}\\mathbf{a}$, lalu faktorkan $\\frac{1}{2}$.",
+   "explain": "$\\frac{1}{2}\\mathbf{b} - \\frac{1}{2}\\mathbf{a} = \\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Karena $\\overrightarrow{PQ} = \\frac{1}{2}\\overrightarrow{AB}$, kesimpulannya ...",
+   "options": [
+    "$PQ \\parallel AB$ dan $PQ = \\frac{1}{2}AB$",
+    "$PQ$ tegak lurus $AB$",
+    "$PQ = 2AB$"
+   ],
+   "answer": "$PQ \\parallel AB$ dan $PQ = \\frac{1}{2}AB$",
+   "hint": "Kelipatan skalar positif berarti searah dan sejajar.",
+   "explain": "Kelipatan skalar berarti sejajar, dan faktor $\\frac{1}{2}$ berarti panjangnya setengah.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban dengan angka: $\\mathbf{a} = \\begin{pmatrix} 4 \\\\ 0 \\end{pmatrix}$, $\\mathbf{b} = \\begin{pmatrix} 2 \\\\ 6 \\end{pmatrix}$. Komponen atas $\\overrightarrow{PQ} = 1 - 2$ = ?",
+   "answer": "-1",
+   "hint": "$\\overrightarrow{OQ} = \\begin{pmatrix} 1 \\\\ 3 \\end{pmatrix}$ dan $\\overrightarrow{OP} = \\begin{pmatrix} 2 \\\\ 0 \\end{pmatrix}$.",
+   "explain": "$\\overrightarrow{PQ} = \\begin{pmatrix} -1 \\\\ 3 \\end{pmatrix}$, tepat setengah dari $\\overrightarrow{AB} = \\begin{pmatrix} -2 \\\\ 6 \\end{pmatrix}$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\overrightarrow{PQ} = \\frac{1}{2}\\overrightarrow{AB}$: $PQ \\parallel AB$ dan $PQ = \\frac{1}{2}AB$."
+}
+```
 
 ### Contoh 4: Tiga titik segaris
 
-**Soal.** Diketahui $\overrightarrow{OP} = 2\mathbf{a} + \mathbf{b}$, $\overrightarrow{OQ} = 4\mathbf{a} + 3\mathbf{b}$, dan $\overrightarrow{OR} = 7\mathbf{a} + 6\mathbf{b}$, dengan $\mathbf{a}$ dan $\mathbf{b}$ tidak sejajar. Tunjukkan $P$, $Q$, $R$ segaris dan tentukan $PQ : QR$.
-
-1. **Langkah 1: Hitung $\overrightarrow{PQ}$.** $(4\mathbf{a} + 3\mathbf{b}) - (2\mathbf{a} + \mathbf{b}) = 2\mathbf{a} + 2\mathbf{b}$.
-2. **Langkah 2: Hitung $\overrightarrow{QR}$.** $(7\mathbf{a} + 6\mathbf{b}) - (4\mathbf{a} + 3\mathbf{b}) = 3\mathbf{a} + 3\mathbf{b}$.
-3. **Langkah 3: Cari hubungan skalar.** $\overrightarrow{QR} = \frac{3}{2}(2\mathbf{a} + 2\mathbf{b}) = \frac{3}{2}\overrightarrow{PQ}$. Jadi sejajar.
-4. **Langkah 4: Simpulkan segaris.** $\overrightarrow{PQ}$ dan $\overrightarrow{QR}$ sejajar dan berbagi titik $Q$, jadi $P$, $Q$, $R$ pada satu garis. Perbandingan $PQ : QR = 2 : 3$.
-5. **Cek jawaban.** Langsung dari vektor posisi: $\overrightarrow{PR} = (7\mathbf{a} + 6\mathbf{b}) - (2\mathbf{a} + \mathbf{b}) = 5\mathbf{a} + 5\mathbf{b}$. Ini sama dengan $\overrightarrow{PQ} + \overrightarrow{QR}$ dan sama dengan $\frac{5}{2}\overrightarrow{PQ}$, sesuai $2 + 3 = 5$ bagian. Cocok.
-
-**Jawaban:** Segaris, dengan $PQ : QR = 2 : 3$.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Diketahui $\\overrightarrow{OP} = 2\\mathbf{a} + \\mathbf{b}$, $\\overrightarrow{OQ} = 4\\mathbf{a} + 3\\mathbf{b}$, dan $\\overrightarrow{OR} = 7\\mathbf{a} + 6\\mathbf{b}$, dengan $\\mathbf{a}$ dan $\\mathbf{b}$ tidak sejajar. Tunjukkan $P$, $Q$, $R$ segaris dan tentukan $PQ : QR$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: $\\overrightarrow{PQ}$ = ...",
+   "options": [
+    "$2\\mathbf{a} + 2\\mathbf{b}$",
+    "$6\\mathbf{a} + 4\\mathbf{b}$",
+    "$-2\\mathbf{a} - 2\\mathbf{b}$"
+   ],
+   "answer": "$2\\mathbf{a} + 2\\mathbf{b}$",
+   "hint": "$\\overrightarrow{OQ} - \\overrightarrow{OP}$.",
+   "explain": "$(4\\mathbf{a} + 3\\mathbf{b}) - (2\\mathbf{a} + \\mathbf{b}) = 2\\mathbf{a} + 2\\mathbf{b}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $\\overrightarrow{QR}$ = ...",
+   "options": [
+    "$3\\mathbf{a} + 3\\mathbf{b}$",
+    "$11\\mathbf{a} + 9\\mathbf{b}$",
+    "$5\\mathbf{a} + 5\\mathbf{b}$"
+   ],
+   "answer": "$3\\mathbf{a} + 3\\mathbf{b}$",
+   "hint": "$\\overrightarrow{OR} - \\overrightarrow{OQ}$.",
+   "explain": "$(7\\mathbf{a} + 6\\mathbf{b}) - (4\\mathbf{a} + 3\\mathbf{b}) = 3\\mathbf{a} + 3\\mathbf{b}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 3: $\\overrightarrow{QR} = k\\,\\overrightarrow{PQ}$. Berapa $k$?",
+   "answer": {
+    "num": 3,
+    "den": 2
+   },
+   "hint": "Bagi koefisien $\\mathbf{a}$ di $\\overrightarrow{QR}$ dengan koefisien $\\mathbf{a}$ di $\\overrightarrow{PQ}$.",
+   "explain": "$3 \\div 2 = \\frac{3}{2}$, dan untuk $\\mathbf{b}$ juga $\\frac{3}{2}$. Jadi sejajar.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Kenapa $P$, $Q$, $R$ segaris?",
+   "options": [
+    "Sejajar dan berbagi titik $Q$",
+    "Karena panjangnya sama",
+    "Karena $\\mathbf{a}$ dan $\\mathbf{b}$ tidak sejajar"
+   ],
+   "answer": "Sejajar dan berbagi titik $Q$",
+   "hint": "Sejajar saja belum cukup.",
+   "explain": "Dua panah sejajar yang berbagi titik pasti terletak di satu garis.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Perbandingan $PQ : QR$ adalah ...",
+   "options": [
+    "$2 : 3$",
+    "$3 : 2$",
+    "$2 : 5$"
+   ],
+   "answer": "$2 : 3$",
+   "hint": "$\\overrightarrow{PQ}$ memuat 2 bagian, $\\overrightarrow{QR}$ memuat 3 bagian.",
+   "explain": "$2(\\mathbf{a} + \\mathbf{b})$ dan $3(\\mathbf{a} + \\mathbf{b})$, jadi $2 : 3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: $\\overrightarrow{PR} = \\overrightarrow{OR} - \\overrightarrow{OP}$ = ...",
+   "options": [
+    "$5\\mathbf{a} + 5\\mathbf{b}$",
+    "$9\\mathbf{a} + 7\\mathbf{b}$",
+    "$5\\mathbf{a} + 6\\mathbf{b}$"
+   ],
+   "answer": "$5\\mathbf{a} + 5\\mathbf{b}$",
+   "hint": "Kurangkan koefisien $\\mathbf{a}$ dan $\\mathbf{b}$ masing-masing.",
+   "explain": "$5(\\mathbf{a} + \\mathbf{b})$: ada $2 + 3 = 5$ bagian. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $P$, $Q$, $R$ segaris dengan $PQ : QR = 2 : 3$."
+}
+```
 
 ### Contoh 5: Soal cerita kurir
 
-**Soal.** Seorang kurir di Denpasar berangkat dari gudang dengan perpindahan $\mathbf{p} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ km, lalu $\mathbf{q} = \begin{pmatrix} 5 \\ -10 \end{pmatrix}$ km (komponen atas ke timur, bawah ke utara). Hitung perpindahan totalnya, jarak lurus dari gudang, dan panjang jalur yang ditempuh.
-
-1. **Langkah 1: Jumlahkan instruksi.** $\mathbf{p} + \mathbf{q} = \begin{pmatrix} 8 \\ -6 \end{pmatrix}$: 8 km ke timur dan 6 km ke selatan.
-2. **Langkah 2: Jarak lurus.** $\sqrt{8^2 + (-6)^2} = \sqrt{100} = 10$ km.
-3. **Langkah 3: Panjang tiap bagian jalur.** $|\mathbf{p}| = \sqrt{9 + 16} = 5$ km dan $|\mathbf{q}| = \sqrt{25 + 100} = \sqrt{125} \approx 11{,}18$ km.
-4. **Langkah 4: Total jalur.** $5 + 11{,}18 = 16{,}18$ km.
-5. **Cek jawaban.** Jarak lurus (10 km) harus lebih pendek dari jalur yang ditempuh (16,18 km). Benar.
-
-**Jawaban:** Perpindahan $\begin{pmatrix} 8 \\ -6 \end{pmatrix}$ km, jarak lurus 10 km, jalur sekitar 16,2 km.
+```soal
+{
+ "title": "Contoh 5",
+ "text": "Seorang kurir di Denpasar berangkat dari gudang dengan perpindahan $\\mathbf{p} = \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$ km, lalu $\\mathbf{q} = \\begin{pmatrix} 5 \\\\ -10 \\end{pmatrix}$ km (komponen atas ke timur, bawah ke utara). Hitung perpindahan totalnya, jarak lurus dari gudang, dan panjang jalur yang ditempuh.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Komponen atas $\\mathbf{p} + \\mathbf{q}$ = ?",
+   "answer": "8",
+   "hint": "Jumlahkan komponen atas.",
+   "explain": "$3 + 5 = 8$: 8 km ke timur.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen bawah $\\mathbf{p} + \\mathbf{q}$ = ?",
+   "answer": "-6",
+   "hint": "Jumlahkan komponen bawah.",
+   "explain": "$4 + (-10) = -6$: 6 km ke selatan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Jarak lurus dari gudang = ?",
+   "answer": "10",
+   "hint": "Hitung $\\sqrt{8^2 + (-6)^2}$.",
+   "explain": "$\\sqrt{64 + 36} = \\sqrt{100} = 10$ km.",
+   "error": "salah-langkah-materi",
+   "suffix": "km"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: $|\\mathbf{p}|$ = ?",
+   "answer": "5",
+   "hint": "$\\sqrt{3^2 + 4^2}$.",
+   "explain": "$\\sqrt{25} = 5$ km.",
+   "error": "salah-langkah-materi",
+   "suffix": "km"
+  },
+  {
+   "kind": "number",
+   "prompt": "$|\\mathbf{q}| = \\sqrt{125}$. Bulatkan ke 2 desimal.",
+   "answer": "11,18",
+   "hint": "$11^2 = 121$, jadi sedikit lebih dari 11.",
+   "explain": "$\\sqrt{125} \\approx 11{,}18$ km.",
+   "error": "salah-langkah-materi",
+   "suffix": "km"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Total panjang jalur (2 desimal) = ?",
+   "answer": "16,18",
+   "hint": "Jumlahkan panjang kedua bagian jalur.",
+   "explain": "$5 + 11{,}18 = 16{,}18$ km.",
+   "error": "salah-langkah-materi",
+   "suffix": "km"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Cek jawaban: mana yang lebih pendek?",
+   "options": [
+    "Jarak lurus",
+    "Panjang jalur",
+    "Sama panjang"
+   ],
+   "answer": "Jarak lurus",
+   "hint": "Garis lurus adalah jalan terpendek.",
+   "explain": "10 km lebih pendek dari 16,18 km. Masuk akal.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Perpindahan total $\\begin{pmatrix} 8 \\\\ -6 \\end{pmatrix}$ km, jarak lurus 10 km, dan jalur sekitar 16,2 km."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -158,16 +520,178 @@ $$\overrightarrow{AB} = \overrightarrow{AO} + \overrightarrow{OB} = \overrightar
 
 ## Cek pemahaman
 
-1. Hitung $\left|\begin{pmatrix} -5 \\ 12 \end{pmatrix}\right|$.
-2. Diketahui $\mathbf{a} = \begin{pmatrix} 2 \\ 3 \end{pmatrix}$ dan $\mathbf{b} = \begin{pmatrix} -4 \\ 1 \end{pmatrix}$. Hitung $\mathbf{a} + 2\mathbf{b}$ dan $\mathbf{a} - \mathbf{b}$.
-3. Titik $A(1, -2)$ dan $B(4, 2)$. Tentukan $\overrightarrow{AB}$ dan $|\overrightarrow{AB}|$.
-4. Vektor $\begin{pmatrix} k \\ 6 \end{pmatrix}$ sejajar dengan $\begin{pmatrix} 2 \\ 3 \end{pmatrix}$. Tentukan $k$.
-5. Pada segitiga $OAB$, $\overrightarrow{OA} = \mathbf{a}$, $\overrightarrow{OB} = \mathbf{b}$, dan $M$ titik tengah $AB$. Nyatakan $\overrightarrow{OM}$ dalam $\mathbf{a}$ dan $\mathbf{b}$.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $\sqrt{25 + 144} = \sqrt{169} = 13$.
-2. $\mathbf{a} + 2\mathbf{b} = \begin{pmatrix} 2 - 8 \\ 3 + 2 \end{pmatrix} = \begin{pmatrix} -6 \\ 5 \end{pmatrix}$; $\mathbf{a} - \mathbf{b} = \begin{pmatrix} 6 \\ 2 \end{pmatrix}$.
-3. $\overrightarrow{AB} = \begin{pmatrix} 3 \\ 4 \end{pmatrix}$ dan $|\overrightarrow{AB}| = 5$.
-4. $\begin{pmatrix} k \\ 6 \end{pmatrix} = 2\begin{pmatrix} 2 \\ 3 \end{pmatrix}$ karena $6 = 2 \times 3$, jadi $k = 4$.
-5. $\overrightarrow{OM} = \mathbf{a} + \frac{1}{2}(\mathbf{b} - \mathbf{a}) = \frac{1}{2}(\mathbf{a} + \mathbf{b})$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Hitung $\\left|\\begin{pmatrix} -5 \\\\ 12 \\end{pmatrix}\\right|$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: $(-5)^2 + 12^2$ = ?",
+   "answer": "169",
+   "hint": "Kuadrat bilangan negatif hasilnya positif.",
+   "explain": "$25 + 144 = 169$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $\\sqrt{169}$ = ?",
+   "answer": "13",
+   "hint": "Bilangan berapa yang kuadratnya 169?",
+   "explain": "$13^2 = 169$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Besarnya 13."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Diketahui $\\mathbf{a} = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$ dan $\\mathbf{b} = \\begin{pmatrix} -4 \\\\ 1 \\end{pmatrix}$. Hitung $\\mathbf{a} + 2\\mathbf{b}$ dan $\\mathbf{a} - \\mathbf{b}$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Komponen atas $\\mathbf{a} + 2\\mathbf{b}$: $2 + 2(-4)$ = ?",
+   "answer": "-6",
+   "hint": "Kalikan dulu, baru jumlahkan.",
+   "explain": "$2 - 8 = -6$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen bawah $\\mathbf{a} + 2\\mathbf{b}$: $3 + 2(1)$ = ?",
+   "answer": "5",
+   "hint": "Kalikan dulu, baru jumlahkan.",
+   "explain": "$3 + 2 = 5$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen atas $\\mathbf{a} - \\mathbf{b}$: $2 - (-4)$ = ?",
+   "answer": "6",
+   "hint": "Mengurangi negatif sama dengan menambah.",
+   "explain": "$2 + 4 = 6$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen bawah $\\mathbf{a} - \\mathbf{b}$: $3 - 1$ = ?",
+   "answer": "2",
+   "hint": "Kurangkan komponen bawah.",
+   "explain": "$3 - 1 = 2$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$\\mathbf{a} + 2\\mathbf{b} = \\begin{pmatrix} -6 \\\\ 5 \\end{pmatrix}$ dan $\\mathbf{a} - \\mathbf{b} = \\begin{pmatrix} 6 \\\\ 2 \\end{pmatrix}$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Titik $A(1, -2)$ dan $B(4, 2)$. Tentukan $\\overrightarrow{AB}$ dan $|\\overrightarrow{AB}|$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Komponen atas $\\overrightarrow{AB}$ = ?",
+   "answer": "3",
+   "hint": "Ujung dikurangi pangkal: $4 - 1$.",
+   "explain": "$4 - 1 = 3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Komponen bawah $\\overrightarrow{AB}$ = ?",
+   "answer": "4",
+   "hint": "Ujung dikurangi pangkal: $2 - (-2)$.",
+   "explain": "$2 + 2 = 4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$|\\overrightarrow{AB}|$ = ?",
+   "answer": "5",
+   "hint": "$\\sqrt{3^2 + 4^2}$.",
+   "explain": "$\\sqrt{9 + 16} = 5$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$\\overrightarrow{AB} = \\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix}$ dan $|\\overrightarrow{AB}| = 5$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Vektor $\\begin{pmatrix} k \\\\ 6 \\end{pmatrix}$ sejajar dengan $\\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$. Tentukan $k$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Vektor pertama $= m$ kali vektor kedua. Dari komponen bawah, $6 = 3m$. Berapa $m$?",
+   "answer": "2",
+   "hint": "Bagi 6 dengan 3.",
+   "explain": "$m = 2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: $k = 2 \\times 2$ = ?",
+   "answer": "4",
+   "hint": "Komponen atas juga dikali $m$.",
+   "explain": "$k = 4$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $k = 4$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Pada segitiga $OAB$, $\\overrightarrow{OA} = \\mathbf{a}$, $\\overrightarrow{OB} = \\mathbf{b}$, dan $M$ titik tengah $AB$. Nyatakan $\\overrightarrow{OM}$ dalam $\\mathbf{a}$ dan $\\mathbf{b}$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: $\\overrightarrow{AB}$ = ...",
+   "options": [
+    "$\\mathbf{b} - \\mathbf{a}$",
+    "$\\mathbf{a} - \\mathbf{b}$",
+    "$\\mathbf{a} + \\mathbf{b}$"
+   ],
+   "answer": "$\\mathbf{b} - \\mathbf{a}$",
+   "hint": "Ujung dikurangi pangkal.",
+   "explain": "$\\overrightarrow{AB} = \\mathbf{b} - \\mathbf{a}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $\\overrightarrow{OM} = \\overrightarrow{OA} + \\frac{1}{2}\\overrightarrow{AB}$ = ...",
+   "options": [
+    "$\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
+    "$\\frac{1}{2}(\\mathbf{b} - \\mathbf{a})$",
+    "$\\mathbf{a} + \\mathbf{b}$"
+   ],
+   "answer": "$\\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$",
+   "hint": "$\\mathbf{a} + \\frac{1}{2}\\mathbf{b} - \\frac{1}{2}\\mathbf{a}$, lalu sederhanakan.",
+   "explain": "$\\mathbf{a} + \\frac{1}{2}(\\mathbf{b} - \\mathbf{a}) = \\frac{1}{2}\\mathbf{a} + \\frac{1}{2}\\mathbf{b}$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$\\overrightarrow{OM} = \\frac{1}{2}(\\mathbf{a} + \\mathbf{b})$."
+}
+```

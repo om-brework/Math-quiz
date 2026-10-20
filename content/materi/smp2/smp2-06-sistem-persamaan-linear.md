@@ -25,6 +25,10 @@ Dari satu nota, ada banyak kemungkinan harga. Tetapi dua nota bersama hanya coco
 
 Dua cara ini akan kita pakai terus di contoh.
 
+```anim
+{"type": "persamaan", "title": "Membandingkan dua nota (contoh lain)", "baris": [{"tex": "2\\text{ tahu} + 1\\text{ tempe} = 6.000", "say": "Nota C: 2 tahu dan 1 tempe, Rp6.000."}, {"tex": "1\\text{ tahu} + 1\\text{ tempe} = 4.500", "say": "Nota D: 1 tahu dan 1 tempe, Rp4.500. Banyak tempenya sudah sama."}, {"tex": "1\\text{ tahu} = 1.500", "say": "Kurangkan nota: tempe saling hilang, selisih harga hanya karena 1 tahu.", "op": "C - D"}, {"tex": "1\\text{ tempe} = 4.500 - 1.500 = 3.000", "say": "Tukar tahu dengan nilainya di nota D: harga tempe ketemu.", "op": "\\text{substitusi}"}]}
+```
+
 ## Konsep
 
 ### Persamaan linear dua variabel dan grafiknya
@@ -38,11 +42,19 @@ Semua pasangan itu terletak pada **satu garis lurus**. Cara cepat menggambarnya 
 
 Hubungkan kedua titik dengan penggaris.
 
+```anim
+{"type": "grafik", "title": "Grafik 2x + 3y = 12", "xmin": -1, "xmax": 7, "ymin": -1, "ymax": 5, "kurva": [{"f": "(12-2x)/3", "label": "2x + 3y = 12"}], "titik": [{"x": 0, "y": 4, "label": "(0, 4)"}, {"x": 6, "y": 0, "label": "(6, 0)"}, {"x": 3, "y": 2, "label": "(3, 2)"}], "langkah": [{"say": "Ambil $x = 0$: $y = 4$. Titik $(0, 4)$.", "kurva": 0, "titik": 1}, {"say": "Ambil $y = 0$: $x = 6$. Titik $(6, 0)$.", "kurva": 0, "titik": 2}, {"say": "Hubungkan dengan penggaris.", "kurva": 1, "titik": 2}, {"say": "Titik lain di garis, misalnya $(3, 2)$, juga memenuhi: $6 + 6 = 12$.", "kurva": 1, "titik": 3}]}
+```
+
 ### Sistem persamaan
 
 **Sistem persamaan linear dua variabel** (SPLDV) adalah dua persamaan yang harus benar **bersamaan**. Penyelesaiannya adalah pasangan $(x, y)$ yang memenuhi kedua persamaan sekaligus.
 
 Secara grafik, setiap persamaan adalah sebuah garis. Pasangan yang memenuhi keduanya adalah **titik potong** kedua garis. Itulah sebabnya dua nota bisa menentukan satu pasangan harga: dua garis yang tidak sejajar berpotongan tepat di satu titik.
+
+```anim
+{"type": "grafik", "title": "Dua garis, satu titik potong", "xmin": -1, "xmax": 8, "ymin": -1, "ymax": 8, "kurva": [{"f": "x+1", "label": "y = x + 1"}, {"f": "7-x", "label": "x + y = 7"}], "titik": [{"x": 3, "y": 4, "label": "(3, 4)"}], "langkah": [{"say": "Garis pertama: $y = x + 1$. Banyak sekali titik di garis ini.", "kurva": 1}, {"say": "Garis kedua: $x + y = 7$.", "kurva": 2}, {"say": "Hanya satu titik yang ada di kedua garis: $(3, 4)$. Cek: $4 = 3 + 1$ dan $3 + 4 = 7$.", "kurva": 2, "titik": 1}]}
+```
 
 ### Tiga metode
 
@@ -58,82 +70,353 @@ Jika $A = B$ dan $C = D$, maka $A + C = B + D$ dan $A - C = B - D$. Menjumlah at
 
 Urutan berpikir: **pilih metode → hilangkan satu variabel → cari variabel pertama → cari variabel kedua → cek di kedua persamaan**.
 
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Substitusi
 
-**Soal.** Selesaikan $y = 2x - 1$ dan $3x + y = 14$.
-
-1. **Langkah 1: Pilih metode.** Persamaan pertama sudah berbentuk $y = \ldots$, jadi pakai substitusi. Ini seperti sudah tahu "1 tempe senilai $2x - 1$".
-2. **Langkah 2: Tukar $y$.** Ganti $y$ di persamaan kedua.
-$$3x + (2x - 1) = 14$$
-3. **Langkah 3: Cari $x$.** $5x - 1 = 14$, jadi $5x = 15$ dan $x = 3$.
-4. **Langkah 4: Cari $y$.** $y = 2(3) - 1 = 5$.
-5. **Cek jawaban.** Persamaan 1: $2(3) - 1 = 5$, benar. Persamaan 2: $3(3) + 5 = 14$, benar.
-
-**Jawaban:** $x = 3$, $y = 5$.
+```soal
+{
+ "title": "Substitusi",
+ "text": "Selesaikan $y = 2x - 1$ dan $3x + y = 14$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Metode yang paling cocok?",
+   "options": [
+    "Substitusi",
+    "Eliminasi",
+    "Grafik"
+   ],
+   "answer": "Substitusi",
+   "hint": "Lihat persamaan pertama: sudah berbentuk $y = \\ldots$",
+   "explain": "Persamaan pertama sudah $y = \\ldots$, jadi substitusi.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Tukar $y$ di persamaan kedua.",
+   "options": [
+    "$3x + (2x - 1) = 14$",
+    "$3(2x - 1) + y = 14$",
+    "$3x + 2x = 14$"
+   ],
+   "answer": "$3x + (2x - 1) = 14$",
+   "hint": "Ganti $y$ dengan $2x - 1$, utuh.",
+   "explain": "$3x + (2x - 1) = 14$, jadi $5x - 1 = 14$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Dari $5x - 1 = 14$, cari $x$.",
+   "answer": "3",
+   "hint": "Tambah 1, lalu bagi 5.",
+   "explain": "5x = 15, x = 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Cari $y = 2(3) - 1$.",
+   "answer": "5",
+   "hint": "6 − 1.",
+   "explain": "y = 5.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $3(3) + 5 = ?$",
+   "answer": "14",
+   "hint": "Masukkan ke persamaan kedua.",
+   "explain": "9 + 5 = 14. Benar di kedua persamaan.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $x = 3$, $y = 5$."
+}
+```
 
 ### Contoh 2: Eliminasi langsung
 
-**Soal.** Selesaikan $2x + 3y = 12$ dan $4x - 3y = 6$.
-
-1. **Langkah 1: Pilih metode.** Koefisien $y$ adalah $+3$ dan $-3$, sudah berlawanan. Pakai eliminasi dengan **menjumlahkan**.
-2. **Langkah 2: Jumlahkan kedua persamaan.**
-$$(2x + 4x) + (3y - 3y) = 12 + 6 \quad\Rightarrow\quad 6x = 18$$
-3. **Langkah 3: Cari $x$.** $x = 3$.
-4. **Langkah 4: Cari $y$.** Masukkan ke persamaan pertama: $2(3) + 3y = 12$, jadi $3y = 6$ dan $y = 2$.
-5. **Cek jawaban.** $2(3) + 3(2) = 12$, benar. $4(3) - 3(2) = 12 - 6 = 6$, benar.
-
-**Jawaban:** $x = 3$, $y = 2$.
+```soal
+{
+ "title": "Eliminasi langsung",
+ "text": "Selesaikan $2x + 3y = 12$ dan $4x - 3y = 6$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Koefisien $y$ adalah $+3$ dan $-3$. Apa yang dilakukan?",
+   "options": [
+    "Jumlahkan kedua persamaan",
+    "Kurangkan kedua persamaan"
+   ],
+   "answer": "Jumlahkan kedua persamaan",
+   "hint": "Koefisien berlawanan saling menghapus kalau dijumlah.",
+   "explain": "$3y + (-3y) = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Setelah dijumlah, $6x = ?$",
+   "answer": "18",
+   "hint": "12 + 6.",
+   "explain": "$6x = 18$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Cari $x$.",
+   "answer": "3",
+   "hint": "18 ÷ 6.",
+   "explain": "x = 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: $2(3) + 3y = 12$. Cari $y$.",
+   "answer": "2",
+   "hint": "3y = 6.",
+   "explain": "y = 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $4(3) - 3(2) = ?$",
+   "answer": "6",
+   "hint": "12 − 6.",
+   "explain": "Hasilnya 6, cocok dengan persamaan kedua.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $x = 3$, $y = 2$."
+}
+```
 
 ### Contoh 3: Eliminasi dengan mengalikan dulu
 
-**Soal.** Selesaikan $3x + 2y = 16$ dan $5x - 3y = 14$.
-
-1. **Langkah 1: Pilih variabel yang dihilangkan.** Hilangkan $y$. Koefisiennya 2 dan $-3$. KPK dari 2 dan 3 adalah 6.
-2. **Langkah 2: Samakan koefisien.** Kalikan persamaan pertama dengan 3 dan persamaan kedua dengan 2. Ini seperti memfotokopi nota agar banyak tempenya sama.
-$$9x + 6y = 48$$
-$$10x - 6y = 28$$
-3. **Langkah 3: Jumlahkan.** $19x = 76$, jadi $x = 4$.
-4. **Langkah 4: Cari $y$.** $3(4) + 2y = 16$, jadi $2y = 4$ dan $y = 2$.
-5. **Cek jawaban.** $3(4) + 2(2) = 16$, benar. $5(4) - 3(2) = 20 - 6 = 14$, benar.
-
-**Jawaban:** $x = 4$, $y = 2$.
+```soal
+{
+ "title": "Eliminasi dengan mengalikan dulu",
+ "text": "Selesaikan $3x + 2y = 16$ dan $5x - 3y = 14$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Hilangkan $y$. KPK dari 2 dan 3?",
+   "answer": "6",
+   "hint": "Kelipatan persekutuan terkecil.",
+   "explain": "KPK = 6.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Persamaan pertama dikali 3 menjadi?",
+   "options": [
+    "$9x + 6y = 48$",
+    "$9x + 6y = 16$",
+    "$9x + 2y = 48$"
+   ],
+   "answer": "$9x + 6y = 48$",
+   "hint": "Fotokopi seluruh nota, termasuk totalnya.",
+   "explain": "$9x + 6y = 48$. Persamaan kedua dikali 2: $10x - 6y = 28$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Jumlahkan. $19x = ?$",
+   "answer": "76",
+   "hint": "48 + 28.",
+   "explain": "$19x = 76$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3 (lanjutan): Cari $x$.",
+   "answer": "4",
+   "hint": "76 ÷ 19.",
+   "explain": "x = 4.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: $3(4) + 2y = 16$. Cari $y$.",
+   "answer": "2",
+   "hint": "2y = 4.",
+   "explain": "y = 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $5(4) - 3(2) = ?$",
+   "answer": "14",
+   "hint": "20 − 6.",
+   "explain": "14, cocok dengan persamaan kedua.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $x = 4$, $y = 2$."
+}
+```
 
 ### Contoh 4: Metode grafik
 
-**Soal.** Selesaikan $x + y = 5$ dan $x - y = 1$ dengan grafik.
-
-1. **Langkah 1: Cari dua titik garis pertama.** $x + y = 5$: titik $(0, 5)$ dan $(5, 0)$.
-2. **Langkah 2: Cari dua titik garis kedua.** $x - y = 1$: jika $x = 0$ maka $y = -1$, titik $(0, -1)$; jika $y = 0$ maka $x = 1$, titik $(1, 0)$.
-3. **Langkah 3: Gambar dan baca titik potong.** Garis $x + y = 5$ turun ke kanan, garis $x - y = 1$ naik ke kanan. Tabel berikut menunjukkan nilai $y$ kedua garis untuk beberapa nilai $x$. Kedua garis bertemu di tempat nilai $y$-nya sama.
-
+```soal
+{
+ "title": "Metode grafik",
+ "text": "Selesaikan $x + y = 5$ dan $x - y = 1$ dengan grafik. Tabel menunjukkan nilai $y$ kedua garis.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Garis $x + y = 5$ memotong sumbu-$y$ di $(0, ?)$.",
+   "answer": "5",
+   "hint": "Ambil $x = 0$.",
+   "explain": "Titik (0, 5); titik lainnya (5, 0).",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Garis $x - y = 1$ memotong sumbu-$y$ di $(0, ?)$.",
+   "answer": "-1",
+   "hint": "Ambil $x = 0$: $-y = 1$.",
+   "explain": "Titik (0, −1); titik lainnya (1, 0).",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Pada tabel, di nilai $x$ berapa kedua garis punya $y$ yang sama?",
+   "answer": "3",
+   "hint": "Cari kolom yang dua angkanya sama.",
+   "explain": "Di x = 3, keduanya y = 2. Itulah titik potongnya.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Titik potongnya?",
+   "options": [
+    "$(3, 2)$",
+    "$(2, 3)$",
+    "$(5, 0)$"
+   ],
+   "answer": "$(3, 2)$",
+   "hint": "Tulis $(x, y)$.",
+   "explain": "(3, 2).",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $3 - 2 = ?$",
+   "answer": "1",
+   "hint": "Masukkan ke persamaan kedua.",
+   "explain": "3 − 2 = 1 dan 3 + 2 = 5. Benar di keduanya.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $x = 3$, $y = 2$.",
+ "visual": {
+  "type": "table",
+  "head": [
+   "x",
+   "0",
+   "1",
+   "2",
+   "3",
+   "4",
+   "5"
+  ],
+  "rows": [
+   [
+    "y (x + y = 5)",
+    "5",
+    "4",
+    "3",
+    "2",
+    "1",
+    "0"
+   ],
+   [
+    "y (x − y = 1)",
+    "−1",
+    "0",
+    "1",
+    "2",
+    "3",
+    "4"
+   ]
+  ]
+ }
+}
 ```
-  x               0    1    2    3    4    5
-  y (x + y = 5)   5    4    3    2    1    0
-  y (x - y = 1)  -1    0    1    2    3    4
-                                 ^
-                          sama: titik potong (3, 2)
-```
-
-Pada kertas berpetak, kedua garis berpotongan di $(3, 2)$.
-
-4. **Cek jawaban.** $3 + 2 = 5$, benar. $3 - 2 = 1$, benar. Dua nota cocok dengan satu pasangan yang sama.
-
-**Jawaban:** $x = 3$, $y = 2$.
 
 ### Contoh 5: Soal cerita
 
-**Soal.** Di warung Bu Made, 3 tahu dan 2 tempe harganya Rp11.000. Sementara 2 tahu dan 4 tempe harganya Rp14.000. Berapa harga 1 tahu dan 1 tempe?
-
-1. **Langkah 1: Pilih variabel.** Misalkan $t$ = harga 1 tahu, $p$ = harga 1 tempe (dalam rupiah).
-2. **Langkah 2: Susun dua persamaan dari dua nota.**
-$$3t + 2p = 11.000 \quad\text{(nota A)}$$
-$$2t + 4p = 14.000 \quad\text{(nota B)}$$
-3. **Langkah 3: Samakan banyak tempe.** Kalikan nota A dengan 2: $6t + 4p = 22.000$.
-4. **Langkah 4: Bandingkan nota (kurangkan).** $(6t + 4p) - (2t + 4p) = 22.000 - 14.000$, jadi $4t = 8.000$ dan $t = 2.000$. Selisih harga memang hanya karena tahu.
-5. **Langkah 5: Cari harga tempe.** $3(2.000) + 2p = 11.000$, jadi $2p = 5.000$ dan $p = 2.500$.
-6. **Cek jawaban.** Nota A: $6.000 + 5.000 = 11.000$, benar. Nota B: $4.000 + 10.000 = 14.000$, benar.
-
-**Jawaban:** 1 tahu Rp2.000 dan 1 tempe Rp2.500.
+```soal
+{
+ "title": "Soal cerita",
+ "text": "Di warung Bu Made, 3 tahu dan 2 tempe harganya Rp11.000. Sementara 2 tahu dan 4 tempe harganya Rp14.000. Berapa harga 1 tahu dan 1 tempe?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1–2: Dua persamaannya ($t$ = tahu, $p$ = tempe)?",
+   "options": [
+    "$3t + 2p = 11.000$ dan $2t + 4p = 14.000$",
+    "$3t + 2t = 11.000$ dan $2p + 4p = 14.000$",
+    "$3t + 2p = 14.000$ dan $2t + 4p = 11.000$"
+   ],
+   "answer": "$3t + 2p = 11.000$ dan $2t + 4p = 14.000$",
+   "hint": "Satu nota menjadi satu persamaan.",
+   "explain": "Nota A dan nota B.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Samakan banyak tempe. Nota A dikali 2 menjadi?",
+   "options": [
+    "$6t + 4p = 22.000$",
+    "$6t + 4p = 11.000$",
+    "$6t + 2p = 22.000$"
+   ],
+   "answer": "$6t + 4p = 22.000$",
+   "hint": "Seluruh nota dikali 2.",
+   "explain": "$6t + 4p = 22.000$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Kurangkan nota B. $4t = ?$",
+   "answer": "8.000",
+   "hint": "22.000 − 14.000.",
+   "explain": "4t = 8.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4 (lanjutan): Harga 1 tahu?",
+   "answer": "2.000",
+   "hint": "8.000 ÷ 4.",
+   "explain": "t = 2.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: $3(2.000) + 2p = 11.000$. Harga 1 tempe?",
+   "answer": "2.500",
+   "hint": "2p = 5.000.",
+   "explain": "p = 2.500.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: nota B, 2 tahu + 4 tempe = ?",
+   "answer": "14.000",
+   "hint": "4.000 + 10.000.",
+   "explain": "Rp14.000. Cocok dengan nota B.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "1 tahu Rp2.000 dan 1 tempe Rp2.500."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -153,16 +436,185 @@ $$2t + 4p = 14.000 \quad\text{(nota B)}$$
 
 ## Cek pemahaman
 
-1. Selesaikan dengan substitusi: $y = x + 2$ dan $2x + y = 11$.
-2. Selesaikan dengan eliminasi: $x + 2y = 10$ dan $x - 2y = 2$.
-3. Selesaikan: $2x + 5y = 1$ dan $3x - 2y = 11$.
-4. Garis $y = 2x$ dan garis $x + y = 6$ berpotongan di titik mana?
-5. Harga tiket masuk kebun binatang untuk 2 dewasa dan 3 anak adalah Rp95.000. Untuk 1 dewasa dan 2 anak, harganya Rp55.000. Berapa harga tiket dewasa dan tiket anak?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $x = 3$, $y = 5$. Substitusi memberi $2x + x + 2 = 11$, jadi $3x = 9$.
-2. $x = 6$, $y = 2$. Jumlahkan: $2x = 12$; lalu $6 + 2y = 10$.
-3. $x = 3$, $y = -1$. Kalikan persamaan pertama dengan 3 dan kedua dengan 2, kurangkan: $19y = -19$; lalu $2x - 5 = 1$.
-4. $(2, 4)$. Substitusi $y = 2x$: $3x = 6$, jadi $x = 2$ dan $y = 4$.
-5. Dewasa Rp25.000, anak Rp15.000. Kalikan persamaan kedua dengan 2: $2d + 4a = 110.000$; kurangkan dengan $2d + 3a = 95.000$ memberi $a = 15.000$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Selesaikan dengan substitusi: $y = x + 2$ dan $2x + y = 11$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Substitusi memberi $3x + 2 = 11$. Cari $x$.",
+   "answer": "3",
+   "hint": "3x = 9.",
+   "explain": "x = 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cari $y$.",
+   "answer": "5",
+   "hint": "y = 3 + 2.",
+   "explain": "y = 5.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$x = 3$, $y = 5$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Selesaikan dengan eliminasi: $x + 2y = 10$ dan $x - 2y = 2$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Jumlahkan: $2x = 12$. Cari $x$.",
+   "answer": "6",
+   "hint": "12 ÷ 2.",
+   "explain": "x = 6.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$6 + 2y = 10$. Cari $y$.",
+   "answer": "2",
+   "hint": "2y = 4.",
+   "explain": "y = 2.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$x = 6$, $y = 2$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Selesaikan $2x + 5y = 1$ dan $3x - 2y = 11$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Untuk menghilangkan $x$, kalikan persamaan pertama dengan 3 dan kedua dengan 2. Hasil kurangannya?",
+   "options": [
+    "$19y = -19$",
+    "$11y = -19$",
+    "$19y = 19$"
+   ],
+   "answer": "$19y = -19$",
+   "hint": "$(6x + 15y) - (6x - 4y) = 3 - 22$.",
+   "explain": "$15y + 4y = 19y$ dan $3 - 22 = -19$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cari $y$.",
+   "answer": "-1",
+   "hint": "−19 ÷ 19.",
+   "explain": "y = −1.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$2x + 5(-1) = 1$. Cari $x$.",
+   "answer": "3",
+   "hint": "2x = 6.",
+   "explain": "x = 3. Cek: 3(3) − 2(−1) = 11, benar.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$x = 3$, $y = -1$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Garis $y = 2x$ dan garis $x + y = 6$ berpotongan di titik mana?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Substitusi: $x + 2x = 6$. Cari $x$.",
+   "answer": "2",
+   "hint": "3x = 6.",
+   "explain": "x = 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cari $y$.",
+   "answer": "4",
+   "hint": "y = 2x.",
+   "explain": "y = 4.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Titik potongnya?",
+   "options": [
+    "$(2, 4)$",
+    "$(4, 2)$",
+    "$(2, 6)$"
+   ],
+   "answer": "$(2, 4)$",
+   "hint": "Tulis $(x, y)$.",
+   "explain": "(2, 4).",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Titik potongnya $(2, 4)$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Tiket kebun binatang untuk 2 dewasa dan 3 anak Rp95.000. Untuk 1 dewasa dan 2 anak Rp55.000. Berapa harga tiket dewasa dan anak?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Persamaan kedua dikali 2 menjadi?",
+   "options": [
+    "$2d + 4a = 110.000$",
+    "$2d + 4a = 55.000$",
+    "$2d + 2a = 110.000$"
+   ],
+   "answer": "$2d + 4a = 110.000$",
+   "hint": "Seluruh persamaan dikali 2.",
+   "explain": "$2d + 4a = 110.000$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Kurangkan dengan $2d + 3a = 95.000$. Harga tiket anak?",
+   "answer": "15.000",
+   "hint": "110.000 − 95.000.",
+   "explain": "a = 15.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "$d + 2(15.000) = 55.000$. Harga tiket dewasa?",
+   "answer": "25.000",
+   "hint": "55.000 − 30.000.",
+   "explain": "d = 25.000.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "Dewasa Rp25.000, anak Rp15.000."
+}
+```

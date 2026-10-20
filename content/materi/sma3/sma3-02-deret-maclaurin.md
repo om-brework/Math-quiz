@@ -22,6 +22,10 @@ Bayangkan seorang **penjahit kebaya** yang harus meniru bentuk sebuah kebaya, te
 
 Makin banyak ukuran yang dipakai, makin mirip tiruannya. Namun tiruan itu paling akurat **dekat titik yang diukur**. Makin jauh dari $x = 0$, makin besar kemungkinan meleset. Inilah sifat deret Maclaurin.
 
+```anim
+{"type": "grafik", "title": "Tiruan sin x makin mirip", "xmin": -5, "xmax": 5, "ymin": -2, "ymax": 2, "kurva": [{"f": "sin(x)", "label": "y = \\sin x"}, {"f": "x", "label": "x"}, {"f": "x-x^3/6", "label": "x - \\frac{x^3}{6}"}, {"f": "x-x^3/6+x^5/120", "label": "x - \\frac{x^3}{6} + \\frac{x^5}{120}"}], "langkah": [{"say": "Kain yang ditiru: grafik $y = \\sin x$.", "kurva": 1}, {"say": "Satu ukuran (kemiringan di 0): garis $y = x$. Mirip hanya sangat dekat $x = 0$.", "kurva": 2}, {"say": "Tambah suku $-\\frac{x^3}{6}$: tiruan menempel lebih lebar.", "kurva": 3}, {"say": "Tambah suku $\\frac{x^5}{120}$: makin mirip, tetapi tetap meleset jauh dari $x = 0$.", "kurva": 4}]}
+```
+
 ## Konsep
 
 ### Menurunkan rumus
@@ -49,7 +53,15 @@ $$ (1 + x)^n = 1 + nx + \frac{n(n-1)}{2!}x^2 + \frac{n(n-1)(n-2)}{3!}x^3 + \cdot
 
 Contoh penurunan: untuk $f(x) = e^x$, semua turunan adalah $e^x$, dan $e^0 = 1$, jadi $a_n = \frac{1}{n!}$. Untuk $\sin x$, turunannya berputar $\sin, \cos, -\sin, -\cos$, sehingga di $x = 0$ nilainya $0, 1, 0, -1, \ldots$ Karena itu $\sin x$ hanya punya pangkat ganjil (fungsi ganjil) dan $\cos x$ hanya pangkat genap.
 
+```anim
+{"type": "persamaan", "title": "Menurunkan deret cos x", "baris": [{"tex": "f(0) = \\cos 0 = 1", "say": "Ukuran pertama: nilai di $x = 0$."}, {"tex": "f'(0) = -\\sin 0 = 0", "say": "Kemiringan di $x = 0$ nol: tidak ada suku $x$."}, {"tex": "f''(0) = -\\cos 0 = -1", "say": "Lengkungan: koefisien $x^2$ adalah $\\frac{-1}{2!}$."}, {"tex": "f'''(0) = \\sin 0 = 0,\\quad f^{(4)}(0) = \\cos 0 = 1", "say": "Polanya berulang setiap empat turunan."}, {"tex": "\\cos x = 1 - \\frac{x^2}{2!} + \\frac{x^4}{4!} - \\cdots", "say": "Hanya pangkat genap yang tersisa."}]}
+```
+
 Untuk $(1 + x)^n$ dengan $n$ bukan bilangan bulat positif, deretnya tak hingga dan **hanya berlaku untuk $|x| < 1$**.
+
+```anim
+{"type": "grafik", "title": "Deret (1 + x)⁻¹ hanya sah untuk |x| < 1", "xmin": -2, "xmax": 2, "ymin": -2, "ymax": 6, "kurva": [{"f": "1/(1+x)", "label": "y = \\frac{1}{1 + x}", "dari": -0.9}, {"f": "1-x+x^2-x^3+x^4", "label": "1 - x + x^2 - x^3 + x^4"}], "garis": [{"x": -1}, {"x": 1}], "langkah": [{"say": "Grafik $y = (1 + x)^{-1}$.", "kurva": 1}, {"say": "Lima suku pertama deretnya.", "kurva": 2}, {"say": "Di antara $x = -1$ dan $x = 1$ keduanya berimpit; di luar itu deret meleset jauh.", "kurva": 2, "garis": 2}]}
+```
 
 ### Memakai deret standar
 
@@ -60,60 +72,296 @@ Ganti $x$ dengan ekspresi lain, misalnya $e^{2x}$: ganti $x$ dengan $2x$. Daerah
 Jika $x$ kecil (dalam radian), suku pangkat tinggi sangat kecil dan bisa diabaikan:
 $$ \sin x \approx x, \qquad \cos x \approx 1 - \frac{x^2}{2}, \qquad \tan x \approx x $$
 
+```anim
+{"type": "grafik", "title": "Hampiran untuk x kecil", "xmin": -3, "xmax": 3, "ymin": -2, "ymax": 1.5, "kurva": [{"f": "cos(x)", "label": "y = \\cos x"}, {"f": "1-x^2/2", "label": "y = 1 - \\frac{x^2}{2}"}], "langkah": [{"say": "Grafik $y = \\cos x$.", "kurva": 1}, {"say": "Hampiran $1 - \\frac{x^2}{2}$ hampir sama untuk $x$ dekat 0 (radian), lalu menjauh.", "kurva": 2}]}
+```
+
 ## Contoh langkah demi langkah
+
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
 
 ### Contoh 1: Substitusi ke deret standar
 
-**Soal.** Tentukan ekspansi $e^{2x}$ sampai suku $x^3$.
-
-1. **Langkah 1: Pilih deret.** $e^u = 1 + u + \frac{u^2}{2!} + \frac{u^3}{3!} + \cdots$ dengan $u = 2x$.
-2. **Langkah 2: Substitusi.** $1 + 2x + \frac{4x^2}{2} + \frac{8x^3}{6}$.
-3. **Langkah 3: Sederhanakan.** $1 + 2x + 2x^2 + \frac{4}{3}x^3$.
-4. **Cek jawaban.** Dengan rumus Maclaurin: $f^{(n)}(x) = 2^ne^{2x}$, jadi $f'''(0) = 8$ dan koefisien $x^3$ adalah $\frac{8}{3!} = \frac{4}{3}$. Sama.
-
-**Jawaban:** $e^{2x} \approx 1 + 2x + 2x^2 + \frac{4}{3}x^3$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "Tentukan ekspansi $e^{2x}$ sampai suku $x^3$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pilih deret $e^u = 1 + u + \\frac{u^2}{2!} + \\frac{u^3}{3!} + \\cdots$. Nilai $u$ = ?",
+   "options": [
+    "$2x$",
+    "$x^2$",
+    "$x$"
+   ],
+   "answer": "$2x$",
+   "hint": "Apa yang ada di pangkat $e$?",
+   "explain": "$u = 2x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Substitusi. Suku $\\frac{u^2}{2!}$ menjadi?",
+   "options": [
+    "$2x^2$",
+    "$x^2$",
+    "$4x^2$"
+   ],
+   "answer": "$2x^2$",
+   "hint": "Seluruh $2x$ dikuadratkan: $(2x)^2 = 4x^2$.",
+   "explain": "$\\frac{4x^2}{2} = 2x^2$. Pilihan $x^2$ muncul kalau lupa kurung.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 3: Sederhanakan suku $\\frac{(2x)^3}{3!} = \\frac{8x^3}{6}$. Koefisien $x^3$ = ?",
+   "answer": {
+    "num": 4,
+    "den": 3
+   },
+   "hint": "Sederhanakan $\\frac{8}{6}$.",
+   "explain": "$\\frac{8}{6} = \\frac{4}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: dengan rumus Maclaurin, $f'''(x) = 2^3e^{2x}$. Nilai $f'''(0)$ = ?",
+   "answer": "8",
+   "hint": "$e^0 = 1$.",
+   "explain": "$f'''(0) = 8$, dan $\\frac{8}{3!} = \\frac{4}{3}$. Sama.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $e^{2x} \\approx 1 + 2x + 2x^2 + \\frac{4}{3}x^3$."
+}
+```
 
 ### Contoh 2: Dengan turunan berulang
 
-**Soal.** $y = e^{\sin x}$. Tunjukkan bahwa $\dfrac{dy}{dx} = y\cos x$, lalu tentukan deret Maclaurin $y$ sampai suku $x^3$.
-
-1. **Langkah 1: Turunan pertama.** Aturan rantai: $\dfrac{dy}{dx} = e^{\sin x}\cos x = y\cos x$.
-2. **Langkah 2: Turunan kedua.** Aturan perkalian pada $y\cos x$: $y'' = y'\cos x - y\sin x$.
-3. **Langkah 3: Turunan ketiga.** $y''' = y''\cos x - y'\sin x - y'\sin x - y\cos x = y''\cos x - 2y'\sin x - y\cos x$.
-4. **Langkah 4: Ukur di $x = 0$.** $y(0) = e^0 = 1$. $y'(0) = 1 \cdot 1 = 1$. $y''(0) = 1 \cdot 1 - 0 = 1$. $y'''(0) = 1 - 0 - 1 = 0$.
-5. **Langkah 5: Susun deret.** $y = 1 + x + \frac{1}{2!}x^2 + \frac{0}{3!}x^3 = 1 + x + \frac{x^2}{2}$ (suku $x^3$ bernilai nol).
-6. **Cek jawaban.** Cara lain: $\sin x \approx x - \frac{x^3}{6}$, lalu $e^u \approx 1 + u + \frac{u^2}{2} + \frac{u^3}{6}$. Hasilnya $1 + x - \frac{x^3}{6} + \frac{x^2}{2} + \frac{x^3}{6} = 1 + x + \frac{x^2}{2}$. Suku $x^3$ memang saling menghapus.
-
-**Jawaban:** $e^{\sin x} \approx 1 + x + \dfrac{x^2}{2} + 0x^3$.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "$y = e^{\\sin x}$. Tunjukkan bahwa $\\dfrac{dy}{dx} = y\\cos x$, lalu tentukan deret Maclaurin $y$ sampai suku $x^3$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Turunan pertama dengan aturan rantai: $\\frac{dy}{dx}$ = ?",
+   "options": [
+    "$y\\cos x$",
+    "$y\\sin x$",
+    "$e^{\\cos x}$"
+   ],
+   "answer": "$y\\cos x$",
+   "hint": "Turunan bagian dalam $\\sin x$ adalah $\\cos x$.",
+   "explain": "$e^{\\sin x}\\cos x = y\\cos x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Turunan kedua dari $y\\cos x$ (aturan perkalian): $y''$ = ?",
+   "options": [
+    "$y'\\cos x - y\\sin x$",
+    "$y'\\cos x + y\\sin x$",
+    "$-y\\sin x$"
+   ],
+   "answer": "$y'\\cos x - y\\sin x$",
+   "hint": "$(uv)' = u'v + uv'$ dan turunan $\\cos x$ adalah $-\\sin x$.",
+   "explain": "$y'' = y'\\cos x - y\\sin x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: Turunan ketiga: $y'''$ = ?",
+   "options": [
+    "$y''\\cos x - 2y'\\sin x - y\\cos x$",
+    "$y''\\cos x - y'\\sin x$",
+    "$y''\\cos x + 2y'\\sin x - y\\cos x$"
+   ],
+   "answer": "$y''\\cos x - 2y'\\sin x - y\\cos x$",
+   "hint": "Turunkan kedua suku $y'\\cos x$ dan $-y\\sin x$ dengan aturan perkalian.",
+   "explain": "$(y''\\cos x - y'\\sin x) - (y'\\sin x + y\\cos x)$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Ukur di $x = 0$. $y(0)$ = ?",
+   "answer": "1",
+   "hint": "$e^{\\sin 0} = e^0$.",
+   "explain": "$y(0) = 1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$y'(0) = y(0)\\cos 0$ = ?",
+   "answer": "1",
+   "hint": "$\\cos 0 = 1$.",
+   "explain": "$1 \\cdot 1 = 1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$y''(0) = y'(0)\\cos 0 - y(0)\\sin 0$ = ?",
+   "answer": "1",
+   "hint": "$\\sin 0 = 0$.",
+   "explain": "$1 - 0 = 1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$y'''(0) = y''(0) - 0 - y(0)$ = ?",
+   "answer": "0",
+   "hint": "$1 - 0 - 1$.",
+   "explain": "$y'''(0) = 0$, jadi suku $x^3$ bernilai nol.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 5: Susun deretnya.",
+   "options": [
+    "$1 + x + \\frac{x^2}{2}$",
+    "$1 + x + x^2$",
+    "$1 + x + \\frac{x^2}{2} + \\frac{x^3}{6}$"
+   ],
+   "answer": "$1 + x + \\frac{x^2}{2}$",
+   "hint": "Koefisien $x^n$ adalah $\\frac{f^{(n)}(0)}{n!}$.",
+   "explain": "$1 + x + \\frac{1}{2!}x^2 + \\frac{0}{3!}x^3$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: cara substitusi memberi suku $x^3$: $-\\frac{x^3}{6} + \\frac{x^3}{6}$. Koefisiennya = ?",
+   "answer": "0",
+   "hint": "Kedua suku saling menghapus.",
+   "explain": "Koefisien $x^3$ memang 0. Cocok.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $e^{\\sin x} \\approx 1 + x + \\dfrac{x^2}{2} + 0x^3$."
+}
+```
 
 ### Contoh 3: Hasil kali dua deret
 
-**Soal.** Tentukan ekspansi $e^{2x}\ln(1 + x)$ sampai suku $x^3$, dan nyatakan daerah berlakunya.
-
-1. **Langkah 1: Tulis kedua deret.** $e^{2x} = 1 + 2x + 2x^2 + \cdots$ dan $\ln(1 + x) = x - \frac{x^2}{2} + \frac{x^3}{3} - \cdots$
-2. **Langkah 2: Kalikan, kumpulkan per pangkat.**
-
-   ```
-   x   :  1 · x                                  =  x
-   x^2 :  1 · (-x^2/2) + 2x · x                  =  (3/2) x^2
-   x^3 :  1 · (x^3/3) + 2x · (-x^2/2) + 2x^2 · x =  (1/3 - 1 + 2) x^3 = (4/3) x^3
-   ```
-
-3. **Langkah 3: Daerah berlaku.** $e^{2x}$ berlaku untuk semua $x$, $\ln(1 + x)$ untuk $-1 < x \leq 1$. Irisannya $-1 < x \leq 1$.
-4. **Cek jawaban.** Untuk $x = 0{,}1$: nilai sebenarnya $e^{0{,}2}\ln 1{,}1 \approx 1{,}2214 \times 0{,}09531 \approx 0{,}11641$. Deret: $0{,}1 + 0{,}015 + 0{,}00133 = 0{,}11633$. Sangat dekat.
-
-**Jawaban:** $x + \dfrac{3}{2}x^2 + \dfrac{4}{3}x^3$, berlaku untuk $-1 < x \leq 1$.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Tentukan ekspansi $e^{2x}\\ln(1 + x)$ sampai suku $x^3$, dan nyatakan daerah berlakunya. Pakai $e^{2x} = 1 + 2x + 2x^2 + \\cdots$ dan $\\ln(1 + x) = x - \\frac{x^2}{2} + \\frac{x^3}{3} - \\cdots$",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Koefisien $x$: hanya $1 \\cdot x$. Koefisiennya = ?",
+   "answer": "1",
+   "hint": "Pasangan pangkat yang jumlahnya 1: pangkat 0 dari $e^{2x}$ dan pangkat 1 dari $\\ln$.",
+   "explain": "Koefisien $x$ adalah 1.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 2: Koefisien $x^2$: $1 \\cdot \\left(-\\frac{1}{2}\\right) + 2 \\cdot 1$ = ?",
+   "answer": {
+    "num": 3,
+    "den": 2
+   },
+   "hint": "Ambil semua pasangan pangkat yang jumlahnya 2.",
+   "explain": "$-\\frac{1}{2} + 2 = \\frac{3}{2}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Langkah 3: Koefisien $x^3$: $1 \\cdot \\frac{1}{3} + 2 \\cdot \\left(-\\frac{1}{2}\\right) + 2 \\cdot 1$ = ?",
+   "answer": {
+    "num": 4,
+    "den": 3
+   },
+   "hint": "Tiga pasangan: $(0,3)$, $(1,2)$, $(2,1)$.",
+   "explain": "$\\frac{1}{3} - 1 + 2 = \\frac{4}{3}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: Daerah berlaku?",
+   "options": [
+    "$-1 < x \\leq 1$",
+    "semua $x$",
+    "$|x| < 2$"
+   ],
+   "answer": "$-1 < x \\leq 1$",
+   "hint": "$e^{2x}$ berlaku untuk semua $x$; ambil irisan dengan daerah $\\ln(1 + x)$.",
+   "explain": "Irisannya $-1 < x \\leq 1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: nilai deret di $x = 0{,}1$, bulatkan ke 4 desimal.",
+   "answer": "0,1163",
+   "hint": "$0{,}1 + 1{,}5(0{,}01) + \\frac{4}{3}(0{,}001)$.",
+   "explain": "$0{,}1 + 0{,}015 + 0{,}00133 \\approx 0{,}1163$; nilai sebenarnya $\\approx 0{,}1164$. Sangat dekat.",
+   "error": "salah-pembulatan"
+  }
+ ],
+ "conclusion": "Jadi $e^{2x}\\ln(1 + x) \\approx x + \\dfrac{3}{2}x^2 + \\dfrac{4}{3}x^3$, berlaku untuk $-1 < x \\leq 1$."
+}
+```
 
 ### Contoh 4: Tabungan dengan bunga kontinu
 
-**Soal.** Bu Siti menyimpan Rp10.000.000 di deposito dengan bunga kontinu 5% per tahun. Setelah satu tahun, saldonya $10.000.000\,e^{0{,}05}$. Hampiri saldo itu dengan tiga dan empat suku deret $e^x$.
-
-1. **Langkah 1: Pilih deret.** $e^x = 1 + x + \frac{x^2}{2} + \frac{x^3}{6} + \cdots$ dengan $x = 0{,}05$ (kecil, jadi deret cepat akurat).
-2. **Langkah 2: Tiga suku.** $1 + 0{,}05 + 0{,}00125 = 1{,}05125$. Saldo $\approx$ Rp10.512.500.
-3. **Langkah 3: Suku keempat.** $\frac{0{,}05^3}{6} = \frac{0{,}000125}{6} \approx 0{,}0000208$. Jumlah $\approx 1{,}0512708$. Saldo $\approx$ Rp10.512.708.
-4. **Cek jawaban.** Kalkulator: $e^{0{,}05} \approx 1{,}0512711$, saldo $\approx$ Rp10.512.711. Tiga suku meleset sekitar Rp211, empat suku hanya sekitar Rp3. Setiap suku tambahan membuat tiruannya jauh lebih mirip.
-
-**Jawaban:** Tiga suku: Rp10.512.500; empat suku: Rp10.512.708 (nilai sebenarnya sekitar Rp10.512.711).
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Bu Siti menyimpan Rp10.000.000 di deposito dengan bunga kontinu 5% per tahun. Setelah satu tahun, saldonya $10.000.000\\,e^{0{,}05}$. Hampiri saldo itu dengan tiga dan empat suku deret $e^x$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Tiga suku $1 + 0{,}05 + \\frac{0{,}05^2}{2}$ = ?",
+   "answer": "1,05125",
+   "hint": "$0{,}05^2 = 0{,}0025$, dibagi 2.",
+   "explain": "$1 + 0{,}05 + 0{,}00125 = 1{,}05125$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Saldo dengan tiga suku = ?",
+   "answer": "10.512.500",
+   "hint": "Kalikan 10.000.000 dengan 1,05125.",
+   "explain": "Saldo $\\approx$ Rp10.512.500.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Suku keempat dalam rupiah: $10.000.000 \\times \\frac{0{,}05^3}{6}$, bulatkan ke rupiah terdekat.",
+   "answer": "208",
+   "hint": "$0{,}05^3 = 0{,}000125$; kali 10.000.000 lalu bagi 6.",
+   "explain": "$1.250 \\div 6 \\approx 208$.",
+   "error": "salah-pembulatan",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Saldo dengan empat suku = ?",
+   "answer": "10.512.708",
+   "hint": "Tambahkan suku keempat ke saldo tiga suku.",
+   "explain": "Rp10.512.500 + Rp208 = Rp10.512.708.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: kalkulator memberi Rp10.512.711. Selisihnya dengan hampiran tiga suku = ?",
+   "answer": "211",
+   "hint": "10.512.711 − 10.512.500.",
+   "explain": "Tiga suku meleset Rp211, empat suku hanya sekitar Rp3.",
+   "error": "salah-langkah-materi",
+   "prefix": "Rp"
+  }
+ ],
+ "conclusion": "Jadi hampiran tiga suku Rp10.512.500 dan empat suku Rp10.512.708 (nilai sebenarnya sekitar Rp10.512.711)."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -133,16 +381,245 @@ $$ \sin x \approx x, \qquad \cos x \approx 1 - \frac{x^2}{2}, \qquad \tan x \app
 
 ## Cek pemahaman
 
-1. Tentukan ekspansi $\cos 3x$ sampai suku $x^4$.
-2. Tentukan ekspansi $(1 - 2x)^{-1/2}$ sampai suku $x^2$, dan daerah berlakunya.
-3. Untuk $x$ kecil, tunjukkan $\dfrac{\cos x}{1 + \sin x} \approx 1 - x + \dfrac{x^2}{2}$.
-4. $y = \tan x$. Dengan $\frac{dy}{dx} = 1 + y^2$, tentukan deret Maclaurin $y$ sampai suku $x^3$.
-5. Hampiri $\ln 1{,}1$ dengan tiga suku pertama deret $\ln(1 + x)$.
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $1 - \dfrac{9x^2}{2} + \dfrac{27x^4}{8}$. Ganti $x$ dengan $3x$: $\frac{9x^2}{2}$ dan $\frac{81x^4}{24}$.
-2. $1 + x + \dfrac{3}{2}x^2$, berlaku untuk $|x| < \frac{1}{2}$. Dengan $n = -\frac{1}{2}$, $u = -2x$: $\frac{(-1/2)(-3/2)}{2}(4x^2) = \frac{3}{2}x^2$.
-3. $\cos x \approx 1 - \frac{x^2}{2}$, $\frac{1}{1 + \sin x} \approx (1 + x)^{-1} \approx 1 - x + x^2$; hasil kalinya $1 - x + x^2 - \frac{x^2}{2} = 1 - x + \frac{x^2}{2}$.
-4. $x + \dfrac{x^3}{3}$. $y'' = 2yy'$, $y''' = 2(y')^2 + 2yy''$; di $x = 0$: $y = 0$, $y' = 1$, $y'' = 0$, $y''' = 2$, jadi koefisien $x^3$ adalah $\frac{2}{3!}$.
-5. $\approx 0{,}09533$. $0{,}1 - 0{,}005 + 0{,}000333$; nilai sebenarnya $0{,}09531$.
+```soal
+{
+ "title": "Soal 1",
+ "text": "Tentukan ekspansi $\\cos 3x$ sampai suku $x^4$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Ganti $x$ dengan $3x$. $(3x)^2 = ?\\,x^2$",
+   "answer": "9",
+   "hint": "Kuadratkan 3 juga.",
+   "explain": "$(3x)^2 = 9x^2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$(3x)^4 = ?\\,x^4$",
+   "answer": "81",
+   "hint": "$3^4$.",
+   "explain": "$(3x)^4 = 81x^4$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Koefisien $x^4$: $\\frac{81}{4!}$ = ? (paling sederhana)",
+   "answer": {
+    "num": 27,
+    "den": 8
+   },
+   "hint": "$4! = 24$.",
+   "explain": "$\\frac{81}{24} = \\frac{27}{8}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "choice",
+   "prompt": "Ekspansinya?",
+   "options": [
+    "$1 - \\frac{9x^2}{2} + \\frac{27x^4}{8}$",
+    "$1 - \\frac{3x^2}{2} + \\frac{3x^4}{24}$",
+    "$1 + \\frac{9x^2}{2} + \\frac{27x^4}{8}$"
+   ],
+   "answer": "$1 - \\frac{9x^2}{2} + \\frac{27x^4}{8}$",
+   "hint": "$\\cos u = 1 - \\frac{u^2}{2!} + \\frac{u^4}{4!}$; tanda berselang.",
+   "explain": "$1 - \\frac{9x^2}{2} + \\frac{81x^4}{24}$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\cos 3x \\approx 1 - \\dfrac{9x^2}{2} + \\dfrac{27x^4}{8}$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Tentukan ekspansi $(1 - 2x)^{-1/2}$ sampai suku $x^2$, dan daerah berlakunya.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Pakai $(1 + u)^n$ dengan $n = -\\frac{1}{2}$, $u = -2x$. Koefisien $x$ ($nu$) = ?",
+   "answer": "1",
+   "hint": "$\\left(-\\frac{1}{2}\\right)(-2)$.",
+   "explain": "Koefisien $x$ adalah 1.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Koefisien $x^2$: $\\frac{n(n-1)}{2!}(-2)^2$ = ?",
+   "answer": {
+    "num": 3,
+    "den": 2
+   },
+   "hint": "$\\frac{(-1/2)(-3/2)}{2} = \\frac{3}{8}$, lalu kali 4.",
+   "explain": "$\\frac{3}{8} \\times 4 = \\frac{3}{2}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  },
+  {
+   "kind": "choice",
+   "prompt": "Daerah berlakunya?",
+   "options": [
+    "$|x| < \\frac{1}{2}$",
+    "$|x| < 1$",
+    "$|x| < 2$"
+   ],
+   "answer": "$|x| < \\frac{1}{2}$",
+   "hint": "Syaratnya $|u| < 1$, yaitu $|2x| < 1$.",
+   "explain": "$|x| < \\frac{1}{2}$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $(1 - 2x)^{-1/2} \\approx 1 + x + \\dfrac{3}{2}x^2$ untuk $|x| < \\frac{1}{2}$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Untuk $x$ kecil, tunjukkan $\\dfrac{\\cos x}{1 + \\sin x} \\approx 1 - x + \\dfrac{x^2}{2}$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Hampiran $\\cos x$ sampai $x^2$?",
+   "options": [
+    "$1 - \\frac{x^2}{2}$",
+    "$1 - x^2$",
+    "$x$"
+   ],
+   "answer": "$1 - \\frac{x^2}{2}$",
+   "hint": "Deret standar cos.",
+   "explain": "$\\cos x \\approx 1 - \\frac{x^2}{2}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$\\frac{1}{1 + \\sin x} \\approx (1 + x)^{-1}$ sampai $x^2$ = ?",
+   "options": [
+    "$1 - x + x^2$",
+    "$1 + x + x^2$",
+    "$1 - x - x^2$"
+   ],
+   "answer": "$1 - x + x^2$",
+   "hint": "$(1 + u)^{-1} = 1 - u + u^2 - \\cdots$",
+   "explain": "Dengan $u \\approx x$: $1 - x + x^2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "fraction",
+   "prompt": "Kalikan $(1 - \\frac{x^2}{2})(1 - x + x^2)$. Koefisien $x^2$ = ?",
+   "answer": {
+    "num": 1,
+    "den": 2
+   },
+   "hint": "Pasangan: $1 \\cdot x^2$ dan $-\\frac{x^2}{2} \\cdot 1$.",
+   "explain": "$1 - \\frac{1}{2} = \\frac{1}{2}$, jadi hasilnya $1 - x + \\frac{x^2}{2}$.",
+   "error": "salah-langkah-materi",
+   "simplest": true
+  }
+ ],
+ "conclusion": "Jadi $\\dfrac{\\cos x}{1 + \\sin x} \\approx 1 - x + \\dfrac{x^2}{2}$."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "$y = \\tan x$. Dengan $\\frac{dy}{dx} = 1 + y^2$, tentukan deret Maclaurin $y$ sampai suku $x^3$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$y(0) = \\tan 0$ = ?",
+   "answer": "0",
+   "hint": "$\\tan 0$.",
+   "explain": "$y(0) = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$y'(0) = 1 + y(0)^2$ = ?",
+   "answer": "1",
+   "hint": "Masukkan $y(0) = 0$.",
+   "explain": "$y'(0) = 1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$y'' = 2yy'$. Nilai $y''(0)$ = ?",
+   "answer": "0",
+   "hint": "$y(0) = 0$.",
+   "explain": "$y''(0) = 0$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$y''' = 2(y')^2 + 2yy''$. Nilai $y'''(0)$ = ?",
+   "answer": "2",
+   "hint": "$2(1)^2 + 2(0)(0)$.",
+   "explain": "$y'''(0) = 2$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Deretnya?",
+   "options": [
+    "$x + \\frac{x^3}{3}$",
+    "$x + 2x^3$",
+    "$x + \\frac{x^3}{6}$"
+   ],
+   "answer": "$x + \\frac{x^3}{3}$",
+   "hint": "Koefisien $x^3$ adalah $\\frac{y'''(0)}{3!}$.",
+   "explain": "$\\frac{2}{6} = \\frac{1}{3}$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $\\tan x \\approx x + \\dfrac{x^3}{3}$."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Hampiri $\\ln 1{,}1$ dengan tiga suku pertama deret $\\ln(1 + x)$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Nilai $x$ = ?",
+   "answer": "0,1",
+   "hint": "$1 + x = 1{,}1$.",
+   "explain": "$x = 0{,}1$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$x - \\frac{x^2}{2}$ = ?",
+   "answer": "0,095",
+   "hint": "$\\frac{0{,}01}{2} = 0{,}005$.",
+   "explain": "$0{,}1 - 0{,}005 = 0{,}095$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Tambah $\\frac{x^3}{3}$. Hasil akhir, bulatkan ke 5 desimal.",
+   "answer": "0,09533",
+   "hint": "$\\frac{0{,}001}{3} \\approx 0{,}000333$.",
+   "explain": "$0{,}095 + 0{,}000333 \\approx 0{,}09533$; nilai sebenarnya $0{,}09531$.",
+   "error": "salah-pembulatan"
+  }
+ ],
+ "conclusion": "Jadi $\\ln 1{,}1 \\approx 0{,}09533$."
+}
+```

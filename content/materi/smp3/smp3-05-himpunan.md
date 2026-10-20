@@ -21,6 +21,10 @@ Di lantai lapangan ada dua **simpai (hula hoop) besar** yang saling tumpang tind
 - Siswa yang hanya ikut satu klub berdiri di bagian simpainya saja.
 - Siswa yang tidak ikut keduanya berdiri di lapangan, **di luar kedua simpai**.
 
+```anim
+{"type": "bangun", "title": "Lapangan dan dua simpai", "titik": {" ": [0, 0], "  ": [10, 0], "   ": [10, 6], "    ": [0, 6], "ξ": [0.6, 5.4], "Futsal": [2.2, 5.6], "Paduan suara": [7.9, 5.6]}, "sisi": [[" ", "  "], ["  ", "   "], ["   ", "    "], ["    ", " "]], "lingkaran": [{"pusat": [3.8, 3], "r": 2.2}, {"pusat": [6.2, 3], "r": 2.2}], "langkah": [{"say": "Lapangan sekolah adalah semesta $\\xi$: semua siswa 9A ada di sini.", "lingkaran": 0}, {"say": "Simpai merah: anggota klub futsal.", "lingkaran": 1, "sorot": ["Futsal"]}, {"say": "Simpai biru: anggota paduan suara. Kedua simpai tumpang tindih.", "lingkaran": 2, "sorot": ["Paduan suara"]}, {"say": "Yang ikut keduanya berdiri di bagian tumpang tindih; yang tidak ikut apa pun berdiri di luar kedua simpai.", "lingkaran": 2}]}
+```
+
 Setiap siswa berdiri di tepat satu tempat. Itulah kunci menghitung dengan diagram Venn.
 
 ## Konsep
@@ -57,20 +61,10 @@ Dua fakta penting: $\varnothing$ adalah himpunan bagian dari setiap himpunan, da
 
 ### Empat daerah pada diagram Venn
 
-Dua lingkaran di dalam persegi panjang membagi semesta menjadi empat daerah. Pada gambar teks di bawah, lingkaran digambar sebagai kotak:
+Dua lingkaran di dalam persegi panjang membagi semesta menjadi empat daerah:
 
-```
-+-------------------------------------------+
-| ξ                                         |
-|   +-----------------+                     |
-|   | A               |                     |
-|   |      I     +----+--------------+      |
-|   |            | II |              |      |
-|   +------------+----+     III      |      |
-|                |                 B |      |
-|                +-------------------+      |
-|                                      IV   |
-+-------------------------------------------+
+```anim
+{"type": "bangun", "title": "Empat daerah diagram Venn", "titik": {" ": [0, 0], "  ": [10, 0], "   ": [10, 6], "    ": [0, 6], "ξ": [0.6, 5.4], "A": [2.0, 5.0], "B": [8.0, 5.0], "I": [2.7, 3], "II": [5, 3], "III": [7.3, 3], "IV": [9, 1]}, "sisi": [[" ", "  "], ["  ", "   "], ["   ", "    "], ["    ", " "]], "lingkaran": [{"pusat": [3.8, 3], "r": 2.2}, {"pusat": [6.2, 3], "r": 2.2}], "langkah": [{"say": "Persegi panjang adalah semesta $\\xi$, dua lingkaran adalah $A$ dan $B$."}, {"say": "Daerah I: hanya $A$, yaitu $A \\cap B'$.", "sorot": ["I"]}, {"say": "Daerah II: $A$ dan $B$, yaitu $A \\cap B$.", "sorot": ["II"]}, {"say": "Daerah III: hanya $B$, yaitu $A' \\cap B$.", "sorot": ["III"]}, {"say": "Daerah IV: bukan keduanya, yaitu $(A \\cup B)'$.", "sorot": ["IV"]}]}
 ```
 
 - I: hanya $A$, yaitu $A \cap B'$.
@@ -84,57 +78,281 @@ $$n(A \cup B) = n(A) + n(B) - n(A \cap B)$$
 
 **Kenapa dikurangi?** Saat menghitung $n(A)$ lalu $n(B)$, siswa di daerah tumpang tindih terhitung **dua kali**: sekali di simpai merah, sekali di simpai biru. Jadi kita kurangi sekali.
 
+```anim
+{"type": "persamaan", "title": "Kenapa irisan dikurangi sekali", "baris": [{"tex": "n(F) + n(P) = 20 + 15 = 35", "say": "Hitung simpai futsal (20) dan simpai paduan suara (15)."}, {"tex": "n(F \\cap P) = 6", "say": "Tetapi 6 siswa di daerah tumpang tindih terhitung dua kali."}, {"tex": "n(F \\cup P) = 35 - 6 = 29", "say": "Kurangi sekali, supaya setiap siswa terhitung tepat satu kali.", "op": "$-\\,n(F \\cap P)$"}]}
+```
+
 ## Contoh langkah demi langkah
+
+Kerjakan setiap langkah sendiri. Kalau salah, baca petunjuknya lalu coba lagi.
 
 ### Contoh 1: Mendaftar anggota
 
-**Soal.** $\xi = \{x : x \text{ bilangan bulat}, 1 \le x \le 12\}$, $A = \{x : x \text{ genap}\}$, $B = \{x : x \text{ kelipatan } 3\}$. Tentukan $A \cap B$, $A \cup B$, $A'$, dan $(A \cup B)'$.
-
-1. **Langkah 1: Daftar setiap himpunan.** $A = \{2, 4, 6, 8, 10, 12\}$, $B = \{3, 6, 9, 12\}$.
-2. **Langkah 2: Irisan.** Anggota yang ada di keduanya: $A \cap B = \{6, 12\}$.
-3. **Langkah 3: Gabungan.** Semua anggota, tanpa menulis dua kali: $A \cup B = \{2, 3, 4, 6, 8, 9, 10, 12\}$.
-4. **Langkah 4: Komplemen.** $A' = \{1, 3, 5, 7, 9, 11\}$ dan $(A \cup B)' = \{1, 5, 7, 11\}$.
-5. **Cek jawaban.** Pakai rumus: $n(A \cup B) = 6 + 4 - 2 = 8$. Hitung langsung juga 8. Lalu $8 + 4 = 12 = n(\xi)$, cocok.
-
-**Jawaban:** $A \cap B = \{6, 12\}$, $A \cup B = \{2, 3, 4, 6, 8, 9, 10, 12\}$, $A' = \{1, 3, 5, 7, 9, 11\}$, $(A \cup B)' = \{1, 5, 7, 11\}$.
+```soal
+{
+ "title": "Contoh 1",
+ "text": "$\\xi = \\{x : x \\text{ bilangan bulat}, 1 \\le x \\le 12\\}$, $A = \\{x : x \\text{ genap}\\}$, $B = \\{x : x \\text{ kelipatan } 3\\}$. Tentukan $A \\cap B$, $A \\cup B$, $A'$, dan $(A \\cup B)'$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Daftar anggota $B$.",
+   "options": [
+    "$\\{3, 6, 9, 12\\}$",
+    "$\\{3, 6, 9\\}$",
+    "$\\{1, 3, 6, 9, 12\\}$"
+   ],
+   "answer": "$\\{3, 6, 9, 12\\}$",
+   "hint": "Kelipatan 3 dari 1 sampai 12.",
+   "explain": "$B = \\{3, 6, 9, 12\\}$, dan $A = \\{2, 4, 6, 8, 10, 12\\}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: $A \\cap B$ = ?",
+   "options": [
+    "$\\{6, 12\\}$",
+    "$\\{6\\}$",
+    "$\\{2, 3, 4, 6, 8, 9, 10, 12\\}$"
+   ],
+   "answer": "$\\{6, 12\\}$",
+   "hint": "Anggota yang ada di $A$ dan di $B$.",
+   "explain": "6 dan 12 genap sekaligus kelipatan 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: $A \\cup B$ = ?",
+   "options": [
+    "$\\{2, 3, 4, 6, 8, 9, 10, 12\\}$",
+    "$\\{6, 12\\}$",
+    "$\\{2, 3, 4, 6, 6, 8, 9, 10, 12, 12\\}$"
+   ],
+   "answer": "$\\{2, 3, 4, 6, 8, 9, 10, 12\\}$",
+   "hint": "Semua anggota $A$ atau $B$, masing-masing ditulis sekali.",
+   "explain": "Ada 8 anggota.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: $A'$ = ?",
+   "options": [
+    "$\\{1, 3, 5, 7, 9, 11\\}$",
+    "$\\{3, 6, 9, 12\\}$",
+    "$\\{1, 5, 7, 11\\}$"
+   ],
+   "answer": "$\\{1, 3, 5, 7, 9, 11\\}$",
+   "hint": "Anggota semesta yang tidak genap.",
+   "explain": "$A'$ berisi semua bilangan ganjil 1 sampai 11.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 5: $(A \\cup B)'$ = ?",
+   "options": [
+    "$\\{1, 5, 7, 11\\}$",
+    "$\\{1, 3, 5, 7, 9, 11\\}$",
+    "$\\varnothing$"
+   ],
+   "answer": "$\\{1, 5, 7, 11\\}$",
+   "hint": "Anggota semesta yang tidak ada di $A \\cup B$.",
+   "explain": "Bilangan yang bukan genap dan bukan kelipatan 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $n(A \\cup B) = 6 + 4 - 2$ = ?",
+   "answer": "8",
+   "hint": "$n(A) + n(B) - n(A \\cap B)$.",
+   "explain": "8, sama dengan hitungan langsung. Lalu $8 + 4 = 12 = n(\\xi)$.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $A \\cap B = \\{6, 12\\}$, $A \\cup B = \\{2, 3, 4, 6, 8, 9, 10, 12\\}$, $A' = \\{1, 3, 5, 7, 9, 11\\}$, $(A \\cup B)' = \\{1, 5, 7, 11\\}$."
+}
+```
 
 ### Contoh 2: Himpunan bagian dan notasi
 
-**Soal.** Dengan $A$ dan $B$ dari Contoh 1, mana yang benar? (a) $\{6, 12\} \subset A$, (b) $9 \in A$, (c) $\{3\} \in B$, (d) $\varnothing \subseteq B$.
-
-1. **Langkah 1: Bedakan lambang.** $\in$ menghubungkan **satu anggota** dengan himpunan. $\subset$ dan $\subseteq$ menghubungkan **himpunan** dengan himpunan.
-2. **Langkah 2: Periksa (a).** 6 dan 12 keduanya di $A$, dan $A$ punya anggota lain (misalnya 2). Benar.
-3. **Langkah 3: Periksa (b).** 9 ganjil, tidak di $A$. Salah; yang benar $9 \notin A$.
-4. **Langkah 4: Periksa (c).** $\{3\}$ adalah himpunan, bukan anggota. Salah; yang benar $3 \in B$ atau $\{3\} \subset B$.
-5. **Langkah 5: Periksa (d).** Himpunan kosong adalah himpunan bagian dari setiap himpunan. Benar.
-6. **Cek jawaban.** Bayangkan simpai: simpai kecil $\{6, 12\}$ muat seluruhnya di dalam simpai $A$, sedangkan anak bernomor 9 berdiri di luar simpai $A$.
-
-**Jawaban:** (a) dan (d) benar; (b) dan (c) salah.
+```soal
+{
+ "title": "Contoh 2",
+ "text": "Dengan $A = \\{2, 4, 6, 8, 10, 12\\}$ dan $B = \\{3, 6, 9, 12\\}$, mana yang benar? (a) $\\{6, 12\\} \\subset A$, (b) $9 \\in A$, (c) $\\{3\\} \\in B$, (d) $\\varnothing \\subseteq B$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Lambang $\\in$ menghubungkan ...",
+   "options": [
+    "satu anggota dengan himpunan",
+    "himpunan dengan himpunan"
+   ],
+   "answer": "satu anggota dengan himpunan",
+   "hint": "Ingat cara membaca $4 \\in A$.",
+   "explain": "$\\in$ untuk anggota; $\\subset$ dan $\\subseteq$ untuk himpunan.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: (a) $\\{6, 12\\} \\subset A$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Benar",
+   "hint": "Apakah 6 dan 12 di $A$, dan $A$ punya anggota lain?",
+   "explain": "Keduanya di $A$, dan $A$ punya anggota lain seperti 2.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 3: (b) $9 \\in A$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Salah",
+   "hint": "Apakah 9 genap?",
+   "explain": "9 ganjil; yang benar $9 \\notin A$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 4: (c) $\\{3\\} \\in B$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Salah",
+   "hint": "$\\{3\\}$ itu anggota atau himpunan?",
+   "explain": "$\\{3\\}$ himpunan; yang benar $3 \\in B$ atau $\\{3\\} \\subset B$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 5: (d) $\\varnothing \\subseteq B$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Benar",
+   "hint": "Ingat fakta tentang himpunan kosong.",
+   "explain": "Himpunan kosong adalah himpunan bagian dari setiap himpunan.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi (a) dan (d) benar; (b) dan (c) salah."
+}
+```
 
 ### Contoh 3: Soal cerita dengan diagram Venn
 
-**Soal.** Kelas 9A berisi 36 siswa. Sebanyak 20 siswa ikut futsal, 15 ikut paduan suara, dan 6 ikut keduanya. Berapa siswa yang tidak ikut kedua klub?
-
-1. **Langkah 1: Isi daerah tengah dulu.** Irisan selalu diisi pertama. Daerah II = 6.
-2. **Langkah 2: Hitung "hanya futsal".** $20 - 6 = 14$. Daerah I = 14.
-3. **Langkah 3: Hitung "hanya paduan suara".** $15 - 6 = 9$. Daerah III = 9.
-4. **Langkah 4: Hitung di luar simpai.** $36 - (14 + 6 + 9) = 36 - 29 = 7$.
-5. **Cek jawaban.** Dengan rumus: $n(F \cup P) = 20 + 15 - 6 = 29$, dan $36 - 29 = 7$. Sama.
-
-**Jawaban:** 7 siswa tidak ikut kedua klub.
+```soal
+{
+ "title": "Contoh 3",
+ "text": "Kelas 9A berisi 36 siswa. Sebanyak 20 siswa ikut futsal, 15 ikut paduan suara, dan 6 ikut keduanya. Berapa siswa yang tidak ikut kedua klub?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Isi daerah tengah (irisan) dulu. Daerah II = ?",
+   "answer": "6",
+   "hint": "Siswa yang ikut keduanya.",
+   "explain": "Daerah II = 6.",
+   "error": "salah-langkah-materi",
+   "suffix": "siswa"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Hanya futsal = 20 − 6 = ?",
+   "answer": "14",
+   "hint": "Kurangi irisan dari futsal.",
+   "explain": "Daerah I = 14.",
+   "error": "salah-fakta-kurang",
+   "suffix": "siswa"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Hanya paduan suara = 15 − 6 = ?",
+   "answer": "9",
+   "hint": "Kurangi irisan dari paduan suara.",
+   "explain": "Daerah III = 9.",
+   "error": "salah-fakta-kurang",
+   "suffix": "siswa"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Di luar kedua simpai = 36 − (14 + 6 + 9) = ?",
+   "answer": "7",
+   "hint": "14 + 6 + 9 = 29.",
+   "explain": "36 − 29 = 7.",
+   "error": "salah-langkah-materi",
+   "suffix": "siswa"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: $n(F \\cup P) = 20 + 15 - 6$ = ?",
+   "answer": "29",
+   "hint": "Pakai rumus gabungan.",
+   "explain": "29, dan 36 − 29 = 7. Sama.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Ada 7 siswa yang tidak ikut kedua klub."
+}
+```
 
 ### Contoh 4: Irisan belum diketahui
 
-**Soal.** Dari 40 siswa, 25 suka bakso, 18 suka soto, dan 5 tidak suka keduanya. Berapa siswa yang suka keduanya?
-
-1. **Langkah 1: Beri nama yang belum diketahui.** Misalkan $x$ siswa suka keduanya (daerah II).
-2. **Langkah 2: Nyatakan daerah lain dengan $x$.** Hanya bakso: $25 - x$. Hanya soto: $18 - x$. Di luar: 5.
-3. **Langkah 3: Susun persamaan.** Semua daerah jumlahnya 40:
-   $$(25 - x) + x + (18 - x) + 5 = 40$$
-   $$48 - x = 40 \quad\Rightarrow\quad x = 8$$
-4. **Cek jawaban.** Daerah-daerahnya $17, 8, 10, 5$. Jumlahnya $17 + 8 + 10 + 5 = 40$. Semua daerah tidak negatif, jadi masuk akal.
-
-**Jawaban:** 8 siswa suka bakso dan soto.
+```soal
+{
+ "title": "Contoh 4",
+ "text": "Dari 40 siswa, 25 suka bakso, 18 suka soto, dan 5 tidak suka keduanya. Berapa siswa yang suka keduanya?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Misalkan $x$ siswa suka keduanya. Berapa yang hanya suka bakso?",
+   "options": [
+    "$25 - x$",
+    "$25$",
+    "$25 + x$"
+   ],
+   "answer": "$25 - x$",
+   "hint": "Siswa di irisan juga termasuk 25 penyuka bakso.",
+   "explain": "Hanya bakso: $25 - x$; hanya soto: $18 - x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Langkah 2: Semua daerah jumlahnya 40. Persamaannya?",
+   "options": [
+    "$48 - x = 40$",
+    "$48 + x = 40$",
+    "$43 - x = 40$"
+   ],
+   "answer": "$48 - x = 40$",
+   "hint": "$(25 - x) + x + (18 - x) + 5$.",
+   "explain": "$25 + 18 + 5 - x = 48 - x$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Berapa $x$?",
+   "answer": "8",
+   "hint": "48 − 40.",
+   "explain": "$x = 8$.",
+   "error": "salah-langkah-materi",
+   "suffix": "siswa"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: hanya bakso = 25 − 8 = ?",
+   "answer": "17",
+   "hint": "Kurangi irisan.",
+   "explain": "Daerahnya 17, 8, 10, 5; jumlahnya 40 dan tidak ada yang negatif.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Ada 8 siswa yang suka bakso dan soto."
+}
+```
 
 ## Kesalahan yang sering terjadi
 
@@ -155,16 +373,207 @@ $$n(A \cup B) = n(A) + n(B) - n(A \cap B)$$
 
 ## Cek pemahaman
 
-1. $\xi = \{1, 2, 3, \ldots, 10\}$, $A = \{x : x \text{ bilangan prima}\}$, $B = \{1, 2, 3, 4\}$. Tentukan $A \cap B$, $A \cup B$, dan $A'$.
-2. Diketahui $n(A) = 12$, $n(B) = 9$, dan $n(A \cap B) = 4$. Hitung $n(A \cup B)$.
-3. Benar atau salah: (a) $3 \in \{1, 3, 5\}$; (b) $\{3\} \in \{1, 3, 5\}$; (c) $\{1, 5\} \subset \{1, 3, 5\}$.
-4. Dari 30 siswa, 17 ikut klub matematika, 12 ikut klub sains, dan 4 tidak ikut keduanya. Berapa siswa yang ikut keduanya?
-5. Tuliskan semua himpunan bagian dari $\{p, q\}$. Berapa yang merupakan himpunan bagian sejati?
+Kerjakan sendiri. Petunjuk muncul kalau jawabanmu belum tepat.
 
-### Kunci jawaban
+### Soal 1
 
-1. $A = \{2, 3, 5, 7\}$, jadi $A \cap B = \{2, 3\}$, $A \cup B = \{1, 2, 3, 4, 5, 7\}$, $A' = \{1, 4, 6, 8, 9, 10\}$.
-2. $12 + 9 - 4 = 17$.
-3. (a) Benar; (b) Salah, $\{3\}$ himpunan sehingga harus $\{3\} \subset \{1, 3, 5\}$; (c) Benar.
-4. 3 siswa: yang ikut minimal satu klub $30 - 4 = 26$, dan $17 + 12 - x = 26$ memberi $x = 3$.
-5. $\varnothing$, $\{p\}$, $\{q\}$, $\{p, q\}$; himpunan bagian sejati ada 3 (semua kecuali $\{p, q\}$).
+```soal
+{
+ "title": "Soal 1",
+ "text": "$\\xi = \\{1, 2, 3, \\ldots, 10\\}$, $A = \\{x : x \\text{ bilangan prima}\\}$, $B = \\{1, 2, 3, 4\\}$. Tentukan $A \\cap B$, $A \\cup B$, dan $A'$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Daftar anggota $A$.",
+   "options": [
+    "$\\{2, 3, 5, 7\\}$",
+    "$\\{1, 2, 3, 5, 7\\}$",
+    "$\\{3, 5, 7, 9\\}$"
+   ],
+   "answer": "$\\{2, 3, 5, 7\\}$",
+   "hint": "1 bukan prima; 9 = 3 × 3.",
+   "explain": "$A = \\{2, 3, 5, 7\\}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$A \\cap B$ = ?",
+   "options": [
+    "$\\{2, 3\\}$",
+    "$\\{1, 2, 3, 4, 5, 7\\}$",
+    "$\\{1, 2, 3\\}$"
+   ],
+   "answer": "$\\{2, 3\\}$",
+   "hint": "Di $A$ dan di $B$.",
+   "explain": "2 dan 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$A \\cup B$ = ?",
+   "options": [
+    "$\\{1, 2, 3, 4, 5, 7\\}$",
+    "$\\{2, 3\\}$",
+    "$\\{1, 2, 3, 4, 5, 6, 7, 8, 9, 10\\}$"
+   ],
+   "answer": "$\\{1, 2, 3, 4, 5, 7\\}$",
+   "hint": "Di $A$ atau di $B$, tulis sekali.",
+   "explain": "Ada 6 anggota.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "$A'$ = ?",
+   "options": [
+    "$\\{1, 4, 6, 8, 9, 10\\}$",
+    "$\\{5, 6, 7, 8, 9, 10\\}$",
+    "$\\{6, 8, 9, 10\\}$"
+   ],
+   "answer": "$\\{1, 4, 6, 8, 9, 10\\}$",
+   "hint": "Anggota semesta yang bukan prima.",
+   "explain": "1, 4, 6, 8, 9, 10.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi $A \\cap B = \\{2, 3\\}$, $A \\cup B = \\{1, 2, 3, 4, 5, 7\\}$, $A' = \\{1, 4, 6, 8, 9, 10\\}$."
+}
+```
+
+### Soal 2
+
+```soal
+{
+ "title": "Soal 2",
+ "text": "Diketahui $n(A) = 12$, $n(B) = 9$, dan $n(A \\cap B) = 4$. Hitung $n(A \\cup B)$.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "$n(A) + n(B)$ = ?",
+   "answer": "21",
+   "hint": "12 + 9.",
+   "explain": "21, tetapi irisan terhitung dua kali.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "$n(A \\cup B)$ = ?",
+   "answer": "17",
+   "hint": "Kurangi irisan sekali.",
+   "explain": "21 − 4 = 17.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "$n(A \\cup B) = 17$."
+}
+```
+
+### Soal 3
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Benar atau salah: (a) $3 \\in \\{1, 3, 5\\}$; (b) $\\{3\\} \\in \\{1, 3, 5\\}$; (c) $\\{1, 5\\} \\subset \\{1, 3, 5\\}$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "(a) $3 \\in \\{1, 3, 5\\}$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Benar",
+   "hint": "Apakah 3 tertulis di dalam kurung?",
+   "explain": "3 adalah anggota.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "(b) $\\{3\\} \\in \\{1, 3, 5\\}$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Salah",
+   "hint": "$\\{3\\}$ itu himpunan.",
+   "explain": "Seharusnya $\\{3\\} \\subset \\{1, 3, 5\\}$.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "(c) $\\{1, 5\\} \\subset \\{1, 3, 5\\}$?",
+   "options": [
+    "Benar",
+    "Salah"
+   ],
+   "answer": "Benar",
+   "hint": "Apakah 1 dan 5 ada, dan masih ada anggota lain?",
+   "explain": "1 dan 5 ada, dan 3 tidak termasuk $\\{1, 5\\}$, jadi himpunan bagian sejati.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "(a) Benar, (b) Salah, (c) Benar."
+}
+```
+
+### Soal 4
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Dari 30 siswa, 17 ikut klub matematika, 12 ikut klub sains, dan 4 tidak ikut keduanya. Berapa siswa yang ikut keduanya?",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Berapa siswa yang ikut minimal satu klub?",
+   "answer": "26",
+   "hint": "Kurangi yang tidak ikut keduanya dari 30.",
+   "explain": "30 − 4 = 26.",
+   "error": "salah-langkah-materi",
+   "suffix": "siswa"
+  },
+  {
+   "kind": "number",
+   "prompt": "$17 + 12 - x = 26$. Berapa $x$?",
+   "answer": "3",
+   "hint": "17 + 12 = 29.",
+   "explain": "29 − 26 = 3.",
+   "error": "salah-langkah-materi",
+   "suffix": "siswa"
+  }
+ ],
+ "conclusion": "Ada 3 siswa yang ikut keduanya."
+}
+```
+
+### Soal 5
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Tuliskan semua himpunan bagian dari $\\{p, q\\}$. Berapa yang merupakan himpunan bagian sejati?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Semua himpunan bagian dari $\\{p, q\\}$?",
+   "options": [
+    "$\\varnothing$, $\\{p\\}$, $\\{q\\}$, $\\{p, q\\}$",
+    "$\\{p\\}$, $\\{q\\}$",
+    "$\\{p\\}$, $\\{q\\}$, $\\{p, q\\}$"
+   ],
+   "answer": "$\\varnothing$, $\\{p\\}$, $\\{q\\}$, $\\{p, q\\}$",
+   "hint": "Jangan lupa himpunan kosong dan himpunan itu sendiri.",
+   "explain": "Ada 4 himpunan bagian.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa yang merupakan himpunan bagian sejati?",
+   "answer": "3",
+   "hint": "Himpunan bagian sejati tidak sama dengan himpunannya sendiri.",
+   "explain": "Semua kecuali $\\{p, q\\}$: ada 3.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Himpunan bagiannya $\\varnothing$, $\\{p\\}$, $\\{q\\}$, $\\{p, q\\}$; yang sejati ada 3."
+}
+```
