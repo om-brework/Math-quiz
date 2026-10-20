@@ -14,6 +14,7 @@ import rehypeKatex from 'rehype-katex';
 import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import { Anim, StaticVisual } from './anim';
+import { SoalBlock } from './anim/soal';
 
 /* ---------- Markdown dengan blok anim/visual ---------- */
 
@@ -30,6 +31,7 @@ function Md({ children, className }: { children: string; className?: string }) {
                         const text = String(children).replace(/\n$/, '');
                         if (lang === 'anim') return <Anim source={text} />;
                         if (lang === 'visual') return <StaticVisual source={text} />;
+                        if (lang === 'soal') return <SoalBlock source={text} />;
                         if (!className && !text.includes('\n')) return <code>{children}</code>;
                         return <pre className="papan"><code>{text}</code></pre>;
                     },
@@ -138,8 +140,17 @@ function Example({ title, body }: { title: string; body: string }) {
         const at = last.text.search(/^\*\*Jawaban/m);
         if (at >= 0) { answer = last.text.slice(at).trim(); last.text = last.text.slice(0, at).trim(); }
     }
+    const interactive = /```soal/.test(body);
     const [shown, setShown] = useState(items.length ? 1 : 0);
     const all = shown >= items.length;
+    if (interactive) {
+        return (
+            <div className="-mx-2 mt-5 overflow-hidden rounded-2xl border-2 border-emerald-100 sm:mx-0 dark:border-emerald-900">
+                <h3 className="bg-emerald-600 px-4 py-2 font-bold text-white">{title}</h3>
+                <div className="p-3 sm:p-4"><Md>{body.replace(/^\*\*Jawaban.*$/m, '').replace(/^\*\*Soal\.\*\*.*$/m, '')}</Md></div>
+            </div>
+        );
+    }
     return (
         <div className="-mx-2 mt-5 overflow-hidden rounded-2xl border-2 border-emerald-100 sm:mx-0 dark:border-emerald-900">
             <h3 className="bg-emerald-600 px-4 py-2 font-bold text-white">{title}</h3>
@@ -207,6 +218,7 @@ function Summary({ body }: { body: string }) {
 }
 
 function Practice({ body, answerKey }: { body: string; answerKey?: string }) {
+    if (/```soal/.test(body)) return <Md>{body}</Md>;
     const { intro, items } = numbered(body);
     const answers = new Map(numbered(answerKey ?? '').items.map((x) => [x.n, x.text.replace(/^\d+\.\s*/, '')]));
     return (

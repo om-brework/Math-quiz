@@ -194,3 +194,6 @@
 .dark .materi pre.papan { background: #10241f; }
 .materi.langkah ol { margin: 0.25rem 0; }
 .materi > div > :first-child, .materi > :first-child { margin-top: 0; }
+/* Soal interaktif dan animasi di dalam materi tidak memakai gaya daftar materi */
+.materi .not-prose ol, .materi .not-prose ul { list-style: none; padding-left: 0; margin: 0; }
+.materi .not-prose li { margin: 0; }

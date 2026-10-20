@@ -1,19 +1,110 @@
 {
-  "lupa-simpan": { "nama": "Lupa menyimpan", "kategori": "Hitung susun", "penjelasan": "Saat hasil satu kolom 10 atau lebih, angka puluhannya tidak dipindahkan ke kolom sebelah kiri.", "saran": "Latih kebiasaan: setelah menjumlah satu kolom, tanya \"lebih dari 9?\". Kalau ya, tulis 1 di kotak simpanan sebelum pindah kolom." },
-  "simpan-tidak-perlu": { "nama": "Menyimpan padahal tidak perlu", "kategori": "Hitung susun", "penjelasan": "Menulis simpanan padahal hasil kolom sebelumnya kurang dari 10.", "saran": "Minta anak mengucapkan hasil kolom dengan keras sebelum memutuskan perlu menyimpan atau tidak." },
-  "salah-fakta-tambah": { "nama": "Salah fakta penjumlahan", "kategori": "Fakta dasar", "penjelasan": "Langkahnya benar, tetapi hasil penjumlahan dua angka satu digit keliru.", "saran": "Latihan singkat 5 menit sehari untuk fakta penjumlahan sampai 20 (membuat 10, dobel)." },
-  "lupa-pinjam": { "nama": "Lupa meminjam", "kategori": "Hitung susun", "penjelasan": "Angka atas lebih kecil dari angka bawah, tetapi anak tidak meminjam dari kolom kiri.", "saran": "Biasakan memeriksa tiap kolom: \"atas lebih kecil dari bawah?\" Kalau ya, pinjam 1 dari kiri dulu." },
-  "salah-pinjam": { "nama": "Salah menulis pinjaman", "kategori": "Hitung susun", "penjelasan": "Sudah meminjam, tetapi angka yang dipinjami tidak dikurangi 1, atau angka yang meminjam tidak ditambah 10.", "saran": "Pakai analogi menukar 1 lembar puluhan dengan 10 koin: kolom kiri berkurang 1, kolom kanan bertambah 10." },
-  "kurang-terbalik": { "nama": "Mengurangkan terbalik", "kategori": "Hitung susun", "penjelasan": "Mengurangkan angka kecil dari angka besar di kolom yang sama (misalnya 8 − 3 padahal soalnya 3 − 8).", "saran": "Ingatkan bahwa yang dikurangi selalu angka atas. Kalau atas lebih kecil, pinjam dulu." },
-  "salah-fakta-kurang": { "nama": "Salah fakta pengurangan", "kategori": "Fakta dasar", "penjelasan": "Langkahnya benar, tetapi hasil pengurangan satu kolom keliru.", "saran": "Latih pengurangan sampai 20 dengan keluarga bilangan (8 + 5 = 13, jadi 13 − 5 = 8)." },
-  "lupa-simpan-kali": { "nama": "Lupa menambahkan simpanan perkalian", "kategori": "Hitung susun", "penjelasan": "Hasil perkalian kolom sudah benar, tetapi simpanan dari kolom kanan tidak ditambahkan.", "saran": "Urutan tiap kolom: kalikan dulu, lalu tambah simpanan, baru tulis satuannya." },
-  "salah-simpan-kali": { "nama": "Salah menulis simpanan perkalian", "kategori": "Hitung susun", "penjelasan": "Angka yang disimpan pada perkalian bersusun tidak sesuai dengan puluhan hasil kolom.", "saran": "Tulis hasil kali kolom lengkap di kertas (misalnya 7 × 6 = 42), lalu pisahkan 4 dan 2." },
-  "salah-fakta-kali": { "nama": "Salah fakta perkalian", "kategori": "Fakta dasar", "penjelasan": "Hasil perkalian satu angka keliru.", "saran": "Ulangi tabel perkalian yang sering salah dengan hitung loncat dan kartu kilat." },
-  "kolom-kosong": { "nama": "Ada kolom yang belum diisi", "kategori": "Ketelitian", "penjelasan": "Anak memeriksa jawaban sebelum semua kolom terisi.", "saran": "Biasakan memeriksa ulang dari kanan ke kiri sebelum menekan Periksa." },
-  "lupa-nol-hasil-bagi": { "nama": "Lupa menulis 0 di hasil bagi", "kategori": "Pembagian bersusun", "penjelasan": "Saat bagian yang dibagi lebih kecil dari pembagi, anak tidak menulis 0 di hasil bagi.", "saran": "Ingatkan: kalau tidak muat, tulis 0 lalu turunkan angka berikutnya." },
-  "tebakan-bagi-kebesaran": { "nama": "Tebakan hasil bagi terlalu besar", "kategori": "Pembagian bersusun", "penjelasan": "Angka hasil bagi dipilih terlalu besar sehingga hasil kalinya melebihi bilangan yang dibagi.", "saran": "Ajari mengecek dengan perkalian sebelum menulis: hasil kali tidak boleh lebih besar." },
-  "tebakan-bagi-kekecilan": { "nama": "Tebakan hasil bagi terlalu kecil", "kategori": "Pembagian bersusun", "penjelasan": "Sisa pengurangan masih sama atau lebih besar dari pembagi, artinya pembagi masih muat.", "saran": "Setelah mengurangi, cek: sisa harus lebih kecil dari pembagi." },
-  "salah-kali-porogapit": { "nama": "Salah perkalian di porogapit", "kategori": "Pembagian bersusun", "penjelasan": "Hasil kali angka hasil bagi dengan pembagi keliru.", "saran": "Latih tabel perkalian pembagi yang dipakai; boleh tulis hitung loncat di samping." },
-  "salah-kurang-porogapit": { "nama": "Salah pengurangan di porogapit", "kategori": "Pembagian bersusun", "penjelasan": "Pengurangan di dalam porogapit keliru.", "saran": "Kerjakan pengurangan di samping dengan cara bersusun kalau angkanya dua digit." },
-  "pecahan-belum-sederhana": { "nama": "Pecahan belum disederhanakan", "kategori": "Pecahan", "penjelasan": "Nilai pecahan benar, tetapi belum dalam bentuk paling sederhana.", "saran": "Biasakan bertanya: adakah bilangan yang bisa membagi pembilang dan penyebut sekaligus?" }
+  "lupa-simpan": {
+    "nama": "Lupa menyimpan",
+    "kategori": "Hitung susun",
+    "penjelasan": "Saat hasil satu kolom 10 atau lebih, angka puluhannya tidak dipindahkan ke kolom sebelah kiri.",
+    "saran": "Latih kebiasaan: setelah menjumlah satu kolom, tanya \"lebih dari 9?\". Kalau ya, tulis 1 di kotak simpanan sebelum pindah kolom."
+  },
+  "simpan-tidak-perlu": {
+    "nama": "Menyimpan padahal tidak perlu",
+    "kategori": "Hitung susun",
+    "penjelasan": "Menulis simpanan padahal hasil kolom sebelumnya kurang dari 10.",
+    "saran": "Minta anak mengucapkan hasil kolom dengan keras sebelum memutuskan perlu menyimpan atau tidak."
+  },
+  "salah-fakta-tambah": {
+    "nama": "Salah fakta penjumlahan",
+    "kategori": "Fakta dasar",
+    "penjelasan": "Langkahnya benar, tetapi hasil penjumlahan dua angka satu digit keliru.",
+    "saran": "Latihan singkat 5 menit sehari untuk fakta penjumlahan sampai 20 (membuat 10, dobel)."
+  },
+  "lupa-pinjam": {
+    "nama": "Lupa meminjam",
+    "kategori": "Hitung susun",
+    "penjelasan": "Angka atas lebih kecil dari angka bawah, tetapi anak tidak meminjam dari kolom kiri.",
+    "saran": "Biasakan memeriksa tiap kolom: \"atas lebih kecil dari bawah?\" Kalau ya, pinjam 1 dari kiri dulu."
+  },
+  "salah-pinjam": {
+    "nama": "Salah menulis pinjaman",
+    "kategori": "Hitung susun",
+    "penjelasan": "Sudah meminjam, tetapi angka yang dipinjami tidak dikurangi 1, atau angka yang meminjam tidak ditambah 10.",
+    "saran": "Pakai analogi menukar 1 lembar puluhan dengan 10 koin: kolom kiri berkurang 1, kolom kanan bertambah 10."
+  },
+  "kurang-terbalik": {
+    "nama": "Mengurangkan terbalik",
+    "kategori": "Hitung susun",
+    "penjelasan": "Mengurangkan angka kecil dari angka besar di kolom yang sama (misalnya 8 − 3 padahal soalnya 3 − 8).",
+    "saran": "Ingatkan bahwa yang dikurangi selalu angka atas. Kalau atas lebih kecil, pinjam dulu."
+  },
+  "salah-fakta-kurang": {
+    "nama": "Salah fakta pengurangan",
+    "kategori": "Fakta dasar",
+    "penjelasan": "Langkahnya benar, tetapi hasil pengurangan satu kolom keliru.",
+    "saran": "Latih pengurangan sampai 20 dengan keluarga bilangan (8 + 5 = 13, jadi 13 − 5 = 8)."
+  },
+  "lupa-simpan-kali": {
+    "nama": "Lupa menambahkan simpanan perkalian",
+    "kategori": "Hitung susun",
+    "penjelasan": "Hasil perkalian kolom sudah benar, tetapi simpanan dari kolom kanan tidak ditambahkan.",
+    "saran": "Urutan tiap kolom: kalikan dulu, lalu tambah simpanan, baru tulis satuannya."
+  },
+  "salah-simpan-kali": {
+    "nama": "Salah menulis simpanan perkalian",
+    "kategori": "Hitung susun",
+    "penjelasan": "Angka yang disimpan pada perkalian bersusun tidak sesuai dengan puluhan hasil kolom.",
+    "saran": "Tulis hasil kali kolom lengkap di kertas (misalnya 7 × 6 = 42), lalu pisahkan 4 dan 2."
+  },
+  "salah-fakta-kali": {
+    "nama": "Salah fakta perkalian",
+    "kategori": "Fakta dasar",
+    "penjelasan": "Hasil perkalian satu angka keliru.",
+    "saran": "Ulangi tabel perkalian yang sering salah dengan hitung loncat dan kartu kilat."
+  },
+  "kolom-kosong": {
+    "nama": "Ada kolom yang belum diisi",
+    "kategori": "Ketelitian",
+    "penjelasan": "Anak memeriksa jawaban sebelum semua kolom terisi.",
+    "saran": "Biasakan memeriksa ulang dari kanan ke kiri sebelum menekan Periksa."
+  },
+  "lupa-nol-hasil-bagi": {
+    "nama": "Lupa menulis 0 di hasil bagi",
+    "kategori": "Pembagian bersusun",
+    "penjelasan": "Saat bagian yang dibagi lebih kecil dari pembagi, anak tidak menulis 0 di hasil bagi.",
+    "saran": "Ingatkan: kalau tidak muat, tulis 0 lalu turunkan angka berikutnya."
+  },
+  "tebakan-bagi-kebesaran": {
+    "nama": "Tebakan hasil bagi terlalu besar",
+    "kategori": "Pembagian bersusun",
+    "penjelasan": "Angka hasil bagi dipilih terlalu besar sehingga hasil kalinya melebihi bilangan yang dibagi.",
+    "saran": "Ajari mengecek dengan perkalian sebelum menulis: hasil kali tidak boleh lebih besar."
+  },
+  "tebakan-bagi-kekecilan": {
+    "nama": "Tebakan hasil bagi terlalu kecil",
+    "kategori": "Pembagian bersusun",
+    "penjelasan": "Sisa pengurangan masih sama atau lebih besar dari pembagi, artinya pembagi masih muat.",
+    "saran": "Setelah mengurangi, cek: sisa harus lebih kecil dari pembagi."
+  },
+  "salah-kali-porogapit": {
+    "nama": "Salah perkalian di porogapit",
+    "kategori": "Pembagian bersusun",
+    "penjelasan": "Hasil kali angka hasil bagi dengan pembagi keliru.",
+    "saran": "Latih tabel perkalian pembagi yang dipakai; boleh tulis hitung loncat di samping."
+  },
+  "salah-kurang-porogapit": {
+    "nama": "Salah pengurangan di porogapit",
+    "kategori": "Pembagian bersusun",
+    "penjelasan": "Pengurangan di dalam porogapit keliru.",
+    "saran": "Kerjakan pengurangan di samping dengan cara bersusun kalau angkanya dua digit."
+  },
+  "pecahan-belum-sederhana": {
+    "nama": "Pecahan belum disederhanakan",
+    "kategori": "Pecahan",
+    "penjelasan": "Nilai pecahan benar, tetapi belum dalam bentuk paling sederhana.",
+    "saran": "Biasakan bertanya: adakah bilangan yang bisa membagi pembilang dan penyebut sekaligus?"
+  },
+  "salah-langkah-materi": {
+    "nama": "Salah langkah di contoh materi",
+    "kategori": "Materi",
+    "penjelasan": "Langkah pada contoh di materi belum tepat.",
+    "saran": "Baca lagi bagian konsep dan putar animasinya, lalu coba lagi."
+  }
 }

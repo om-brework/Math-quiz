@@ -71,75 +71,229 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 
 ## Contoh langkah demi langkah
 
+Kerjakan setiap gerakan sendiri: Bagi, Kali, Kurang, Turun. Kalau salah, baca petunjuknya lalu coba lagi.
+
 ### Contoh 1: Pembagian pas
 
 **Soal.** 96 ÷ 4 = ...
 
-```visual
-{"type": "money", "items": [10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 10000, 1000, 1000, 1000, 1000, 1000, 1000], "caption": "Bayangkan Rp96.000: 9 lembar sepuluh ribuan dan 6 ribuan, dibagi ke 4 orang"}
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Hitung $96 \\div 4$ dengan porogapit.",
+ "steps": [
+  {
+   "kind": "number",
+   "prompt": "Langkah 1: Bagi. 4 muat berapa kali di 9?",
+   "answer": "2",
+   "hint": "Hitung loncat 4: 4, 8, 12. Mana yang tidak lebih dari 9?",
+   "explain": "4 × 2 = 8, sedangkan 4 × 3 = 12 kelebihan. Tulis 2 di atas angka 9.",
+   "error": "tebakan-bagi-kebesaran"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 2: Kali. 2 × 4 = ?",
+   "answer": "8",
+   "hint": "Dua kali empat.",
+   "explain": "2 × 4 = 8. Tulis 8 di bawah 9.",
+   "error": "salah-kali-porogapit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Kurang. 9 − 8 = ?",
+   "answer": "1",
+   "hint": "Sisa puluhan yang belum terbagi.",
+   "explain": "9 − 8 = 1. Ada 1 puluhan tersisa, seperti 1 lembar Rp10 yang belum dibagi.",
+   "error": "salah-kurang-porogapit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 4: Turun. Turunkan angka 6. Sekarang ada berapa?",
+   "answer": "16",
+   "hint": "Angka 1 dan angka 6 yang diturunkan berdampingan.",
+   "explain": "1 puluhan ditukar menjadi 10, ditambah 6 = 16.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 5: Bagi lagi. 4 muat berapa kali di 16?",
+   "answer": "4",
+   "hint": "4, 8, 12, 16.",
+   "explain": "4 × 4 = 16. Tulis 4 di atas angka 6.",
+   "error": "tebakan-bagi-kekecilan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 6: Kali dan kurang. 16 − 4 × 4 = ?",
+   "answer": "0",
+   "hint": "4 × 4 = 16, lalu 16 − 16.",
+   "explain": "Sisanya 0. Pembagian pas.",
+   "error": "salah-kurang-porogapit"
+  },
+  {
+   "kind": "number",
+   "prompt": "Jadi 96 ÷ 4 = ?",
+   "answer": "24",
+   "hint": "Baca hasil bagi di atas: angka puluhan lalu satuan.",
+   "explain": "Hasil bagi 24.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 24 × 4 = ?",
+   "answer": "96",
+   "hint": "Kalau benar, hasilnya 96.",
+   "explain": "24 × 4 = 96. Benar.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi 96 ÷ 4 = 24."
+}
 ```
-
-1. **Langkah 1: Bagi angka puluhan.** Lihat angka 9 (artinya 9 puluhan). 4 muat 2 kali di 9, karena 4 × 2 = 8 dan 4 × 3 = 12 sudah kelebihan. Tulis **2** di atas angka 9.
-2. **Langkah 2: Kali.** 2 × 4 = 8. Tulis 8 di bawah 9.
-3. **Langkah 3: Kurang.** 9 − 8 = 1. Ada 1 puluhan yang tersisa. Ini seperti 1 lembar Rp10 yang tidak bisa dibagi ke 4 orang.
-4. **Langkah 4: Turunkan.** Turunkan angka 6. Sekarang kita punya 16. Ini seperti menukar 1 lembar Rp10 menjadi koin, lalu digabung dengan 6 koin yang sudah ada.
-5. **Langkah 5: Bagi angka satuan.** 4 muat 4 kali di 16 (4 × 4 = 16). Tulis **4** di atas angka 6.
-6. **Langkah 6: Kali dan kurang.** 4 × 4 = 16, dan 16 − 16 = 0. Sisanya 0.
-7. **Cek jawaban.** Kalikan balik: 24 × 4 = 96. Sama dengan yang dibagi, jadi benar.
-
-**Jawaban:** 96 ÷ 4 = 24.
 
 ### Contoh 2: Pembagian dengan sisa
 
 **Soal.** 75 ÷ 6 = ...
 
-```anim
-{"type": "porogapit", "a": 75, "b": 6}
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Hitung $75 \\div 6$ dengan porogapit.",
+ "steps": [
+  {
+   "kind": "longdiv",
+   "dividend": 75,
+   "divisor": 6,
+   "prompt": "Kerjakan porogapit sendiri: isi kotak yang menyala satu per satu (Bagi, Kali, Kurang, Turun).",
+   "hint": "Mulai dari 7: 6 muat berapa kali di 7?",
+   "explain": "1, lalu 6, sisa 1, turunkan 5 jadi 15, 2, 12, sisa 3."
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa sisanya?",
+   "answer": "3",
+   "hint": "Angka paling bawah setelah pengurangan terakhir.",
+   "explain": "Sisa 3.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "choice",
+   "prompt": "Apakah sisa 3 sudah benar?",
+   "options": [
+    "Ya, 3 lebih kecil dari 6",
+    "Belum, 3 masih bisa dibagi 6"
+   ],
+   "answer": "Ya, 3 lebih kecil dari 6",
+   "hint": "Sisa harus lebih kecil dari pembagi.",
+   "explain": "3 lebih kecil dari 6, jadi selesai.",
+   "error": "tebakan-bagi-kekecilan"
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek: 12 × 6 + 3 = ?",
+   "answer": "75",
+   "hint": "12 × 6 = 72, lalu tambah 3.",
+   "explain": "72 + 3 = 75. Benar.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi 75 ÷ 6 = 12 sisa 3."
+}
 ```
-
-1. **Langkah 1: Bagi puluhan.** 6 muat 1 kali di 7. Tulis **1** di atas 7.
-2. **Langkah 2: Kali.** 1 × 6 = 6.
-3. **Langkah 3: Kurang.** 7 − 6 = 1.
-4. **Langkah 4: Turunkan.** Turunkan 5. Sekarang 15.
-5. **Langkah 5: Bagi satuan.** 6 muat 2 kali di 15 (6 × 2 = 12, 6 × 3 = 18 kelebihan). Tulis **2**.
-6. **Langkah 6: Kali dan kurang.** 2 × 6 = 12, dan 15 − 12 = 3.
-7. **Langkah 7: Periksa sisa.** Sisa 3 lebih kecil dari pembagi 6, jadi sudah selesai.
-8. **Cek jawaban.** (12 × 6) + 3 = 72 + 3 = 75. Benar.
-
-**Jawaban:** 75 ÷ 6 = 12 sisa 3.
 
 ### Contoh 3: Tiga angka, angka pertama lebih kecil dari pembagi
 
 **Soal.** 252 ÷ 7 = ...
 
-```anim
-{"type": "porogapit", "a": 252, "b": 7}
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Hitung $252 \\div 7$ dengan porogapit.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Lihat angka pertama, 2. Apakah 7 muat di 2?",
+   "options": [
+    "Tidak, gabungkan dengan angka berikutnya menjadi 25",
+    "Ya, 1 kali"
+   ],
+   "answer": "Tidak, gabungkan dengan angka berikutnya menjadi 25",
+   "hint": "Bandingkan 2 dengan 7.",
+   "explain": "2 lebih kecil dari 7, jadi kita lihat 25. Di atas angka 2 tidak ditulis apa-apa.",
+   "error": "tebakan-bagi-kebesaran"
+  },
+  {
+   "kind": "longdiv",
+   "dividend": 252,
+   "divisor": 7,
+   "prompt": "Kerjakan porogapit sendiri.",
+   "hint": "7 muat berapa kali di 25? Hitung loncat 7: 7, 14, 21, 28.",
+   "explain": "3, 21, sisa 4, turunkan 2 jadi 42, 6, 42, sisa 0."
+  },
+  {
+   "kind": "number",
+   "prompt": "Cek jawaban: 36 × 7 = ?",
+   "answer": "252",
+   "hint": "30 × 7 = 210, 6 × 7 = 42.",
+   "explain": "210 + 42 = 252. Benar.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi 252 ÷ 7 = 36."
+}
 ```
-
-1. **Langkah 1: Lihat angka ratusan.** Angka 2 lebih kecil dari 7, jadi 7 tidak muat di 2. Kita **tidak menulis apa-apa** di atas 2, lalu gabungkan dengan angka berikutnya: 25.
-2. **Langkah 2: Bagi.** 7 muat 3 kali di 25 (7 × 3 = 21, 7 × 4 = 28 kelebihan). Tulis **3** di atas angka 5.
-3. **Langkah 3: Kali dan kurang.** 3 × 7 = 21, dan 25 − 21 = 4.
-4. **Langkah 4: Turunkan.** Turunkan 2. Sekarang 42.
-5. **Langkah 5: Bagi.** 7 muat 6 kali di 42 (7 × 6 = 42). Tulis **6**.
-6. **Langkah 6: Kali dan kurang.** 6 × 7 = 42, dan 42 − 42 = 0.
-7. **Cek jawaban.** 36 × 7 = 252. Benar.
-
-**Jawaban:** 252 ÷ 7 = 36.
 
 ### Contoh 4: Soal cerita, sisa harus dipikirkan
 
 **Soal.** Ada 130 siswa yang akan naik bus mini. Satu bus mini memuat 8 siswa. Berapa bus mini yang dibutuhkan?
 
-```anim
-{"type": "porogapit", "a": 130, "b": 8}
+```soal
+{
+ "title": "Kerjakan bersama",
+ "text": "Ada 130 siswa yang akan naik bus mini. Satu bus mini memuat 8 siswa. Berapa bus mini yang dibutuhkan?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Langkah 1: Pahami soal. Hitungan apa yang dipakai?",
+   "options": [
+    "130 ÷ 8",
+    "130 × 8",
+    "130 − 8"
+   ],
+   "answer": "130 ÷ 8",
+   "hint": "Siswa dibagi ke kelompok berisi 8.",
+   "explain": "Membagi 130 ke kelompok berisi 8: 130 ÷ 8.",
+   "error": "salah-pilih-operasi"
+  },
+  {
+   "kind": "longdiv",
+   "dividend": 130,
+   "divisor": 8,
+   "prompt": "Langkah 2: Hitung dengan porogapit.",
+   "hint": "8 muat berapa kali di 13?",
+   "explain": "1, 8, sisa 5, turunkan 0 jadi 50, 6, 48, sisa 2."
+  },
+  {
+   "kind": "number",
+   "prompt": "Ada berapa siswa yang tersisa (sisa)?",
+   "answer": "2",
+   "hint": "Angka paling bawah.",
+   "explain": "16 bus penuh, masih ada 2 siswa.",
+   "error": "salah-langkah-materi"
+  },
+  {
+   "kind": "number",
+   "prompt": "Langkah 3: Pikirkan sisanya. Berapa bus yang dibutuhkan?",
+   "answer": "17",
+   "hint": "2 siswa yang tersisa tidak boleh ditinggal.",
+   "explain": "16 bus penuh ditambah 1 bus untuk 2 siswa = 17 bus.",
+   "error": "salah-tafsir-sisa",
+   "suffix": "bus"
+  }
+ ],
+ "conclusion": "Dibutuhkan 17 bus mini."
+}
 ```
-
-1. **Langkah 1: Pahami soal.** Kita membagi 130 siswa ke kelompok berisi 8. Jadi kita menghitung 130 ÷ 8.
-2. **Langkah 2: Hitung bersusun.** 8 muat 1 kali di 13, sisa 5. Turunkan 0 menjadi 50. 8 muat 6 kali di 50 (8 × 6 = 48), sisa 2. Jadi 130 ÷ 8 = 16 sisa 2.
-3. **Langkah 3: Pikirkan arti sisa.** 16 bus terisi penuh, tetapi masih ada 2 siswa. Mereka tidak boleh ditinggal, jadi perlu **1 bus lagi**.
-4. **Cek jawaban.** 17 bus memuat 17 × 8 = 136 siswa. Cukup untuk 130. Dengan 16 bus hanya muat 128, tidak cukup.
-
-**Jawaban:** 17 bus mini.
 
 ## Kesalahan yang sering terjadi
 
@@ -159,16 +313,153 @@ Cara mudah mengingat: **Bagi, Kali, Kurang, Turun**.
 
 ## Cek pemahaman
 
-1. 84 ÷ 3 = ...
-2. 59 ÷ 4 = ...
-3. 312 ÷ 6 = ...
-4. 618 ÷ 3 = ...
-5. Bu Made punya 100 tangkai bunga. Setiap ikat berisi 7 tangkai. Berapa ikat yang bisa dibuat, dan berapa tangkai yang tersisa?
+Kerjakan sendiri langkah demi langkah.
 
-### Kunci jawaban
+```soal
+{
+ "title": "Soal 1",
+ "text": "Hitung $84 \\div 3$.",
+ "steps": [
+  {
+   "kind": "longdiv",
+   "dividend": 84,
+   "divisor": 3,
+   "prompt": "Kerjakan dengan porogapit.",
+   "hint": "3 muat berapa kali di 8?",
+   "explain": "2, 6, sisa 2, turunkan 4 jadi 24, 8."
+  }
+ ],
+ "conclusion": "Jadi 84 ÷ 3 = 28."
+}
+```
 
-1. 28. 3 muat 2 kali di 8 sisa 2, turunkan 4 menjadi 24, 24 ÷ 3 = 8.
-2. 14 sisa 3. Cek: 14 × 4 + 3 = 59.
-3. 52. 6 tidak muat di 3, jadi bagi 31: hasil 5 sisa 1, turunkan 2 menjadi 12, 12 ÷ 6 = 2.
-4. 206. 6 ÷ 3 = 2, angka 1 tidak muat 3 maka tulis 0, turunkan 8 menjadi 18, 18 ÷ 3 = 6.
-5. 14 ikat, sisa 2 tangkai. 100 ÷ 7 = 14 sisa 2, karena 14 × 7 = 98.
+```soal
+{
+ "title": "Soal 2",
+ "text": "Hitung $59 \\div 4$.",
+ "steps": [
+  {
+   "kind": "longdiv",
+   "dividend": 59,
+   "divisor": 4,
+   "prompt": "Kerjakan dengan porogapit.",
+   "hint": "4 muat berapa kali di 5?",
+   "explain": "1, 4, sisa 1, turunkan 9 jadi 19, 4, 16, sisa 3."
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa sisanya?",
+   "answer": "3",
+   "hint": "Angka paling bawah.",
+   "explain": "Sisa 3.",
+   "error": "salah-langkah-materi"
+  }
+ ],
+ "conclusion": "Jadi 59 ÷ 4 = 14 sisa 3."
+}
+```
+
+```soal
+{
+ "title": "Soal 3",
+ "text": "Hitung $312 \\div 6$.",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Apakah 6 muat di angka pertama, 3?",
+   "options": [
+    "Tidak, lihat 31",
+    "Ya"
+   ],
+   "answer": "Tidak, lihat 31",
+   "hint": "Bandingkan 3 dengan 6.",
+   "explain": "3 lebih kecil dari 6, jadi kita lihat 31.",
+   "error": "tebakan-bagi-kebesaran"
+  },
+  {
+   "kind": "longdiv",
+   "dividend": 312,
+   "divisor": 6,
+   "prompt": "Kerjakan dengan porogapit.",
+   "hint": "6 muat berapa kali di 31?",
+   "explain": "5, 30, sisa 1, turunkan 2 jadi 12, 2."
+  }
+ ],
+ "conclusion": "Jadi 312 ÷ 6 = 52."
+}
+```
+
+```soal
+{
+ "title": "Soal 4",
+ "text": "Hitung $618 \\div 3$.",
+ "steps": [
+  {
+   "kind": "longdiv",
+   "dividend": 618,
+   "divisor": 3,
+   "prompt": "Kerjakan dengan porogapit. Hati-hati dengan angka 1!",
+   "hint": "Kalau 3 tidak muat di 1, tulis 0 di hasil bagi.",
+   "explain": "2, lalu 0 (3 tidak muat di 1), turunkan 8 jadi 18, 6."
+  },
+  {
+   "kind": "number",
+   "prompt": "Jadi 618 ÷ 3 = ?",
+   "answer": "206",
+   "hint": "Baca hasil bagi di atas, jangan lupa angka 0.",
+   "explain": "Hasilnya 206.",
+   "error": "lupa-nol-hasil-bagi"
+  }
+ ],
+ "conclusion": "Jadi 618 ÷ 3 = 206."
+}
+```
+
+```soal
+{
+ "title": "Soal 5",
+ "text": "Bu Made punya 100 tangkai bunga. Setiap ikat berisi 7 tangkai. Berapa ikat yang bisa dibuat, dan berapa tangkai yang tersisa?",
+ "steps": [
+  {
+   "kind": "choice",
+   "prompt": "Hitungan apa yang dipakai?",
+   "options": [
+    "100 ÷ 7",
+    "100 × 7",
+    "100 − 7"
+   ],
+   "answer": "100 ÷ 7",
+   "hint": "Bunga dibagi menjadi ikatan berisi 7.",
+   "explain": "100 ÷ 7.",
+   "error": "salah-pilih-operasi"
+  },
+  {
+   "kind": "longdiv",
+   "dividend": 100,
+   "divisor": 7,
+   "prompt": "Kerjakan dengan porogapit.",
+   "hint": "7 muat berapa kali di 10?",
+   "explain": "1, 7, sisa 3, turunkan 0 jadi 30, 4, 28, sisa 2."
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa ikat yang bisa dibuat?",
+   "answer": "14",
+   "hint": "Hasil bagi.",
+   "explain": "14 ikat.",
+   "error": "salah-langkah-materi",
+   "suffix": "ikat"
+  },
+  {
+   "kind": "number",
+   "prompt": "Berapa tangkai yang tersisa?",
+   "answer": "2",
+   "hint": "Sisa pembagian.",
+   "explain": "Sisa 2 tangkai.",
+   "error": "salah-tafsir-sisa",
+   "suffix": "tangkai"
+  }
+ ],
+ "conclusion": "14 ikat, sisa 2 tangkai."
+}
+```

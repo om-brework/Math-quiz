@@ -71,3 +71,26 @@ describe.each(TOPICS.map((t) => [t.topic, t] as const))('%s', (topic, def) => {
         }
     }
 });
+
+/* Blok ```soal di materi: harus bisa diparse dan setiap langkahnya sah */
+import { toQuestion, type SoalSpec } from '../anim/soal';
+const materiDir = resolve(root, 'content/materi');
+const soalBlocks = readdirSync(materiDir).flatMap((g) => readdirSync(resolve(materiDir, g)).map((f) => [g, f] as const))
+    .flatMap(([g, f]) => [...readFileSync(resolve(materiDir, g, f), 'utf8').matchAll(/```soal\n([\s\S]*?)\n```/g)].map((m, i) => [`${f} #${i + 1}`, m[1]] as const));
+describe('soal di materi', () => {
+    it.each(soalBlocks)('%s', (_where, src) => {
+        const q = toQuestion(JSON.parse(src) as SoalSpec);
+        expect(q.text.length).toBeGreaterThan(3);
+        expect(q.conclusion.length).toBeGreaterThan(3);
+        for (const s of q.steps) {
+            expect(s.prompt.length).toBeGreaterThan(2);
+            expect(s.hint.length).toBeGreaterThan(2);
+            expect(s.explain.length).toBeGreaterThan(2);
+            if (s.kind === 'number') expect(normalizeNumber(s.answer)).toMatch(/^-?\d+(\.\d+)?$/);
+            if (s.kind === 'choice') { expect(s.options).toContain(s.answer); expect(new Set(s.options).size).toBe(s.options.length); }
+            if (s.kind === 'number' || s.kind === 'choice') expect(errorCodes.has(s.error), `kode "${s.error}"`).toBe(true);
+            if (s.kind === 'column') expect(() => columnPlan(s.op, s.a, s.b)).not.toThrow();
+            if (s.kind === 'longdiv') expect(divisionPlan(s.dividend, s.divisor).quotient).toBeGreaterThan(0);
+        }
+    });
+});
