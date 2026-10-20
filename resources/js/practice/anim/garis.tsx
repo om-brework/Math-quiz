@@ -1,13 +1,12 @@
 /* Animasi garis bilangan: katak melompat dari `start` sesuai daftar lompatan (+/−). */
 import { motion } from 'motion/react';
-import { useMemo } from 'react';
 import { AnimFrame, type AnimStep } from './frame';
 
 const W = 440, L = 24, R = W - 24, Y = 96;
 
 export function GarisAnim({ from, to, start, jumps, step = 1, title }: { from: number; to: number; start: number; jumps: number[]; step?: number; title?: string }) {
     const xs = (v: number) => L + ((v - from) / (to - from)) * (R - L);
-    const states = useMemo(() => {
+    const states = (() => {
         const out: (AnimStep & { at: number; arcs: { a: number; b: number }[] })[] = [{ say: `Mulai dari ${start}.`, tag: 'Mulai', at: start, arcs: [] }];
         let cur = start;
         const arcs: { a: number; b: number }[] = [];
@@ -21,7 +20,7 @@ export function GarisAnim({ from, to, start, jumps, step = 1, title }: { from: n
         out.push({ say: `Sampai di ${cur}. Jadi ${start}${jumps.map((j) => (j > 0 ? ` + ${j}` : ` − ${-j}`)).join('')} = ${cur}.`, tag: 'Selesai', at: cur, arcs: [...arcs] });
         void sum;
         return out;
-    }, [start, jumps]);
+    })();
     const ticks: number[] = [];
     for (let v = from; v <= to; v += step) ticks.push(v);
     const labelEvery = ticks.length > 21 ? (ticks.length > 50 ? 10 : 5) : 1;

@@ -21,7 +21,7 @@ function build(op: '+' | '-', a: number, b: number): { states: State[]; height: 
     const at = Math.floor(a / 10), ao = a % 10, bt = Math.floor(b / 10), bo = b % 10;
     const rowsA = Math.max(Math.ceil(at / 5), 1), rowA = 34, rowB = rowA + rowsA * (STICK.h + 10) + 26;
     const height = op === '+' ? rowB + Math.max(Math.ceil(bt / 5), 1) * (STICK.h + 10) + 20 : rowA + Math.max(Math.ceil((at) / 5), 2) * (STICK.h + 10) + 30;
-    let items: Item[] = [];
+    const items: Item[] = [];
     for (let i = 0; i < at; i++) items.push({ id: `a-t${i}`, kind: 'bundle', color: 'a', ...bundleAt(i, rowA) });
     for (let i = 0; i < ao; i++) items.push({ id: `a-s${i}`, kind: 'stick', color: 'a', ...stickAt(i, rowA) });
     const states: State[] = [];
